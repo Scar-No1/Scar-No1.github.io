@@ -7,16 +7,20 @@
   
   <title>ARDUINO Programme 4 | Han&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="Request a password system a keyboard to input the password a screen to show the four-digit password, which is  1234 if the password is correct, the steering engine starts working if wrong, the light t">
+<meta property="og:type" content="article">
 <meta property="og:title" content="ARDUINO Programme 4">
 <meta property="og:url" content="http://yoursite.com/2020/08/20/ARDUINO-Programme-4/index.html">
 <meta property="og:site_name" content="Han&#39;s blog">
+<meta property="og:description" content="Request a password system a keyboard to input the password a screen to show the four-digit password, which is  1234 if the password is correct, the steering engine starts working if wrong, the light t">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/20/dJtbWT.jpg">
 <meta property="article:published_time" content="2020-08-20T12:11:50.000Z">
-<meta property="article:modified_time" content="2020-08-20T12:11:50.983Z">
+<meta property="article:modified_time" content="2020-08-20T14:20:41.534Z">
 <meta property="article:author" content="Han">
 <meta property="article:tag" content="Daily Rcording">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/08/20/dJtbWT.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Han&#39;s blog" type="application/atom+xml">
   
@@ -87,11 +91,58 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h3><ul>
+<li>a password system</li>
+<li>a keyboard to input the password</li>
+<li>a screen to show the four-digit password, which is  1234</li>
+<li>if the password is correct, the steering engine starts working</li>
+<li>if wrong, the light turns on</li>
+</ul>
+<h3 id="How-to-connect"><a href="#How-to-connect" class="headerlink" title="How to connect"></a>How to connect</h3><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/dJtbWT"><img src="https://s1.ax1x.com/2020/08/20/dJtbWT.jpg" alt="dJtbWT.jpg"></a></p>
+<h3 id="Program"><a href="#Program" class="headerlink" title="Program"></a>Program</h3><p>Include all the packages we need.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;Keypad.h&gt; </span><br><span class="line">#include &lt;Servo.h&gt;  </span><br><span class="line">#include &lt;TM1637.h&gt;</span><br><span class="line">#define CLK 2    </span><br><span class="line">#define DIO 12</span><br><span class="line">#define KEY_ROWS 4 </span><br><span class="line">#define KEY_COLS 4 </span><br><span class="line">Servo myservo;  </span><br></pre></td></tr></table></figure>
+
+
+
+<p>Set all these packets in detail.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">TM1637 tm1637(CLK,DIO);</span><br><span class="line"></span><br><span class="line">char keymap[KEY_ROWS][KEY_COLS] &#x3D; &#123;</span><br><span class="line">  &#123;&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;A&#39;&#125;,</span><br><span class="line">  &#123;&#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;B&#39;&#125;,</span><br><span class="line">  &#123;&#39;7&#39;, &#39;8&#39;, &#39;9&#39;, &#39;C&#39;&#125;,</span><br><span class="line">  &#123;&#39;*&#39;, &#39;0&#39;, &#39;#&#39;, &#39;D&#39;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">byte colPins[KEY_COLS] &#x3D; &#123;7, 6, 5, 4&#125;; </span><br><span class="line">byte rowPins[KEY_ROWS] &#x3D; &#123;11, 10, 9, 8&#125;;  </span><br><span class="line">Keypad myKeypad &#x3D; Keypad(makeKeymap(keymap), rowPins, colPins, KEY_ROWS, KEY_COLS);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Set the password.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int times &#x3D; 0;</span><br><span class="line">int password &#x3D; 1234;</span><br><span class="line">int keyword &#x3D; 0;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Set the initial input and output.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void setup()&#123;</span><br><span class="line">  Serial.begin(9600);</span><br><span class="line">  myservo.attach(3);</span><br><span class="line">  tm1637.init();</span><br><span class="line">  tm1637.point(1);&#x2F;&#x2F;小数点开关，1为打开，0为关闭</span><br><span class="line">  tm1637.set(BRIGHT_TYPICAL);</span><br><span class="line">  pinMode(13, OUTPUT);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Define the function to achieve the power multiple calculations.</p>
+<p>It will help manage the transform of four single digits into thousands.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int multiple(int keytimes)&#123;</span><br><span class="line">    int multi;</span><br><span class="line">    switch(keytimes)&#123;</span><br><span class="line">        case 0: multi &#x3D; 1000;</span><br><span class="line">        break;</span><br><span class="line">        case 1: multi &#x3D; 100;</span><br><span class="line">        break;</span><br><span class="line">        case 2: multi &#x3D; 10;</span><br><span class="line">        break;</span><br><span class="line">        case 3: multi &#x3D; 1;</span><br><span class="line">        break;</span><br><span class="line">        default: multi &#x3D; 0;</span><br><span class="line">        break; </span><br><span class="line">      &#125;</span><br><span class="line">    return multi;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>When starting the loop, set the original state.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void loop()&#123;</span><br><span class="line">  char key &#x3D; myKeypad.getKey();</span><br><span class="line">  digitalWrite(13, HIGH);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Complete the condition sentence.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">if (key)&#123;</span><br><span class="line">    digitalWrite(13, HIGH); </span><br><span class="line">    tm1637.display(times, (int(key)-48));</span><br><span class="line">    keyword &#x3D; keyword + (int(key)-48)*(multiple(times));</span><br><span class="line">    times ++;                     #show the input password on the screen</span><br><span class="line">    if(times &gt; 3)&#123;                #condition 1  zero clearing after four digit </span><br><span class="line">        if(keyword &#x3D;&#x3D; password)&#123;                has all inputed</span><br><span class="line">            myservo.write(0);                   </span><br><span class="line">            tm1637.display(0, 0);               </span><br><span class="line">            tm1637.display(1, 0);</span><br><span class="line">            tm1637.display(2, 0);</span><br><span class="line">            tm1637.display(3, 0);</span><br><span class="line">            delay(1000);</span><br><span class="line">            keyword &#x3D; 0;</span><br><span class="line">            myservo.write(90);                   turning the servo</span><br><span class="line">          &#125;</span><br><span class="line">        else&#123;                     #condition 2   if the password is not correct</span><br><span class="line">            digitalWrite(13, LOW);               screen zero clearing</span><br><span class="line">            delay(2000);                         </span><br><span class="line">            digitalWrite(13, HIGH);              light on</span><br><span class="line">            tm1637.display(0, 0);</span><br><span class="line">            tm1637.display(1, 0);</span><br><span class="line">            tm1637.display(2, 0);</span><br><span class="line">            tm1637.display(3, 0);</span><br><span class="line">            keyword &#x3D; 0;</span><br><span class="line">          &#125;</span><br><span class="line">        times &#x3D; 0;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Show on the serial monitor.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Serial.println(keyword);</span><br><span class="line">      Serial.println(times);</span><br><span class="line">     </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/20/ARDUINO-Programme-4/" data-id="cke2vkqhp000bysti63zlc3or" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/20/ARDUINO-Programme-4/" data-id="cke2wbaib000hcgti7tuhdooc" class="article-share-link">Share</a>
       
       
     </footer>
