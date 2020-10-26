@@ -65,6 +65,71 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-Download-files-from-website" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/25/Python-Download-files-from-website/" class="article-date">
+  <time datetime="2020-10-25T13:15:55.000Z" itemprop="datePublished">2020-10-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/25/Python-Download-files-from-website/">Python:Download files from website</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This is the 11th paragraphs on the Python book. It talks about the way of getting and downloading files from the Internet and how to analyse the HTML. I first learned about the first part , which I think it may be help for me to download articles when preparing for my essay.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> webbrowser</span><br><span class="line">webbrowser.open(<span class="string">&#x27;http://inventwithpython.com/&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>There is a package called <code>webbrowser</code> which can be used to open URL using Web.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> pyperclip</span><br><span class="line"><span class="keyword">if</span> len(sys.argv)&gt;<span class="number">1</span>:</span><br><span class="line">    adress=<span class="string">&#x27; &#x27;</span>.join(sys.argv[<span class="number">1</span>:])</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    adress=pyperclip.paste()</span><br><span class="line">    </span><br><span class="line">webbrowser.open(<span class="string">&#x27;http://www.google.com/maps/place/&#x27;</span>+adress)</span><br></pre></td></tr></table></figure>
+
+<p>Using this way,  import the <code>sys</code> package to read the possible command line parameters, we can open the website directly from the Jupyter Notebook.</p>
+<p>The next part teaches the <code>requests</code> package. We need to install this package first in the Jupyter Prompt.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">res=requests.get(<span class="string">&#x27;http://www.gutenberg.org/cache/epub/1112/pg1112.txt&#x27;</span>)</span><br><span class="line">type(res)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">requests.models.Response</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>type()` returns a Response object, including the response from the Web service to your accessing request.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">res.status_code==requests.codes.ok</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"></span><br><span class="line">len(res.text)</span><br><span class="line"><span class="number">179380</span></span><br><span class="line"></span><br><span class="line">print(res.text[:<span class="number">250</span>])</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;The Project Gutenberg EBook of Romeo and Juliet, by William Shakespeare</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">*******************************************************************</span></span><br><span class="line"><span class="string">THIS EBOOK WAS ONE OF PROJECT GUTENBERG&#x27;S EARLY FILES PRODUCED AT A</span></span><br><span class="line"><span class="string">TIME WHEN PROOFING METHODS AND TOO&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>To save the document to our computer, we first need to download the file, using <code>requests.get()</code>. Then, use <code>wb</code> to open a new file and write the content in the new file through <code>iter_content()</code> loop. Finally, close the file.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">playFile.close()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>I try a new website, it does response but the content download is quit strange.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res=requests.get(<span class="string">&#x27;https://www.lifewire.com/what-is-social-media-explaining-the-big-trend-3486616&#x27;</span>)</span><br><span class="line">type(res)</span><br><span class="line">print(res.text)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html id&#x3D;&quot;structuredContentTemplate_1-0&quot; class&#x3D;&quot;comp taxlevel-2  structuredContentTemplate article-html html mntl-html&quot; data-ab&#x3D;&quot;99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,57,78,75&quot; data-resource-version&#x3D;&quot;3.117.0&quot; lang&#x3D;&quot;en&quot; data-adhesive-refresh&#x3D;&quot;billboard3&quot; data-mantle-resource-version&#x3D;&quot;3.12.171&quot; data-tech-resource-version&#x3D;&quot;3.117.0&quot; data-tracking-container&#x3D;&quot;true&quot;&gt;                </span><br><span class="line">&lt;!--</span><br><span class="line">&lt;globe-environment environment&#x3D;&quot;prod&quot; application&#x3D;&quot;tech&quot; dataCenter&#x3D;&quot;us-west-2&quot;&#x2F;&gt;</span><br><span class="line">--&gt;</span><br><span class="line">&lt;head class&#x3D;&quot;loc head&quot;&gt;                </span><br><span class="line">                    </span><br><span class="line">                    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/10/25/Python-Download-files-from-website/" data-id="ckgqff3d7001jdoti2evb964g" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Python-tweets-data-analysis" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/10/11/Python-tweets-data-analysis/" class="article-date">
@@ -113,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/11/Python-tweets-data-analysis/" data-id="ckg81bkbw001nb8tig7otbmjb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/11/Python-tweets-data-analysis/" data-id="ckgqff3d9001ndotibs92akhl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,7 +245,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/06/Stage-summary-of-senior-one/" data-id="ckg81bkc10020b8ti6uc763g1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/06/Stage-summary-of-senior-one/" data-id="ckgqff3dg0023doti7ajkb94s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -223,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/12/The-unfamiliar-situation-I-have-met/" data-id="ckg81bkcz003yb8ti33281fgw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/12/The-unfamiliar-situation-I-have-met/" data-id="ckgqff3dt0030doti97rkd1c5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/paragraph-writing/" rel="tag">paragraph writing</a></li></ul>
@@ -272,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/06/Finance-Introducing-PPT/" data-id="ckg81bkbl000nb8ti9yggb4kf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/06/Finance-Introducing-PPT/" data-id="ckgqff3cx000tdotidf3g10yi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -329,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/24/ARDUINO-Programme-5/" data-id="ckg81bkbh000hb8ti51go47u0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/24/ARDUINO-Programme-5/" data-id="ckgqff3cp000hdoti329z9wlx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -416,7 +481,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/20/ARDUINO-Programme-4/" data-id="ckg81bkbf000bb8tifggfhu3h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/20/ARDUINO-Programme-4/" data-id="ckgqff3cm000bdotiglv02mbo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li></ul>
@@ -480,7 +545,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/12/ARDUINO-Programme-3/" data-id="ckg81bkbe000ab8ti8l1h0dvv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/12/ARDUINO-Programme-3/" data-id="ckgqff3cl000adotibs6a91kn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li></ul>
@@ -534,7 +599,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/ARDUINO-Programme-2/" data-id="ckg81bkbc0006b8ti6kyt8ura" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/04/ARDUINO-Programme-2/" data-id="ckgqff3cj0006doti44fe4xy2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li></ul>
@@ -624,68 +689,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/01/ARDUINO-Programme-1/" data-id="ckg81bkbb0005b8ti51on719l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/01/ARDUINO-Programme-1/" data-id="ckgqff3cj0005doticdor6en2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Quantitative-investment" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/26/Quantitative-investment/" class="article-date">
-  <time datetime="2020-07-26T08:27:12.000Z" itemprop="datePublished">2020-07-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Business-study/">Business study</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/26/Quantitative-investment/">Quantitative investment</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>This is the first time I heard this word, “quantitative investment”.</p>
-<p>It can be considered as a investment which totally bases on data.(From Google: Quantitative investing, also known as systematic investing, is an investment approach that uses advanced mathematical modelling, computer systems and data analysis to calculate the optimal probability of executing a profitable trade.)</p>
-<h4 id="Stock-certification"><a href="#Stock-certification" class="headerlink" title="Stock certification"></a>Stock certification</h4><p>Stock is all of the shares into which ownership of the corporation is divided. It can be trade on the stock market.  Imagine that you want to buy an apple, the original price of one apple is 3 yuan. A lot of people want to buy it, so some people are willing to buy it in 3.1 yuan. Hence, the price of an apple now becomes 3.1 yuan. As the price of apple get higher, less people want to buy it in the price of 3.1 yuan, so the price of an an apple then drops back to 3 yuan. You can consider the apple as a share. That is the reason why the stock value fluctuate all the time. </p>
-<p><img src="https://s1.ax1x.com/2020/07/26/aCuN90.jpg" alt="aCuN90.jpg"></p>
-<h4 id="How-is-the-quantitative-investment-carried-out"><a href="#How-is-the-quantitative-investment-carried-out" class="headerlink" title="How is the quantitative investment carried out"></a>How is the quantitative investment carried out</h4><p>First, the computer analysis the data of stock market in previous year and it can predict whether the stock value will raise or drop. Then, computer can judge if the investors need to buy this stock or sell through a programme.</p>
-<h4 id="Characteristics-of-quantitative-investment"><a href="#Characteristics-of-quantitative-investment" class="headerlink" title="Characteristics of quantitative investment"></a>Characteristics of quantitative investment</h4><ol>
-<li><p>It is carried out by a computer. In reality, the data needed is over 100T , which people can only rely on computer to circulate.  </p>
-</li>
-<li><p>People believe the result from the computer in most conditions, unless the result goes against the financial principles.</p>
-</li>
-<li><p>A lot of math knowledge are used when programming, e.g. linear regression(which also be used in AI)</p>
-</li>
-<li><p>What a programme needs to improve most is its operating speed since other people can buy stocks when the price is low and sell it at higher price but you can only buy the stock which other people sell(higher price) and sell at low price.</p>
-</li>
-</ol>
-<p>It is hard for people to speculate in stock in the future because more and more people use computer to finish the task which is much more efficient than those people who do market research.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/26/Quantitative-investment/" data-id="ckg81bkbx001pb8ti0twt123q" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Business-study/" rel="tag">Business study</a></li></ul>
 
     </footer>
   </div>
@@ -751,6 +758,10 @@
       <ul>
         
           <li>
+            <a href="/2020/10/25/Python-Download-files-from-website/">Python:Download files from website</a>
+          </li>
+        
+          <li>
             <a href="/2020/10/11/Python-tweets-data-analysis/">Python tweets data analysis</a>
           </li>
         
@@ -764,10 +775,6 @@
         
           <li>
             <a href="/2020/09/06/Finance-Introducing-PPT/"> Finance Introducing PPT</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/24/ARDUINO-Programme-5/">ARDUINO Programme 5</a>
           </li>
         
       </ul>
