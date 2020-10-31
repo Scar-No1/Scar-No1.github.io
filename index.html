@@ -65,12 +65,96 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-the-center-of-film-industry" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/31/Python-the-center-of-film-industry/" class="article-date">
+  <time datetime="2020-10-31T12:52:27.000Z" itemprop="datePublished">2020-10-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Computer-learning/">Computer learning</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/31/Python-the-center-of-film-industry/">Python the center of film industry</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Backbround"><a href="#Backbround" class="headerlink" title="Backbround"></a>Backbround</h3><p>Social network analysis  is a branch of data science that allows the investigation of social structures using networks and graph theory. It can help to reveal patterns in voting preferences, aid the understanding of how ideas spread, and even help to model the spread of diseases.</p>
+<p>A social network is made up of a set of nodes (usually people) that have links, or edges between them that describe their relationships.</p>
+<p>My analysis is carried out using the Python programming language and, in particular, the tools available in the <code>NetworkX</code> library.</p>
+<h3 id="About-this-programme"><a href="#About-this-programme" class="headerlink" title="About this programme"></a>About this programme</h3><p>Here is a film data collection collected by Rhyd Lewis in 18th February 2020. It includes 114827 films’ information.</p>
+<ul>
+<li>I need to write some function , allowing us to do some research conveniently. </li>
+<li>Draw the diagram to show the relationships between these film stars.</li>
+</ul>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> networkx <span class="keyword">as</span> nx</span><br><span class="line"><span class="keyword">import</span> matplotlib . pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> statistics</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> random</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Movies = []</span><br><span class="line"><span class="keyword">with</span> open (<span class="string">&quot;./data.json&quot;</span>, <span class="string">&quot;r&quot;</span>, encoding =<span class="string">&quot;utf -8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">        J = json.loads(line)</span><br><span class="line">        Movies.append(J)      <span class="comment"># read the data and put the imformation of each film in to a list</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">len(Movies)</span><br><span class="line"></span><br><span class="line"><span class="number">114827</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Movies[<span class="number">10086</span>]</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">&#x27;title&#x27;</span>: <span class="string">&#x27;A Yank at Oxford&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;cast&#x27;</span>: [<span class="string">&#x27;Robert Taylor&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Lionel Barrymore&#x27;</span>,</span><br><span class="line">  <span class="string">&quot;Maureen O&#x27;Sullivan&quot;</span>,</span><br><span class="line">  <span class="string">&#x27;Vivien Leigh&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Edmund Gwenn&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Griffith Jones&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;C.V. France&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Edward Rigby&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Morton Selten&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Claude Gillingwater&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Tully Marshall&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Walter Kingsford&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Robert Coote&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Peter Croft&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Noel Howlett&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Ronald Shiner&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Jon Pertwee&#x27;</span>],</span><br><span class="line"> <span class="string">&#x27;directors&#x27;</span>: [<span class="string">&#x27;Jack Conway&#x27;</span>],</span><br><span class="line"> <span class="string">&#x27;producers&#x27;</span>: [<span class="string">&#x27;Michael Balcon&#x27;</span>],</span><br><span class="line"> <span class="string">&#x27;companies&#x27;</span>: [<span class="string">&#x27;Metro-Goldwyn-Mayer&#x27;</span>],</span><br><span class="line"> <span class="string">&#x27;year&#x27;</span>: <span class="number">1938</span>&#125;</span><br><span class="line"> <span class="comment">#the detailed information is put in a dictionary.</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>Then I write a function which can help search the film information. By input the type of keywords that you want to search and the keywords, the programme can return order number of the films which satisfy the requirements.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search_films</span>(<span class="params">key, value</span>):</span></span><br><span class="line">    films=[]   </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range (<span class="number">0</span>,<span class="number">114827</span>):</span><br><span class="line">        <span class="keyword">if</span> key  <span class="keyword">in</span> Movies[i].keys():             </span><br><span class="line">            <span class="keyword">if</span> type(Movies[i][key])==str:</span><br><span class="line">                <span class="keyword">if</span> value==Movies[i][key]:</span><br><span class="line">                    films.append(i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">for</span> u <span class="keyword">in</span> Movies[i][key]:</span><br><span class="line">                    <span class="keyword">if</span> u==value:</span><br><span class="line">                        films.append(i)</span><br><span class="line">    </span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> films</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#text the function</span></span><br><span class="line"></span><br><span class="line">search_films(<span class="string">&#x27;cast&#x27;</span>, <span class="string">&#x27;Jackie Chan&#x27;</span>)</span><br><span class="line"></span><br><span class="line">[<span class="number">26</span>,</span><br><span class="line"> <span class="number">911</span>,</span><br><span class="line"> <span class="number">1084</span>,</span><br><span class="line"> <span class="number">1103</span>,</span><br><span class="line"> <span class="number">1161</span>,</span><br><span class="line"> <span class="number">1365</span>,</span><br><span class="line"> <span class="number">1402</span>,</span><br><span class="line"> <span class="number">1793</span>,</span><br><span class="line"> <span class="number">1980</span>,</span><br><span class="line"> <span class="number">2131</span>,</span><br><span class="line"> <span class="number">2210</span>,</span><br><span class="line"> <span class="number">2394</span>,</span><br><span class="line"> <span class="number">2395</span>,</span><br><span class="line"> <span class="number">2396</span>,</span><br><span class="line"> <span class="number">2397</span>,</span><br><span class="line"> ....]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ids = search_films(<span class="string">&#x27;cast&#x27;</span>, <span class="string">&#x27;Jackie Chan&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> ids:</span><br><span class="line">    print(Movies[i][<span class="string">&#x27;year&#x27;</span>], Movies[i][<span class="string">&#x27;title&#x27;</span>])</span><br><span class="line">    </span><br><span class="line"><span class="number">1973</span> Enter the Dragon</span><br><span class="line"><span class="number">1995</span> Rumble <span class="keyword">in</span> the Bronx</span><br><span class="line">1998 Who Am I? (1998 film)</span><br><span class="line"><span class="number">2003</span> Shanghai Knights</span><br><span class="line"><span class="number">2000</span> Shanghai Noon</span><br><span class="line"><span class="number">1998</span> An Alan Smithee Film: Burn Hollywood Burn</span><br><span class="line"><span class="number">2002</span> The Tuxedo</span><br><span class="line"><span class="number">1978</span> Drunken Master</span><br><span class="line"><span class="number">1998</span> Rush Hour (<span class="number">1998</span> film)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ids = search_films(<span class="string">&#x27;companies&#x27;</span>, <span class="string">&#x27;Marvel Studios&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> ids:</span><br><span class="line">    print(Movies[i][<span class="string">&#x27;year&#x27;</span>], Movies[i][<span class="string">&#x27;title&#x27;</span>])</span><br><span class="line">    </span><br><span class="line">ids = search_films(<span class="string">&quot;title&quot;</span>, <span class="string">&quot;Back to the Future&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> ids:</span><br><span class="line">    print(Movies[i][<span class="string">&#x27;year&#x27;</span>], Movies[i][<span class="string">&#x27;title&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Then by using a for loop and <code>NetworkX</code>, draw a diagram to show the relationship between film stars which have been worked together.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">G = nx.MultiGraph()  </span><br><span class="line"><span class="keyword">for</span> movie <span class="keyword">in</span> Movies[<span class="number">0</span>:<span class="number">3</span>]: </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(movie[<span class="string">&quot;cast&quot;</span>]) - <span class="number">1</span>): </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i + <span class="number">1</span>, len(movie[<span class="string">&quot;cast&quot;</span>])): </span><br><span class="line">            G.add_edge(movie[<span class="string">&quot;cast&quot;</span>][i], movie[<span class="string">&quot;cast&quot;</span>][j], title=movie[<span class="string">&quot;title&quot;</span>])</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>,<span class="number">6</span>))</span><br><span class="line">nx.draw_shell(G, with_labels=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Because the original data set is too big, it’s impossible for me to process it and draw the diagram.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/Bahx6f"><img src="https://s1.ax1x.com/2020/10/31/Bahx6f.png" alt="Bahx6f.png"></a></p>
+<p> I reduce the number of the information used. Though there are only three film industry information, the relationship is still very complicated.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/Ba4eXT"><img src="https://s1.ax1x.com/2020/10/31/Ba4eXT.png" alt="Ba4eXT.png"></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/10/31/Python-the-center-of-film-industry/" data-id="ckgxq6wbo001pdgti2quqb6ib" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Python-Download-files-from-website" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/10/25/Python-Download-files-from-website/" class="article-date">
   <time datetime="2020-10-25T13:15:55.000Z" itemprop="datePublished">2020-10-25</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Computer-learning/">Computer learning</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -120,9 +204,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/25/Python-Download-files-from-website/" data-id="ckgqff3d7001jdoti2evb964g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/25/Python-Download-files-from-website/" data-id="ckgxq6wbl001jdgtiddq30iyk" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li></ul>
+
     </footer>
   </div>
   
@@ -136,6 +222,10 @@
   <time datetime="2020-10-11T13:41:21.000Z" itemprop="datePublished">2020-10-11</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Computer-learning/">Computer learning</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -178,9 +268,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/11/Python-tweets-data-analysis/" data-id="ckgqff3d9001ndotibs92akhl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/11/Python-tweets-data-analysis/" data-id="ckgxq6wbq001tdgtifk619nae" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li></ul>
+
     </footer>
   </div>
   
@@ -245,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/06/Stage-summary-of-senior-one/" data-id="ckgqff3dg0023doti7ajkb94s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/06/Stage-summary-of-senior-one/" data-id="ckgxq6wbv0025dgtig8xa4zpa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -288,7 +380,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/12/The-unfamiliar-situation-I-have-met/" data-id="ckgqff3dt0030doti97rkd1c5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/12/The-unfamiliar-situation-I-have-met/" data-id="ckgxq6wcp0048dgtibd4bceup" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/paragraph-writing/" rel="tag">paragraph writing</a></li></ul>
@@ -337,7 +429,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/06/Finance-Introducing-PPT/" data-id="ckgqff3cx000tdotidf3g10yi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/06/Finance-Introducing-PPT/" data-id="ckgxq6wbb000tdgti8yfub4j4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -394,7 +486,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/24/ARDUINO-Programme-5/" data-id="ckgqff3cp000hdoti329z9wlx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/24/ARDUINO-Programme-5/" data-id="ckgxq6wb3000bdgti5ofuctu6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -481,7 +573,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/20/ARDUINO-Programme-4/" data-id="ckgqff3cm000bdotiglv02mbo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/20/ARDUINO-Programme-4/" data-id="ckgxq6wb2000adgtica5h4vzz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li></ul>
@@ -545,7 +637,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/12/ARDUINO-Programme-3/" data-id="ckgqff3cl000adotibs6a91kn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/12/ARDUINO-Programme-3/" data-id="ckgxq6wb5000gdgtif4ju5sgb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li></ul>
@@ -599,97 +691,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/ARDUINO-Programme-2/" data-id="ckgqff3cj0006doti44fe4xy2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ARDUINO-Programme-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/01/ARDUINO-Programme-1/" class="article-date">
-  <time datetime="2020-08-01T08:36:44.000Z" itemprop="datePublished">2020-08-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Computer-learning/">Computer learning</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/01/ARDUINO-Programme-1/">ARDUINO Programme 1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="WHAT-IS-ARDUINO"><a href="#WHAT-IS-ARDUINO" class="headerlink" title="WHAT IS  ARDUINO"></a>WHAT IS  ARDUINO</h3><p> <strong>Arduino</strong> is an open-source hardware and software company, project that provide a platform for people to design their own digital devices.</p>
-<img src="https://s1.ax1x.com/2020/08/01/a8rLE8.png" alt="a8rLE8.png" border="0" />
-
-<h3 id="WHAT-WILL-WE-DO"><a href="#WHAT-WILL-WE-DO" class="headerlink" title="WHAT WILL WE DO"></a>WHAT WILL WE DO</h3><ul>
-<li>intelligent fan </li>
-<li>smoke alarm</li>
-<li>automatic light </li>
-<li>PDC (PARKING DISTANCE CONTROL)</li>
-<li>motion recognition </li>
-<li>manipulator </li>
-</ul>
-<h3 id="COMPONENT"><a href="#COMPONENT" class="headerlink" title="COMPONENT"></a>COMPONENT</h3><h4 id="MOTHERBOARD"><a href="#MOTHERBOARD" class="headerlink" title="MOTHERBOARD"></a>MOTHERBOARD</h4><p><img src="https://s1.ax1x.com/2020/08/01/a8vMUf.png" alt="a8vMUf.png"></p>
-<p>It is the most important unit,which is used for signal collection and output. There are many metal joint on it, they can be divided into three parts.</p>
-<ul>
-<li>VCC (3.3V/5V)</li>
-<li>PIN (Analog,Digital)</li>
-<li>GND</li>
-</ul>
-<p><img src="https://s1.ax1x.com/2020/08/01/a8vEgH.png" alt="a8vEgH.png"></p>
-<p>Each joint need to connect to the same type of interface in order to make sure the signal can be successfully transform and prevent the motherboard from burning out due to excessive current.</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/a8v4PO"><img src="https://s1.ax1x.com/2020/08/01/a8v4PO.png" alt="a8v4PO.png"></a></p>
-<h4 id="Other-basic-originals"><a href="#Other-basic-originals" class="headerlink" title="Other basic originals"></a>Other basic originals</h4><ul>
-<li><p>resistance,luminous diode,wire,bread board</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/a8zTHI"><img src="https://s1.ax1x.com/2020/08/01/a8zTHI.png" alt="a8zTHI.png"></a></p>
-</li>
-</ul>
-<ul>
-<li><p>keyboard,infrared remote control,buzzer</p>
-<p><img src="https://s1.ax1x.com/2020/08/01/a8zvvQ.png" alt="a8zvvQ.png"></p>
-</li>
-<li><p>sensor: gray scale sensor,temperature sensor,infrared sensor,smoke sensor</p>
-<p><img src="https://s1.ax1x.com/2020/08/01/aGpKyQ.png" alt="aGpKyQ.png"></p>
-</li>
-<li><p>sensor: ultrasonic sensor,sound sensor, IMU(inertial measurement unit)</p>
-<p><img src="https://s1.ax1x.com/2020/08/01/aG9q4x.png" alt="aG9q4x.png"></p>
-</li>
-<li><p>motor: servo,direct current motor</p>
-<p><img src="https://s1.ax1x.com/2020/08/01/aG9zKe.png" alt="aG9zKe.png"></p>
-</li>
-<li><p>display: Nixie tube, 1602LCD</p>
-<p><img src="https://s1.ax1x.com/2020/08/01/aGCVxS.png" alt="aGCVxS.png"></p>
-</li>
-</ul>
-<h3 id="ARDUINO-Programming-Software"><a href="#ARDUINO-Programming-Software" class="headerlink" title="ARDUINO Programming Software"></a>ARDUINO Programming Software</h3><p><img src="https://s1.ax1x.com/2020/08/01/aGPYfP.png" alt="aGPYfP.png"></p>
-<p>It should be noted that the indentation are marked using <code>&#123;&#125;</code>.</p>
-<p>All the programming statements can be written through a flow chart.</p>
-<p><img src="https://s1.ax1x.com/2020/08/01/aGNgOO.png" alt="aGNgOO.png"></p>
-<h4 id="E-g"><a href="#E-g" class="headerlink" title="E.g."></a>E.g.</h4><p><img src="https://s1.ax1x.com/2020/08/01/aGUPXT.png" alt="aGUPXT.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/01/ARDUINO-Programme-1/" data-id="ckgqff3cj0005doticdor6en2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/04/ARDUINO-Programme-2/" data-id="ckgxq6waz0006dgti36au6jc5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li></ul>
@@ -736,7 +738,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AI-Competition/" style="font-size: 15px;">AI Competition</a> <a href="/tags/ARDUINO/" style="font-size: 17.5px;">ARDUINO</a> <a href="/tags/Business-study/" style="font-size: 10px;">Business study</a> <a href="/tags/Business-theory-and-case-study/" style="font-size: 10px;">Business theory and case study</a> <a href="/tags/C11-project/" style="font-size: 15px;">C11 project</a> <a href="/tags/Data-Analysis/" style="font-size: 15px;">Data Analysis</a> <a href="/tags/Python-Lesson/" style="font-size: 15px;">Python Lesson</a> <a href="/tags/Python-Notes/" style="font-size: 20px;">Python Notes</a> <a href="/tags/Reading-Seminar/" style="font-size: 10px;">Reading Seminar</a> <a href="/tags/Test-File/" style="font-size: 12.5px;">Test File</a> <a href="/tags/paragraph-writing/" style="font-size: 15px;">paragraph writing</a>
+      <a href="/tags/AI-Competition/" style="font-size: 14px;">AI Competition</a> <a href="/tags/ARDUINO/" style="font-size: 16px;">ARDUINO</a> <a href="/tags/Business-study/" style="font-size: 10px;">Business study</a> <a href="/tags/Business-theory-and-case-study/" style="font-size: 10px;">Business theory and case study</a> <a href="/tags/C11-project/" style="font-size: 14px;">C11 project</a> <a href="/tags/Data-Analysis/" style="font-size: 14px;">Data Analysis</a> <a href="/tags/Python-Lesson/" style="font-size: 18px;">Python Lesson</a> <a href="/tags/Python-Notes/" style="font-size: 20px;">Python Notes</a> <a href="/tags/Reading-Seminar/" style="font-size: 10px;">Reading Seminar</a> <a href="/tags/Test-File/" style="font-size: 12px;">Test File</a> <a href="/tags/paragraph-writing/" style="font-size: 14px;">paragraph writing</a>
     </div>
   </div>
 
@@ -758,6 +760,10 @@
       <ul>
         
           <li>
+            <a href="/2020/10/31/Python-the-center-of-film-industry/">Python the center of film industry</a>
+          </li>
+        
+          <li>
             <a href="/2020/10/25/Python-Download-files-from-website/">Python:Download files from website</a>
           </li>
         
@@ -771,10 +777,6 @@
         
           <li>
             <a href="/2020/09/12/The-unfamiliar-situation-I-have-met/">Paragraph writing The unfamiliar situation I have met</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/06/Finance-Introducing-PPT/"> Finance Introducing PPT</a>
           </li>
         
       </ul>
