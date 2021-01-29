@@ -65,6 +65,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-data-visualization-app-using-time" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/29/Python-data-visualization-app-using-time/" class="article-date">
+  <time datetime="2021-01-29T12:31:01.000Z" itemprop="datePublished">2021-01-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/29/Python-data-visualization-app-using-time/">Python:data visualization app using time</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The topic today is focusing on the data visualization of our app time using. The data is from a news in 2018.</p>
+<p><a target="_blank" rel="noopener" href="https://verimake.com/topics/96">Website</a></p>
+<h3 id="My-code"><a href="#My-code" class="headerlink" title="My code"></a>My code</h3><h4 id="Import-package-to-use"><a href="#Import-package-to-use" class="headerlink" title="Import package to use"></a>Import package to use</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]  <span class="comment"># 设置 matplotlib 字体为黑体，因为默认字体无法显示中文</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span>   <span class="comment"># 让 matplotlib 能够正常显示负号</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">giants = [<span class="string">&#x27;腾讯系&#x27;</span>, <span class="string">&#x27;头条系&#x27;</span>, <span class="string">&#x27;百度系&#x27;</span>, <span class="string">&#x27;阿里系&#x27;</span>, <span class="string">&#x27;新浪系&#x27;</span>, <span class="string">&#x27;其它&#x27;</span>]</span><br><span class="line">ratios = &#123;<span class="string">&#x27;2017年6月&#x27;</span> : [<span class="number">54.3</span>, <span class="number">3.9</span>, <span class="number">7.9</span>, <span class="number">6.7</span>, <span class="number">2.9</span>, <span class="number">24.3</span>],</span><br><span class="line">          <span class="string">&#x27;2018年6月&#x27;</span> : [<span class="number">47.7</span>, <span class="number">10.1</span>, <span class="number">7.4</span>, <span class="number">6.4</span>, <span class="number">3.6</span>, <span class="number">24.8</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Drawing-diagram"><a href="#Drawing-diagram" class="headerlink" title="Drawing diagram"></a>Drawing diagram</h4><p>From the matplotlib, I found a way to draw this into a bar chart. <a target="_blank" rel="noopener" href="https://matplotlib.org/gallery/lines_bars_and_markers/horizontal_barchart_distribution.html#sphx-glr-gallery-lines-bars-and-markers-horizontal-barchart-distribution-py">website</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">xaxis=[]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">survey</span>(<span class="params">results, category_names</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Parameters</span></span><br><span class="line"><span class="string">    ----------</span></span><br><span class="line"><span class="string">    results : dict</span></span><br><span class="line"><span class="string">        A mapping from question labels to a list of answers per category.</span></span><br><span class="line"><span class="string">        It is assumed all lists contain the same number of entries and that</span></span><br><span class="line"><span class="string">        it matches the length of *category_names*.</span></span><br><span class="line"><span class="string">    category_names : list of str</span></span><br><span class="line"><span class="string">        The category labels.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    labels = list(results.keys())</span><br><span class="line">    data = np.array(list(results.values()))</span><br><span class="line">    data_cum = data.cumsum(axis=<span class="number">1</span>)</span><br><span class="line">    print(data_cum)</span><br><span class="line">    <span class="keyword">for</span> p <span class="keyword">in</span> range(<span class="number">6</span>):</span><br><span class="line">        xaxis.append((data_cum[<span class="number">0</span>][p]+data_cum[<span class="number">1</span>][p])/<span class="number">2</span>)</span><br><span class="line">    print(xaxis)</span><br><span class="line">    category_colors = plt.get_cmap(<span class="string">&#x27;RdYlGn&#x27;</span>)(</span><br><span class="line">        np.linspace(<span class="number">0.15</span>, <span class="number">0.85</span>, data.shape[<span class="number">1</span>]))</span><br><span class="line"></span><br><span class="line">    fig, ax = plt.subplots(figsize=(<span class="number">9.2</span>, <span class="number">5</span>))</span><br><span class="line">    ax.invert_yaxis()</span><br><span class="line">    ax.xaxis.set_visible(<span class="literal">False</span>)</span><br><span class="line">    ax.set_xlim(<span class="number">0</span>, np.sum(data, axis=<span class="number">1</span>).max())</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i, (colname, color) <span class="keyword">in</span> enumerate(zip(category_names, category_colors)):</span><br><span class="line">        widths = data[:, i]</span><br><span class="line">        starts = data_cum[:, i] - widths</span><br><span class="line">        ax.barh(labels, widths, left=starts, height=<span class="number">0.5</span>,</span><br><span class="line">                label=colname, color=color)</span><br><span class="line">        xcenters = starts + widths / <span class="number">2</span></span><br><span class="line"></span><br><span class="line">        r, g, b, _ = color</span><br><span class="line">        text_color = <span class="string">&#x27;white&#x27;</span> <span class="keyword">if</span> r * g * b &lt; <span class="number">0.5</span> <span class="keyword">else</span> <span class="string">&#x27;darkgrey&#x27;</span></span><br><span class="line">        <span class="keyword">for</span> y, (x, c) <span class="keyword">in</span> enumerate(zip(xcenters, widths)):</span><br><span class="line">            ax.text(x, y, str(c)+<span class="string">&#x27;%&#x27;</span>, ha=<span class="string">&#x27;center&#x27;</span>, va=<span class="string">&#x27;center&#x27;</span>,</span><br><span class="line">                    color=text_color)</span><br><span class="line">    ax.legend(ncol=len(category_names), bbox_to_anchor=(<span class="number">0</span>, <span class="number">1</span>),</span><br><span class="line">              loc=<span class="string">&#x27;lower left&#x27;</span>, fontsize=<span class="string">&#x27;small&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> fig, ax</span><br><span class="line">fig, ax= survey(ratios, giants)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yi7yYd"><img src="https://s3.ax1x.com/2021/01/29/yi7yYd.png" alt="yi7yYd.png"></a></p>
+<h4 id="Draw-lines-between-two-group-of-data"><a href="#Draw-lines-between-two-group-of-data" class="headerlink" title="Draw lines between two group of data"></a>Draw lines between two group of data</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data = np.array(list(ratios.values()))</span><br><span class="line">data_cum = data.cumsum(axis=<span class="number">1</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">    ax.plot([data_cum[<span class="number">0</span>, i], data_cum[<span class="number">1</span>, i]], [<span class="number">0.25</span>, <span class="number">0.75</span>])</span><br><span class="line">    </span><br><span class="line">fig</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yi7ay6"><img src="https://s3.ax1x.com/2021/01/29/yi7ay6.png" alt="yi7ay6.png"></a></p>
+<h4 id="Add-change-rate"><a href="#Add-change-rate" class="headerlink" title="Add change rate"></a>Add change rate</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">loc = np.c_[np.zeros((<span class="number">2</span>,<span class="number">1</span>)), data_cum]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">6</span>):</span><br><span class="line">    x = (loc[<span class="number">0</span>, i] + loc[<span class="number">1</span>, i] + loc[<span class="number">0</span>, i+<span class="number">1</span>] + loc[<span class="number">0</span>, i+<span class="number">1</span>]) / <span class="number">4</span></span><br><span class="line">    ax.text(x, <span class="number">0.5</span>, <span class="string">&#x27;%+.1f%%&#x27;</span>%(data[<span class="number">1</span>, i] - data[<span class="number">0</span>, i]), ha=<span class="string">&#x27;center&#x27;</span>, va=<span class="string">&#x27;center&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">fig</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Final-chart"><a href="#Final-chart" class="headerlink" title="Final chart"></a>Final chart</h4><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yiHptJ"><img src="https://s3.ax1x.com/2021/01/29/yiHptJ.png" alt="yiHptJ.png"></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2021/01/29/Python-data-visualization-app-using-time/" data-id="ckkibmfpx001fvstia8av2tu1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Survey-on-the-sustainability-factors-of-the-fair-development-3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/01/25/Survey-on-the-sustainability-factors-of-the-fair-development-3/" class="article-date">
@@ -104,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/01/25/Survey-on-the-sustainability-factors-of-the-fair-development-3/" data-id="ckkcdl4t5002tjsti3m9rgbkx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/01/25/Survey-on-the-sustainability-factors-of-the-fair-development-3/" data-id="ckkibmfqc002mvstie6zofy5k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fair-development/" rel="tag">Fair development</a></li></ul>
@@ -271,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/01/24/Survey-on-the-sustainability-factors-of-the-fair-development-2/" data-id="ckkcdl4sr002pjsti7x6iflc4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/01/24/Survey-on-the-sustainability-factors-of-the-fair-development-2/" data-id="ckkibmfqe002svstigt6zepz7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fair-development/" rel="tag">Fair development</a></li></ul>
@@ -395,7 +453,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/12/27/Survey-on-the-sustainablality-factors-of-the-fair-development/" data-id="ckkcdl4sn002njstifanrao19" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/12/27/Survey-on-the-sustainablality-factors-of-the-fair-development/" data-id="ckkibmfqf002uvstic2j930jq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fair-development/" rel="tag">Fair development</a></li></ul>
@@ -441,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/12/06/Bitcoin/" data-id="ckkcdl4po0013jstihdeq2rs3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/12/06/Bitcoin/" data-id="ckkibmfpn000mvstifz0g9sk2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -480,7 +538,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/30/Reading-Seminar-Financing/" data-id="ckkcdl4rp0023jstidl4g8wkq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/30/Reading-Seminar-Financing/" data-id="ckkibmfq60029vstid1nng72i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -534,7 +592,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/15/Python-the-center-of-film-industry-2/" data-id="ckkcdl4qz001pjsti6oj0691w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/15/Python-the-center-of-film-industry-2/" data-id="ckkibmfq3001vvsti6pbxh5ev" class="article-share-link">Share</a>
       
       
     </footer>
@@ -612,7 +670,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/31/Python-the-center-of-film-industry/" data-id="ckkcdl4r6001tjstieynjdae7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/31/Python-the-center-of-film-industry/" data-id="ckkibmfq50024vsti3yam94u7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li></ul>
@@ -683,7 +741,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/25/Python-Download-files-from-website/" data-id="ckkcdl4qp001jjstiarr07j7w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/25/Python-Download-files-from-website/" data-id="ckkibmfq0001pvsti9mrc6lsf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li></ul>
@@ -747,78 +805,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/11/Python-tweets-data-analysis/" data-id="ckkcdl4si002jjstia0z19kjm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/11/Python-tweets-data-analysis/" data-id="ckkibmfq4001zvstic10yhguy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Stage-summary-of-senior-one" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/06/Stage-summary-of-senior-one/" class="article-date">
-  <time datetime="2020-10-06T12:05:13.000Z" itemprop="datePublished">2020-10-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/06/Stage-summary-of-senior-one/">Stage summary of senior one</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>  I do this summery is to make myself have a comprehensive concepts about the progress I’ve made last term.</p>
-<h4 id="School-course"><a href="#School-course" class="headerlink" title="School course"></a>School course</h4><p>Result: all A*</p>
-<p>The IGCSE course is relatively simple for me. Most knowledge I have already learned in the middle school. So I spent about only 40% of my time on this part.</p>
-<h4 id="IELTS"><a href="#IELTS" class="headerlink" title="IELTS"></a>IELTS</h4><p>Result: 7 in total , 6 in each component</p>
-<p>IELTS is the basic requirement for applying a university. I spent the rest 40% times on it. The result I have now can allow me to apply the university. But my ideal school needs higher mark. Therefore, I need to get a higher mark next year to satisfy the requirement of the condition offer.</p>
-<p>Future plan: I plan to have the IELTS exam when I go to the senior three because I need to pay mainly of my attention on AS course study. Moreover, my English level may be better than now, it may be easier for me to get higher marks.</p>
-<h4 id="Major-explore"><a href="#Major-explore" class="headerlink" title="Major explore"></a>Major explore</h4><p>Result: economics in general</p>
-<p>After exploring different fields, I gradually found that I am better in liberal arts than science and I am especially interest in Economics. However, there are many branches in it which are still waiting for me to discover. </p>
-<p>The activities I’ve done :</p>
-<p>Eight Vally new retail activity</p>
-<p>AI programming </p>
-<p>Python Learning</p>
-<h4 id="Preparing-for-the-Major"><a href="#Preparing-for-the-Major" class="headerlink" title="Preparing for the Major"></a>Preparing for the Major</h4><ul>
-<li><p>Reading</p>
-<ul>
-<li>薛兆丰经济学讲义（basic economic concepts)</li>
-<li>Monetary Economics</li>
-<li>Human History</li>
-<li>Capitalism</li>
-</ul>
-</li>
-<li><p>Eight Vally new retail activity</p>
-</li>
-<li><p>Python Learning(necessary data analysis skills)</p>
-</li>
-<li><p>competition</p>
-<ul>
-<li>UKMT  Result: Gold award</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/06/Stage-summary-of-senior-one/" data-id="ckkcdl4s7002cjsti88048429" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -883,6 +874,10 @@
       <ul>
         
           <li>
+            <a href="/2021/01/29/Python-data-visualization-app-using-time/">Python:data visualization app using time</a>
+          </li>
+        
+          <li>
             <a href="/2021/01/25/Survey-on-the-sustainability-factors-of-the-fair-development-3/">Survey on the sustainability factors of the fair development(3)</a>
           </li>
         
@@ -896,10 +891,6 @@
         
           <li>
             <a href="/2020/12/06/Bitcoin/">Bitcoin</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/30/Reading-Seminar-Financing/">Reading Seminar Financing</a>
           </li>
         
       </ul>
