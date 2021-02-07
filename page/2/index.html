@@ -65,6 +65,141 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-Download-files-from-website" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/25/Python-Download-files-from-website/" class="article-date">
+  <time datetime="2020-10-25T13:15:55.000Z" itemprop="datePublished">2020-10-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Computer-learning/">Computer learning</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/25/Python-Download-files-from-website/">Python:Download files from website</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This is the 11th paragraphs on the Python book. It talks about the way of getting and downloading files from the Internet and how to analyse the HTML. I first learned about the first part , which I think it may be help for me to download articles when preparing for my essay.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> webbrowser</span><br><span class="line">webbrowser.open(<span class="string">&#x27;http://inventwithpython.com/&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>There is a package called <code>webbrowser</code> which can be used to open URL using Web.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> pyperclip</span><br><span class="line"><span class="keyword">if</span> len(sys.argv)&gt;<span class="number">1</span>:</span><br><span class="line">    adress=<span class="string">&#x27; &#x27;</span>.join(sys.argv[<span class="number">1</span>:])</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    adress=pyperclip.paste()</span><br><span class="line">    </span><br><span class="line">webbrowser.open(<span class="string">&#x27;http://www.google.com/maps/place/&#x27;</span>+adress)</span><br></pre></td></tr></table></figure>
+
+<p>Using this way,  import the <code>sys</code> package to read the possible command line parameters, we can open the website directly from the Jupyter Notebook.</p>
+<p>The next part teaches the <code>requests</code> package. We need to install this package first in the Jupyter Prompt.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">res=requests.get(<span class="string">&#x27;http://www.gutenberg.org/cache/epub/1112/pg1112.txt&#x27;</span>)</span><br><span class="line">type(res)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">requests.models.Response</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>type()` returns a Response object, including the response from the Web service to your accessing request.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">res.status_code==requests.codes.ok</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"></span><br><span class="line">len(res.text)</span><br><span class="line"><span class="number">179380</span></span><br><span class="line"></span><br><span class="line">print(res.text[:<span class="number">250</span>])</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;The Project Gutenberg EBook of Romeo and Juliet, by William Shakespeare</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">*******************************************************************</span></span><br><span class="line"><span class="string">THIS EBOOK WAS ONE OF PROJECT GUTENBERG&#x27;S EARLY FILES PRODUCED AT A</span></span><br><span class="line"><span class="string">TIME WHEN PROOFING METHODS AND TOO&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>To save the document to our computer, we first need to download the file, using <code>requests.get()</code>. Then, use <code>wb</code> to open a new file and write the content in the new file through <code>iter_content()</code> loop. Finally, close the file.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">playFile.close()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>I try a new website, it does response but the content download is quit strange.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res=requests.get(<span class="string">&#x27;https://www.lifewire.com/what-is-social-media-explaining-the-big-trend-3486616&#x27;</span>)</span><br><span class="line">type(res)</span><br><span class="line">print(res.text)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html id&#x3D;&quot;structuredContentTemplate_1-0&quot; class&#x3D;&quot;comp taxlevel-2  structuredContentTemplate article-html html mntl-html&quot; data-ab&#x3D;&quot;99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,57,78,75&quot; data-resource-version&#x3D;&quot;3.117.0&quot; lang&#x3D;&quot;en&quot; data-adhesive-refresh&#x3D;&quot;billboard3&quot; data-mantle-resource-version&#x3D;&quot;3.12.171&quot; data-tech-resource-version&#x3D;&quot;3.117.0&quot; data-tracking-container&#x3D;&quot;true&quot;&gt;                </span><br><span class="line">&lt;!--</span><br><span class="line">&lt;globe-environment environment&#x3D;&quot;prod&quot; application&#x3D;&quot;tech&quot; dataCenter&#x3D;&quot;us-west-2&quot;&#x2F;&gt;</span><br><span class="line">--&gt;</span><br><span class="line">&lt;head class&#x3D;&quot;loc head&quot;&gt;                </span><br><span class="line">                    </span><br><span class="line">                    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/10/25/Python-Download-files-from-website/" data-id="ckkv9hpol001mcsticx9ib7pd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Python-tweets-data-analysis" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/11/Python-tweets-data-analysis/" class="article-date">
+  <time datetime="2020-10-11T13:41:21.000Z" itemprop="datePublished">2020-10-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Computer-learning/">Computer learning</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/11/Python-tweets-data-analysis/">Python tweets data analysis</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This python programme is from a Canada university’s question. It a data processing question.</p>
+<h4 id="Requests"><a href="#Requests" class="headerlink" title="Requests"></a>Requests</h4><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/0WaT7q"><img src="https://s1.ax1x.com/2020/10/12/0WaT7q.png" alt="0WaT7q.png"></a></p>
+<h4 id="My-Code"><a href="#My-Code" class="headerlink" title="My Code"></a>My Code</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">&quot;C:\\Users\\PC\\keywords.txt&quot;</span>,<span class="string">&quot;r&quot;</span>,encoding=<span class="string">&quot;utf-8&quot;</span>)<span class="keyword">as</span> f:</span><br><span class="line">    lines= f.readlines()</span><br><span class="line">print(lines)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#39;alone,1\n&#39;, &#39;amazed,10\n&#39;, &#39;amazing,10\n&#39;, &#39;bad,1\n&#39;, &#39;best,10\n&#39;, &#39;better,10\n&#39;, &#39;excellent,10\n&#39;, &#39;excited,10\n&#39;, &#39;excite,10\n&#39;, &#39;excites,10\n&#39;, &#39;exciting,10\n&#39;, &#39;glad,10\n&#39;, &#39;god,5\n&#39;, &#39;good,7\n&#39;, &#39;great,7\n&#39;, &#39;greatest,10\n&#39;, &#39;haha,5\n&#39;, &#39;hahaha,5\n&#39;, &#39;happy,10\n&#39;, &#39;hate,1\n&#39;, &#39;hurt,1\n&#39;, &#39;hurts,1\n&#39;, &#39;hurting,1\n&#39;, &#39;like,7\n&#39;, &#39;likes,7\n&#39;, &#39;liked,7\n&#39;, &#39;lol,5\n&#39;, &#39;lonely,1\n&#39;, &#39;love,10\n&#39;, &#39;loves,10\n&#39;, &#39;loved,10\n&#39;, &#39;loving,10\n&#39;, &#39;lovin,10\n&#39;, &#39;need,1\n&#39;, &#39;needs,1\n&#39;, &#39;negative,1\n&#39;, &#39;please,5\n&#39;, &#39;positive,7\n&#39;, &#39;pretty,10\n&#39;, &#39;prettiest,10\n&#39;, &#39;regret,1\n&#39;, &#39;regrets,1\n&#39;, &#39;ruin,1\n&#39;, &#39;ruins,1\n&#39;, &#39;ruined,1\n&#39;, &#39;sad,1\n&#39;, &#39;save,5\n&#39;, &#39;saves,5\n&#39;, &#39;saved,5\n&#39;, &#39;sorry,1\n&#39;, &#39;thank,5\n&#39;, &#39;thanks,5\n&#39;, &#39;tired,1\n&#39;, &#39;worst,1\n&#39;]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(lines[<span class="number">0</span>].replace(<span class="string">&#x27;\n&#x27;</span>,<span class="string">&#x27;&#x27;</span>).split(<span class="string">&#x27;,&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#39;alone&#39;, &#39;1&#39;]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">keywords=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">    keyword, value =line.replace(<span class="string">&#x27;\n&#x27;</span>,<span class="string">&#x27;&#x27;</span>).split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">    keywords[keyword]=int(value)</span><br><span class="line">    </span><br><span class="line">keywords</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#39;alone&#39;: 1,</span><br><span class="line"> &#39;amazed&#39;: 10,</span><br><span class="line"> &#39;amazing&#39;: 10,</span><br><span class="line"> &#39;bad&#39;: 1,</span><br><span class="line"> &#39;best&#39;: 10,</span><br><span class="line"> &#39;better&#39;: 10,</span><br><span class="line"> &#39;excellent&#39;: 10,</span><br><span class="line"> &#39;excited&#39;: 10,</span><br><span class="line"> &#39;excite&#39;: 10,</span><br><span class="line"> &#39;excites&#39;: 10,</span><br><span class="line"> &#39;exciting&#39;: 10,</span><br><span class="line"> &#39;glad&#39;: 10,</span><br><span class="line"> &#39;god&#39;: 5,</span><br><span class="line"> &#39;good&#39;: 7,</span><br><span class="line"> &#39;great&#39;: 7,</span><br><span class="line"> &#39;greatest&#39;: 10,</span><br><span class="line"> &#39;haha&#39;: 5,</span><br><span class="line"> &#39;hahaha&#39;: 5,</span><br><span class="line"> &#39;happy&#39;: 10,</span><br><span class="line"> &#39;hate&#39;: 1,</span><br><span class="line"> &#39;hurt&#39;: 1,</span><br><span class="line"> &#39;hurts&#39;: 1,</span><br><span class="line"> &#39;hurting&#39;: 1,</span><br><span class="line"> &#39;like&#39;: 7,</span><br><span class="line"> &#39;likes&#39;: 7,</span><br><span class="line"> &#39;liked&#39;: 7,</span><br><span class="line"> &#39;lol&#39;: 5,</span><br><span class="line"> &#39;lonely&#39;: 1,</span><br><span class="line"> &#39;love&#39;: 10,</span><br><span class="line"> &#39;loves&#39;: 10,</span><br><span class="line"> &#39;loved&#39;: 10,</span><br><span class="line"> &#39;loving&#39;: 10,</span><br><span class="line"> &#39;lovin&#39;: 10,</span><br><span class="line"> &#39;need&#39;: 1,</span><br><span class="line"> &#39;needs&#39;: 1,</span><br><span class="line"> &#39;negative&#39;: 1,</span><br><span class="line"> &#39;please&#39;: 5,</span><br><span class="line"> &#39;positive&#39;: 7,</span><br><span class="line"> &#39;pretty&#39;: 10,</span><br><span class="line"> &#39;prettiest&#39;: 10,</span><br><span class="line"> &#39;regret&#39;: 1,</span><br><span class="line"> &#39;regrets&#39;: 1,</span><br><span class="line"> &#39;ruin&#39;: 1,</span><br><span class="line"> &#39;ruins&#39;: 1,</span><br><span class="line"> &#39;ruined&#39;: 1,</span><br><span class="line"> &#39;sad&#39;: 1,</span><br><span class="line"> &#39;save&#39;: 5,</span><br><span class="line"> &#39;saves&#39;: 5,</span><br><span class="line"> &#39;saved&#39;: 5,</span><br><span class="line"> &#39;sorry&#39;: 1,</span><br><span class="line"> &#39;thank&#39;: 5,</span><br><span class="line"> &#39;thanks&#39;: 5,</span><br><span class="line"> &#39;tired&#39;: 1,</span><br><span class="line"> &#39;worst&#39;: 1&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">&quot;C:\\Users\\PC\\tweets.txt&quot;</span>,<span class="string">&quot;r&quot;</span>,encoding=<span class="string">&quot;utf-8&quot;</span>)<span class="keyword">as</span> f:</span><br><span class="line">    tweets= f.readlines()</span><br><span class="line">去重 = <span class="literal">True</span> <span class="comment"># delete the repeated texts</span></span><br><span class="line"><span class="keyword">if</span> 去重:</span><br><span class="line">    new_lines = list(set(tweets))</span><br><span class="line">    new_lines.sort(key=tweets.index)</span><br><span class="line">    tweets = new_lines</span><br><span class="line"></span><br><span class="line"><span class="comment">#print(lines)</span></span><br><span class="line">print(tweets)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">wholecontent=tweets[<span class="number">0</span>].split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">content3=wholecontent[<span class="number">5</span>:]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p1 =  <span class="number">-67.444574</span></span><br><span class="line">p2 = <span class="number">-67.444574</span></span><br><span class="line">p3 =  <span class="number">-87.518395</span></span><br><span class="line">p4 = <span class="number">-87.518395</span></span><br><span class="line">p5 = <span class="number">-101.998892</span></span><br><span class="line">p6 = <span class="number">-101.998892</span></span><br><span class="line">p7 = <span class="number">-115.236428</span></span><br><span class="line">p8 = <span class="number">-115.236428</span></span><br><span class="line">p9 =  <span class="number">-125.242264</span></span><br><span class="line">p10 =  <span class="number">-125.242264</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getTimezone</span>(<span class="params">longitude</span>):</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="number">-125.242264</span> &lt; longitude) <span class="keyword">and</span> (longitude &lt;= <span class="number">-115.236428</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Pacific&quot;</span></span><br><span class="line">    <span class="keyword">elif</span> (<span class="number">-115.236428</span> &lt; longitude) <span class="keyword">and</span> (longitude &lt;= <span class="number">-101.998892</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Mountain&quot;</span></span><br><span class="line">    <span class="keyword">elif</span> (<span class="number">-101.998892</span> &lt; longitude) <span class="keyword">and</span> (longitude &lt;= <span class="number">-87.518395</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Central&quot;</span></span><br><span class="line">    <span class="keyword">elif</span> (<span class="number">-87.518395</span> &lt; longitude) <span class="keyword">and</span> (longitude &lt;= <span class="number">-67.444574</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Eastern&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">content2=[]</span><br><span class="line">content3=[]</span><br><span class="line">list2=[]</span><br><span class="line">location=[]</span><br><span class="line">general=&#123;&#125;</span><br><span class="line">total=&#123;&#125;</span><br><span class="line">Pacific = <span class="number">0</span></span><br><span class="line">Mountain = <span class="number">0</span></span><br><span class="line">Central = <span class="number">0</span></span><br><span class="line">Eastern = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(tweets)):</span><br><span class="line">    wholecontent=tweets[i].split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    content3=wholecontent[<span class="number">5</span>:]</span><br><span class="line">    content1=[]</span><br><span class="line">    emovalue=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(content3)):</span><br><span class="line">        str1=<span class="string">&#x27;&#x27;</span></span><br><span class="line">        content3[i]=content3[i].lower()</span><br><span class="line">        <span class="keyword">for</span> p <span class="keyword">in</span> range(len(content3[i])):</span><br><span class="line">            <span class="keyword">if</span> content3[i][p]&gt;=<span class="string">&#x27;a&#x27;</span> <span class="keyword">and</span> content3[i][p]&lt;=<span class="string">&#x27;z&#x27;</span>:</span><br><span class="line">                str1=str1+content3[i][p]</span><br><span class="line">        content1.append(str1)</span><br><span class="line">        <span class="keyword">while</span> <span class="string">&#x27;&#x27;</span> <span class="keyword">in</span> content1:</span><br><span class="line">            content1.remove(<span class="string">&#x27;&#x27;</span>)  <span class="comment"># string processing</span></span><br><span class="line">        location=wholecontent[<span class="number">1</span>]</span><br><span class="line">        location=location[<span class="number">0</span>:<span class="number">-1</span>]</span><br><span class="line">        locate=float(location)   <span class="comment">#get the longlitude</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(content3)):</span><br><span class="line">            key=location</span><br><span class="line">            value=content1</span><br><span class="line">            total[key]=value     <span class="comment">#put in dictionary</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(content1)):</span><br><span class="line">        <span class="keyword">if</span> content1[i] <span class="keyword">in</span> keywords:</span><br><span class="line">            emovalue += keywords[content1[i]]  <span class="comment">#count emovalue for each text</span></span><br><span class="line">    timezone = getTimezone(locate)</span><br><span class="line">    score = emovalue</span><br><span class="line">    <span class="keyword">if</span> timezone == <span class="string">&quot;Pacific&quot;</span>:    <span class="comment">#add the score to its area belonging</span></span><br><span class="line">        Pacific += score</span><br><span class="line">    <span class="keyword">elif</span> timezone == <span class="string">&quot;Mountain&quot;</span>:</span><br><span class="line">        Mountain += score</span><br><span class="line">    <span class="keyword">elif</span> timezone == <span class="string">&quot;Central&quot;</span>:</span><br><span class="line">        Central += score</span><br><span class="line">    <span class="keyword">elif</span> timezone == <span class="string">&quot;Eastern&quot;</span>:</span><br><span class="line">        Eastern += score</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">print(<span class="string">&#x27;Pacific: &#x27;</span>+str(Pacific),<span class="string">&#x27; Mountain: &#x27;</span>+str(Mountain), <span class="string">&#x27; Central: &#x27;</span>+str(Central),<span class="string">&#x27; Eastern: &#x27;</span>+str(Eastern))</span><br></pre></td></tr></table></figure>
+
+<h4 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pacific: 1644  Mountain: 728  Central: 2711  Eastern: 5836</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/10/11/Python-tweets-data-analysis/" data-id="ckkv9hpp0002bcsti9i5791s3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Stage-summary-of-senior-one" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/10/06/Stage-summary-of-senior-one/" class="article-date">
@@ -122,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/06/Stage-summary-of-senior-one/" data-id="ckkibmfqc002jvsti68g31jsy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/10/06/Stage-summary-of-senior-one/" data-id="ckkv9hpp5002ncstidnts0jfs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -165,7 +300,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/12/The-unfamiliar-situation-I-have-met/" data-id="ckkibmfqp003pvstie03i3jja" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/12/The-unfamiliar-situation-I-have-met/" data-id="ckkv9hppq003ucsti7c851lh2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/paragraph-writing/" rel="tag">paragraph writing</a></li></ul>
@@ -214,7 +349,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/06/Finance-Introducing-PPT/" data-id="ckkibmfpr000xvstif6386g57" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/06/Finance-Introducing-PPT/" data-id="ckkv9hpo3000tcstiapvudndj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -271,7 +406,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/24/ARDUINO-Programme-5/" data-id="ckkibmfpl000gvstid2g7gh77" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/24/ARDUINO-Programme-5/" data-id="ckkv9hpnv000gcsti6duohohi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -358,7 +493,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/20/ARDUINO-Programme-4/" data-id="ckkibmfpi000avsti9m8je6e1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/20/ARDUINO-Programme-4/" data-id="ckkv9hpnt000bcstifj6t5iif" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li></ul>
@@ -422,7 +557,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/12/ARDUINO-Programme-3/" data-id="ckkibmfpj000bvsti47c23cwl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/12/ARDUINO-Programme-3/" data-id="ckkv9hpnr000acsti7hfsafeo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li></ul>
@@ -476,7 +611,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/ARDUINO-Programme-2/" data-id="ckkibmfpg0006vsti8cp01lpu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/04/ARDUINO-Programme-2/" data-id="ckkv9hpnn0005cstibsu9elnh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li></ul>
@@ -566,108 +701,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/01/ARDUINO-Programme-1/" data-id="ckkibmfpf0005vstifu573w1p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/01/ARDUINO-Programme-1/" data-id="ckkv9hpno0006csti2a0k3k05" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Quantitative-investment" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/26/Quantitative-investment/" class="article-date">
-  <time datetime="2020-07-26T08:27:12.000Z" itemprop="datePublished">2020-07-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Business-study/">Business study</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/26/Quantitative-investment/">Quantitative investment</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>This is the first time I heard this word, “quantitative investment”.</p>
-<p>It can be considered as a investment which totally bases on data.(From Google: Quantitative investing, also known as systematic investing, is an investment approach that uses advanced mathematical modelling, computer systems and data analysis to calculate the optimal probability of executing a profitable trade.)</p>
-<h4 id="Stock-certification"><a href="#Stock-certification" class="headerlink" title="Stock certification"></a>Stock certification</h4><p>Stock is all of the shares into which ownership of the corporation is divided. It can be trade on the stock market.  Imagine that you want to buy an apple, the original price of one apple is 3 yuan. A lot of people want to buy it, so some people are willing to buy it in 3.1 yuan. Hence, the price of an apple now becomes 3.1 yuan. As the price of apple get higher, less people want to buy it in the price of 3.1 yuan, so the price of an an apple then drops back to 3 yuan. You can consider the apple as a share. That is the reason why the stock value fluctuate all the time. </p>
-<p><img src="https://s1.ax1x.com/2020/07/26/aCuN90.jpg" alt="aCuN90.jpg"></p>
-<h4 id="How-is-the-quantitative-investment-carried-out"><a href="#How-is-the-quantitative-investment-carried-out" class="headerlink" title="How is the quantitative investment carried out"></a>How is the quantitative investment carried out</h4><p>First, the computer analysis the data of stock market in previous year and it can predict whether the stock value will raise or drop. Then, computer can judge if the investors need to buy this stock or sell through a programme.</p>
-<h4 id="Characteristics-of-quantitative-investment"><a href="#Characteristics-of-quantitative-investment" class="headerlink" title="Characteristics of quantitative investment"></a>Characteristics of quantitative investment</h4><ol>
-<li><p>It is carried out by a computer. In reality, the data needed is over 100T , which people can only rely on computer to circulate.  </p>
-</li>
-<li><p>People believe the result from the computer in most conditions, unless the result goes against the financial principles.</p>
-</li>
-<li><p>A lot of math knowledge are used when programming, e.g. linear regression(which also be used in AI)</p>
-</li>
-<li><p>What a programme needs to improve most is its operating speed since other people can buy stocks when the price is low and sell it at higher price but you can only buy the stock which other people sell(higher price) and sell at low price.</p>
-</li>
-</ol>
-<p>It is hard for people to speculate in stock in the future because more and more people use computer to finish the task which is much more efficient than those people who do market research.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/26/Quantitative-investment/" data-id="ckkibmfq50022vstifliebnb7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Business-study/" rel="tag">Business study</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-About-cooperation" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/20/About-cooperation/" class="article-date">
-  <time datetime="2020-07-20T01:14:37.000Z" itemprop="datePublished">2020-07-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/20/About-cooperation/">About cooperation</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>  It is necessary for me to record some of the problems that I confronted in life in order to  have self- examination. </p>
-<p>  I have attended a business programe called 8XP, teaching me about practical business knowledge and helping make a store design. I was distributed in Group A, which is consisted with all senior three students, except me and it seems that they all know each other since the are classmates. I gradually found that it is hard for me to integrate into their discussion. They usually have more immediate thinking and know more about brands than me, so I can seldom come up with any novel point of view.</p>
-<p>  Confidence is the thing that I need most. I think it is quite important for me to be brave to express my opinion. I Should not be afraid of making mistakes since it is the process of learning.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/20/About-cooperation/" data-id="ckkibmfpl000hvsti9451b2w7" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -710,7 +748,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AI-Competition/" style="font-size: 14px;">AI Competition</a> <a href="/tags/ARDUINO/" style="font-size: 16px;">ARDUINO</a> <a href="/tags/Business-study/" style="font-size: 10px;">Business study</a> <a href="/tags/Business-theory-and-case-study/" style="font-size: 10px;">Business theory and case study</a> <a href="/tags/C11-project/" style="font-size: 14px;">C11 project</a> <a href="/tags/Data-Analysis/" style="font-size: 14px;">Data Analysis</a> <a href="/tags/Fair-development/" style="font-size: 14px;">Fair development</a> <a href="/tags/Python-Lesson/" style="font-size: 18px;">Python Lesson</a> <a href="/tags/Python-Notes/" style="font-size: 20px;">Python Notes</a> <a href="/tags/Reading-Seminar/" style="font-size: 10px;">Reading Seminar</a> <a href="/tags/Test-File/" style="font-size: 12px;">Test File</a> <a href="/tags/paragraph-writing/" style="font-size: 14px;">paragraph writing</a>
+      <a href="/tags/AI-Competition/" style="font-size: 14px;">AI Competition</a> <a href="/tags/ARDUINO/" style="font-size: 16px;">ARDUINO</a> <a href="/tags/Business-study/" style="font-size: 10px;">Business study</a> <a href="/tags/Business-theory-and-case-study/" style="font-size: 10px;">Business theory and case study</a> <a href="/tags/C11-project/" style="font-size: 14px;">C11 project</a> <a href="/tags/Data-Analysis/" style="font-size: 14px;">Data Analysis</a> <a href="/tags/Fair-development/" style="font-size: 14px;">Fair development</a> <a href="/tags/Python-Lesson/" style="font-size: 18px;">Python Lesson</a> <a href="/tags/Python-Notes/" style="font-size: 20px;">Python Notes</a> <a href="/tags/Reading-Seminar/" style="font-size: 10px;">Reading Seminar</a> <a href="/tags/Test-File/" style="font-size: 12px;">Test File</a> <a href="/tags/paragraph-writing/" style="font-size: 16px;">paragraph writing</a>
     </div>
   </div>
 
@@ -719,7 +757,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
     </div>
   </div>
 
@@ -732,6 +770,14 @@
       <ul>
         
           <li>
+            <a href="/2021/02/07/Survey-on-the-sustainability-factors-of-the-fair-development-4/"> Survey on the sustainability factors of the fair development(4)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/07/Paragraph-writing/">Paragraph writing Who I am</a>
+          </li>
+        
+          <li>
             <a href="/2021/01/29/Python-data-visualization-app-using-time/">Python:data visualization app using time</a>
           </li>
         
@@ -741,14 +787,6 @@
         
           <li>
             <a href="/2021/01/24/Survey-on-the-sustainability-factors-of-the-fair-development-2/">Survey on the sustainability factors of the fair development(2)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/12/27/Survey-on-the-sustainablality-factors-of-the-fair-development/">Survey on the sustainability factors of the fair development</a>
-          </li>
-        
-          <li>
-            <a href="/2020/12/06/Bitcoin/">Bitcoin</a>
           </li>
         
       </ul>
