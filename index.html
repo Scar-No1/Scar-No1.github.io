@@ -65,6 +65,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-Nanjing-Metro-Line-1-Price-Consulting-System" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/02/20/Python-Nanjing-Metro-Line-1-Price-Consulting-System/" class="article-date">
+  <time datetime="2021-02-20T09:52:49.000Z" itemprop="datePublished">2021-02-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/20/Python-Nanjing-Metro-Line-1-Price-Consulting-System/">Python Nanjing Metro Line 1 Price Consulting System</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Write the code to build a Metro Price Consulting System with Metro Line 1.</p>
+<h3 id="Concepts"><a href="#Concepts" class="headerlink" title="Concepts"></a>Concepts</h3><p>Sometimes, when we face a complex problem, we can make a form of all the possibilities that may happen and solve the problems by looking up table.</p>
+<p>So, it only takes me less than 5 min to make a simple table of the price of Metro Line 1.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yIAysP"><img src="https://s3.ax1x.com/2021/02/20/yIAysP.png" alt="yIAysP.png"></a></p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p>There is a sample code of this question.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    df = pd.read_excel(<span class="string">&#x27;./subway.xlsx&#x27;</span>)</span><br><span class="line">    <span class="comment"># print(df)</span></span><br><span class="line">    df.drop(<span class="string">&#x27;Unnamed: 0&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># print(df)</span></span><br><span class="line">    df.index = df.columns</span><br><span class="line">    place = list(df.index)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        key = input(<span class="string">&#x27;你是否需要乘坐1号线地铁:(y/n)&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> key == <span class="string">&#x27;y&#x27;</span>:</span><br><span class="line">            print(<span class="string">&#x27;*&#x27;</span> * <span class="number">50</span> + <span class="string">&#x27;欢迎你乘坐地铁1号线&#x27;</span> + <span class="string">&#x27;*&#x27;</span> * <span class="number">50</span>)</span><br><span class="line">            print(<span class="string">&#x27;线路如下:&#x27;</span>)</span><br><span class="line">            path = <span class="string">&#x27;&#x27;</span></span><br><span class="line">            <span class="keyword">for</span> i, n <span class="keyword">in</span> enumerate(place):</span><br><span class="line">                n += <span class="string">&#x27;(&#123;&#125;)&#x27;</span>.format(i)</span><br><span class="line">                path += n</span><br><span class="line">                <span class="keyword">if</span> i == <span class="number">15</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                path += <span class="string">&#x27;&lt;-&gt;&#x27;</span></span><br><span class="line">            print(path)</span><br><span class="line">            start = int(input(<span class="string">&#x27;请输入你所在1号线的上车点(序号):&#x27;</span>))</span><br><span class="line">            end = int(input(<span class="string">&#x27;请输入你所在1号线的下车点(序号):&#x27;</span>))</span><br><span class="line">            price = df.loc[place[start], place[end]]</span><br><span class="line">            print(<span class="string">&#x27;售价为:&#123;&#125;元&#x27;</span>.format(price))</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">&#x27;欢迎您下次使用！再见！&#x27;</span>)</span><br><span class="line">            time.sleep(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">你是否需要乘坐1号线地铁:(y&#x2F;n)y</span><br><span class="line">**************************************************欢迎你乘坐地铁1号线**************************************************</span><br><span class="line">线路如下:</span><br><span class="line">迈皋桥(0)&lt;-&gt;红山动物园(1)&lt;-&gt;南京站(2)&lt;-&gt;新模范马路(3)&lt;-&gt;玄武门(4)&lt;-&gt;鼓楼(5)&lt;-&gt;珠江路(6)&lt;-&gt;新街口(7)&lt;-&gt;张府园(8)&lt;-&gt;三山街(9)&lt;-&gt;中华门(10)&lt;-&gt;安德门(11)&lt;-&gt;天隆寺(12)&lt;-&gt;软件大道(13)&lt;-&gt;花神庙(14)&lt;-&gt;南京南站(15)</span><br><span class="line">请输入你所在1号线的上车点(序号):8</span><br><span class="line">请输入你所在1号线的下车点(序号):2</span><br><span class="line">售价为:3元</span><br></pre></td></tr></table></figure>
+
+<p>However, as I am learning how to process Excel form in Python, I read the Excel document directly into Python.</p>
+<p>This is my code.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">wb = openpyxl.load_workbook(<span class="string">&#x27;C:\\Users\\PC\\Python 入门\\南京地铁票价.xlsx&#x27;</span>)</span><br><span class="line">sheet = wb.get_sheet_by_name(<span class="string">&#x27;Sheet1&#x27;</span>)</span><br><span class="line">station = [<span class="string">&#x27;迈皋桥&#x27;</span>,<span class="string">&#x27;红山动物园&#x27;</span>,<span class="string">&#x27;南京站&#x27;</span>,<span class="string">&#x27;新模范马路&#x27;</span>,<span class="string">&#x27;玄武门&#x27;</span>,<span class="string">&#x27;鼓楼&#x27;</span>,<span class="string">&#x27;珠江路&#x27;</span>,<span class="string">&#x27;新街口&#x27;</span>,<span class="string">&#x27;张府园&#x27;</span>,<span class="string">&#x27;三山街&#x27;</span>,<span class="string">&#x27;中华门&#x27;</span>,<span class="string">&#x27;安德门&#x27;</span>,<span class="string">&#x27;天隆寺&#x27;</span>,<span class="string">&#x27;软件大道&#x27;</span>,<span class="string">&#x27;花神庙&#x27;</span>,<span class="string">&#x27;南京南站&#x27;</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;Welcome to Nanjing Metro Line 1. Please input the name of your starting and stoping station:&#x27;</span>)</span><br><span class="line">print(<span class="string">&#x27;Start: &#x27;</span>)</span><br><span class="line">start=input()</span><br><span class="line">print(<span class="string">&#x27;Stop: &#x27;</span>)</span><br><span class="line">stop=input()</span><br><span class="line">a=station.index(start)+<span class="number">2</span></span><br><span class="line">b=station.index(stop)+<span class="number">1</span>+<span class="number">65</span></span><br><span class="line">c=chr(b)</span><br><span class="line">coordinate=c+str(a)</span><br><span class="line">print(<span class="string">&#x27;Your ticket price is &#x27;</span>+str(sheet[coordinate].value))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Welcome to Nanjing Metro Line 1. Please input the name of your starting and stoping station:</span><br><span class="line">Start: </span><br><span class="line">珠江路</span><br><span class="line">Stop: </span><br><span class="line">三山街</span><br><span class="line">Your ticket price is 2</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Further-thinking"><a href="#Further-thinking" class="headerlink" title="Further thinking"></a>Further thinking</h3><p>How can I manage that if more than one Metro Line are added. More condition needs to be consider as the ticket price is calculated according to the shortest route of underground between two place and whenever you change to another Metro Line in the middle to your journey, 0.5yuan is needed to pay in extra.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2021/02/20/Python-Nanjing-Metro-Line-1-Price-Consulting-System/" data-id="ckldohnji001jrsti2cxf8n4e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Survey-on-the-sustainability-factors-of-the-fair-development-5" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/02/19/Survey-on-the-sustainability-factors-of-the-fair-development-5/" class="article-date">
@@ -127,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/02/19/Survey-on-the-sustainability-factors-of-the-fair-development-5/" data-id="cklbu8me40032r0tibaf1ccul" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/02/19/Survey-on-the-sustainability-factors-of-the-fair-development-5/" data-id="ckldohnld0033rsti59u54y6q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fair-development/" rel="tag">Fair development</a></li></ul>
@@ -207,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/02/07/Survey-on-the-sustainability-factors-of-the-fair-development-4/" data-id="cklbu8me3002zr0ti9zga8szg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/02/07/Survey-on-the-sustainability-factors-of-the-fair-development-4/" data-id="ckldohnli0036rsti2nx09y76" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fair-development/" rel="tag">Fair development</a></li></ul>
@@ -273,7 +327,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/02/07/Paragraph-writing/" data-id="cklbu8md9001fr0ti2mp92vud" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/02/07/Paragraph-writing/" data-id="ckldohnju001nrstif25ser8w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/paragraph-writing/" rel="tag">paragraph writing</a></li></ul>
@@ -337,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/01/29/Python-data-visualization-app-using-time/" data-id="cklbu8mdj001tr0ti93rn17lq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/01/29/Python-data-visualization-app-using-time/" data-id="ckldohnk6001trsticcn3au1z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li></ul>
@@ -388,7 +442,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/01/25/Survey-on-the-sustainability-factors-of-the-fair-development-3/" data-id="cklbu8me1002vr0ti7tncb28h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/01/25/Survey-on-the-sustainability-factors-of-the-fair-development-3/" data-id="ckldohnl6002wrstiel3d1wl8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fair-development/" rel="tag">Fair development</a></li></ul>
@@ -555,7 +609,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/01/24/Survey-on-the-sustainability-factors-of-the-fair-development-2/" data-id="cklbu8mdx002mr0ti5qlq215f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/01/24/Survey-on-the-sustainability-factors-of-the-fair-development-2/" data-id="ckldohnl90030rsti9g2u3rnl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fair-development/" rel="tag">Fair development</a></li></ul>
@@ -679,7 +733,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/12/27/Survey-on-the-sustainablality-factors-of-the-fair-development/" data-id="cklbu8me50035r0ti78yo5kq8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/12/27/Survey-on-the-sustainablality-factors-of-the-fair-development/" data-id="ckldohnlv0039rstiawrdcm3q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fair-development/" rel="tag">Fair development</a></li></ul>
@@ -725,7 +779,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/12/06/Bitcoin/" data-id="cklbu8mcy000rr0ti1pgtdeth" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/12/06/Bitcoin/" data-id="ckldohnic000mrsti1899a0ex" class="article-share-link">Share</a>
       
       
     </footer>
@@ -764,61 +818,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/30/Reading-Seminar-Financing/" data-id="cklbu8mdv002gr0ti4bnifil6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Python-the-center-of-film-industry-2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/11/15/Python-the-center-of-film-industry-2/" class="article-date">
-  <time datetime="2020-11-15T14:06:14.000Z" itemprop="datePublished">2020-11-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/15/Python-the-center-of-film-industry-2/">Python the center of film industry 2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>  Following the last blog, I installed a new package called <code>pyvis</code>. It can visualize the information and form interactive images.</p>
-<p>I prepared to visualize the working relationship  between the actors and actresses in film Avengers.</p>
-<p>First, get the data.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cast=[]</span><br><span class="line">cast2=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">114827</span>):</span><br><span class="line">    <span class="keyword">if</span>  <span class="string">&#x27;companies&#x27;</span><span class="keyword">in</span> Movies[i].keys() <span class="keyword">and</span> <span class="string">&#x27;Avengers&#x27;</span><span class="keyword">in</span> Movies[i][<span class="string">&#x27;title&#x27;</span>]:</span><br><span class="line">        cast.append(i)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cast:</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> Movies[i][<span class="string">&#x27;companies&#x27;</span>]:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;Marvel&#x27;</span><span class="keyword">in</span> j:</span><br><span class="line">            cast2.append(i)</span><br><span class="line">print(cast2)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[39550, 65904, 83523, 83588]</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Second, form the relationship.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">G = nx.Graph()  </span><br><span class="line">Mov=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cast2:</span><br><span class="line">    Mov.append(Movies[i])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> movie <span class="keyword">in</span> Mov: </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(movie[<span class="string">&quot;cast&quot;</span>]) - <span class="number">1</span>): </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i + <span class="number">1</span>, len(movie[<span class="string">&quot;cast&quot;</span>])): </span><br><span class="line">            G.add_edge(movie[<span class="string">&quot;cast&quot;</span>][i], movie[<span class="string">&quot;cast&quot;</span>][j], title=movie[<span class="string">&quot;title&quot;</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>Third, draw the diagram.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">displayG = Network(width=<span class="number">1024</span>, height=<span class="number">768</span>, notebook = <span class="literal">True</span>) <span class="comment"># 创建 pyvis 中的 Network 对象，可以设置长度、宽度、是否在当前笔记本中显示等</span></span><br><span class="line"></span><br><span class="line">displayG.from_nx(G) <span class="comment"># 将 NetWorkX 的图导入 pyvis</span></span><br><span class="line"></span><br><span class="line">displayG.show(<span class="string">&#x27;test.html&#x27;</span>) <span class="comment"># 展示，并可生成一个名为 &quot;test.html&quot; 的网页文件</span></span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DFotWn"><img src="https://s3.ax1x.com/2020/11/15/DFotWn.png" alt="DFotWn.png"></a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/15/Python-the-center-of-film-industry-2/" data-id="cklbu8mdp001zr0tici8x2k69" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/30/Reading-Seminar-Financing/" data-id="ckldohnl5002trsti0v4d5w81" class="article-share-link">Share</a>
       
       
     </footer>
@@ -832,7 +832,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -885,6 +885,10 @@
       <ul>
         
           <li>
+            <a href="/2021/02/20/Python-Nanjing-Metro-Line-1-Price-Consulting-System/">Python Nanjing Metro Line 1 Price Consulting System</a>
+          </li>
+        
+          <li>
             <a href="/2021/02/19/Survey-on-the-sustainability-factors-of-the-fair-development-5/">Survey on the sustainability factors of the fair development(5)</a>
           </li>
         
@@ -898,10 +902,6 @@
         
           <li>
             <a href="/2021/01/29/Python-data-visualization-app-using-time/">Python:data visualization app using time</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/25/Survey-on-the-sustainability-factors-of-the-fair-development-3/">Survey on the sustainability factors of the fair development(3)</a>
           </li>
         
       </ul>
