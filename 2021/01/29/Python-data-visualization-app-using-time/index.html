@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Python:data visualization app using time | Han&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="The topic today is focusing on the data visualization of our app time using. The data is from a news in 2018. Website My codeImport package to use12345import numpy as npimport matplotlibimport matplot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python:data visualization app using time">
+<meta property="og:url" content="http://example.com/2021/01/29/Python-data-visualization-app-using-time/index.html">
+<meta property="og:site_name" content="Han&#39;s blog">
+<meta property="og:description" content="The topic today is focusing on the data visualization of our app time using. The data is from a news in 2018. Website My codeImport package to use12345import numpy as npimport matplotlibimport matplot">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s3.ax1x.com/2021/01/29/yi7yYd.png">
+<meta property="og:image" content="https://s3.ax1x.com/2021/01/29/yi7ay6.png">
+<meta property="og:image" content="https://s3.ax1x.com/2021/01/29/yiHptJ.png">
+<meta property="article:published_time" content="2021-01-29T12:31:01.000Z">
+<meta property="article:modified_time" content="2021-01-30T13:55:33.988Z">
+<meta property="article:author" content="Han">
+<meta property="article:tag" content="Python Lesson">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.ax1x.com/2021/01/29/yi7yYd.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Han's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Han&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Daily Rcording</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Python-data-visualization-app-using-time" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/29/Python-data-visualization-app-using-time/" class="article-date">
+  <time class="dt-published" datetime="2021-01-29T12:31:01.000Z" itemprop="datePublished">2021-01-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Computer-learning/">Computer learning</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Python:data visualization app using time
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>The topic today is focusing on the data visualization of our app time using. The data is from a news in 2018.</p>
+<p><a target="_blank" rel="noopener" href="https://verimake.com/topics/96">Website</a></p>
+<h3 id="My-code"><a href="#My-code" class="headerlink" title="My code"></a>My code</h3><h4 id="Import-package-to-use"><a href="#Import-package-to-use" class="headerlink" title="Import package to use"></a>Import package to use</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]  <span class="comment"># 设置 matplotlib 字体为黑体，因为默认字体无法显示中文</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span>   <span class="comment"># 让 matplotlib 能够正常显示负号</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">giants = [<span class="string">&#x27;腾讯系&#x27;</span>, <span class="string">&#x27;头条系&#x27;</span>, <span class="string">&#x27;百度系&#x27;</span>, <span class="string">&#x27;阿里系&#x27;</span>, <span class="string">&#x27;新浪系&#x27;</span>, <span class="string">&#x27;其它&#x27;</span>]</span><br><span class="line">ratios = &#123;<span class="string">&#x27;2017年6月&#x27;</span> : [<span class="number">54.3</span>, <span class="number">3.9</span>, <span class="number">7.9</span>, <span class="number">6.7</span>, <span class="number">2.9</span>, <span class="number">24.3</span>],</span><br><span class="line">          <span class="string">&#x27;2018年6月&#x27;</span> : [<span class="number">47.7</span>, <span class="number">10.1</span>, <span class="number">7.4</span>, <span class="number">6.4</span>, <span class="number">3.6</span>, <span class="number">24.8</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Drawing-diagram"><a href="#Drawing-diagram" class="headerlink" title="Drawing diagram"></a>Drawing diagram</h4><p>From the matplotlib, I found a way to draw this into a bar chart. <a target="_blank" rel="noopener" href="https://matplotlib.org/gallery/lines_bars_and_markers/horizontal_barchart_distribution.html#sphx-glr-gallery-lines-bars-and-markers-horizontal-barchart-distribution-py">website</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">xaxis=[]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">survey</span>(<span class="params">results, category_names</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Parameters</span></span><br><span class="line"><span class="string">    ----------</span></span><br><span class="line"><span class="string">    results : dict</span></span><br><span class="line"><span class="string">        A mapping from question labels to a list of answers per category.</span></span><br><span class="line"><span class="string">        It is assumed all lists contain the same number of entries and that</span></span><br><span class="line"><span class="string">        it matches the length of *category_names*.</span></span><br><span class="line"><span class="string">    category_names : list of str</span></span><br><span class="line"><span class="string">        The category labels.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    labels = <span class="built_in">list</span>(results.keys())</span><br><span class="line">    data = np.array(<span class="built_in">list</span>(results.values()))</span><br><span class="line">    data_cum = data.cumsum(axis=<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(data_cum)</span><br><span class="line">    <span class="keyword">for</span> p <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">6</span>):</span><br><span class="line">        xaxis.append((data_cum[<span class="number">0</span>][p]+data_cum[<span class="number">1</span>][p])/<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(xaxis)</span><br><span class="line">    category_colors = plt.get_cmap(<span class="string">&#x27;RdYlGn&#x27;</span>)(</span><br><span class="line">        np.linspace(<span class="number">0.15</span>, <span class="number">0.85</span>, data.shape[<span class="number">1</span>]))</span><br><span class="line"></span><br><span class="line">    fig, ax = plt.subplots(figsize=(<span class="number">9.2</span>, <span class="number">5</span>))</span><br><span class="line">    ax.invert_yaxis()</span><br><span class="line">    ax.xaxis.set_visible(<span class="literal">False</span>)</span><br><span class="line">    ax.set_xlim(<span class="number">0</span>, np.<span class="built_in">sum</span>(data, axis=<span class="number">1</span>).<span class="built_in">max</span>())</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i, (colname, color) <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">zip</span>(category_names, category_colors)):</span><br><span class="line">        widths = data[:, i]</span><br><span class="line">        starts = data_cum[:, i] - widths</span><br><span class="line">        ax.barh(labels, widths, left=starts, height=<span class="number">0.5</span>,</span><br><span class="line">                label=colname, color=color)</span><br><span class="line">        xcenters = starts + widths / <span class="number">2</span></span><br><span class="line"></span><br><span class="line">        r, g, b, _ = color</span><br><span class="line">        text_color = <span class="string">&#x27;white&#x27;</span> <span class="keyword">if</span> r * g * b &lt; <span class="number">0.5</span> <span class="keyword">else</span> <span class="string">&#x27;darkgrey&#x27;</span></span><br><span class="line">        <span class="keyword">for</span> y, (x, c) <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">zip</span>(xcenters, widths)):</span><br><span class="line">            ax.text(x, y, <span class="built_in">str</span>(c)+<span class="string">&#x27;%&#x27;</span>, ha=<span class="string">&#x27;center&#x27;</span>, va=<span class="string">&#x27;center&#x27;</span>,</span><br><span class="line">                    color=text_color)</span><br><span class="line">    ax.legend(ncol=<span class="built_in">len</span>(category_names), bbox_to_anchor=(<span class="number">0</span>, <span class="number">1</span>),</span><br><span class="line">              loc=<span class="string">&#x27;lower left&#x27;</span>, fontsize=<span class="string">&#x27;small&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> fig, ax</span><br><span class="line">fig, ax= survey(ratios, giants)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yi7yYd"><img src="https://s3.ax1x.com/2021/01/29/yi7yYd.png" alt="yi7yYd.png"></a></p>
+<h4 id="Draw-lines-between-two-group-of-data"><a href="#Draw-lines-between-two-group-of-data" class="headerlink" title="Draw lines between two group of data"></a>Draw lines between two group of data</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data = np.array(<span class="built_in">list</span>(ratios.values()))</span><br><span class="line">data_cum = data.cumsum(axis=<span class="number">1</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    ax.plot([data_cum[<span class="number">0</span>, i], data_cum[<span class="number">1</span>, i]], [<span class="number">0.25</span>, <span class="number">0.75</span>])</span><br><span class="line">    </span><br><span class="line">fig</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yi7ay6"><img src="https://s3.ax1x.com/2021/01/29/yi7ay6.png" alt="yi7ay6.png"></a></p>
+<h4 id="Add-change-rate"><a href="#Add-change-rate" class="headerlink" title="Add change rate"></a>Add change rate</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">loc = np.c_[np.zeros((<span class="number">2</span>,<span class="number">1</span>)), data_cum]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">6</span>):</span><br><span class="line">    x = (loc[<span class="number">0</span>, i] + loc[<span class="number">1</span>, i] + loc[<span class="number">0</span>, i+<span class="number">1</span>] + loc[<span class="number">0</span>, i+<span class="number">1</span>]) / <span class="number">4</span></span><br><span class="line">    ax.text(x, <span class="number">0.5</span>, <span class="string">&#x27;%+.1f%%&#x27;</span>%(data[<span class="number">1</span>, i] - data[<span class="number">0</span>, i]), ha=<span class="string">&#x27;center&#x27;</span>, va=<span class="string">&#x27;center&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">fig</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Final-chart"><a href="#Final-chart" class="headerlink" title="Final chart"></a>Final chart</h4><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yiHptJ"><img src="https://s3.ax1x.com/2021/01/29/yiHptJ.png" alt="yiHptJ.png"></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/29/Python-data-visualization-app-using-time/" data-id="ckptr5w9s001v4svu35i8cu40" data-title="Python:data visualization app using time" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/02/07/Paragraph-writing/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Paragraph writing Who I am
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/01/25/Survey-on-the-sustainability-factors-of-the-fair-development-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Survey on the sustainability factors of the fair development(3)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI-Competition/">AI Competition</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Business-study/">Business study</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-learning/">Computer learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reading-Seminar/">Reading Seminar</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Testing/">Testing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/paragraph-writing/">paragraph writing</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Competition/" rel="tag">AI Competition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Business-study/" rel="tag">Business study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Business-theory-and-case-study/" rel="tag">Business theory and case study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C11-project/" rel="tag">C11 project</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Analysis/" rel="tag">Data Analysis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fair-development/" rel="tag">Fair development</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Notes/" rel="tag">Python Notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading-Seminar/" rel="tag">Reading Seminar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test-File/" rel="tag">Test File</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paragraph-writing/" rel="tag">paragraph writing</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI-Competition/" style="font-size: 13.33px;">AI Competition</a> <a href="/tags/ARDUINO/" style="font-size: 15px;">ARDUINO</a> <a href="/tags/Business-study/" style="font-size: 10px;">Business study</a> <a href="/tags/Business-theory-and-case-study/" style="font-size: 10px;">Business theory and case study</a> <a href="/tags/C11-project/" style="font-size: 13.33px;">C11 project</a> <a href="/tags/Data-Analysis/" style="font-size: 13.33px;">Data Analysis</a> <a href="/tags/Fair-development/" style="font-size: 16.67px;">Fair development</a> <a href="/tags/Python-Lesson/" style="font-size: 18.33px;">Python Lesson</a> <a href="/tags/Python-Notes/" style="font-size: 20px;">Python Notes</a> <a href="/tags/Reading-Seminar/" style="font-size: 10px;">Reading Seminar</a> <a href="/tags/Test-File/" style="font-size: 11.67px;">Test File</a> <a href="/tags/paragraph-writing/" style="font-size: 15px;">paragraph writing</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/03/02/Survey-on-the-sustainability-factors-of-the-fair-development-6/">Survey on the sustainability factors of the fair development(6)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/20/Python-Nanjing-Metro-Line-1-Price-Consulting-System/">Python Nanjing Metro Line 1 Price Consulting System</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/19/Survey-on-the-sustainability-factors-of-the-fair-development-5/">Survey on the sustainability factors of the fair development(5)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/07/Survey-on-the-sustainability-factors-of-the-fair-development-4/"> Survey on the sustainability factors of the fair development(4)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/07/Paragraph-writing/">Paragraph writing Who I am</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Han<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
