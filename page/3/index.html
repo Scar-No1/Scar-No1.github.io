@@ -76,6 +76,97 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ARDUINO-Programme-4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/08/20/ARDUINO-Programme-4/" class="article-date">
+  <time class="dt-published" datetime="2020-08-20T12:11:50.000Z" itemprop="datePublished">2020-08-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Computer-learning/">Computer learning</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/08/20/ARDUINO-Programme-4/">ARDUINO Programme 4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h3><ul>
+<li>a password system</li>
+<li>a keyboard to input the password</li>
+<li>a screen to show the four-digit password, which is  1234</li>
+<li>if the password is correct, the steering engine starts working</li>
+<li>if wrong, the light turns on</li>
+</ul>
+<h3 id="How-to-connect"><a href="#How-to-connect" class="headerlink" title="How to connect"></a>How to connect</h3><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/dJtbWT"><img src="https://s1.ax1x.com/2020/08/20/dJtbWT.jpg" alt="dJtbWT.jpg"></a></p>
+<h3 id="Program"><a href="#Program" class="headerlink" title="Program"></a>Program</h3><p>Include all the packages we need.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;Keypad.h&gt; </span><br><span class="line">#include &lt;Servo.h&gt;  </span><br><span class="line">#include &lt;TM1637.h&gt;</span><br><span class="line">#define CLK 2    </span><br><span class="line">#define DIO 12</span><br><span class="line">#define KEY_ROWS 4 </span><br><span class="line">#define KEY_COLS 4 </span><br><span class="line">Servo myservo;  </span><br></pre></td></tr></table></figure>
+
+
+
+<p>Set all these packets in detail.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">TM1637 tm1637(CLK,DIO);</span><br><span class="line"></span><br><span class="line">char keymap[KEY_ROWS][KEY_COLS] = &#123;</span><br><span class="line">  &#123;&#x27;1&#x27;, &#x27;2&#x27;, &#x27;3&#x27;, &#x27;A&#x27;&#125;,</span><br><span class="line">  &#123;&#x27;4&#x27;, &#x27;5&#x27;, &#x27;6&#x27;, &#x27;B&#x27;&#125;,</span><br><span class="line">  &#123;&#x27;7&#x27;, &#x27;8&#x27;, &#x27;9&#x27;, &#x27;C&#x27;&#125;,</span><br><span class="line">  &#123;&#x27;*&#x27;, &#x27;0&#x27;, &#x27;#&#x27;, &#x27;D&#x27;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">byte colPins[KEY_COLS] = &#123;7, 6, 5, 4&#125;; </span><br><span class="line">byte rowPins[KEY_ROWS] = &#123;11, 10, 9, 8&#125;;  </span><br><span class="line">Keypad myKeypad = Keypad(makeKeymap(keymap), rowPins, colPins, KEY_ROWS, KEY_COLS);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Set the password.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int times = 0;</span><br><span class="line">int password = 1234;</span><br><span class="line">int keyword = 0;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Set the initial input and output.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void setup()&#123;</span><br><span class="line">  Serial.begin(9600);</span><br><span class="line">  myservo.attach(3);</span><br><span class="line">  tm1637.init();</span><br><span class="line">  tm1637.point(1);//小数点开关，1为打开，0为关闭</span><br><span class="line">  tm1637.set(BRIGHT_TYPICAL);</span><br><span class="line">  pinMode(13, OUTPUT);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Define the function to achieve the power multiple calculations.</p>
+<p>It will help manage the transform of four single digits into thousands.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int multiple(int keytimes)&#123;</span><br><span class="line">    int multi;</span><br><span class="line">    switch(keytimes)&#123;</span><br><span class="line">        case 0: multi = 1000;</span><br><span class="line">        break;</span><br><span class="line">        case 1: multi = 100;</span><br><span class="line">        break;</span><br><span class="line">        case 2: multi = 10;</span><br><span class="line">        break;</span><br><span class="line">        case 3: multi = 1;</span><br><span class="line">        break;</span><br><span class="line">        default: multi = 0;</span><br><span class="line">        break; </span><br><span class="line">      &#125;</span><br><span class="line">    return multi;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>When starting the loop, set the original state.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void loop()&#123;</span><br><span class="line">  char key = myKeypad.getKey();</span><br><span class="line">  digitalWrite(13, HIGH);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Complete the condition sentence.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">if (key)&#123;</span><br><span class="line">    digitalWrite(13, HIGH); </span><br><span class="line">    tm1637.display(times, (int(key)-48));</span><br><span class="line">    keyword = keyword + (int(key)-48)*(multiple(times));</span><br><span class="line">    times ++;                     #show the input password on the screen</span><br><span class="line">    if(times &gt; 3)&#123;                #condition 1  zero clearing after four digit </span><br><span class="line">        if(keyword == password)&#123;                has all inputed</span><br><span class="line">            myservo.write(0);                   </span><br><span class="line">            tm1637.display(0, 0);               </span><br><span class="line">            tm1637.display(1, 0);</span><br><span class="line">            tm1637.display(2, 0);</span><br><span class="line">            tm1637.display(3, 0);</span><br><span class="line">            delay(1000);</span><br><span class="line">            keyword = 0;</span><br><span class="line">            myservo.write(90);                   turning the servo</span><br><span class="line">          &#125;</span><br><span class="line">        else&#123;                     #condition 2   if the password is not correct</span><br><span class="line">            digitalWrite(13, LOW);               screen zero clearing</span><br><span class="line">            delay(2000);                         </span><br><span class="line">            digitalWrite(13, HIGH);              light on</span><br><span class="line">            tm1637.display(0, 0);</span><br><span class="line">            tm1637.display(1, 0);</span><br><span class="line">            tm1637.display(2, 0);</span><br><span class="line">            tm1637.display(3, 0);</span><br><span class="line">            keyword = 0;</span><br><span class="line">          &#125;</span><br><span class="line">        times = 0;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Show on the serial monitor.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Serial.println(keyword);</span><br><span class="line">      Serial.println(times);</span><br><span class="line">     </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/08/20/ARDUINO-Programme-4/" data-id="ckq6oc91c000btovuhh6ycdnh" data-title="ARDUINO Programme 4" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-ARDUINO-Programme-3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2020/08/12/ARDUINO-Programme-3/" class="article-date">
@@ -128,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/08/12/ARDUINO-Programme-3/" data-id="ckpupwin60006xcvu99eu8mkv" data-title="ARDUINO Programme 3" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/08/12/ARDUINO-Programme-3/" data-id="ckq6oc91a000atovu8upu9bfw" data-title="ARDUINO Programme 3" class="article-share-link">Share</a>
       
       
       
@@ -184,7 +275,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/08/04/ARDUINO-Programme-2/" data-id="ckpupwin9000axcvu9u5yh5eu" data-title="ARDUINO Programme 2" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/08/04/ARDUINO-Programme-2/" data-id="ckq6oc9180006tovubyzvf7cg" data-title="ARDUINO Programme 2" class="article-share-link">Share</a>
       
       
       
@@ -274,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/08/01/ARDUINO-Programme-1/" data-id="ckpupwin60005xcvuhj1ue8fo" data-title="ARDUINO Programme 1" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/08/01/ARDUINO-Programme-1/" data-id="ckq6oc9180005tovuef9henx4" data-title="ARDUINO Programme 1" class="article-share-link">Share</a>
       
       
       
@@ -334,7 +425,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/07/26/Quantitative-investment/" data-id="ckpupwio0002cxcvu3mop11g2" data-title="Quantitative investment" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/07/26/Quantitative-investment/" data-id="ckq6oc92g002htovu4h0melqb" data-title="Quantitative investment" class="article-share-link">Share</a>
       
       
       
@@ -377,7 +468,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/07/20/About-cooperation/" data-id="ckpupwinf000hxcvudv0phfgr" data-title="About cooperation" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/07/20/About-cooperation/" data-id="ckq6oc91h000htovufshpa63e" data-title="About cooperation" class="article-share-link">Share</a>
       
       
       
@@ -443,7 +534,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/07/12/Python-study-how-mamy-days-have-passed-of-a-year/" data-id="ckpupwinx0020xcvu3b1ygpso" data-title="Python study:how mamy days have passed of a year" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/07/12/Python-study-how-mamy-days-have-passed-of-a-year/" data-id="ckq6oc92a0022tovudc3dgia8" data-title="Python study:how mamy days have passed of a year" class="article-share-link">Share</a>
       
       
       
@@ -485,7 +576,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/07/04/Reading-Seminar-economic-theory/" data-id="ckpupwio3002nxcvu31c2cw74" data-title="Reading Seminar: economic theory" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/07/04/Reading-Seminar-economic-theory/" data-id="ckq6oc92j002rtovu99utgl0s" data-title="Reading Seminar: economic theory" class="article-share-link">Share</a>
       
       
       
@@ -532,7 +623,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/07/04/Reading-Seminar-Sociology/" data-id="ckpupwio2002kxcvu8vp16flf" data-title="Reading Seminar:  Sociology" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/07/04/Reading-Seminar-Sociology/" data-id="ckq6oc92i002otovu3qe8c1o3" data-title="Reading Seminar:  Sociology" class="article-share-link">Share</a>
       
       
       
@@ -583,72 +674,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/06/07/Paragraph-writing-My-Biggest-academic-achievement/" data-id="ckpupwinq001bxcvu6zi5adyp" data-title="Paragraph writing:My Biggest academic achievement" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/06/07/Paragraph-writing-My-Biggest-academic-achievement/" data-id="ckq6oc91u001btovu3maf45bo" data-title="Paragraph writing:My Biggest academic achievement" class="article-share-link">Share</a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/paragraph-writing/" rel="tag">paragraph writing</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Python-game-Guessing-number" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/06/06/Python-game-Guessing-number/" class="article-date">
-  <time class="dt-published" datetime="2020-06-06T07:55:21.000Z" itemprop="datePublished">2020-06-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Computer-learning/">Computer learning</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/06/06/Python-game-Guessing-number/">Python game Guessing number</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="Guessing-Numbers"><a href="#Guessing-Numbers" class="headerlink" title="Guessing Numbers"></a>Guessing Numbers</h3><h4 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h4><ul>
-<li>The computer will randomly generate a four digit number.</li>
-<li>You need to guess it .</li>
-<li>If one of the  number you enter are included in the answer but its position is not the same, a “△” will be shown.</li>
-<li>If this number also has the right position, a “O” will be shown.</li>
-<li>Try to guess the number correctly as few times as possible.</li>
-</ul>
-<h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="built_in">list</span>=[random.randint(<span class="number">1</span>,<span class="number">9</span>),random.randint(<span class="number">1</span>,<span class="number">9</span>),random.randint(<span class="number">1</span>,<span class="number">9</span>),random.randint(<span class="number">1</span>,<span class="number">9</span>)]</span><br><span class="line">list1=<span class="built_in">list</span></span><br><span class="line">m=<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    m=m+<span class="number">1</span></span><br><span class="line">    i=<span class="number">0</span></span><br><span class="line">    p=<span class="number">0</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;PLEASE GUESS A FOUR DIGIT NUMBER&#x27;</span>)</span><br><span class="line">    a=<span class="built_in">input</span>()</span><br><span class="line">    b=<span class="built_in">input</span>()</span><br><span class="line">    c=<span class="built_in">input</span>()</span><br><span class="line">    d=<span class="built_in">input</span>()</span><br><span class="line">    list2=[<span class="built_in">int</span>(a),<span class="built_in">int</span>(b),<span class="built_in">int</span>(c),<span class="built_in">int</span>(d)]</span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">0</span>]==list2[<span class="number">0</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">1</span>]==list2[<span class="number">1</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">2</span>]==list2[<span class="number">2</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">3</span>]==list2[<span class="number">3</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">0</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">0</span>]!=list1[<span class="number">0</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">1</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">1</span>]!=list1[<span class="number">1</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">2</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">2</span>]!=list1[<span class="number">2</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">3</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">3</span>]!=list1[<span class="number">3</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> i==<span class="number">4</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;You get the right answer.&#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;The right answer is &#x27;</span>+<span class="built_in">str</span>(a)+<span class="built_in">str</span>(b)+<span class="built_in">str</span>(c)+<span class="built_in">str</span>(d))</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;You use &#x27;</span>+<span class="built_in">str</span>(m)+<span class="string">&#x27; times to find the right answer.&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;The result is : &#x27;</span>+<span class="built_in">str</span>(i)+<span class="string">&#x27;△&#x27;</span>+<span class="string">&#x27; &#x27;</span>+<span class="built_in">str</span>(p)+<span class="string">&#x27;O&#x27;</span>)</span><br><span class="line">        <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><p><img src="https://s1.ax1x.com/2020/06/06/t6DKun.png" alt="t6DKun.png"></p>
-<h4 id="Improvement"><a href="#Improvement" class="headerlink" title="Improvement"></a>Improvement</h4><p>I find that the game is too difficult if there is the same number in this four digit number. Here is the code for choosing four digits which have no repetition.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">number=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">list1=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">    w=random.randint(<span class="number">0</span>,<span class="number">9</span>-i)</span><br><span class="line">    s=number[w]</span><br><span class="line">    list1.append(s)</span><br><span class="line">    number.remove(s)</span><br><span class="line">list1</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">number=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">list1=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">    w=random.randint(<span class="number">0</span>,<span class="number">9</span>-i)</span><br><span class="line">    s=number[w]</span><br><span class="line">    list1.append(s)</span><br><span class="line">    number.remove(s)</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br><span class="line">m=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    m=m+<span class="number">1</span></span><br><span class="line">    i=<span class="number">0</span></span><br><span class="line">    p=<span class="number">0</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;PLEASE GUESS A FOUR DIGIT NUMBER&#x27;</span>)</span><br><span class="line">    a=<span class="built_in">input</span>()</span><br><span class="line">    b=<span class="built_in">input</span>()</span><br><span class="line">    c=<span class="built_in">input</span>()</span><br><span class="line">    d=<span class="built_in">input</span>()</span><br><span class="line">    list2=[<span class="built_in">int</span>(a),<span class="built_in">int</span>(b),<span class="built_in">int</span>(c),<span class="built_in">int</span>(d)]</span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">0</span>]==list2[<span class="number">0</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">1</span>]==list2[<span class="number">1</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">2</span>]==list2[<span class="number">2</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">3</span>]==list2[<span class="number">3</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">0</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">0</span>]!=list1[<span class="number">0</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">1</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">1</span>]!=list1[<span class="number">1</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">2</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">2</span>]!=list1[<span class="number">2</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">3</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">3</span>]!=list1[<span class="number">3</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> i==<span class="number">4</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;You get the right answer.&#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;The right answer is &#x27;</span>+<span class="built_in">str</span>(a)+<span class="built_in">str</span>(b)+<span class="built_in">str</span>(c)+<span class="built_in">str</span>(d))</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;You use &#x27;</span>+<span class="built_in">str</span>(m)+<span class="string">&#x27; times to find the right answer.&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;The result is : &#x27;</span>+<span class="built_in">str</span>(i)+<span class="string">&#x27;△&#x27;</span>+<span class="string">&#x27; &#x27;</span>+<span class="built_in">str</span>(p)+<span class="string">&#x27;O&#x27;</span>)</span><br><span class="line">        <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/06/06/Python-game-Guessing-number/" data-id="ckpupwinw001txcvu1m1fhoeb" data-title="Python game Guessing number" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li></ul>
 
     </footer>
   </div>
@@ -702,7 +732,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
     </div>
   </div>
 
@@ -713,6 +743,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/06/14/Professional-experience-of-Agriculture-Bank-of-China/">Professional experience of Agriculture Bank of China</a>
+          </li>
         
           <li>
             <a href="/2021/03/02/Survey-on-the-sustainability-factors-of-the-fair-development-6/">Survey on the sustainability factors of the fair development(6)</a>
@@ -728,10 +762,6 @@
         
           <li>
             <a href="/2021/02/07/Survey-on-the-sustainability-factors-of-the-fair-development-4/"> Survey on the sustainability factors of the fair development(4)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/07/Paragraph-writing/">Paragraph writing Who I am</a>
           </li>
         
       </ul>

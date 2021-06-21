@@ -76,6 +76,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-game-Guessing-number" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/06/06/Python-game-Guessing-number/" class="article-date">
+  <time class="dt-published" datetime="2020-06-06T07:55:21.000Z" itemprop="datePublished">2020-06-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Computer-learning/">Computer learning</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/06/06/Python-game-Guessing-number/">Python game Guessing number</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="Guessing-Numbers"><a href="#Guessing-Numbers" class="headerlink" title="Guessing Numbers"></a>Guessing Numbers</h3><h4 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h4><ul>
+<li>The computer will randomly generate a four digit number.</li>
+<li>You need to guess it .</li>
+<li>If one of the  number you enter are included in the answer but its position is not the same, a “△” will be shown.</li>
+<li>If this number also has the right position, a “O” will be shown.</li>
+<li>Try to guess the number correctly as few times as possible.</li>
+</ul>
+<h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="built_in">list</span>=[random.randint(<span class="number">1</span>,<span class="number">9</span>),random.randint(<span class="number">1</span>,<span class="number">9</span>),random.randint(<span class="number">1</span>,<span class="number">9</span>),random.randint(<span class="number">1</span>,<span class="number">9</span>)]</span><br><span class="line">list1=<span class="built_in">list</span></span><br><span class="line">m=<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    m=m+<span class="number">1</span></span><br><span class="line">    i=<span class="number">0</span></span><br><span class="line">    p=<span class="number">0</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;PLEASE GUESS A FOUR DIGIT NUMBER&#x27;</span>)</span><br><span class="line">    a=<span class="built_in">input</span>()</span><br><span class="line">    b=<span class="built_in">input</span>()</span><br><span class="line">    c=<span class="built_in">input</span>()</span><br><span class="line">    d=<span class="built_in">input</span>()</span><br><span class="line">    list2=[<span class="built_in">int</span>(a),<span class="built_in">int</span>(b),<span class="built_in">int</span>(c),<span class="built_in">int</span>(d)]</span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">0</span>]==list2[<span class="number">0</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">1</span>]==list2[<span class="number">1</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">2</span>]==list2[<span class="number">2</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">3</span>]==list2[<span class="number">3</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">0</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">0</span>]!=list1[<span class="number">0</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">1</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">1</span>]!=list1[<span class="number">1</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">2</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">2</span>]!=list1[<span class="number">2</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">3</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">3</span>]!=list1[<span class="number">3</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> i==<span class="number">4</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;You get the right answer.&#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;The right answer is &#x27;</span>+<span class="built_in">str</span>(a)+<span class="built_in">str</span>(b)+<span class="built_in">str</span>(c)+<span class="built_in">str</span>(d))</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;You use &#x27;</span>+<span class="built_in">str</span>(m)+<span class="string">&#x27; times to find the right answer.&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;The result is : &#x27;</span>+<span class="built_in">str</span>(i)+<span class="string">&#x27;△&#x27;</span>+<span class="string">&#x27; &#x27;</span>+<span class="built_in">str</span>(p)+<span class="string">&#x27;O&#x27;</span>)</span><br><span class="line">        <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><p><img src="https://s1.ax1x.com/2020/06/06/t6DKun.png" alt="t6DKun.png"></p>
+<h4 id="Improvement"><a href="#Improvement" class="headerlink" title="Improvement"></a>Improvement</h4><p>I find that the game is too difficult if there is the same number in this four digit number. Here is the code for choosing four digits which have no repetition.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">number=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">list1=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">    w=random.randint(<span class="number">0</span>,<span class="number">9</span>-i)</span><br><span class="line">    s=number[w]</span><br><span class="line">    list1.append(s)</span><br><span class="line">    number.remove(s)</span><br><span class="line">list1</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">number=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">list1=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">    w=random.randint(<span class="number">0</span>,<span class="number">9</span>-i)</span><br><span class="line">    s=number[w]</span><br><span class="line">    list1.append(s)</span><br><span class="line">    number.remove(s)</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br><span class="line">m=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    m=m+<span class="number">1</span></span><br><span class="line">    i=<span class="number">0</span></span><br><span class="line">    p=<span class="number">0</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;PLEASE GUESS A FOUR DIGIT NUMBER&#x27;</span>)</span><br><span class="line">    a=<span class="built_in">input</span>()</span><br><span class="line">    b=<span class="built_in">input</span>()</span><br><span class="line">    c=<span class="built_in">input</span>()</span><br><span class="line">    d=<span class="built_in">input</span>()</span><br><span class="line">    list2=[<span class="built_in">int</span>(a),<span class="built_in">int</span>(b),<span class="built_in">int</span>(c),<span class="built_in">int</span>(d)]</span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">0</span>]==list2[<span class="number">0</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">1</span>]==list2[<span class="number">1</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">2</span>]==list2[<span class="number">2</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list1[<span class="number">3</span>]==list2[<span class="number">3</span>]:</span><br><span class="line">        i=i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">0</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">0</span>]!=list1[<span class="number">0</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">1</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">1</span>]!=list1[<span class="number">1</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">2</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">2</span>]!=list1[<span class="number">2</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> list2[<span class="number">3</span>] <span class="keyword">in</span> list1 <span class="keyword">and</span> list2[<span class="number">3</span>]!=list1[<span class="number">3</span>]:</span><br><span class="line">        p=p+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> i==<span class="number">4</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;You get the right answer.&#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;The right answer is &#x27;</span>+<span class="built_in">str</span>(a)+<span class="built_in">str</span>(b)+<span class="built_in">str</span>(c)+<span class="built_in">str</span>(d))</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;You use &#x27;</span>+<span class="built_in">str</span>(m)+<span class="string">&#x27; times to find the right answer.&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;The result is : &#x27;</span>+<span class="built_in">str</span>(i)+<span class="string">&#x27;△&#x27;</span>+<span class="string">&#x27; &#x27;</span>+<span class="built_in">str</span>(p)+<span class="string">&#x27;O&#x27;</span>)</span><br><span class="line">        <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/06/06/Python-game-Guessing-number/" data-id="ckq6oc929001ztovu06roh1xe" data-title="Python game Guessing number" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-data-analysis-case-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2020/04/29/data-analysis-case-1/" class="article-date">
@@ -143,7 +204,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/04/29/data-analysis-case-1/" data-id="ckpupwiol0049xcvu683nf7qq" data-title="data analysis case 1" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/04/29/data-analysis-case-1/" data-id="ckq6oc935004btovu48mp3o8y" data-title="data analysis case 1" class="article-share-link">Share</a>
       
       
       
@@ -188,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/04/19/AI-competition-feelings-harvests/" data-id="ckpupwin50004xcvug1cy2wyb" data-title="AI competition--feelings&amp;harvests" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/04/19/AI-competition-feelings-harvests/" data-id="ckq6oc9170004tovu8mx7dqx7" data-title="AI competition--feelings&amp;harvests" class="article-share-link">Share</a>
       
       
       
@@ -247,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/04/18/AI-Learning-training-model/" data-id="ckpupwimy0000xcvu3g2t0ppk" data-title="AI Learning--training model" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/04/18/AI-Learning-training-model/" data-id="ckq6oc9100000tovu1pig558v" data-title="AI Learning--training model" class="article-share-link">Share</a>
       
       
       
@@ -344,7 +405,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/04/06/C11-project-Brand-landing-preparation/" data-id="ckpupwink000txcvugx4qfm20" data-title="C11 project:Brand landing preparation" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/04/06/C11-project-Brand-landing-preparation/" data-id="ckq6oc91n000ttovuhuul9r8d" data-title="C11 project:Brand landing preparation" class="article-share-link">Share</a>
       
       
       
@@ -397,7 +458,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/04/06/Paragraph-writing-the-biggest-failure-I-experienced/" data-id="ckpupwinr001fxcvuee91hon6" data-title="Paragraph writing:the biggest failure I experienced" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/04/06/Paragraph-writing-the-biggest-failure-I-experienced/" data-id="ckq6oc91z001ftovu1zdt79q5" data-title="Paragraph writing:the biggest failure I experienced" class="article-share-link">Share</a>
       
       
       
@@ -468,7 +529,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/03/22/C11-project-Brand-Feiyue/" data-id="ckpupwinh000nxcvuh09j7oqt" data-title="C11-project-Brand-Feiyue" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/03/22/C11-project-Brand-Feiyue/" data-id="ckq6oc91n000rtovu3so7e3el" data-title="C11-project-Brand-Feiyue" class="article-share-link">Share</a>
       
       
       
@@ -561,7 +622,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/03/15/Stage-summery-of-data-analysis-learning/" data-id="ckpupwio5002uxcvu5j2q00dl" data-title="Stage summery of data analysis learning" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/03/15/Stage-summery-of-data-analysis-learning/" data-id="ckq6oc92l002ytovu4jfvgnr6" data-title="Stage summery of data analysis learning" class="article-share-link">Share</a>
       
       
       
@@ -627,7 +688,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/03/15/The-essay-about-two-buz-model/" data-id="ckpupwiod003ixcvu4dp3bfr3" data-title="The essay about two buz model" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/03/15/The-essay-about-two-buz-model/" data-id="ckq6oc92v003ltovu5oft5nsn" data-title="The essay about two buz model" class="article-share-link">Share</a>
       
       
       
@@ -692,61 +753,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/03/02/My-first-programme-for-data-anaylsis/" data-id="ckpupwino0015xcvu80p9h4rc" data-title="My first program for data analysis" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/03/02/My-first-programme-for-data-anaylsis/" data-id="ckq6oc91s0015tovu4fh2cl3l" data-title="My first program for data analysis" class="article-share-link">Share</a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Analysis/" rel="tag">Data Analysis</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-The-tenth-Python-lesson" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/02/23/The-tenth-Python-lesson/" class="article-date">
-  <time class="dt-published" datetime="2020-02-23T13:22:19.000Z" itemprop="datePublished">2020-02-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Computer-learning/">Computer learning</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/02/23/The-tenth-Python-lesson/">The tenth Python lesson</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><img src="https://s2.ax1x.com/2020/02/23/33C4Vf.jpg" alt="33C4Vf.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/23/33CTPg.jpg" alt="33CTPg.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/23/33CvZV.jpg" alt="33CvZV.jpg"></p>
-<hr>
-<p>There is also a website for Python learning:</p>
-<p><a target="_blank" rel="noopener" href="https://www.runoob.com/">菜鸟教程</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/02/23/The-tenth-Python-lesson/" data-id="ckpupwiok0043xcvu7503efgt" data-title="The tenth Python lesson" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Notes/" rel="tag">Python Notes</a></li></ul>
 
     </footer>
   </div>
@@ -800,7 +811,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
     </div>
   </div>
 
@@ -811,6 +822,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/06/14/Professional-experience-of-Agriculture-Bank-of-China/">Professional experience of Agriculture Bank of China</a>
+          </li>
         
           <li>
             <a href="/2021/03/02/Survey-on-the-sustainability-factors-of-the-fair-development-6/">Survey on the sustainability factors of the fair development(6)</a>
@@ -826,10 +841,6 @@
         
           <li>
             <a href="/2021/02/07/Survey-on-the-sustainability-factors-of-the-fair-development-4/"> Survey on the sustainability factors of the fair development(4)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/07/Paragraph-writing/">Paragraph writing Who I am</a>
           </li>
         
       </ul>
