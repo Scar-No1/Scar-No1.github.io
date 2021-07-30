@@ -76,6 +76,166 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-My-video-test-article" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/02/09/My-video-test-article/" class="article-date">
+  <time class="dt-published" datetime="2020-02-09T08:19:43.000Z" itemprop="datePublished">2020-02-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Testing/">Testing</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/02/09/My-video-test-article/">My video test article</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="My-video-test-article"><a href="#My-video-test-article" class="headerlink" title="My video test article"></a>My video test article</h3><p>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line"></span><br><span class="line">&lt;div style=&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;&gt;</span><br><span class="line">    &lt;iframe src=&quot;//player.bilibili.com/player.html?aid=63909506&amp;cid=110956601&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot; style=&quot;position: absolute; width: 100%; height: 100%; left: 0; top: 0;&quot;&gt;</span><br><span class="line">    &lt;/iframe&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>效果：</p>
+
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?aid=63909506&cid=110956601&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;">
+    </iframe>
+</div>
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/02/09/My-video-test-article/" data-id="ckrqd7xfa001f0svu1jd8gt33" data-title="My video test article" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Test-File/" rel="tag">Test File</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-The-seventh-python-lesson" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/02/08/The-seventh-python-lesson/" class="article-date">
+  <time class="dt-published" datetime="2020-02-08T13:44:28.000Z" itemprop="datePublished">2020-02-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Computer-learning/">Computer learning</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/02/08/The-seventh-python-lesson/">The seventh python lesson</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="https://s2.ax1x.com/2020/02/08/1W0F3T.jpg" alt="1W0F3T.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/08/1WDXjO.jpg" alt="1WDXjO.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/08/1WrpEd.jpg" alt="1WrpEd.jpg"></p>
+<p>HW:Define a function, accepts two input lists and returns a new list which contains only the unique</p>
+<p>elements from both lists.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">a</span>(<span class="params">m,n</span>):</span></span><br><span class="line">    b = m + n</span><br><span class="line">    c = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> b:</span><br><span class="line">        <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> c:</span><br><span class="line">            c.append(i)</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line">list1=<span class="string">&#x27;&#x27;</span></span><br><span class="line">list2=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;请用空格分隔。&#x27;</span>)</span><br><span class="line"></span><br><span class="line">list1=<span class="built_in">input</span>()</span><br><span class="line">list2=<span class="built_in">input</span>()</span><br><span class="line">m=list1.split()</span><br><span class="line">n=list2.split()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a(m,n))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/02/08/The-seventh-python-lesson/" data-id="ckrqd7xg600430svudqq43smz" data-title="The seventh python lesson" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Notes/" rel="tag">Python Notes</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-The-sixth-python-lesson" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/02/08/The-sixth-python-lesson/" class="article-date">
+  <time class="dt-published" datetime="2020-02-08T13:33:31.000Z" itemprop="datePublished">2020-02-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Computer-learning/">Computer learning</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/02/08/The-sixth-python-lesson/">The sixth python lesson</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="https://s2.ax1x.com/2020/02/08/1Wwr7R.jpg" alt="1Wwr7R.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/08/1Ww5Bd.jpg" alt="1Ww5Bd.jpg"></p>
+<p>Homework</p>
+<p>算这几个学生各科的平均分，和最高分</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">allStudents=&#123;<span class="string">&#x27;Alice&#x27;</span>:&#123;<span class="string">&#x27;Chinese&#x27;</span>:<span class="number">88</span>,<span class="string">&#x27;Maths&#x27;</span>:<span class="number">97</span>,<span class="string">&#x27;English&#x27;</span>:<span class="number">98</span>,<span class="string">&#x27;Arts&#x27;</span>:<span class="number">95</span>&#125;,</span><br><span class="line">                      <span class="string">&#x27;Bob&#x27;</span>:&#123;<span class="string">&#x27;Chinese&#x27;</span>:<span class="number">96</span>,<span class="string">&#x27;Maths&#x27;</span>:<span class="number">88</span>,<span class="string">&#x27;English&#x27;</span>:<span class="number">92</span>,<span class="string">&#x27;Arts&#x27;</span>:<span class="number">80</span>&#125;,</span><br><span class="line">                      <span class="string">&#x27;Carol&#x27;</span>:&#123;<span class="string">&#x27;Chinese&#x27;</span>:<span class="number">78</span>,<span class="string">&#x27;Maths&#x27;</span>:<span class="number">80</span>,<span class="string">&#x27;English&#x27;</span>:<span class="number">94</span>,<span class="string">&#x27;Arts&#x27;</span>:<span class="number">92</span>&#125;,</span><br><span class="line">                      <span class="string">&#x27;Daniel&#x27;</span>:&#123;<span class="string">&#x27;Chinese&#x27;</span>:<span class="number">92</span>,<span class="string">&#x27;Maths&#x27;</span>:<span class="number">93</span>,<span class="string">&#x27;English&#x27;</span>:<span class="number">70</span>,<span class="string">&#x27;Arts&#x27;</span>:<span class="number">89</span>&#125;&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">averagescore</span>(<span class="params">student,item</span>):</span></span><br><span class="line">    score=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> k, v <span class="keyword">in</span> student.items():</span><br><span class="line">        score = score + v.get(item,<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> (score/<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-math &#x27;</span>+ <span class="built_in">str</span>(averagescore(allStudents,<span class="string">&#x27;Maths&#x27;</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-chinese &#x27;</span>+ <span class="built_in">str</span>(averagescore(allStudents,<span class="string">&#x27;Chinese&#x27;</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-english &#x27;</span>+ <span class="built_in">str</span>(averagescore(allStudents,<span class="string">&#x27;English&#x27;</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-arts &#x27;</span>+ <span class="built_in">str</span>(averagescore(allStudents,<span class="string">&#x27;Arts&#x27;</span>)))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">maximumscore</span>(<span class="params">student,item</span>):</span></span><br><span class="line">    marks=[]</span><br><span class="line">    mark=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> k, v <span class="keyword">in</span> student.items():</span><br><span class="line">        marks.append(v.get(item,<span class="number">0</span>))</span><br><span class="line">        mark = <span class="built_in">max</span>(marks)</span><br><span class="line">    <span class="keyword">return</span> mark</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-math maximumscore &#x27;</span>+ <span class="built_in">str</span>(maximumscore(allStudents,<span class="string">&#x27;Maths&#x27;</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-chinese maximumscore &#x27;</span>+ <span class="built_in">str</span>(maximumscore(allStudents,<span class="string">&#x27;Chinese&#x27;</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-english maximumscore &#x27;</span>+ <span class="built_in">str</span>(maximumscore(allStudents,<span class="string">&#x27;English&#x27;</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-arts maximumscore &#x27;</span>+ <span class="built_in">str</span>(maximumscore(allStudents,<span class="string">&#x27;Arts&#x27;</span>)))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/02/08/The-sixth-python-lesson/" data-id="ckrqd7xg700460svu3cjffoqs" data-title="The sixth python lesson" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Notes/" rel="tag">Python Notes</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-The-fifth-python-lesson" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2020/02/08/The-fifth-python-lesson/" class="article-date">
@@ -108,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/02/08/The-fifth-python-lesson/" data-id="ckq6oc92w003otovuf4weflpv" data-title="The fifth python lesson" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/02/08/The-fifth-python-lesson/" data-id="ckrqd7xg1003r0svu3dr797n6" data-title="The fifth python lesson" class="article-share-link">Share</a>
       
       
       
@@ -157,7 +317,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/02/08/The-second-python-lesson/" data-id="ckq6oc92z003xtovu3c2n9y8v" data-title="The second python lesson" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/02/08/The-second-python-lesson/" data-id="ckrqd7xg500400svu9hum8u99" data-title="The second python lesson" class="article-share-link">Share</a>
       
       
       
@@ -203,7 +363,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/02/08/The-first-python-lesson/" data-id="ckq6oc92x003rtovu511tg1fb" data-title="The first python lesson" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/02/08/The-first-python-lesson/" data-id="ckrqd7xg4003x0svu7ysx5i3j" data-title="The first python lesson" class="article-share-link">Share</a>
       
       
       
@@ -242,7 +402,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Competition/" rel="tag">AI Competition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Business-study/" rel="tag">Business study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Business-theory-and-case-study/" rel="tag">Business theory and case study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C11-project/" rel="tag">C11 project</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Analysis/" rel="tag">Data Analysis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fair-development/" rel="tag">Fair development</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Notes/" rel="tag">Python Notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading-Seminar/" rel="tag">Reading Seminar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test-File/" rel="tag">Test File</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paragraph-writing/" rel="tag">paragraph writing</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Competition/" rel="tag">AI Competition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Business-study/" rel="tag">Business study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Business-theory-and-case-study/" rel="tag">Business theory and case study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C11-project/" rel="tag">C11 project</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Analysis/" rel="tag">Data Analysis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fair-development/" rel="tag">Fair development</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Internship-harvest/" rel="tag">Internship harvest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Notes/" rel="tag">Python Notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading-Seminar/" rel="tag">Reading Seminar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test-File/" rel="tag">Test File</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paragraph-writing/" rel="tag">paragraph writing</a></li></ul>
     </div>
   </div>
 
@@ -252,7 +412,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AI-Competition/" style="font-size: 13.33px;">AI Competition</a> <a href="/tags/ARDUINO/" style="font-size: 15px;">ARDUINO</a> <a href="/tags/Business-study/" style="font-size: 10px;">Business study</a> <a href="/tags/Business-theory-and-case-study/" style="font-size: 10px;">Business theory and case study</a> <a href="/tags/C11-project/" style="font-size: 13.33px;">C11 project</a> <a href="/tags/Data-Analysis/" style="font-size: 13.33px;">Data Analysis</a> <a href="/tags/Fair-development/" style="font-size: 16.67px;">Fair development</a> <a href="/tags/Python-Lesson/" style="font-size: 18.33px;">Python Lesson</a> <a href="/tags/Python-Notes/" style="font-size: 20px;">Python Notes</a> <a href="/tags/Reading-Seminar/" style="font-size: 10px;">Reading Seminar</a> <a href="/tags/Test-File/" style="font-size: 11.67px;">Test File</a> <a href="/tags/paragraph-writing/" style="font-size: 15px;">paragraph writing</a>
+      <a href="/tags/AI-Competition/" style="font-size: 13.33px;">AI Competition</a> <a href="/tags/ARDUINO/" style="font-size: 15px;">ARDUINO</a> <a href="/tags/Business-study/" style="font-size: 10px;">Business study</a> <a href="/tags/Business-theory-and-case-study/" style="font-size: 10px;">Business theory and case study</a> <a href="/tags/C11-project/" style="font-size: 13.33px;">C11 project</a> <a href="/tags/Data-Analysis/" style="font-size: 13.33px;">Data Analysis</a> <a href="/tags/Fair-development/" style="font-size: 16.67px;">Fair development</a> <a href="/tags/Internship-harvest/" style="font-size: 11.67px;">Internship harvest</a> <a href="/tags/Python-Lesson/" style="font-size: 18.33px;">Python Lesson</a> <a href="/tags/Python-Notes/" style="font-size: 20px;">Python Notes</a> <a href="/tags/Reading-Seminar/" style="font-size: 10px;">Reading Seminar</a> <a href="/tags/Test-File/" style="font-size: 11.67px;">Test File</a> <a href="/tags/paragraph-writing/" style="font-size: 15px;">paragraph writing</a>
     </div>
   </div>
 
@@ -261,7 +421,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
     </div>
   </div>
 
@@ -274,23 +434,23 @@
       <ul>
         
           <li>
+            <a href="/2021/07/30/Internship-harvest2/">Internship harvest2</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/30/Internship-harvest/">Internship harvest</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/03/Use-Python-to-pridict-the-NBA-wining-team/">Use Python to pridict the NBA wining team</a>
+          </li>
+        
+          <li>
             <a href="/2021/06/14/Professional-experience-of-Agriculture-Bank-of-China/">Professional experience of Agriculture Bank of China</a>
           </li>
         
           <li>
             <a href="/2021/03/02/Survey-on-the-sustainability-factors-of-the-fair-development-6/">Survey on the sustainability factors of the fair development(6)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/20/Python-Nanjing-Metro-Line-1-Price-Consulting-System/">Python Nanjing Metro Line 1 Price Consulting System</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/19/Survey-on-the-sustainability-factors-of-the-fair-development-5/">Survey on the sustainability factors of the fair development(5)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/07/Survey-on-the-sustainability-factors-of-the-fair-development-4/"> Survey on the sustainability factors of the fair development(4)</a>
           </li>
         
       </ul>
