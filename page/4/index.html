@@ -76,6 +76,74 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-study-how-mamy-days-have-passed-of-a-year" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/07/12/Python-study-how-mamy-days-have-passed-of-a-year/" class="article-date">
+  <time class="dt-published" datetime="2020-07-12T03:30:24.000Z" itemprop="datePublished">2020-07-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Computer-learning/">Computer learning</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/07/12/Python-study-how-mamy-days-have-passed-of-a-year/">Python study:how mamy days have passed of a year</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>题目1:设计一个程序输入-一个日期，判断当前日期是属于这一年的第几天并输出</p>
+<p>Design a programme : input a date and determine which day of the year the current date belongs to and output the value.</p>
+<h4 id="First-step"><a href="#First-step" class="headerlink" title="First step"></a>First step</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Please input a date in the form of dd mm yyyy&#x27;</span>)</span><br><span class="line">date=<span class="built_in">input</span>()</span><br><span class="line">date=date.split(<span class="string">&#x27; &#x27;</span>)    <span class="comment">#separate the day month and year</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Please input a date in the form of dd mm yyyy</span><br><span class="line">20 09 2019</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">day=<span class="built_in">int</span>(date[<span class="number">0</span>])</span><br><span class="line">month=<span class="built_in">int</span>(date[<span class="number">1</span>])</span><br><span class="line">year=<span class="built_in">int</span>(date[<span class="number">2</span>])</span><br><span class="line"><span class="built_in">print</span>(day,month,year)    <span class="comment">#turn the date in str into int</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20 9 2019</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Second-step"><a href="#Second-step" class="headerlink" title="Second step"></a>Second step</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (year % <span class="number">4</span>) == <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">if</span> (year % <span class="number">100</span>) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">if</span> (year % <span class="number">400</span>) == <span class="number">0</span>:</span><br><span class="line">             <span class="built_in">print</span>(<span class="string">&quot;&#123;0&#125; is a leap year&quot;</span>.<span class="built_in">format</span>(year))   <span class="comment"># leap year must be divided by 400.</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;&#123;0&#125; is not a leap year&quot;</span>.<span class="built_in">format</span>(year))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;&#123;0&#125;  is a leap year&quot;</span>.<span class="built_in">format</span>(year))       <span class="comment"># non integral hundred year which can be divided by 4 is a leap year.</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&#123;0&#125; is not a leap year&quot;</span>.<span class="built_in">format</span>(year))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019 is not a leap year</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Third-step"><a href="#Third-step" class="headerlink" title="Third step"></a>Third step</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> month==<span class="number">1</span>:</span><br><span class="line">    daypass=day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">2</span>:</span><br><span class="line">    daypass=<span class="number">31</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">3</span>:</span><br><span class="line">    daypass=<span class="number">60</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">4</span>:</span><br><span class="line">    daypass=<span class="number">91</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">5</span>:</span><br><span class="line">    daypass=<span class="number">121</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">6</span>:</span><br><span class="line">    daypass=<span class="number">152</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">7</span>:</span><br><span class="line">    daypass=<span class="number">182</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">8</span>:</span><br><span class="line">    daypass=<span class="number">213</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">9</span>:</span><br><span class="line">    daypass=<span class="number">244</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">10</span>:</span><br><span class="line">    daypass=<span class="number">274</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">11</span>:</span><br><span class="line">    daypass=<span class="number">305</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">12</span>:</span><br><span class="line">    daypass=<span class="number">335</span>+day    <span class="comment">#for leap year</span></span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> month==<span class="number">1</span>:</span><br><span class="line">    daypass=day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">2</span>:</span><br><span class="line">    daypass=<span class="number">31</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">3</span>:</span><br><span class="line">    daypass=<span class="number">59</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">4</span>:</span><br><span class="line">    daypass=<span class="number">90</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">5</span>:</span><br><span class="line">    daypass=<span class="number">120</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">6</span>:</span><br><span class="line">    daypass=<span class="number">151</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">7</span>:</span><br><span class="line">    daypass=<span class="number">181</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">8</span>:</span><br><span class="line">    daypass=<span class="number">212</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">9</span>:</span><br><span class="line">    daypass=<span class="number">243</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">10</span>:</span><br><span class="line">    daypass=<span class="number">274</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">11</span>:</span><br><span class="line">    daypass=<span class="number">305</span>+day</span><br><span class="line"><span class="keyword">if</span> month==<span class="number">12</span>:</span><br><span class="line">    daypass=<span class="number">334</span>+day     <span class="comment">#for normal year</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Final-programme"><a href="#Final-programme" class="headerlink" title="Final programme"></a>Final programme</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Please input a date in the form of dd mm yyyy&#x27;</span>)</span><br><span class="line">date=<span class="built_in">input</span>()</span><br><span class="line">date=date.split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">day=<span class="built_in">int</span>(date[<span class="number">0</span>])</span><br><span class="line">month=<span class="built_in">int</span>(date[<span class="number">1</span>])</span><br><span class="line">year=<span class="built_in">int</span>(date[<span class="number">2</span>])</span><br><span class="line"><span class="built_in">print</span>(day,month,year)</span><br><span class="line"><span class="keyword">if</span> (year % <span class="number">4</span>) == <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">if</span> (year % <span class="number">100</span>) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">if</span> (year % <span class="number">400</span>) == <span class="number">0</span>:                 <span class="comment"># 整百年能被400整除的是闰年</span></span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">1</span>:</span><br><span class="line">                daypass=day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">2</span>:</span><br><span class="line">                daypass=<span class="number">31</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">3</span>:</span><br><span class="line">                daypass=<span class="number">60</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">4</span>:</span><br><span class="line">                daypass=<span class="number">91</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">5</span>:</span><br><span class="line">                daypass=<span class="number">121</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">6</span>:</span><br><span class="line">                daypass=<span class="number">152</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">7</span>:</span><br><span class="line">                daypass=<span class="number">182</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">8</span>:</span><br><span class="line">                daypass=<span class="number">213</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">9</span>:</span><br><span class="line">                daypass=<span class="number">244</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">10</span>:</span><br><span class="line">                daypass=<span class="number">274</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">11</span>:</span><br><span class="line">                daypass=<span class="number">305</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">12</span>:</span><br><span class="line">                daypass=<span class="number">335</span>+day</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">1</span>:</span><br><span class="line">                daypass=day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">2</span>:</span><br><span class="line">                daypass=<span class="number">31</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">3</span>:</span><br><span class="line">                daypass=<span class="number">59</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">4</span>:</span><br><span class="line">                daypass=<span class="number">90</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">5</span>:</span><br><span class="line">                daypass=<span class="number">120</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">6</span>:</span><br><span class="line">                daypass=<span class="number">151</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">7</span>:</span><br><span class="line">                daypass=<span class="number">181</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">8</span>:</span><br><span class="line">                daypass=<span class="number">212</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">9</span>:</span><br><span class="line">                daypass=<span class="number">243</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">10</span>:</span><br><span class="line">                daypass=<span class="number">274</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">11</span>:</span><br><span class="line">                daypass=<span class="number">305</span>+day</span><br><span class="line">            <span class="keyword">if</span> month==<span class="number">12</span>:</span><br><span class="line">                daypass=<span class="number">334</span>+day</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> month==<span class="number">1</span>:</span><br><span class="line">            daypass=day</span><br><span class="line">        <span class="keyword">if</span> month==<span class="number">2</span>:</span><br><span class="line">            daypass=<span class="number">31</span>+day</span><br><span class="line">        <span class="keyword">if</span> month==<span class="number">3</span>:</span><br><span class="line">            daypass=<span class="number">60</span>+day</span><br><span class="line">        <span class="keyword">if</span> month==<span class="number">4</span>:</span><br><span class="line">            daypass=<span class="number">91</span>+day</span><br><span class="line">        <span class="keyword">if</span> month==<span class="number">5</span>:</span><br><span class="line">            daypass=<span class="number">121</span>+day</span><br><span class="line">        <span class="keyword">if</span> month==<span class="number">6</span>:</span><br><span class="line">            daypass=<span class="number">152</span>+day</span><br><span class="line">        <span class="keyword">if</span> month==<span class="number">7</span>:</span><br><span class="line">            daypass=<span class="number">182</span>+day</span><br><span class="line">        <span class="keyword">if</span> month==<span class="number">8</span>:</span><br><span class="line">            daypass=<span class="number">213</span>+day</span><br><span class="line">        <span class="keyword">if</span> month==<span class="number">9</span>:</span><br><span class="line">            daypass=<span class="number">244</span>+day</span><br><span class="line">        <span class="keyword">if</span> month==<span class="number">10</span>:</span><br><span class="line">            daypass=<span class="number">274</span>+day</span><br><span class="line">        <span class="keyword">if</span> month==<span class="number">11</span>:</span><br><span class="line">            daypass=<span class="number">305</span>+day</span><br><span class="line">        <span class="keyword">if</span> month==<span class="number">12</span>:</span><br><span class="line">            daypass=<span class="number">335</span>+day       <span class="comment"># 非整百年能被4整除的为闰年</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">if</span> month==<span class="number">1</span>:</span><br><span class="line">        daypass=day</span><br><span class="line">    <span class="keyword">if</span> month==<span class="number">2</span>:</span><br><span class="line">        daypass=<span class="number">31</span>+day</span><br><span class="line">    <span class="keyword">if</span> month==<span class="number">3</span>:</span><br><span class="line">        daypass=<span class="number">59</span>+day</span><br><span class="line">    <span class="keyword">if</span> month==<span class="number">4</span>:</span><br><span class="line">        daypass=<span class="number">90</span>+day</span><br><span class="line">    <span class="keyword">if</span> month==<span class="number">5</span>:</span><br><span class="line">        daypass=<span class="number">120</span>+day</span><br><span class="line">    <span class="keyword">if</span> month==<span class="number">6</span>:</span><br><span class="line">        daypass=<span class="number">151</span>+day</span><br><span class="line">    <span class="keyword">if</span> month==<span class="number">7</span>:</span><br><span class="line">        daypass=<span class="number">181</span>+day</span><br><span class="line">    <span class="keyword">if</span> month==<span class="number">8</span>:</span><br><span class="line">        daypass=<span class="number">212</span>+day</span><br><span class="line">    <span class="keyword">if</span> month==<span class="number">9</span>:</span><br><span class="line">        daypass=<span class="number">243</span>+day</span><br><span class="line">    <span class="keyword">if</span> month==<span class="number">10</span>:</span><br><span class="line">        daypass=<span class="number">274</span>+day</span><br><span class="line">    <span class="keyword">if</span> month==<span class="number">11</span>:</span><br><span class="line">        daypass=<span class="number">305</span>+day</span><br><span class="line">    <span class="keyword">if</span> month==<span class="number">12</span>:</span><br><span class="line">        daypass=<span class="number">334</span>+day</span><br><span class="line"><span class="built_in">print</span>(daypass,<span class="string">&#x27; has passed by in the year of &#x27;</span>,year)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">263  has passed by in the year of  2019</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/07/12/Python-study-how-mamy-days-have-passed-of-a-year/" data-id="ckrrk6gku0027isvu9j5afpl6" data-title="Python study:how mamy days have passed of a year" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Reading-Seminar-economic-theory" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2020/07/04/Reading-Seminar-economic-theory/" class="article-date">
@@ -104,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/07/04/Reading-Seminar-economic-theory/" data-id="ckrqdrmij002u24vu7r2mfmzx" data-title="Reading Seminar: economic theory" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/07/04/Reading-Seminar-economic-theory/" data-id="ckrrk6gl1002visvufhiggd3c" data-title="Reading Seminar: economic theory" class="article-share-link">Share</a>
       
       
       
@@ -151,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/07/04/Reading-Seminar-Sociology/" data-id="ckrqdrmii002r24vu4xuy555n" data-title="Reading Seminar:  Sociology" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/07/04/Reading-Seminar-Sociology/" data-id="ckrrk6gl0002sisvuek00dxfh" data-title="Reading Seminar:  Sociology" class="article-share-link">Share</a>
       
       
       
@@ -202,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/06/07/Paragraph-writing-My-Biggest-academic-achievement/" data-id="ckrqdrmi5001h24vu9lmk8fwd" data-title="Paragraph writing:My Biggest academic achievement" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/06/07/Paragraph-writing-My-Biggest-academic-achievement/" data-id="ckrrk6gkm001fisvudcz7gqce" data-title="Paragraph writing:My Biggest academic achievement" class="article-share-link">Share</a>
       
       
       
@@ -263,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/06/06/Python-game-Guessing-number/" data-id="ckrqdrmib002124vu5n5e9vk1" data-title="Python game Guessing number" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/06/06/Python-game-Guessing-number/" data-id="ckrrk6gkr001yisvu9e9j22ul" data-title="Python game Guessing number" class="article-share-link">Share</a>
       
       
       
@@ -344,7 +412,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/04/29/data-analysis-case-1/" data-id="ckrqdrmj4004i24vudcqpfdol" data-title="data analysis case 1" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/04/29/data-analysis-case-1/" data-id="ckrrk6gln004jisvu9ize6qhm" data-title="data analysis case 1" class="article-share-link">Share</a>
       
       
       
@@ -389,7 +457,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/04/19/AI-competition-feelings-harvests/" data-id="ckrqdrmhn000424vugv8n3y7f" data-title="AI competition--feelings&amp;harvests" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/04/19/AI-competition-feelings-harvests/" data-id="ckrrk6gk60004isvuhcbb4obw" data-title="AI competition--feelings&amp;harvests" class="article-share-link">Share</a>
       
       
       
@@ -448,7 +516,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/04/18/AI-Learning-training-model/" data-id="ckrqdrmhg000024vu1bbwarul" data-title="AI Learning--training model" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/04/18/AI-Learning-training-model/" data-id="ckrrk6gjz0000isvuhxhu821q" data-title="AI Learning--training model" class="article-share-link">Share</a>
       
       
       
@@ -545,7 +613,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/04/06/C11-project-Brand-landing-preparation/" data-id="ckrqdrmhy000r24vu5iw9gpa4" data-title="C11 project:Brand landing preparation" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/04/06/C11-project-Brand-landing-preparation/" data-id="ckrrk6gkg000tisvu3afahoq3" data-title="C11 project:Brand landing preparation" class="article-share-link">Share</a>
       
       
       
@@ -598,82 +666,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/04/06/Paragraph-writing-the-biggest-failure-I-experienced/" data-id="ckrqdrmi6001l24vu61uvhyd6" data-title="Paragraph writing:the biggest failure I experienced" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/04/06/Paragraph-writing-the-biggest-failure-I-experienced/" data-id="ckrrk6gkn001iisvudo6cayq1" data-title="Paragraph writing:the biggest failure I experienced" class="article-share-link">Share</a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/paragraph-writing/" rel="tag">paragraph writing</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-C11-project-Brand-Feiyue" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/03/22/C11-project-Brand-Feiyue/" class="article-date">
-  <time class="dt-published" datetime="2020-03-22T14:43:55.000Z" itemprop="datePublished">2020-03-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Business-study/">Business study</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/03/22/C11-project-Brand-Feiyue/">C11-project-Brand-Feiyue</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>In such a market which full of competition, traditional retail model gradually shows its drawbacks, inflexible, low efficiency and the mismatch between online and offline. The era of 100% online marketing is over. The new retail model, which the focus of work gradually shift from online to offline, booms up.</p>
-<h1 id="Target-brand"><a href="#Target-brand" class="headerlink" title="Target brand"></a>Target brand</h1><ul>
-<li>Feiyue </li>
-</ul>
-<h2 id="Brand-introduction"><a href="#Brand-introduction" class="headerlink" title="Brand introduction"></a>Brand introduction</h2><h3 id="History"><a href="#History" class="headerlink" title="History"></a>History</h3><p>- set up in 1958, produced liberation shoes</p>
-<p>- in 1963, began to produce track shoes</p>
-<p>- in 1997, brand Feiyue was registered</p>
-<p>- in 2005, a French <strong>Patrice</strong> <strong>BAstian</strong> promote the brand Feiyue abroad,the shoes were loved by foreigners.</p>
-<p>- after 2005, Feiyue began to promote in China again, considered as national fashion</p>
-<h3 id="Tag-for-this-brand"><a href="#Tag-for-this-brand" class="headerlink" title="Tag for this brand"></a>Tag for this brand</h3><p>- canvas shoes</p>
-<p>- retro white shoes</p>
-<p>- Chinese brand </p>
-<p>- for Kungfu</p>
-<p>- necessary of young people</p>
-<p>- memories of the 1960s &amp; 1970s</p>
-<h3 id="Price-level"><a href="#Price-level" class="headerlink" title="Price level"></a>Price level</h3><p>49~299</p>
-<p><strong>Cheap</strong></p>
-<p><img src="https://s1.ax1x.com/2020/03/22/8opxHg.png" alt="8opxHg.png"></p>
-<h3 id="Product-selling-point"><a href="#Product-selling-point" class="headerlink" title="Product selling point"></a>Product selling point</h3><p>- creating new hight</p>
-<p>- national fashion returns</p>
-<p> <img src="https://s1.ax1x.com/2020/03/22/8ophnO.png" alt="8ophnO.png"></p>
-<h2 id="The-sales-channels"><a href="#The-sales-channels" class="headerlink" title="The sales channels"></a>The sales channels</h2><h3 id="Online"><a href="#Online" class="headerlink" title="Online"></a>Online</h3><p><strong>E-commerce sales</strong></p>
-<p>- 2 flagship store on TianMao</p>
-<p>- problems: the insufficient of SKU</p>
-<p><img src="https://s1.ax1x.com/2020/03/22/8o9HZF.png" alt="8o9HZF.png"></p>
-<h3 id="offline"><a href="#offline" class="headerlink" title="offline"></a>offline</h3><p><strong>Indirect sales(agent sales)</strong></p>
-<p>- In the form of regional agent. Beijing, Tianjin and Hebei are one region, Guangzhou and Shenzhen are one region, Jiangsu, Zhejiang and Shanghai are one region. In total, there are more than 20 agents of Feiyue shoes in China.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/03/22/C11-project-Brand-Feiyue/" data-id="ckrqdrmhy000t24vugz4xa65n" data-title="C11-project-Brand-Feiyue" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C11-project/" rel="tag">C11 project</a></li></ul>
 
     </footer>
   </div>
@@ -698,7 +695,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI-Competition/">AI Competition</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Business-study/">Business study</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-learning/">Computer learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reading-Seminar/">Reading Seminar</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Testing/">Testing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/paragraph-writing/">paragraph writing</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI-Competition/">AI Competition</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Business-study/">Business study</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-learning/">Computer learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Economics-and-Statistics/">Economics and Statistics</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reading-Seminar/">Reading Seminar</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Testing/">Testing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/paragraph-writing/">paragraph writing</a></li></ul>
     </div>
   </div>
 
@@ -708,7 +705,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Competition/" rel="tag">AI Competition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Business-study/" rel="tag">Business study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Business-theory-and-case-study/" rel="tag">Business theory and case study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C11-project/" rel="tag">C11 project</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Analysis/" rel="tag">Data Analysis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fair-development/" rel="tag">Fair development</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Internship-harvest/" rel="tag">Internship harvest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Notes/" rel="tag">Python Notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading-Seminar/" rel="tag">Reading Seminar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test-File/" rel="tag">Test File</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paragraph-writing/" rel="tag">paragraph writing</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Competition/" rel="tag">AI Competition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Business-study/" rel="tag">Business study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Business-theory-and-case-study/" rel="tag">Business theory and case study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C11-project/" rel="tag">C11 project</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Analysis/" rel="tag">Data Analysis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Internship-harvest/" rel="tag">Internship harvest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Notes/" rel="tag">Python Notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading-Seminar/" rel="tag">Reading Seminar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Study-on-the-Sustainable-Factors-of-Fair-activities/" rel="tag">Study on the Sustainable Factors of Fair activities</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test-File/" rel="tag">Test File</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paragraph-writing/" rel="tag">paragraph writing</a></li></ul>
     </div>
   </div>
 
@@ -718,7 +715,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AI-Competition/" style="font-size: 13.33px;">AI Competition</a> <a href="/tags/ARDUINO/" style="font-size: 15px;">ARDUINO</a> <a href="/tags/Business-study/" style="font-size: 10px;">Business study</a> <a href="/tags/Business-theory-and-case-study/" style="font-size: 10px;">Business theory and case study</a> <a href="/tags/C11-project/" style="font-size: 13.33px;">C11 project</a> <a href="/tags/Data-Analysis/" style="font-size: 13.33px;">Data Analysis</a> <a href="/tags/Fair-development/" style="font-size: 16.67px;">Fair development</a> <a href="/tags/Internship-harvest/" style="font-size: 11.67px;">Internship harvest</a> <a href="/tags/Python-Lesson/" style="font-size: 18.33px;">Python Lesson</a> <a href="/tags/Python-Notes/" style="font-size: 20px;">Python Notes</a> <a href="/tags/Reading-Seminar/" style="font-size: 10px;">Reading Seminar</a> <a href="/tags/Test-File/" style="font-size: 11.67px;">Test File</a> <a href="/tags/paragraph-writing/" style="font-size: 15px;">paragraph writing</a>
+      <a href="/tags/AI-Competition/" style="font-size: 14px;">AI Competition</a> <a href="/tags/ARDUINO/" style="font-size: 16px;">ARDUINO</a> <a href="/tags/Business-study/" style="font-size: 10px;">Business study</a> <a href="/tags/Business-theory-and-case-study/" style="font-size: 10px;">Business theory and case study</a> <a href="/tags/C11-project/" style="font-size: 14px;">C11 project</a> <a href="/tags/Data-Analysis/" style="font-size: 14px;">Data Analysis</a> <a href="/tags/Internship-harvest/" style="font-size: 12px;">Internship harvest</a> <a href="/tags/Python-Lesson/" style="font-size: 18px;">Python Lesson</a> <a href="/tags/Python-Notes/" style="font-size: 20px;">Python Notes</a> <a href="/tags/Reading-Seminar/" style="font-size: 10px;">Reading Seminar</a> <a href="/tags/Study-on-the-Sustainable-Factors-of-Fair-activities/" style="font-size: 18px;">Study on the Sustainable Factors of Fair activities</a> <a href="/tags/Test-File/" style="font-size: 12px;">Test File</a> <a href="/tags/paragraph-writing/" style="font-size: 16px;">paragraph writing</a>
     </div>
   </div>
 
@@ -740,6 +737,10 @@
       <ul>
         
           <li>
+            <a href="/2021/07/31/Study-on-the-Sustainable-Factors-of-Fair-activities/">Study on the Sustainable Factors of Fair activities</a>
+          </li>
+        
+          <li>
             <a href="/2021/07/30/Internship-harvest2/">Internship harvest2</a>
           </li>
         
@@ -753,10 +754,6 @@
         
           <li>
             <a href="/2021/06/14/Professional-experience-of-Agriculture-Bank-of-China/">Professional experience of Agriculture Bank of China</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/02/Survey-on-the-sustainability-factors-of-the-fair-development-6/">Survey on the sustainability factors of the fair development(6)</a>
           </li>
         
       </ul>
