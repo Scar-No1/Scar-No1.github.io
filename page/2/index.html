@@ -1,23 +1,987 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Han&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Han&#39;s blog">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Han&#39;s blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Han">
+<meta property="article:tag" content="Academic Rcording">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Han's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
-{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Han&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Daily Rcording</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Survey-on-the-sustainability-factors-of-the-fair-development-5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/19/Survey-on-the-sustainability-factors-of-the-fair-development-5/" class="article-date">
+  <time class="dt-published" datetime="2021-02-19T04:39:24.000Z" itemprop="datePublished">2021-02-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Economics-and-Statistics/">Economics and Statistics</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/02/19/Survey-on-the-sustainability-factors-of-the-fair-development-5/">Survey on the sustainability factors of the fair development(5)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Because we changed the data base last time, deleting some useless questionnaires, the total number of questionnaires becomes 383. Hence, I needed to recalculate the descriptive statistics.</p>
+<p>However, it is impossible to count the number and do the calculation by human, so I decided to use Python to do this job. Since I haven’t install the Python package to open and process Excel format documents, I can only paste the data to the notebook and process it in the txt format.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yffBTI"><img src="https://s3.ax1x.com/2021/02/19/yffBTI.png" alt="yffBTI.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yffyff"><img src="https://s3.ax1x.com/2021/02/19/yffyff.png" alt="yffyff.png"></a></p>
+<p>Then, I used Python to read the data and write the code which allow me to process different kinds of data sets. </p>
+<h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data = <span class="built_in">open</span>(<span class="string">&#x27;C:\\Users\\PC\\市集数据-最可能购买.txt&#x27;</span>)</span><br><span class="line">content=data.read()</span><br><span class="line">content</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;1\n0\n1\n1\n0\n0\n0\n1\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n0\n1\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n1\n0\n1\n0\n1\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n1\n0\n0\n0\n0\n1\n0\n0\n1\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n1\n1\n0\n0\n0\n0\n0\n0\n0\n1\n1\n0\n0\n0\n0\n0\n0\n0\n1\n0\n1\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n1\n1\n1\n0\n0\n0\n0\n0\n0\n0\n1\n1\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n1\n1\n0\n0\n1\n0\n1\n0\n1\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n1\n0\n0\n0\n1\n0\n1\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n1\n0\n0\n1\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n\n\n&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>First, read the txt document.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">0</span></span><br><span class="line">b=<span class="number">0</span></span><br><span class="line">c=<span class="number">0</span></span><br><span class="line">d=<span class="number">0</span></span><br><span class="line">e=<span class="number">0</span></span><br><span class="line">f=<span class="number">0</span></span><br><span class="line">g=<span class="number">0</span></span><br><span class="line">h=<span class="number">0</span></span><br><span class="line">j=<span class="number">0</span></span><br><span class="line">k=<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> job:</span><br><span class="line">    <span class="keyword">if</span> i==<span class="string">&#x27;1&#x27;</span>:</span><br><span class="line">        a=a+<span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> i==<span class="string">&#x27;2&#x27;</span>:</span><br><span class="line">        b=b+<span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> i==<span class="string">&#x27;3&#x27;</span>:</span><br><span class="line">        c=c+<span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> i==<span class="string">&#x27;4&#x27;</span>:</span><br><span class="line">        d=d+<span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> i==<span class="string">&#x27;5&#x27;</span>:</span><br><span class="line">        e=e+<span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> i==<span class="string">&#x27;6&#x27;</span>:</span><br><span class="line">        f=f+<span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> i==<span class="string">&#x27;7&#x27;</span>:</span><br><span class="line">        g=g+<span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> i==<span class="string">&#x27;8&#x27;</span>:</span><br><span class="line">        h=h+<span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> i==<span class="string">&#x27;9&#x27;</span>:</span><br><span class="line">        j=j+<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>Next, count the number of times each different number appears in the dataset.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(a/<span class="number">383</span>*<span class="number">100</span>)</span><br><span class="line"><span class="built_in">print</span>(b/<span class="number">383</span>*<span class="number">100</span>)</span><br><span class="line"><span class="built_in">print</span>(c/<span class="number">383</span>*<span class="number">100</span>)</span><br><span class="line"><span class="built_in">print</span>(d/<span class="number">383</span>*<span class="number">100</span>)</span><br><span class="line"><span class="built_in">print</span>(e/<span class="number">383</span>*<span class="number">100</span>)</span><br><span class="line"><span class="built_in">print</span>(f/<span class="number">383</span>*<span class="number">100</span>)</span><br><span class="line"><span class="built_in">print</span>(g/<span class="number">383</span>*<span class="number">100</span>)</span><br><span class="line"><span class="built_in">print</span>(h/<span class="number">383</span>*<span class="number">100</span>)</span><br><span class="line"><span class="built_in">print</span>(j/<span class="number">383</span>*<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">50.13054830287206</span><br><span class="line">12.532637075718014</span><br><span class="line">37.33681462140992</span><br><span class="line">0.0</span><br><span class="line">0.0</span><br><span class="line">0.0</span><br><span class="line">0.0</span><br><span class="line">0.0</span><br><span class="line">0.0</span><br></pre></td></tr></table></figure>
+
+<p>Then, calculate the percentage number.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a/<span class="number">383</span>*<span class="number">100</span>)+(b/<span class="number">383</span>*<span class="number">100</span>)+(c/<span class="number">383</span>*<span class="number">100</span>)+(d/<span class="number">383</span>*<span class="number">100</span>)+(e/<span class="number">383</span>*<span class="number">100</span>)+(f/<span class="number">383</span>*<span class="number">100</span>)+(g/<span class="number">383</span>*<span class="number">100</span>)+(h/<span class="number">383</span>*<span class="number">100</span>)+(j/<span class="number">383</span>*<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">100.0</span><br></pre></td></tr></table></figure>
+
+<p>Checking calculation.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"><span class="built_in">print</span>(c)</span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line"><span class="built_in">print</span>(e)</span><br><span class="line"><span class="built_in">print</span>(f)</span><br><span class="line"><span class="built_in">print</span>(g)</span><br><span class="line"><span class="built_in">print</span>(h)</span><br><span class="line"><span class="built_in">print</span>(j)</span><br><span class="line"><span class="built_in">print</span>(k)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">192</span><br><span class="line">48</span><br><span class="line">143</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+
+<p>Print the number frequency.</p>
+<p>Finally, I got this data collection and I then put the data into the essay form.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yfhwgU"><img src="https://s3.ax1x.com/2021/02/19/yfhwgU.png" alt="yfhwgU.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yfhfgO"><img src="https://s3.ax1x.com/2021/02/19/yfhfgO.png" alt="yfhfgO.png"></a></p>
+<h4 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h4><p>Though this is a very simple code, it still makes me harvest a lot. It is very lucky for me to catch the change to use Python to process and analysis the data, which give me valuable experiences. And I also wish that I can continue to practise this skills in the future as this skills is vital in the accounting and finance subject.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/19/Survey-on-the-sustainability-factors-of-the-fair-development-5/" data-id="ckushoz0q003iy8vu74lle9eb" data-title="Survey on the sustainability factors of the fair development(5)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Study-on-the-Sustainable-Factors-of-Fair-activities/" rel="tag">Study on the Sustainable Factors of Fair activities</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Survey-on-the-sustainability-factors-of-the-fair-development-4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/07/Survey-on-the-sustainability-factors-of-the-fair-development-4/" class="article-date">
+  <time class="dt-published" datetime="2021-02-07T13:58:30.000Z" itemprop="datePublished">2021-02-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Economics-and-Statistics/">Economics and Statistics</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/02/07/Survey-on-the-sustainability-factors-of-the-fair-development-4/"> Survey on the sustainability factors of the fair development(4)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Now we start  learning how to do the reliability and validity analysis.</p>
+<p>信度分析：</p>
+<ol>
+<li>SPSS</li>
+<li>Amos</li>
+</ol>
+<p>信度分析：信度指测验结果的一致性，稳定行和可靠性</p>
+<p>采取同样的方法进行重复测量，其所得结果相一致的程度</p>
+<p>Cronbach’s a系数法： &lt; 0.6 信度不足 0到1 越大越好</p>
+<p>效度分析： 检测测量工具能够准确测出需测事物的程度</p>
+<p>（Amos分析）</p>
+<p>如差异小于阈值，则认为假设模型与实际数据你和程度良好</p>
+<p>（验证因子分析）</p>
+<p>结构方程建模  结构效度（绝对拟合度 增值拟合度 综合拟合度） 收敛效度（CR组合信度 AVE平均方差提取量) &gt;0.7好</p>
+<p>区分效度（变量之间相关性）</p>
+<p>Reliability analysis </p>
+<p> reliability analysis: reliability refers to the consistency of test results, stable line and reliability. The same method is used for repeated measurement, and the results are consistent<br>Cronbach’s  α  coefficient method: &lt; 0.6, the greater the reliability is, the better</p>
+<p>Validity analysis: the measurement tools can accurately measure the degree of things to be tested (Amos analysis)<br>If the difference is less than the threshold, it is considered that the hypothetical model is in good agreement with the actual data (confirmatory factor analysis)</p>
+<p>Structural validity of structural equation modelling (absolute fit, incremental fit, comprehensive fit) convergence validity (CR combination reliability, AVE mean variance extraction) &gt; 0.7 good </p>
+<p>discriminant validity (correlation between variables)</p>
+<h4 id="The-Tool-Used"><a href="#The-Tool-Used" class="headerlink" title="The Tool Used"></a>The Tool Used</h4><ol>
+<li> SPSS Statistic</li>
+<li>Amos</li>
+</ol>
+<h4 id="Data-set"><a href="#Data-set" class="headerlink" title="Data set"></a>Data set</h4><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yaCcY8"><img src="https://s3.ax1x.com/2021/02/08/yaCcY8.png" alt="yaCcY8.png"></a></p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="Reliability-analysis"><a href="#Reliability-analysis" class="headerlink" title="Reliability analysis"></a>Reliability analysis</h4><p>Using the tool SPSS, we calculate the Cronbach’s  α  coefficient. For this test index, if the result is not less than 0.9 , then it means the data collected has great internal consistency, reliability and stability.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yaiKbR"><img src="https://s3.ax1x.com/2021/02/08/yaiKbR.png" alt="yaiKbR.png"></a></p>
+<p>The result is more than 0.9, which means the data is reliable.</p>
+<h4 id="Validity-analysis"><a href="#Validity-analysis" class="headerlink" title="Validity analysis"></a>Validity analysis</h4><p>We use Amos to build the model and calculate several index, namely  χ2 /df , IFI, TLI, CFI, RSEMA.</p>
+<p>Also, the model can calculate the composite reliability(CR), the average variance extracted(AVE) and the discriminant validity.</p>
+<p>However, the result of the first analysis is not so good. Several index and the discriminant validity fail to meet good requirements. Hence, we rescreened the data and delete some uneffective data. We now have 383 valid questionnaires.</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yaesTH"><img src="https://s3.ax1x.com/2021/02/08/yaesTH.png"></a></p>
+<p> Here is the initial model. We have 38 factors in total, with 6 factors are the first level index. However,  accourding to the criterion of discriminant validity,  the second index of correlation coeficient are not up to standard. So we started to delete and combine some of the factors.</p>
+<hr>
+<p>As we change the factors, we also change the model.</p>
+<p>The second test is quite success,all of the index has reached the targets.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yaZsGq"><img src="https://s3.ax1x.com/2021/02/08/yaZsGq.png" alt="yaZsGq.png"></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/07/Survey-on-the-sustainability-factors-of-the-fair-development-4/" data-id="ckushoz0p003fy8vu8y6q7f22" data-title=" Survey on the sustainability factors of the fair development(4)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Study-on-the-Sustainable-Factors-of-Fair-activities/" rel="tag">Study on the Sustainable Factors of Fair activities</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Paragraph-writing" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/07/Paragraph-writing/" class="article-date">
+  <time class="dt-published" datetime="2021-02-07T13:27:50.000Z" itemprop="datePublished">2021-02-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/paragraph-writing/">paragraph writing</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/02/07/Paragraph-writing/">Paragraph writing Who I am</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Writing this paragraph can help me correctly understand myself and prepare for the future professional choice.</p>
+<h4 id="Topic"><a href="#Topic" class="headerlink" title="Topic"></a>Topic</h4><p>Tell us about who you are. How would your family, friends, and/or members of your community describe you? If possible, please include something about yourself that you are most proud of and why. (maximum 350 words)</p>
+<h4 id="My-paragraph"><a href="#My-paragraph" class="headerlink" title="My paragraph"></a>My paragraph</h4><p>I[<a href="#_msocom_1">YL1]</a> am Han, a 16 years old international school student. </p>
+<p>My parents describe me as a boy who has recently grown up, both physically and psychologically. I am now much taller[<a href="#_msocom_2">YL2]</a> and stronger, more independent and mature[<a href="#_msocom_3">YL3]</a> , more hardworking and organized than I was previously. </p>
+<p>In my friends’ eyes[<a href="#_msocom_4">YL4]</a> , I am a humorous and helpful person who likes[<a href="#_msocom_5">YL5]</a> laughing a lot. Moreover, they think[<a href="#_msocom_6">YL6]</a> I have a strong sense of teamwork[<a href="#_msocom_7">YL7]</a> , which is the quality that I feel most proud of[<a href="#_msocom_8">YL8]</a> . This is a very valuable quality since people have to work in teams throughout[<a href="#_msocom_9">YL9]</a>  their lives. Strong teamwork can help a group work efficiently though I may sometimes need to make some sacrifices[<a href="#_msocom_10">YL10]</a> . For example, I often have[<a href="#_msocom_11">YL11]</a> to do more work than any other teammate. Though it seems unfair, I am still[<a href="#_msocom_12">YL12]</a> willing to take on[<a href="#_msocom_13">YL13]</a> this task  for the sake of[<a href="#_msocom_14">YL14]</a> achieving the[<a href="#_msocom_15">YL15]</a> team’s goal. Also, I get a sense of personal satisfaction from working well as part of a team[<a href="#_msocom_16">YL16]</a> [<a href="#_msocom_17">YL17]</a> [<a href="#_msocom_18">YL18]</a> .</p>
+<hr>
+<p> [<a href="#_msoanchor_1">YL1]</a>Use paragraph indents and line spacing to make your writing easier to read</p>
+<p> [<a href="#_msoanchor_2">YL2]</a>If you use the comparative – “er” or” more than” you have to compare the adjectives to something else. For example, “She is smarter than her sister.” Or you just say “She is smart”. So here you need to compare yourself to how you were before.</p>
+<p> [<a href="#_msoanchor_3">YL3]</a>We use the adjective “mature” to describe a person.</p>
+<p> [<a href="#_msoanchor_4">YL4]</a>😊 “In my friends’ eyes” is a great idiom to use.</p>
+<p> [<a href="#_msoanchor_5">YL5]</a>Who is third person which takes an “s”</p>
+<p> [<a href="#_msoanchor_6">YL6]</a>It is interesting to reflect. Do you think that because your friends perceive you humorous, helpful and a teamworker, this encourages you to display those characteristics? According to sociologist Charles Horton Cooley a person’s behaviour and self-esteem are dictated by how they are seen by others. In this way, perception is reality. An interesting concept when you consider who you are.</p>
+<p> [<a href="#_msoanchor_7">YL7]</a>The word we use is “teamwork”</p>
+<p> [<a href="#_msoanchor_8">YL8]</a>The phrase is to be most proud of</p>
+<p> [<a href="#_msoanchor_9">YL9]</a>The appropriate word here is “throughout” which means for the duration of </p>
+<p> [<a href="#_msoanchor_10">YL10]</a>What sacrifices do you have to make? It would be good to develop this point. Your essay is rather short, so it would be interesting to expand.</p>
+<p> [<a href="#_msoanchor_11">YL11]</a>You need to add “often” to clarify what you are saying </p>
+<p> [<a href="#_msoanchor_12">YL12]</a>“still” not “stills”</p>
+<p> [<a href="#_msoanchor_13">YL13]</a>The phrasal verb to “take on” is good here, It means to undertake a task or responsibility, especially a difficult one. For example: I don’t feel ready to take on new responsibilities.</p>
+<p> [<a href="#_msoanchor_14">YL14]</a>“for the sake of” is a good expression to use here. It means for the purpose or motive of </p>
+<p> [<a href="#_msoanchor_15">YL15]</a>Singular countable nouns always have an article – a/an or the (or another determiner – my, your , this, that etc. </p>
+<p> [<a href="#_msoanchor_16">YL16]</a>This is rather unclear. I think you need to say: I get a sense of personal satisfaction from working well as part of a team [<a href="#_msoanchor_16">YL16]</a>.</p>
+<p> [<a href="#_msoanchor_17">YL17]</a>I enjoyed reading your essay. It is rather short, perhaps you could have expanded it but writing about how members of your community see you as well?</p>
+<p> [<a href="#_msoanchor_18">YL18]</a>I still feel that your essay is rather short (as I indicated last month) and that you could expand and therefore develop your English further. </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/07/Paragraph-writing/" data-id="ckushoz00001oy8vu6hwqgrwo" data-title="Paragraph writing Who I am" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/paragraph-writing/" rel="tag">paragraph writing</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Python-data-visualization-app-using-time" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/29/Python-data-visualization-app-using-time/" class="article-date">
+  <time class="dt-published" datetime="2021-01-29T12:31:01.000Z" itemprop="datePublished">2021-01-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Computer-learning/">Computer learning</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/29/Python-data-visualization-app-using-time/">Python:data visualization app using time</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>The topic today is focusing on the data visualization of our app time using. The data is from a news in 2018.</p>
+<p><a target="_blank" rel="noopener" href="https://verimake.com/topics/96">Website</a></p>
+<h3 id="My-code"><a href="#My-code" class="headerlink" title="My code"></a>My code</h3><h4 id="Import-package-to-use"><a href="#Import-package-to-use" class="headerlink" title="Import package to use"></a>Import package to use</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]  <span class="comment"># 设置 matplotlib 字体为黑体，因为默认字体无法显示中文</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span>   <span class="comment"># 让 matplotlib 能够正常显示负号</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">giants = [<span class="string">&#x27;腾讯系&#x27;</span>, <span class="string">&#x27;头条系&#x27;</span>, <span class="string">&#x27;百度系&#x27;</span>, <span class="string">&#x27;阿里系&#x27;</span>, <span class="string">&#x27;新浪系&#x27;</span>, <span class="string">&#x27;其它&#x27;</span>]</span><br><span class="line">ratios = &#123;<span class="string">&#x27;2017年6月&#x27;</span> : [<span class="number">54.3</span>, <span class="number">3.9</span>, <span class="number">7.9</span>, <span class="number">6.7</span>, <span class="number">2.9</span>, <span class="number">24.3</span>],</span><br><span class="line">          <span class="string">&#x27;2018年6月&#x27;</span> : [<span class="number">47.7</span>, <span class="number">10.1</span>, <span class="number">7.4</span>, <span class="number">6.4</span>, <span class="number">3.6</span>, <span class="number">24.8</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Drawing-diagram"><a href="#Drawing-diagram" class="headerlink" title="Drawing diagram"></a>Drawing diagram</h4><p>From the matplotlib, I found a way to draw this into a bar chart. <a target="_blank" rel="noopener" href="https://matplotlib.org/gallery/lines_bars_and_markers/horizontal_barchart_distribution.html#sphx-glr-gallery-lines-bars-and-markers-horizontal-barchart-distribution-py">website</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">xaxis=[]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">survey</span>(<span class="params">results, category_names</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Parameters</span></span><br><span class="line"><span class="string">    ----------</span></span><br><span class="line"><span class="string">    results : dict</span></span><br><span class="line"><span class="string">        A mapping from question labels to a list of answers per category.</span></span><br><span class="line"><span class="string">        It is assumed all lists contain the same number of entries and that</span></span><br><span class="line"><span class="string">        it matches the length of *category_names*.</span></span><br><span class="line"><span class="string">    category_names : list of str</span></span><br><span class="line"><span class="string">        The category labels.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    labels = <span class="built_in">list</span>(results.keys())</span><br><span class="line">    data = np.array(<span class="built_in">list</span>(results.values()))</span><br><span class="line">    data_cum = data.cumsum(axis=<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(data_cum)</span><br><span class="line">    <span class="keyword">for</span> p <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">6</span>):</span><br><span class="line">        xaxis.append((data_cum[<span class="number">0</span>][p]+data_cum[<span class="number">1</span>][p])/<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(xaxis)</span><br><span class="line">    category_colors = plt.get_cmap(<span class="string">&#x27;RdYlGn&#x27;</span>)(</span><br><span class="line">        np.linspace(<span class="number">0.15</span>, <span class="number">0.85</span>, data.shape[<span class="number">1</span>]))</span><br><span class="line"></span><br><span class="line">    fig, ax = plt.subplots(figsize=(<span class="number">9.2</span>, <span class="number">5</span>))</span><br><span class="line">    ax.invert_yaxis()</span><br><span class="line">    ax.xaxis.set_visible(<span class="literal">False</span>)</span><br><span class="line">    ax.set_xlim(<span class="number">0</span>, np.<span class="built_in">sum</span>(data, axis=<span class="number">1</span>).<span class="built_in">max</span>())</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i, (colname, color) <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">zip</span>(category_names, category_colors)):</span><br><span class="line">        widths = data[:, i]</span><br><span class="line">        starts = data_cum[:, i] - widths</span><br><span class="line">        ax.barh(labels, widths, left=starts, height=<span class="number">0.5</span>,</span><br><span class="line">                label=colname, color=color)</span><br><span class="line">        xcenters = starts + widths / <span class="number">2</span></span><br><span class="line"></span><br><span class="line">        r, g, b, _ = color</span><br><span class="line">        text_color = <span class="string">&#x27;white&#x27;</span> <span class="keyword">if</span> r * g * b &lt; <span class="number">0.5</span> <span class="keyword">else</span> <span class="string">&#x27;darkgrey&#x27;</span></span><br><span class="line">        <span class="keyword">for</span> y, (x, c) <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">zip</span>(xcenters, widths)):</span><br><span class="line">            ax.text(x, y, <span class="built_in">str</span>(c)+<span class="string">&#x27;%&#x27;</span>, ha=<span class="string">&#x27;center&#x27;</span>, va=<span class="string">&#x27;center&#x27;</span>,</span><br><span class="line">                    color=text_color)</span><br><span class="line">    ax.legend(ncol=<span class="built_in">len</span>(category_names), bbox_to_anchor=(<span class="number">0</span>, <span class="number">1</span>),</span><br><span class="line">              loc=<span class="string">&#x27;lower left&#x27;</span>, fontsize=<span class="string">&#x27;small&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> fig, ax</span><br><span class="line">fig, ax= survey(ratios, giants)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yi7yYd"><img src="https://s3.ax1x.com/2021/01/29/yi7yYd.png" alt="yi7yYd.png"></a></p>
+<h4 id="Draw-lines-between-two-group-of-data"><a href="#Draw-lines-between-two-group-of-data" class="headerlink" title="Draw lines between two group of data"></a>Draw lines between two group of data</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data = np.array(<span class="built_in">list</span>(ratios.values()))</span><br><span class="line">data_cum = data.cumsum(axis=<span class="number">1</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    ax.plot([data_cum[<span class="number">0</span>, i], data_cum[<span class="number">1</span>, i]], [<span class="number">0.25</span>, <span class="number">0.75</span>])</span><br><span class="line">    </span><br><span class="line">fig</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yi7ay6"><img src="https://s3.ax1x.com/2021/01/29/yi7ay6.png" alt="yi7ay6.png"></a></p>
+<h4 id="Add-change-rate"><a href="#Add-change-rate" class="headerlink" title="Add change rate"></a>Add change rate</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">loc = np.c_[np.zeros((<span class="number">2</span>,<span class="number">1</span>)), data_cum]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">6</span>):</span><br><span class="line">    x = (loc[<span class="number">0</span>, i] + loc[<span class="number">1</span>, i] + loc[<span class="number">0</span>, i+<span class="number">1</span>] + loc[<span class="number">0</span>, i+<span class="number">1</span>]) / <span class="number">4</span></span><br><span class="line">    ax.text(x, <span class="number">0.5</span>, <span class="string">&#x27;%+.1f%%&#x27;</span>%(data[<span class="number">1</span>, i] - data[<span class="number">0</span>, i]), ha=<span class="string">&#x27;center&#x27;</span>, va=<span class="string">&#x27;center&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">fig</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Final-chart"><a href="#Final-chart" class="headerlink" title="Final chart"></a>Final chart</h4><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/yiHptJ"><img src="https://s3.ax1x.com/2021/01/29/yiHptJ.png" alt="yiHptJ.png"></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/29/Python-data-visualization-app-using-time/" data-id="ckushoz040021y8vu8x6770ou" data-title="Python:data visualization app using time" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Survey-on-the-sustainability-factors-of-the-fair-development-3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/25/Survey-on-the-sustainability-factors-of-the-fair-development-3/" class="article-date">
+  <time class="dt-published" datetime="2021-01-25T08:21:30.000Z" itemprop="datePublished">2021-01-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Economics-and-Statistics/">Economics and Statistics</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/25/Survey-on-the-sustainability-factors-of-the-fair-development-3/">Survey on the sustainability factors of the fair development(3)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Because of the time reason, we didn’t do the questionnaire investigation to decide the first level indexes and the secondary indexes. Hence, we decide the first level indexes ourselves after listen to the tutor’s advice. </p>
+<h4 id="First-level-index"><a href="#First-level-index" class="headerlink" title="First level index"></a>First level index</h4><ol>
+<li>Internal factors</li>
+<li>External factors</li>
+</ol>
+<h4 id="Secondary-index"><a href="#Secondary-index" class="headerlink" title="Secondary index"></a>Secondary index</h4><p>We categorised these index by using the company life cycle theory, namely forming period, growing period, mature period and declining period.</p>
+<h4 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h4><p>What’s more, for further research, we built up our research model. </p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sLI4IJ"><img src="https://s3.ax1x.com/2021/01/25/sLI4IJ.jpg" alt="sLI4IJ.jpg"></a></p>
+<h4 id="Questionnaire-investigation"><a href="#Questionnaire-investigation" class="headerlink" title="Questionnaire investigation"></a>Questionnaire investigation</h4><p>On 2020 Dec 24, a small fair was held in a shopping mall. My teammate and I went their to send out the questionnaire. This time, we decided to use electronic questionnaire. People can scan the code and answering the question by doing simple clicking.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/25/Survey-on-the-sustainability-factors-of-the-fair-development-3/" data-id="ckushoz0n003by8vufd07ckqg" data-title="Survey on the sustainability factors of the fair development(3)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Study-on-the-Sustainable-Factors-of-Fair-activities/" rel="tag">Study on the Sustainable Factors of Fair activities</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Survey-on-the-sustainability-factors-of-the-fair-development-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/24/Survey-on-the-sustainability-factors-of-the-fair-development-2/" class="article-date">
+  <time class="dt-published" datetime="2021-01-24T12:24:01.000Z" itemprop="datePublished">2021-01-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Economics-and-Statistics/">Economics and Statistics</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/24/Survey-on-the-sustainability-factors-of-the-fair-development-2/">Survey on the sustainability factors of the fair development(2)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>After doing the fundamental market research, we immediately began the next step. On the second stage,  we prepare to set up an index system.</p>
+<h4 id="Reading-other-master’s-theses"><a href="#Reading-other-master’s-theses" class="headerlink" title="Reading other master’s theses"></a>Reading other master’s theses</h4><p>Since this is the first time for me to using such formal method to analysis factor, I lacked experiences. Hence, the tutor provided us with a master’s essay about the sustainability factors of unmanneded economy business model as an example. By studying this essay, I learned not only the method of system building but also some other detailed factors about sustainability of a business model.</p>
+<ul>
+<li> Four characteristics of business model:</li>
+</ul>
+<p>​        - Effectiveness</p>
+<p>​        - Endogeneity</p>
+<p>​        - Creativity</p>
+<p>​        - Sustainability</p>
+<ul>
+<li><p>Emphasize the importance of building the internal core competitiveness and continuously gaining profits</p>
+</li>
+<li><p>The business model is not static<br>Corporate social responsibility + triple bottom line — corporate value proposition </p>
+</li>
+<li><p>determines sustainability — economic proposition, social proposition and ecological proposition</p>
+</li>
+<li><p>The essence of sustainable business model: enterprises pursue economic sustainability (basic), social sustainability and environmental sustainability through a series of business activities</p>
+</li>
+<li><p>Business model sustainability is realized under the joint action of external environment and internal factors</p>
+</li>
+<li><p>Business sustainable development: its elements form a harmonious relationship (internal consistency, external rationality)</p>
+</li>
+<li><p>Coordination relationship breaking — innovation activities — technology, organizational structure (Management), social and Ecological Innovation</p>
+</li>
+<li><p>Achieving economic goals is the premise! (profit) – &gt; create excellent financial management system</p>
+</li>
+<li><p>A complete ecological environment</p>
+</li>
+<li><p>Policy and government support (e.g. subsidies, related infrastructure) are also guarantees of sustainability</p>
+</li>
+<li><p>Consumers are more willing to choose products and services under the concept of sustainability</p>
+</li>
+<li><p>Sustainable development theory</p>
+<ul>
+<li><p>Theory: not only to meet the development needs of contemporary people, but also to     avoid threatening the development ability of future generations</p>
+</li>
+<li><p>Summarize the theory</p>
+<ul>
+<li>Maintain the vitality of enterprises<br>Meet business objectives<br>Continuous profit growth</li>
+<li>achieve harmonious coexistence with the external environment<br>-At the same time, we need to pay attention to the needs of environment, ecology, society and culture</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Life cycle theory</p>
+<ul>
+<li><p>Connotation:</p>
+<ul>
+<li><p>Consider the research object as an organism</p>
+</li>
+<li><p>The stage of birth, growth, maturity and decline</p>
+</li>
+<li><p>The object of study can be replicated and changed</p>
+</li>
+<li><p>How the research object exchanges with the outside world, and what are the characteristics or commonalities in the process of phase transformation</p>
+</li>
+<li><p>The death of life is not determined by the external environment, but by the internal structure of the organization</p>
+</li>
+</ul>
+</li>
+<li><p>Life cycle model:</p>
+<p> Round, rectangular, spiral, wavy<br> Analyse the cyclical characteristics of market business model and select the corresponding        model</p>
+</li>
+</ul>
+</li>
+<li><p>Enterprise capability theory</p>
+<ul>
+<li><p>Enterprise resource theory</p>
+<ul>
+<li><p>the heterogeneity of enterprise resources leads to the gap of enterprise competitiveness</p>
+</li>
+<li><p>Tangible resources, intangible resources (highest value), human resources (p16)</p>
+</li>
+<li><p>Better resources — better profitability</p>
+</li>
+<li><p>The effectiveness of material resources is based on the use of personnel</p>
+</li>
+</ul>
+</li>
+<li><p>The theory of enterprise core competence</p>
+<ul>
+<li><p>Definition of enterprise core competence: knowledge collection within the enterprise, especially those knowledge that can effectively combine different production technologies and different technologies</p>
+</li>
+<li><p>Features: extensibility, user value, uniqueness</p>
+</li>
+<li><p>Core competence: tap potential market opportunities, meet customer needs, difficult to imitate</p>
+</li>
+</ul>
+</li>
+<li><p>Theory of enterprise dynamic capability</p>
+<ul>
+<li><p>Definition of dynamic capability: in order to achieve rapid adaptation and good survival in the changing external environment, an organization can effectively integrate, reconstruct and mobilize its internal capabilities</p>
+</li>
+<li><p>Improvisation: the ability to meet challenges purposefully</p>
+</li>
+<li><p>Intention, character, clarity</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Theory-application"><a href="#Theory-application" class="headerlink" title="Theory application"></a>Theory application</h4><p> By using these theory, my patterner and I summarized and got several secondary indexes. </p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqih1f"><img src="https://s3.ax1x.com/2021/01/24/sqih1f.png" alt="sqih1f.png"></a></p>
+<hr>
+<p>With the help of teachers, finally we listed such indexes.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqFbrD"><img src="https://s3.ax1x.com/2021/01/24/sqFbrD.png" alt="sqFbrD.png"></a></p>
+<p>Resource capacity of market organizers<br>The operation ability of market organizers<br>Policy environment factors<br>Economic and environmental factors society<br>Meeting environmental factors<br>Technical environment factors</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqkAaj"><img src="https://s3.ax1x.com/2021/01/24/sqkAaj.png" alt="sqkAaj.png"></a></p>
+<p>Stall owner resources<br>Brand resources<br>Channel resources (commodity, customer, capital channels)<br>Site resources<br>Resource utilization capacity<br>Resource innovation capability (new vendors, new products, new brands, new venues)</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqk8o9"><img src="https://s3.ax1x.com/2021/01/24/sqk8o9.png" alt="sqk8o9.png"></a></p>
+<p>Vendors and consumers share common values<br>Organization and promotion ability<br>Market adaptability<br>Profitability<br>Management information level<br>New customer development capability<br>Ability to retain old customers<br>Market brand building capacity<br>Social responsibility and contribution<br>Cost control ability and innovation ability (market mode, technology and Culture)</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqkcWt"><img src="https://s3.ax1x.com/2021/01/24/sqkcWt.png" alt="sqkcWt.png"></a></p>
+<p>Policy support<br>Market activity industry standard<br>Government support</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqAk6K"><img src="https://s3.ax1x.com/2021/01/24/sqAk6K.png" alt="sqAk6K.png"></a></p>
+<p>Local consumption level<br>Local income level<br>Local economic scale<br>Market industry development</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqAeTH"><img src="https://s3.ax1x.com/2021/01/24/sqAeTH.png" alt="sqAeTH.png"></a></p>
+<p>The size of the local population<br>Consumption habits (love to go to the market)<br>Market cultural atmosphere<br>Consumer experience<br>Consumer participation</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqAutA"><img src="https://s3.ax1x.com/2021/01/24/sqAutA.png" alt="sqAutA.png"></a></p>
+<p>Technology level<br>Consumer acceptance of Technology<br>technological innovation</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/24/Survey-on-the-sustainability-factors-of-the-fair-development-2/" data-id="ckushoz0l0038y8vua2hshhd0" data-title="Survey on the sustainability factors of the fair development(2)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Study-on-the-Sustainable-Factors-of-Fair-activities/" rel="tag">Study on the Sustainable Factors of Fair activities</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Survey-on-the-sustainablality-factors-of-the-fair-development" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/12/27/Survey-on-the-sustainablality-factors-of-the-fair-development/" class="article-date">
+  <time class="dt-published" datetime="2020-12-27T10:29:45.000Z" itemprop="datePublished">2020-12-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Economics-and-Statistics/">Economics and Statistics</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/12/27/Survey-on-the-sustainablality-factors-of-the-fair-development/">Survey on the sustainability factors of the fair development</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>This programme began about half a month ago.  I made a team with one of my schoolmate. The main purpose of this programme is to study the sustainability factors of  fair is today’s situation and we need to finish an essay in the end.</p>
+<h4 id="Stage"><a href="#Stage" class="headerlink" title="Stage"></a>Stage</h4><ol>
+<li>Preview</li>
+<li>Market research </li>
+<li>analysis the data</li>
+<li>finish the essay</li>
+</ol>
+<h3 id="Preview"><a href="#Preview" class="headerlink" title="Preview"></a>Preview</h3><p>We spent two weeks on this period. In this stage, we did some research about the examples of  some world famous fair.</p>
+<ul>
+<li>Anpawa market, Bangkok, Thailand<ul>
+<li>short time</li>
+</ul>
+</li>
+<li>Indian moonlight Market (started from 1650)</li>
+<li>Camden market, UK<ul>
+<li>Rock punk style</li>
+</ul>
+</li>
+<li>creative fair<ul>
+<li>Nautilus Market(鹦鹉螺市集)</li>
+<li>“Simple” fair</li>
+<li>Shenyang Lu Xun Academy of Fine Arts—- Star fair</li>
+</ul>
+</li>
+<li>Brick Lane Market<ul>
+<li>It is a London market centered on brick land, located in Tower Hamlets in East London. It’s at the north end of Brick Lane, in the heart of East London’s Bengal community.</li>
+<li>Theme: Art, design, second hand, snack, culture</li>
+</ul>
+</li>
+<li>Portobello market<ul>
+<li>Theme: antique</li>
+</ul>
+</li>
+</ul>
+<p>We mainly analysis these examples from the following aspect:</p>
+<ul>
+<li>Time range</li>
+<li>Theme</li>
+<li>Size</li>
+<li>Organizational form</li>
+<li>Profit</li>
+<li>sustainability factor(questionnaire)</li>
+<li>the influence to the city development </li>
+</ul>
+<p>Here are the several factors that we analysed in the first place:</p>
+<ul>
+<li>profitability</li>
+<li>environment (PEST)</li>
+<li>commodity uniqueness</li>
+<li>reputation of the stall owner or market</li>
+<li>product and market model innovation</li>
+<li>enterprise capacity</li>
+<li>holding time (Festival)</li>
+</ul>
+<p>These are quite general factors, which we can establish index system according to these reasons.</p>
+<hr>
+<p>集市是城市的重要起源之一</p>
+<p>市集更加灵活，特殊主题的集市</p>
+<p>e.g.泰国曼谷安帕瓦市集（短时间）</p>
+<p>印度月光市集，建于1650</p>
+<p>英国卡姆登市集（1974）主题：青年摇滚朋克风格</p>
+<p>创意市集：年轻人喜爱， 使创意作品商品化的试验舞台 </p>
+<p>e.g.鹦鹉螺市集（2013）O2O 非标准化产品 挑选摊主  唯一性 （运营方式？）</p>
+<p>e.g. 台北四四南村的简单市集 2006年12月 李宗盛，张培仁“简单生活节” 口号”做喜欢做的事情，让喜欢的事有价值“  眷村文化  文化—&gt;精神价值  (独特精神文化，主题？) </p>
+<p>e.g. 沈阳鲁迅美术学院 星星市集 一年两场 （全国性）            </p>
+<p>市集的可持续性研究</p>
+<p>市集活动 临时性 无固定组织管理 非盈利性</p>
+<p>目的： 提出市集活动的可持续发展的策略</p>
+<p>研究内容：</p>
+<ol>
+<li><p>背景： 定义； 发展历史； 分类定位（主题）与特点（网上，实地调研）</p>
+</li>
+<li><p>世界各地持续/不持续举办市集活动的案例分析：时间跨度；主题特色；规模（铺位数); 管理组织形式； 盈利模式； 可持续性/不可持续性的原因 （调查问卷）； 市集活动对于城市发展的推动作用</p>
+</li>
+<li><p>市集活动可持续性： 发展因素分析； 指标体系构建； 调查问卷编制</p>
+<p>4.问卷调查，数据收集分析</p>
+<p>5.市集活动的可持续发展策略</p>
+</li>
+</ol>
+<p>案例中市集可持续性的原因（一级指标）：盈利，环境（PEST），商品唯一性，摊主或市集的口碑，产品与市集模式创新，企业能力, 举办时间（节庆）</p>
+<ul>
+<li>PEST: 环境分析方法 P: 政治 E：经济 S：社会 T：技术</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/12/27/Survey-on-the-sustainablality-factors-of-the-fair-development/" data-id="ckushoz0s003ny8vu3wbc9rz6" data-title="Survey on the sustainability factors of the fair development" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Study-on-the-Sustainable-Factors-of-Fair-activities/" rel="tag">Study on the Sustainable Factors of Fair activities</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Bitcoin" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/12/06/Bitcoin/" class="article-date">
+  <time class="dt-published" datetime="2020-12-06T12:54:55.000Z" itemprop="datePublished">2020-12-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/12/06/Bitcoin/">Bitcoin</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>In today’s Reading Senimer, I watched a video about Bitcoin, which I found it very interesting.</p>
+<h3 id="What-is-Bitcoin"><a href="#What-is-Bitcoin" class="headerlink" title="What is Bitcoin?"></a>What is Bitcoin?</h3><p>Bitcoin is a cryptocurrency invented in 2008 by an unknown person called Satoshi Nakamoto and started in 2009 when its implementation was released as open-source software. It is a decentralized digital currency without a central bank or single administrator that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries. Transactions are verified by network nodes through cryptography and recorded in a public distributed ledger called a blockchain. </p>
+<h3 id="How-to-obtain-Bitcoins"><a href="#How-to-obtain-Bitcoins" class="headerlink" title="How to obtain Bitcoins?"></a>How to obtain Bitcoins?</h3><p>There are two main method to obtain Bitcoin.</p>
+<p>First is using common currency to exchange bitcoin. The exchange rate now is 1 bitcoin for 18980.8 US Dollar.</p>
+<p>The second method is mining. Mining is a way which using computer to process a programme, when the result processing out is with in a range, the processer which also called miner can get a reward of bitcoins.</p>
+<h3 id="Mining"><a href="#Mining" class="headerlink" title="Mining"></a>Mining</h3><p>It is a record-keeping service done through the use of computer processing power. Miners keep block chain consistent,  and unalterable by repeatedly grouping newly broadcast transactions into a <em>block</em>, which is then broadcast to the network and verified by recipient nodes. Each block contains a SHA-256 of the previous block, thus linking it to the previous block and giving the blockchain its name.</p>
+<p>Early bitcoin miners used GPUs for mining, as  they were better suited to the proof-of -work algorithm than CPUs. Later amateurs minded bitcoins with specialized FPGA and ASIC chips. Today, high-performance mining hardware is used. </p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DznqoV"><img src="https://s3.ax1x.com/2020/12/07/DznqoV.jpg" alt="DznqoV.jpg"></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/12/06/Bitcoin/" data-id="ckushoyzk000my8vufwy48qsb" data-title="Bitcoin" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Reading-Seminar-Financing" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/11/30/Reading-Seminar-Financing/" class="article-date">
+  <time class="dt-published" datetime="2020-11-30T14:16:23.000Z" itemprop="datePublished">2020-11-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/11/30/Reading-Seminar-Financing/">Reading Seminar Financing</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DWMpm6"><img src="https://s3.ax1x.com/2020/11/30/DWMpm6.jpg" alt="DWMpm6.jpg"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DWKx61"><img src="https://s3.ax1x.com/2020/11/30/DWKx61.jpg" alt="DWKx61.jpg"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DWKvlR"><img src="https://s3.ax1x.com/2020/11/30/DWKvlR.jpg" alt="DWKvlR.jpg"></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/30/Reading-Seminar-Financing/" data-id="ckushoz0d002ny8vuddr0czse" data-title="Reading Seminar Financing" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Python-the-center-of-film-industry-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/11/15/Python-the-center-of-film-industry-2/" class="article-date">
+  <time class="dt-published" datetime="2020-11-15T14:06:14.000Z" itemprop="datePublished">2020-11-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/11/15/Python-the-center-of-film-industry-2/">Python the center of film industry 2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>  Following the last blog, I installed a new package called <code>pyvis</code>. It can visualize the information and form interactive images.</p>
+<p>I prepared to visualize the working relationship  between the actors and actresses in film Avengers.</p>
+<p>First, get the data.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cast=[]</span><br><span class="line">cast2=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">114827</span>):</span><br><span class="line">    <span class="keyword">if</span>  <span class="string">&#x27;companies&#x27;</span><span class="keyword">in</span> Movies[i].keys() <span class="keyword">and</span> <span class="string">&#x27;Avengers&#x27;</span><span class="keyword">in</span> Movies[i][<span class="string">&#x27;title&#x27;</span>]:</span><br><span class="line">        cast.append(i)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cast:</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> Movies[i][<span class="string">&#x27;companies&#x27;</span>]:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;Marvel&#x27;</span><span class="keyword">in</span> j:</span><br><span class="line">            cast2.append(i)</span><br><span class="line"><span class="built_in">print</span>(cast2)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[39550, 65904, 83523, 83588]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Second, form the relationship.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">G = nx.Graph()  </span><br><span class="line">Mov=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cast2:</span><br><span class="line">    Mov.append(Movies[i])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> movie <span class="keyword">in</span> Mov: </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(movie[<span class="string">&quot;cast&quot;</span>]) - <span class="number">1</span>): </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i + <span class="number">1</span>, <span class="built_in">len</span>(movie[<span class="string">&quot;cast&quot;</span>])): </span><br><span class="line">            G.add_edge(movie[<span class="string">&quot;cast&quot;</span>][i], movie[<span class="string">&quot;cast&quot;</span>][j], title=movie[<span class="string">&quot;title&quot;</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>Third, draw the diagram.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">displayG = Network(width=<span class="number">1024</span>, height=<span class="number">768</span>, notebook = <span class="literal">True</span>) <span class="comment"># 创建 pyvis 中的 Network 对象，可以设置长度、宽度、是否在当前笔记本中显示等</span></span><br><span class="line"></span><br><span class="line">displayG.from_nx(G) <span class="comment"># 将 NetWorkX 的图导入 pyvis</span></span><br><span class="line"></span><br><span class="line">displayG.show(<span class="string">&#x27;test.html&#x27;</span>) <span class="comment"># 展示，并可生成一个名为 &quot;test.html&quot; 的网页文件</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DFotWn"><img src="https://s3.ax1x.com/2020/11/15/DFotWn.png" alt="DFotWn.png"></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/15/Python-the-center-of-film-industry-2/" data-id="ckushoz080029y8vu9xp30tue" data-title="Python the center of film industry 2" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI-Competition/">AI Competition</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Business-study/">Business study</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-learning/">Computer learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Economics-and-Statistics/">Economics and Statistics</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reading-Seminar/">Reading Seminar</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Testing/">Testing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/paragraph-writing/">paragraph writing</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Competition/" rel="tag">AI Competition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARDUINO/" rel="tag">ARDUINO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Business-study/" rel="tag">Business study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Business-theory-and-case-study/" rel="tag">Business theory and case study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C11-project/" rel="tag">C11 project</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Analysis/" rel="tag">Data Analysis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Internship-harvest/" rel="tag">Internship harvest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Lesson/" rel="tag">Python Lesson</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Notes/" rel="tag">Python Notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading-Seminar/" rel="tag">Reading Seminar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reading-books/" rel="tag">Reading books</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Study-on-the-Sustainable-Factors-of-Fair-activities/" rel="tag">Study on the Sustainable Factors of Fair activities</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test-File/" rel="tag">Test File</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paragraph-writing/" rel="tag">paragraph writing</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI-Competition/" style="font-size: 14px;">AI Competition</a> <a href="/tags/ARDUINO/" style="font-size: 16px;">ARDUINO</a> <a href="/tags/Business-study/" style="font-size: 10px;">Business study</a> <a href="/tags/Business-theory-and-case-study/" style="font-size: 10px;">Business theory and case study</a> <a href="/tags/C11-project/" style="font-size: 14px;">C11 project</a> <a href="/tags/Data-Analysis/" style="font-size: 14px;">Data Analysis</a> <a href="/tags/Internship-harvest/" style="font-size: 12px;">Internship harvest</a> <a href="/tags/Python-Lesson/" style="font-size: 18px;">Python Lesson</a> <a href="/tags/Python-Notes/" style="font-size: 20px;">Python Notes</a> <a href="/tags/Reading-Seminar/" style="font-size: 10px;">Reading Seminar</a> <a href="/tags/Reading-books/" style="font-size: 12px;">Reading books</a> <a href="/tags/Study-on-the-Sustainable-Factors-of-Fair-activities/" style="font-size: 18px;">Study on the Sustainable Factors of Fair activities</a> <a href="/tags/Test-File/" style="font-size: 12px;">Test File</a> <a href="/tags/paragraph-writing/" style="font-size: 16px;">paragraph writing</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/09/08/The-understanding-of-the-asset-management-industry/">The understanding of the asset management industry</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/08/Reading-harvest-of-The-Economics-of-Money-Banking-and-Financial-Markets/">Reading harvest of The Economics of Money,Banking, and Financial Markets</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/08/Reanding-harvest-of-Currency-war/">Reading harvest of Currency war</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/31/Study-on-the-Sustainable-Factors-of-Fair-activities/">Study on the Sustainable Factors of Fair activities</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/30/Internship-harvest2/">Internship harvest2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Han<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
