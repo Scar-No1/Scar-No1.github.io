@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>AI Learning--training model</title>
+    <url>/2020/04/18/AI-Learning-training-model/</url>
+    <content><![CDATA[<h4 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h4><p>Our project had now enter the second stage. My friends and I formed a team and began to train model and predict data by ourselves.</p>
+<h4 id="The-difficulties-we’ve-met"><a href="#The-difficulties-we’ve-met" class="headerlink" title="The difficulties we’ve met"></a>The difficulties we’ve met</h4><ul>
+<li><p>the low quality of the photos in the training set</p>
+<ul>
+<li>We used the training set which was processed by our teacher to reduce the storage of these photos in order to allowed us to train model by our own computer,which lead to low pixel photos. The original training set took up the storage of 198G, and now it only took up 3G.</li>
+</ul>
+</li>
+<li><p>the computer performance is too poor</p>
+<ul>
+<li>We used our own laptop to train the model, which the training speed is very slow. It takes about nearly 5 hours to train one epoch.</li>
+</ul>
+</li>
+</ul>
+<h4 id="What-we-do"><a href="#What-we-do" class="headerlink" title="What we do"></a>What we do</h4><p>My group mate and I asked for the teacher’s help. They offered us a computer which had ten times faster training speed. During the training process, we’ve met some technical problems, like the program may sometimes automatically shut down, which worried us a lot. </p>
+<h4 id="The-following-plan"><a href="#The-following-plan" class="headerlink" title="The following plan"></a>The following plan</h4><p>At present, the highest accuracy we had achieved was 99.62. To further improve the model accuracy, we wanted to change the training ways, we wanted to change the IncentiveV3 with the Xception package. Also, some parameters needed adjusting and modifying.</p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4>]]></content>
+      <categories>
+        <category>AI Competition</category>
+      </categories>
+      <tags>
+        <tag>AI Competition</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI Learning</title>
     <url>/2020/02/16/AI-Learning/</url>
     <content><![CDATA[<hr>
@@ -52,67 +78,6 @@
       </tags>
   </entry>
   <entry>
-    <title>AI Learning--training model</title>
-    <url>/2020/04/18/AI-Learning-training-model/</url>
-    <content><![CDATA[<h4 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h4><p>Our project had now enter the second stage. My friends and I formed a team and began to train model and predict data by ourselves.</p>
-<h4 id="The-difficulties-we’ve-met"><a href="#The-difficulties-we’ve-met" class="headerlink" title="The difficulties we’ve met"></a>The difficulties we’ve met</h4><ul>
-<li><p>the low quality of the photos in the training set</p>
-<ul>
-<li>We used the training set which was processed by our teacher to reduce the storage of these photos in order to allowed us to train model by our own computer,which lead to low pixel photos. The original training set took up the storage of 198G, and now it only took up 3G.</li>
-</ul>
-</li>
-<li><p>the computer performance is too poor</p>
-<ul>
-<li>We used our own laptop to train the model, which the training speed is very slow. It takes about nearly 5 hours to train one epoch.</li>
-</ul>
-</li>
-</ul>
-<h4 id="What-we-do"><a href="#What-we-do" class="headerlink" title="What we do"></a>What we do</h4><p>My group mate and I asked for the teacher’s help. They offered us a computer which had ten times faster training speed. During the training process, we’ve met some technical problems, like the program may sometimes automatically shut down, which worried us a lot. </p>
-<h4 id="The-following-plan"><a href="#The-following-plan" class="headerlink" title="The following plan"></a>The following plan</h4><p>At present, the highest accuracy we had achieved was 99.62. To further improve the model accuracy, we wanted to change the training ways, we wanted to change the IncentiveV3 with the Xception package. Also, some parameters needed adjusting and modifying.</p>
-<h4 id=""><a href="#" class="headerlink" title=""></a></h4>]]></content>
-      <categories>
-        <category>AI Competition</category>
-      </categories>
-      <tags>
-        <tag>AI Competition</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI competition--feelings&amp;harvests</title>
-    <url>/2020/04/19/AI-competition-feelings-harvests/</url>
-    <content><![CDATA[<p>  In February this year, I signed up for the Haihua AI garbage sorting challenge. The word AI is far away from me from the technical level, but I can always feel its inextricable connection with our lives.<br>  From knowing nothing ,to trying for the first time and to pursuing perfection, I have gone through countless studies and experiments. At the beginning of the project, we had a few AI classes. Mr. Chen Siyu explained the basic AI principles, such as linear regression of machine learning, separation and processing of structural images of artificial neural network, and gave us codes to teach us how to train and predict data. Although these theoretical knowledge are complicated and difficult to understand, and there are many unfamiliar terms to understand, they all lay a good foundation for the later model training.<br>The most experienced and fruitful part is the model training and data forecast upload after the team formation. When the teacher packs a  training set into a group, the rest of the work would be done by ourselves. I tried to train by myself first, and soon learned that this task is extremely time-consuming. It takes nearly five hours to run an epoch on my laptop, which is far not enough. After teaming up with classmates, we began to try to run more programs on our own computers to train the model, but due to the equipment problems, all ended in failure. Failure is always the driving force to move forward, so we contacted TP’s teacher and provided a better performance computer there. After two times of TP debugging in person, plus daily remote control, continuous training, at the end of the competition, our senior group also had the fifth place, ACC 99.78.<br>  Although I didn’t enter the top three as the senior two, I was very satisfied with my efforts, achievements and gains. Through this project, I have not only learned a lot about AI, python data analysis, but also learned that this technology is widely used in daily life. I admire those programmers who are careful enough to write a long and complicated code, and patient enough to debug parameters and wait for training results. Although computer is not my major, I know that there is no clear boundary between disciplines, and knowledge can be exchanged. This project has exercised my data analysis ability, and I have a deeper understanding of linear regression. AI technology can also play an important role in retail projects.</p>
-]]></content>
-      <categories>
-        <category>AI Competition</category>
-      </categories>
-      <tags>
-        <tag>AI Competition</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ARDUINO Programme 2</title>
-    <url>/2020/08/04/ARDUINO-Programme-2/</url>
-    <content><![CDATA[<p>In the second period,  we learned about the theory of  automatic light and  intelligent fan. </p>
-<h3 id="Automatic-Light"><a href="#Automatic-Light" class="headerlink" title="Automatic Light"></a>Automatic Light</h3><h4 id="Infrared"><a href="#Infrared" class="headerlink" title="Infrared"></a>Infrared</h4><p>This lamp uses the infrared sensor to test the surrounding. The sensor can detect  the objects surrounding with the temperature between 36.0C to 37.4C (Human Body Temperature). If there is, it will transmit the analogue signal to the motherboard to open the light.</p>
-<p><img src="https://s1.ax1x.com/2020/08/04/aDEZCt.jpg" alt="aDEZCt.jpg"></p>
-<ul>
-<li>Infrared sensor</li>
-</ul>
-<h3 id="Intelligent-fan"><a href="#Intelligent-fan" class="headerlink" title="Intelligent fan"></a>Intelligent fan</h3><h4 id="Serial"><a href="#Serial" class="headerlink" title="Serial"></a>Serial</h4><p>This is a function in Arduino which can help show the running state of the motherboard. </p>
-<p>We can use this function in the programming of intelligent fan.</p>
-<h4 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h4><p>A temperature sensor is used. It can test the surrounding temperature and send the signal to the motherboard. You can check the detail in the Series Monitor. In the programme , set a standard temperature. If the temperature tested is higher than the set value, the fan will start to work automatically.</p>
-<h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><p><img src="https://s1.ax1x.com/2020/08/04/aDJxwn.png" alt="aDJxwn.png"></p>
-<p>Here, I set 36C as a standard temperature. So, when the temperature exceeds 36C, the fan will start.</p>
-<p><img src="https://s1.ax1x.com/2020/08/04/aDtr8K.jpg" alt="aDtr8K.jpg"></p>
-]]></content>
-      <categories>
-        <category>Computer learning</category>
-      </categories>
-      <tags>
-        <tag>ARDUINO</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ARDUINO Programme 1</title>
     <url>/2020/08/01/ARDUINO-Programme-1/</url>
     <content><![CDATA[<h3 id="WHAT-IS-ARDUINO"><a href="#WHAT-IS-ARDUINO" class="headerlink" title="WHAT IS  ARDUINO"></a>WHAT IS  ARDUINO</h3><p> <strong>Arduino</strong> is an open-source hardware and software company, project that provide a platform for people to design their own digital devices.</p>
@@ -161,6 +126,41 @@
 <p>All the programming statements can be written through a flow chart.</p>
 <p><img src="https://s1.ax1x.com/2020/08/01/aGNgOO.png" alt="aGNgOO.png"></p>
 <h4 id="E-g"><a href="#E-g" class="headerlink" title="E.g."></a>E.g.</h4><p><img src="https://s1.ax1x.com/2020/08/01/aGUPXT.png" alt="aGUPXT.png"></p>
+]]></content>
+      <categories>
+        <category>Computer learning</category>
+      </categories>
+      <tags>
+        <tag>ARDUINO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI competition--feelings&amp;harvests</title>
+    <url>/2020/04/19/AI-competition-feelings-harvests/</url>
+    <content><![CDATA[<p>  In February this year, I signed up for the Haihua AI garbage sorting challenge. The word AI is far away from me from the technical level, but I can always feel its inextricable connection with our lives.<br>  From knowing nothing ,to trying for the first time and to pursuing perfection, I have gone through countless studies and experiments. At the beginning of the project, we had a few AI classes. Mr. Chen Siyu explained the basic AI principles, such as linear regression of machine learning, separation and processing of structural images of artificial neural network, and gave us codes to teach us how to train and predict data. Although these theoretical knowledge are complicated and difficult to understand, and there are many unfamiliar terms to understand, they all lay a good foundation for the later model training.<br>The most experienced and fruitful part is the model training and data forecast upload after the team formation. When the teacher packs a  training set into a group, the rest of the work would be done by ourselves. I tried to train by myself first, and soon learned that this task is extremely time-consuming. It takes nearly five hours to run an epoch on my laptop, which is far not enough. After teaming up with classmates, we began to try to run more programs on our own computers to train the model, but due to the equipment problems, all ended in failure. Failure is always the driving force to move forward, so we contacted TP’s teacher and provided a better performance computer there. After two times of TP debugging in person, plus daily remote control, continuous training, at the end of the competition, our senior group also had the fifth place, ACC 99.78.<br>  Although I didn’t enter the top three as the senior two, I was very satisfied with my efforts, achievements and gains. Through this project, I have not only learned a lot about AI, python data analysis, but also learned that this technology is widely used in daily life. I admire those programmers who are careful enough to write a long and complicated code, and patient enough to debug parameters and wait for training results. Although computer is not my major, I know that there is no clear boundary between disciplines, and knowledge can be exchanged. This project has exercised my data analysis ability, and I have a deeper understanding of linear regression. AI technology can also play an important role in retail projects.</p>
+]]></content>
+      <categories>
+        <category>AI Competition</category>
+      </categories>
+      <tags>
+        <tag>AI Competition</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ARDUINO Programme 2</title>
+    <url>/2020/08/04/ARDUINO-Programme-2/</url>
+    <content><![CDATA[<p>In the second period,  we learned about the theory of  automatic light and  intelligent fan. </p>
+<h3 id="Automatic-Light"><a href="#Automatic-Light" class="headerlink" title="Automatic Light"></a>Automatic Light</h3><h4 id="Infrared"><a href="#Infrared" class="headerlink" title="Infrared"></a>Infrared</h4><p>This lamp uses the infrared sensor to test the surrounding. The sensor can detect  the objects surrounding with the temperature between 36.0C to 37.4C (Human Body Temperature). If there is, it will transmit the analogue signal to the motherboard to open the light.</p>
+<p><img src="https://s1.ax1x.com/2020/08/04/aDEZCt.jpg" alt="aDEZCt.jpg"></p>
+<ul>
+<li>Infrared sensor</li>
+</ul>
+<h3 id="Intelligent-fan"><a href="#Intelligent-fan" class="headerlink" title="Intelligent fan"></a>Intelligent fan</h3><h4 id="Serial"><a href="#Serial" class="headerlink" title="Serial"></a>Serial</h4><p>This is a function in Arduino which can help show the running state of the motherboard. </p>
+<p>We can use this function in the programming of intelligent fan.</p>
+<h4 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h4><p>A temperature sensor is used. It can test the surrounding temperature and send the signal to the motherboard. You can check the detail in the Series Monitor. In the programme , set a standard temperature. If the temperature tested is higher than the set value, the fan will start to work automatically.</p>
+<h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><p><img src="https://s1.ax1x.com/2020/08/04/aDJxwn.png" alt="aDJxwn.png"></p>
+<p>Here, I set 36C as a standard temperature. So, when the temperature exceeds 36C, the fan will start.</p>
+<p><img src="https://s1.ax1x.com/2020/08/04/aDtr8K.jpg" alt="aDtr8K.jpg"></p>
 ]]></content>
       <categories>
         <category>Computer learning</category>
@@ -331,22 +331,6 @@
       </tags>
   </entry>
   <entry>
-    <title> Finance Introducing PPT</title>
-    <url>/2020/09/06/Finance-Introducing-PPT/</url>
-    <content><![CDATA[<p>This is the PPT that I used for the speech in school.</p>
-<p><img src="https://s1.ax1x.com/2020/09/06/wmpDmV.jpg" alt="wmpDmV.jpg"></p>
-<p><img src="https://s1.ax1x.com/2020/09/06/wmpWlR.jpg" alt="wmpWlR.jpg"></p>
-<p><img src="https://s1.ax1x.com/2020/09/06/wmpf61.jpg" alt="wmpf61.jpg"></p>
-<p><a href="https://imgchr.com/i/wmp5m6"><img src="https://s1.ax1x.com/2020/09/06/wmp5m6.jpg" alt="wmp5m6.jpg"></a></p>
-<p><a href="https://imgchr.com/i/wmpI0K"><img src="https://s1.ax1x.com/2020/09/06/wmpI0K.jpg" alt="wmpI0K.jpg"></a></p>
-<p><a href="https://imgchr.com/i/wmpbfH"><img src="https://s1.ax1x.com/2020/09/06/wmpbfH.jpg" alt="wmpbfH.jpg"></a></p>
-<p><img src="https://s1.ax1x.com/2020/09/06/wmpLpd.jpg" alt="wmpLpd.jpg"></p>
-<p><img src="https://s1.ax1x.com/2020/09/06/wmpjXt.jpg" alt="wmpjXt.jpg"></p>
-<p><a href="https://imgchr.com/i/wmpxnP"><img src="https://s1.ax1x.com/2020/09/06/wmpxnP.jpg" alt="wmpxnP.jpg"></a></p>
-<p><a href="https://imgchr.com/i/wm9S78"><img src="https://s1.ax1x.com/2020/09/06/wm9S78.jpg" alt="wm9S78.jpg"></a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>C11-project-Brand-Feiyue</title>
     <url>/2020/03/22/C11-project-Brand-Feiyue/</url>
     <content><![CDATA[<h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>In such a market which full of competition, traditional retail model gradually shows its drawbacks, inflexible, low efficiency and the mismatch between online and offline. The era of 100% online marketing is over. The new retail model, which the focus of work gradually shift from online to offline, booms up.</p>
@@ -449,29 +433,20 @@
       </tags>
   </entry>
   <entry>
-    <title>Internship harvest</title>
-    <url>/2021/07/30/Internship-harvest/</url>
-    <content><![CDATA[<p>Since I have already set my ideal professional direction in university, I prepared to gain more detailed working experiences and  professional knowledge in the related industries.  </p>
-<p>I started my internship experience from July 13th 2020.</p>
-<hr>
-<p>I first did some research about the company  I would go to and learn its basic operation mode.</p>
-<p>The company is called Jiangsu Fuel Corporation and its main business is trade in fuel  commodities, which mainly face to industrial production companies. It is set up years ago when the fuel resources is in shortage in China. The government adopted a policy if rationing. All the fuel produced from primary industries must  go through the company to register and package according to government allocation requirements  and sell to the secondary industries. However, as the country is developing , the rationing is canceled, which downstream firms can directly buy fuel from upstream firms. The necessity of the company has abated. Hence, It needs to attract more customers with better services and starts new projects at the same time to survive.</p>
-<hr>
-<p>The department I went is finance department. The goal of a company is achieve wealth growth and capital appreciation. The financial department is responsible for financial analysis and accounting. </p>
-<p>It has four function:</p>
-<ol>
-<li>fund-raising</li>
-<li>investment</li>
-<li>Dividend distribution</li>
-<li>Use and control of funds</li>
-</ol>
-<hr>
-<p>This is the note for my research.</p>
-<p><a href="https://imgtu.com/i/WL8r0P"><img src="https://z3.ax1x.com/2021/07/30/WL8r0P.jpg" alt="WL8r0P.jpg"></a></p>
+    <title> Finance Introducing PPT</title>
+    <url>/2020/09/06/Finance-Introducing-PPT/</url>
+    <content><![CDATA[<p>This is the PPT that I used for the speech in school.</p>
+<p><img src="https://s1.ax1x.com/2020/09/06/wmpDmV.jpg" alt="wmpDmV.jpg"></p>
+<p><img src="https://s1.ax1x.com/2020/09/06/wmpWlR.jpg" alt="wmpWlR.jpg"></p>
+<p><img src="https://s1.ax1x.com/2020/09/06/wmpf61.jpg" alt="wmpf61.jpg"></p>
+<p><a href="https://imgchr.com/i/wmp5m6"><img src="https://s1.ax1x.com/2020/09/06/wmp5m6.jpg" alt="wmp5m6.jpg"></a></p>
+<p><a href="https://imgchr.com/i/wmpI0K"><img src="https://s1.ax1x.com/2020/09/06/wmpI0K.jpg" alt="wmpI0K.jpg"></a></p>
+<p><a href="https://imgchr.com/i/wmpbfH"><img src="https://s1.ax1x.com/2020/09/06/wmpbfH.jpg" alt="wmpbfH.jpg"></a></p>
+<p><img src="https://s1.ax1x.com/2020/09/06/wmpLpd.jpg" alt="wmpLpd.jpg"></p>
+<p><img src="https://s1.ax1x.com/2020/09/06/wmpjXt.jpg" alt="wmpjXt.jpg"></p>
+<p><a href="https://imgchr.com/i/wmpxnP"><img src="https://s1.ax1x.com/2020/09/06/wmpxnP.jpg" alt="wmpxnP.jpg"></a></p>
+<p><a href="https://imgchr.com/i/wm9S78"><img src="https://s1.ax1x.com/2020/09/06/wm9S78.jpg" alt="wm9S78.jpg"></a></p>
 ]]></content>
-      <tags>
-        <tag>Internship harvest</tag>
-      </tags>
   </entry>
   <entry>
     <title>Internship harvest2</title>
@@ -511,6 +486,31 @@
 </li>
 </ul>
 <h4 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h4><p><a href="https://imgtu.com/i/Wjvi9g"><img src="https://z3.ax1x.com/2021/07/31/Wjvi9g.png" alt="Wjvi9g.png"></a></p>
+]]></content>
+      <tags>
+        <tag>Internship harvest</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Internship harvest</title>
+    <url>/2021/07/30/Internship-harvest/</url>
+    <content><![CDATA[<p>Since I have already set my ideal professional direction in university, I prepared to gain more detailed working experiences and  professional knowledge in the related industries.  </p>
+<p>I started my internship experience from July 13th 2020.</p>
+<hr>
+<p>I first did some research about the company  I would go to and learn its basic operation mode.</p>
+<p>The company is called Jiangsu Fuel Corporation and its main business is trade in fuel  commodities, which mainly face to industrial production companies. It is set up years ago when the fuel resources is in shortage in China. The government adopted a policy if rationing. All the fuel produced from primary industries must  go through the company to register and package according to government allocation requirements  and sell to the secondary industries. However, as the country is developing , the rationing is canceled, which downstream firms can directly buy fuel from upstream firms. The necessity of the company has abated. Hence, It needs to attract more customers with better services and starts new projects at the same time to survive.</p>
+<hr>
+<p>The department I went is finance department. The goal of a company is achieve wealth growth and capital appreciation. The financial department is responsible for financial analysis and accounting. </p>
+<p>It has four function:</p>
+<ol>
+<li>fund-raising</li>
+<li>investment</li>
+<li>Dividend distribution</li>
+<li>Use and control of funds</li>
+</ol>
+<hr>
+<p>This is the note for my research.</p>
+<p><a href="https://imgtu.com/i/WL8r0P"><img src="https://z3.ax1x.com/2021/07/30/WL8r0P.jpg" alt="WL8r0P.jpg"></a></p>
 ]]></content>
       <tags>
         <tag>Internship harvest</tag>
@@ -692,6 +692,14 @@
       </tags>
   </entry>
   <entry>
+    <title>Professional experience of Agriculture Bank of China</title>
+    <url>/2021/06/14/Professional-experience-of-Agriculture-Bank-of-China/</url>
+    <content><![CDATA[<p>After a morning’s career experience in Agricultural Bank of China, I had a deep understanding of various career positions and working environment in the banking sector, and also broadened my knowledge of finance.<br>After arriving at China Agricultural Xuanwu Sub-branch in the morning, we listened to some lectures on banking career development planning and financial knowledge, including the introduction of three career development routes of banking: Technical route, marketing route and management route, personal banking and corporate business, anti-money laundering and so on. I also specially explained the knowledge points and precautions of personal foreign exchange settlement and sale for our international students, which benefited me a lot.<br>In the afternoon, we visited the business offices and institutions of the bank branches. I learned about the different working environments of different positions in the bank, and I also operated the banknote detector, super counter, online banking platform and other machines by myself.<br>I have gained a lot from this career experience activity, and have an in-depth understanding of the talent needs of this industry, which provides me with more targeted goals for my future professional direction.</p>
+<p><a href="https://imgtu.com/i/RVirJU"><img src="https://z3.ax1x.com/2021/06/21/RVirJU.jpg" alt="RVirJU.jpg"></a></p>
+<p><a href="https://imgtu.com/i/RVi2LR"><img src="https://z3.ax1x.com/2021/06/21/RVi2LR.jpg" alt="RVi2LR.jpg"></a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Python:Download files from website</title>
     <url>/2020/10/25/Python-Download-files-from-website/</url>
     <content><![CDATA[<p>This is the 11th paragraphs on the Python book. It talks about the way of getting and downloading files from the Internet and how to analyse the HTML. I first learned about the first part , which I think it may be help for me to download articles when preparing for my essay.</p>
@@ -752,14 +760,6 @@
 
 
 <h3 id="Further-thinking"><a href="#Further-thinking" class="headerlink" title="Further thinking"></a>Further thinking</h3><p>How can I manage that if more than one Metro Line are added. More condition needs to be consider as the ticket price is calculated according to the shortest route of underground between two place and whenever you change to another Metro Line in the middle to your journey, 0.5yuan is needed to pay in extra.</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Professional experience of Agriculture Bank of China</title>
-    <url>/2021/06/14/Professional-experience-of-Agriculture-Bank-of-China/</url>
-    <content><![CDATA[<p>After a morning’s career experience in Agricultural Bank of China, I had a deep understanding of various career positions and working environment in the banking sector, and also broadened my knowledge of finance.<br>After arriving at China Agricultural Xuanwu Sub-branch in the morning, we listened to some lectures on banking career development planning and financial knowledge, including the introduction of three career development routes of banking: Technical route, marketing route and management route, personal banking and corporate business, anti-money laundering and so on. I also specially explained the knowledge points and precautions of personal foreign exchange settlement and sale for our international students, which benefited me a lot.<br>In the afternoon, we visited the business offices and institutions of the bank branches. I learned about the different working environments of different positions in the bank, and I also operated the banknote detector, super counter, online banking platform and other machines by myself.<br>I have gained a lot from this career experience activity, and have an in-depth understanding of the talent needs of this industry, which provides me with more targeted goals for my future professional direction.</p>
-<p><a href="https://imgtu.com/i/RVirJU"><img src="https://z3.ax1x.com/2021/06/21/RVirJU.jpg" alt="RVirJU.jpg"></a></p>
-<p><a href="https://imgtu.com/i/RVi2LR"><img src="https://z3.ax1x.com/2021/06/21/RVi2LR.jpg" alt="RVi2LR.jpg"></a></p>
 ]]></content>
   </entry>
   <entry>
@@ -991,14 +991,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Reading Seminar Financing</title>
-    <url>/2020/11/30/Reading-Seminar-Financing/</url>
-    <content><![CDATA[<p><a href="https://imgchr.com/i/DWMpm6"><img src="https://s3.ax1x.com/2020/11/30/DWMpm6.jpg" alt="DWMpm6.jpg"></a></p>
-<p><a href="https://imgchr.com/i/DWKx61"><img src="https://s3.ax1x.com/2020/11/30/DWKx61.jpg" alt="DWKx61.jpg"></a></p>
-<p><a href="https://imgchr.com/i/DWKvlR"><img src="https://s3.ax1x.com/2020/11/30/DWKvlR.jpg" alt="DWKvlR.jpg"></a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Reading Seminar:  Sociology</title>
     <url>/2020/07/04/Reading-Seminar-Sociology/</url>
     <content><![CDATA[<p>  This book is in the series of  A very Short Introduction from  Oxford. It generally tells about the  consciousness of Sociology.</p>
@@ -1015,6 +1007,21 @@
       </tags>
   </entry>
   <entry>
+    <title>Reading Seminar Financing</title>
+    <url>/2020/11/30/Reading-Seminar-Financing/</url>
+    <content><![CDATA[<p><a href="https://imgchr.com/i/DWMpm6"><img src="https://s3.ax1x.com/2020/11/30/DWMpm6.jpg" alt="DWMpm6.jpg"></a></p>
+<p><a href="https://imgchr.com/i/DWKx61"><img src="https://s3.ax1x.com/2020/11/30/DWKx61.jpg" alt="DWKx61.jpg"></a></p>
+<p><a href="https://imgchr.com/i/DWKvlR"><img src="https://s3.ax1x.com/2020/11/30/DWKvlR.jpg" alt="DWKvlR.jpg"></a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Reading Seminar: economic theory</title>
+    <url>/2020/07/04/Reading-Seminar-economic-theory/</url>
+    <content><![CDATA[<p>There are many insurmountable obstacles to the planned economy which price can solve them. Price mechanism is a much  more changeable and accurate system though it still have some drawbacks. A  proper division of work between government and th price mechanism can maximum the benifits.</p>
+<p><img src="https://s1.ax1x.com/2020/07/04/NxjMSP.jpg" alt="NxjMSP.jpg"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Reading harvest of The Economics of Money,Banking, and Financial Markets</title>
     <url>/2021/09/08/Reading-harvest-of-The-Economics-of-Money-Banking-and-Financial-Markets/</url>
     <content><![CDATA[<p>“The Economics of Money,Banking, and Financial Markets” is written by Frederic S. Mishkin. It has been used as a teaching material. This book illustrates the basic concepts and theories in finance. </p>
@@ -1024,13 +1031,6 @@
       <tags>
         <tag>Reading books</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Reading Seminar: economic theory</title>
-    <url>/2020/07/04/Reading-Seminar-economic-theory/</url>
-    <content><![CDATA[<p>There are many insurmountable obstacles to the planned economy which price can solve them. Price mechanism is a much  more changeable and accurate system though it still have some drawbacks. A  proper division of work between government and th price mechanism can maximum the benifits.</p>
-<p><img src="https://s1.ax1x.com/2020/07/04/NxjMSP.jpg" alt="NxjMSP.jpg"></p>
-]]></content>
   </entry>
   <entry>
     <title>Reading harvest of Currency war</title>
@@ -1429,6 +1429,25 @@
       </tags>
   </entry>
   <entry>
+    <title>The eighth Python lesson</title>
+    <url>/2020/02/10/The-eighth-Python-lesson/</url>
+    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/10/1I1cfU.jpg" alt="1I1cfU.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/11/1ITDDU.jpg" alt="1ITDDU.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/11/1ITrbF.jpg" alt="1ITrbF.jpg"></p>
+<p> HW 写入一串代码，让用户输入自己的密码，密码需含8位以上的字符，包含大、小写字母及数字。 </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Select a new password (letters and numbers only,must have 8 words or more,have both upper and lower words):&#x27;</span>)</span><br><span class="line">    password = <span class="built_in">input</span>()</span><br><span class="line">    <span class="keyword">if</span>  password.isalpha() <span class="keyword">or</span> password.isdecimal() <span class="keyword">or</span> password.isspace()<span class="keyword">or</span> <span class="built_in">len</span>(password)&lt; <span class="number">8</span> <span class="keyword">or</span> <span class="keyword">not</span> password.isalnum()<span class="keyword">or</span> password.isupper() <span class="keyword">or</span> password.islower():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;form mistakes&#x27;</span>)</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Successfully setting password.&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;your password is &#x27;</span>+ password)</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Computer learning</category>
+      </categories>
+      <tags>
+        <tag>Python Notes</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Survey on the sustainability factors of the fair development</title>
     <url>/2020/12/27/Survey-on-the-sustainablality-factors-of-the-fair-development/</url>
     <content><![CDATA[<p>This programme began about half a month ago.  I made a team with one of my schoolmate. The main purpose of this programme is to study the sustainability factors of  fair is today’s situation and we need to finish an essay in the end.</p>
@@ -1523,16 +1542,10 @@
       </tags>
   </entry>
   <entry>
-    <title>The eighth Python lesson</title>
-    <url>/2020/02/10/The-eighth-Python-lesson/</url>
-    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/10/1I1cfU.jpg" alt="1I1cfU.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/11/1ITDDU.jpg" alt="1ITDDU.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/11/1ITrbF.jpg" alt="1ITrbF.jpg"></p>
-<p> HW 写入一串代码，让用户输入自己的密码，密码需含8位以上的字符，包含大、小写字母及数字。 </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Select a new password (letters and numbers only,must have 8 words or more,have both upper and lower words):&#x27;</span>)</span><br><span class="line">    password = <span class="built_in">input</span>()</span><br><span class="line">    <span class="keyword">if</span>  password.isalpha() <span class="keyword">or</span> password.isdecimal() <span class="keyword">or</span> password.isspace()<span class="keyword">or</span> <span class="built_in">len</span>(password)&lt; <span class="number">8</span> <span class="keyword">or</span> <span class="keyword">not</span> password.isalnum()<span class="keyword">or</span> password.isupper() <span class="keyword">or</span> password.islower():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;form mistakes&#x27;</span>)</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Successfully setting password.&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;your password is &#x27;</span>+ password)</span><br></pre></td></tr></table></figure>
-
-
-
+    <title>The fifth python lesson</title>
+    <url>/2020/02/08/The-fifth-python-lesson/</url>
+    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/08/1WdQd1.jpg" alt="1WdQd1.jpg"></p>
+<p><a href="https://imgchr.com/i/1WdtQe"><img src="https://s2.ax1x.com/2020/02/08/1WdtQe.jpg" alt="1WdtQe.jpg"></a></p>
 ]]></content>
       <categories>
         <category>Computer learning</category>
@@ -1572,19 +1585,6 @@
       </categories>
       <tags>
         <tag>Business theory and case study</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>The fifth python lesson</title>
-    <url>/2020/02/08/The-fifth-python-lesson/</url>
-    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/08/1WdQd1.jpg" alt="1WdQd1.jpg"></p>
-<p><a href="https://imgchr.com/i/1WdtQe"><img src="https://s2.ax1x.com/2020/02/08/1WdtQe.jpg" alt="1WdtQe.jpg"></a></p>
-]]></content>
-      <categories>
-        <category>Computer learning</category>
-      </categories>
-      <tags>
-        <tag>Python Notes</tag>
       </tags>
   </entry>
   <entry>
