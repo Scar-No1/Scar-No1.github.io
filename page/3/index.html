@@ -199,9 +199,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -323,46 +357,15 @@
       
         
           
-            <h3 id="Backbround"><a href="#Backbround" class="headerlink" title="Backbround"></a>Backbround</h3><p>Social network analysis  is a branch of data science that allows the investigation of social structures using networks and graph theory. It can help to reveal patterns in voting preferences, aid the understanding of how ideas spread, and even help to model the spread of diseases.</p>
-<p>A social network is made up of a set of nodes (usually people) that have links, or edges between them that describe their relationships.</p>
-<p>My analysis is carried out using the Python programming language and, in particular, the tools available in the <code>NetworkX</code> library.</p>
-<h3 id="About-this-programme"><a href="#About-this-programme" class="headerlink" title="About this programme"></a>About this programme</h3><p>Here is a film data collection collected by Rhyd Lewis in 18th February 2020. It includes 114827 films’ information.</p>
-<ul>
-<li>I need to write some function , allowing us to do some research conveniently. </li>
-<li>Draw the diagram to show the relationships between these film stars.</li>
-</ul>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> networkx <span class="keyword">as</span> nx</span><br><span class="line"><span class="keyword">import</span> matplotlib . pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> statistics</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> random</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Movies = []</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span> (<span class="string">&quot;./data.json&quot;</span>, <span class="string">&quot;r&quot;</span>, encoding =<span class="string">&quot;utf -8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">        J = json.loads(line)</span><br><span class="line">        Movies.append(J)      <span class="comment"># read the data and put the imformation of each film in to a list</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">len</span>(Movies)</span><br><span class="line"></span><br><span class="line"><span class="number">114827</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Movies[<span class="number">10086</span>]</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">&#x27;title&#x27;</span>: <span class="string">&#x27;A Yank at Oxford&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;cast&#x27;</span>: [<span class="string">&#x27;Robert Taylor&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Lionel Barrymore&#x27;</span>,</span><br><span class="line">  <span class="string">&quot;Maureen O&#x27;Sullivan&quot;</span>,</span><br><span class="line">  <span class="string">&#x27;Vivien Leigh&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Edmund Gwenn&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Griffith Jones&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;C.V. France&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Edward Rigby&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Morton Selten&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Claude Gillingwater&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Tully Marshall&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Walter Kingsford&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Robert Coote&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Peter Croft&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Noel Howlett&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Ronald Shiner&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;Jon Pertwee&#x27;</span>],</span><br><span class="line"> <span class="string">&#x27;directors&#x27;</span>: [<span class="string">&#x27;Jack Conway&#x27;</span>],</span><br><span class="line"> <span class="string">&#x27;producers&#x27;</span>: [<span class="string">&#x27;Michael Balcon&#x27;</span>],</span><br><span class="line"> <span class="string">&#x27;companies&#x27;</span>: [<span class="string">&#x27;Metro-Goldwyn-Mayer&#x27;</span>],</span><br><span class="line"> <span class="string">&#x27;year&#x27;</span>: <span class="number">1938</span>&#125;</span><br><span class="line"> <span class="comment">#the detailed information is put in a dictionary.</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>Then I write a function which can help search the film information. By input the type of keywords that you want to search and the keywords, the programme can return order number of the films which satisfy the requirements.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search_films</span>(<span class="params">key, value</span>):</span></span><br><span class="line">    films=[]   </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="number">0</span>,<span class="number">114827</span>):</span><br><span class="line">        <span class="keyword">if</span> key  <span class="keyword">in</span> Movies[i].keys():             </span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">type</span>(Movies[i][key])==<span class="built_in">str</span>:</span><br><span class="line">                <span class="keyword">if</span> value==Movies[i][key]:</span><br><span class="line">                    films.append(i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">for</span> u <span class="keyword">in</span> Movies[i][key]:</span><br><span class="line">                    <span class="keyword">if</span> u==value:</span><br><span class="line">                        films.append(i)</span><br><span class="line">    </span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> films</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#text the function</span></span><br><span class="line"></span><br><span class="line">search_films(<span class="string">&#x27;cast&#x27;</span>, <span class="string">&#x27;Jackie Chan&#x27;</span>)</span><br><span class="line"></span><br><span class="line">[<span class="number">26</span>,</span><br><span class="line"> <span class="number">911</span>,</span><br><span class="line"> <span class="number">1084</span>,</span><br><span class="line"> <span class="number">1103</span>,</span><br><span class="line"> <span class="number">1161</span>,</span><br><span class="line"> <span class="number">1365</span>,</span><br><span class="line"> <span class="number">1402</span>,</span><br><span class="line"> <span class="number">1793</span>,</span><br><span class="line"> <span class="number">1980</span>,</span><br><span class="line"> <span class="number">2131</span>,</span><br><span class="line"> <span class="number">2210</span>,</span><br><span class="line"> <span class="number">2394</span>,</span><br><span class="line"> <span class="number">2395</span>,</span><br><span class="line"> <span class="number">2396</span>,</span><br><span class="line"> <span class="number">2397</span>,</span><br><span class="line"> ....]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ids = search_films(<span class="string">&#x27;cast&#x27;</span>, <span class="string">&#x27;Jackie Chan&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> ids:</span><br><span class="line">    <span class="built_in">print</span>(Movies[i][<span class="string">&#x27;year&#x27;</span>], Movies[i][<span class="string">&#x27;title&#x27;</span>])</span><br><span class="line">    </span><br><span class="line"><span class="number">1973</span> Enter the Dragon</span><br><span class="line"><span class="number">1995</span> Rumble <span class="keyword">in</span> the Bronx</span><br><span class="line"><span class="number">1998</span> Who Am I? (<span class="number">1998</span> film)</span><br><span class="line"><span class="number">2003</span> Shanghai Knights</span><br><span class="line"><span class="number">2000</span> Shanghai Noon</span><br><span class="line"><span class="number">1998</span> An Alan Smithee Film: Burn Hollywood Burn</span><br><span class="line"><span class="number">2002</span> The Tuxedo</span><br><span class="line"><span class="number">1978</span> Drunken Master</span><br><span class="line"><span class="number">1998</span> Rush Hour (<span class="number">1998</span> film)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ids = search_films(<span class="string">&#x27;companies&#x27;</span>, <span class="string">&#x27;Marvel Studios&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> ids:</span><br><span class="line">    <span class="built_in">print</span>(Movies[i][<span class="string">&#x27;year&#x27;</span>], Movies[i][<span class="string">&#x27;title&#x27;</span>])</span><br><span class="line">    </span><br><span class="line">ids = search_films(<span class="string">&quot;title&quot;</span>, <span class="string">&quot;Back to the Future&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> ids:</span><br><span class="line">    <span class="built_in">print</span>(Movies[i][<span class="string">&#x27;year&#x27;</span>], Movies[i][<span class="string">&#x27;title&#x27;</span>])</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Then by using a for loop and <code>NetworkX</code>, draw a diagram to show the relationship between film stars which have been worked together.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">G = nx.MultiGraph()  </span><br><span class="line"><span class="keyword">for</span> movie <span class="keyword">in</span> Movies[<span class="number">0</span>:<span class="number">3</span>]: </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(movie[<span class="string">&quot;cast&quot;</span>]) - <span class="number">1</span>): </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i + <span class="number">1</span>, <span class="built_in">len</span>(movie[<span class="string">&quot;cast&quot;</span>])): </span><br><span class="line">            G.add_edge(movie[<span class="string">&quot;cast&quot;</span>][i], movie[<span class="string">&quot;cast&quot;</span>][j], title=movie[<span class="string">&quot;title&quot;</span>])</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>,<span class="number">6</span>))</span><br><span class="line">nx.draw_shell(G, with_labels=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Because the original data set is too big, it’s impossible for me to process it and draw the diagram.</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/Bahx6f"><img src="https://s1.ax1x.com/2020/10/31/Bahx6f.png" alt="Bahx6f.png"></a></p>
-<p> I reduce the number of the information used. Though there are only three film industry information, the relationship is still very complicated.</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/Ba4eXT"><img src="https://s1.ax1x.com/2020/10/31/Ba4eXT.png" alt="Ba4eXT.png"></a></p>
-
-          
+          BackbroundSocial network analysis  is a branch of data science that allows the investigation of social structures using networks and graph theory. It can help to reveal patterns in voting preferences,
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/10/31/Python-the-center-of-film-industry/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -502,37 +505,15 @@
       
         
           
-            <p>This is the 11th paragraphs on the Python book. It talks about the way of getting and downloading files from the Internet and how to analyse the HTML. I first learned about the first part , which I think it may be help for me to download articles when preparing for my essay.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> webbrowser</span><br><span class="line">webbrowser.<span class="built_in">open</span>(<span class="string">&#x27;http://inventwithpython.com/&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>There is a package called <code>webbrowser</code> which can be used to open URL using Web.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> pyperclip</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(sys.argv)&gt;<span class="number">1</span>:</span><br><span class="line">    adress=<span class="string">&#x27; &#x27;</span>.join(sys.argv[<span class="number">1</span>:])</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    adress=pyperclip.paste()</span><br><span class="line">    </span><br><span class="line">webbrowser.<span class="built_in">open</span>(<span class="string">&#x27;http://www.google.com/maps/place/&#x27;</span>+adress)</span><br></pre></td></tr></table></figure>
-
-<p>Using this way,  import the <code>sys</code> package to read the possible command line parameters, we can open the website directly from the Jupyter Notebook.</p>
-<p>The next part teaches the <code>requests</code> package. We need to install this package first in the Jupyter Prompt.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">res=requests.get(<span class="string">&#x27;http://www.gutenberg.org/cache/epub/1112/pg1112.txt&#x27;</span>)</span><br><span class="line"><span class="built_in">type</span>(res)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">requests.models.Response</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>type()` returns a Response object, including the response from the Web service to your accessing request.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">res.status_code==requests.codes.ok</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">len</span>(res.text)</span><br><span class="line"><span class="number">179380</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(res.text[:<span class="number">250</span>])</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;The Project Gutenberg EBook of Romeo and Juliet, by William Shakespeare</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">*******************************************************************</span></span><br><span class="line"><span class="string">THIS EBOOK WAS ONE OF PROJECT GUTENBERG&#x27;S EARLY FILES PRODUCED AT A</span></span><br><span class="line"><span class="string">TIME WHEN PROOFING METHODS AND TOO&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>To save the document to our computer, we first need to download the file, using <code>requests.get()</code>. Then, use <code>wb</code> to open a new file and write the content in the new file through <code>iter_content()</code> loop. Finally, close the file.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">playFile.close()</span><br></pre></td></tr></table></figure>
-
-
-
-<p>I try a new website, it does response but the content download is quit strange.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res=requests.get(<span class="string">&#x27;https://www.lifewire.com/what-is-social-media-explaining-the-big-trend-3486616&#x27;</span>)</span><br><span class="line"><span class="built_in">type</span>(res)</span><br><span class="line"><span class="built_in">print</span>(res.text)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html id=&quot;structuredContentTemplate_1-0&quot; class=&quot;comp taxlevel-2  structuredContentTemplate article-html html mntl-html&quot; data-ab=&quot;99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,57,78,75&quot; data-resource-version=&quot;3.117.0&quot; lang=&quot;en&quot; data-adhesive-refresh=&quot;billboard3&quot; data-mantle-resource-version=&quot;3.12.171&quot; data-tech-resource-version=&quot;3.117.0&quot; data-tracking-container=&quot;true&quot;&gt;				</span><br><span class="line">&lt;!--</span><br><span class="line">&lt;globe-environment environment=&quot;prod&quot; application=&quot;tech&quot; dataCenter=&quot;us-west-2&quot;/&gt;</span><br><span class="line">--&gt;</span><br><span class="line">&lt;head class=&quot;loc head&quot;&gt;				</span><br><span class="line">					</span><br><span class="line">					&lt;script type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-          
+          This is the 11th paragraphs on the Python book. It talks about the way of getting and downloading files from the Internet and how to analyse the HTML. I first learned about the first part , which I th
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/10/25/Python-Download-files-from-website/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -672,30 +653,17 @@
       
         
           
-            <p>This python programme is from a Canada university’s question. It a data processing question.</p>
-<h4 id="Requests"><a href="#Requests" class="headerlink" title="Requests"></a>Requests</h4><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/0WaT7q"><img src="https://s1.ax1x.com/2020/10/12/0WaT7q.png" alt="0WaT7q.png"></a></p>
-<h4 id="My-Code"><a href="#My-Code" class="headerlink" title="My Code"></a>My Code</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;C:\\Users\\PC\\keywords.txt&quot;</span>,<span class="string">&quot;r&quot;</span>,encoding=<span class="string">&quot;utf-8&quot;</span>)<span class="keyword">as</span> f:</span><br><span class="line">    lines= f.readlines()</span><br><span class="line"><span class="built_in">print</span>(lines)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;alone,1\n&#x27;, &#x27;amazed,10\n&#x27;, &#x27;amazing,10\n&#x27;, &#x27;bad,1\n&#x27;, &#x27;best,10\n&#x27;, &#x27;better,10\n&#x27;, &#x27;excellent,10\n&#x27;, &#x27;excited,10\n&#x27;, &#x27;excite,10\n&#x27;, &#x27;excites,10\n&#x27;, &#x27;exciting,10\n&#x27;, &#x27;glad,10\n&#x27;, &#x27;god,5\n&#x27;, &#x27;good,7\n&#x27;, &#x27;great,7\n&#x27;, &#x27;greatest,10\n&#x27;, &#x27;haha,5\n&#x27;, &#x27;hahaha,5\n&#x27;, &#x27;happy,10\n&#x27;, &#x27;hate,1\n&#x27;, &#x27;hurt,1\n&#x27;, &#x27;hurts,1\n&#x27;, &#x27;hurting,1\n&#x27;, &#x27;like,7\n&#x27;, &#x27;likes,7\n&#x27;, &#x27;liked,7\n&#x27;, &#x27;lol,5\n&#x27;, &#x27;lonely,1\n&#x27;, &#x27;love,10\n&#x27;, &#x27;loves,10\n&#x27;, &#x27;loved,10\n&#x27;, &#x27;loving,10\n&#x27;, &#x27;lovin,10\n&#x27;, &#x27;need,1\n&#x27;, &#x27;needs,1\n&#x27;, &#x27;negative,1\n&#x27;, &#x27;please,5\n&#x27;, &#x27;positive,7\n&#x27;, &#x27;pretty,10\n&#x27;, &#x27;prettiest,10\n&#x27;, &#x27;regret,1\n&#x27;, &#x27;regrets,1\n&#x27;, &#x27;ruin,1\n&#x27;, &#x27;ruins,1\n&#x27;, &#x27;ruined,1\n&#x27;, &#x27;sad,1\n&#x27;, &#x27;save,5\n&#x27;, &#x27;saves,5\n&#x27;, &#x27;saved,5\n&#x27;, &#x27;sorry,1\n&#x27;, &#x27;thank,5\n&#x27;, &#x27;thanks,5\n&#x27;, &#x27;tired,1\n&#x27;, &#x27;worst,1\n&#x27;]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lines[<span class="number">0</span>].replace(<span class="string">&#x27;\n&#x27;</span>,<span class="string">&#x27;&#x27;</span>).split(<span class="string">&#x27;,&#x27;</span>))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;alone&#x27;, &#x27;1&#x27;]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">keywords=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">    keyword, value =line.replace(<span class="string">&#x27;\n&#x27;</span>,<span class="string">&#x27;&#x27;</span>).split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">    keywords[keyword]=<span class="built_in">int</span>(value)</span><br><span class="line">    </span><br><span class="line">keywords</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#x27;alone&#x27;: 1,</span><br><span class="line"> &#x27;amazed&#x27;: 10,</span><br><span class="line"> &#x27;amazing&#x27;: 10,</span><br><span class="line"> &#x27;bad&#x27;: 1,</span><br><span class="line"> &#x27;best&#x27;: 10,</span><br><span class="line"> &#x27;better&#x27;: 10,</span><br><span class="line"> &#x27;excellent&#x27;: 10,</span><br><span class="line"> &#x27;excited&#x27;: 10,</span><br><span class="line"> &#x27;excite&#x27;: 10,</span><br><span class="line"> &#x27;excites&#x27;: 10,</span><br><span class="line"> &#x27;exciting&#x27;: 10,</span><br><span class="line"> &#x27;glad&#x27;: 10,</span><br><span class="line"> &#x27;god&#x27;: 5,</span><br><span class="line"> &#x27;good&#x27;: 7,</span><br><span class="line"> &#x27;great&#x27;: 7,</span><br><span class="line"> &#x27;greatest&#x27;: 10,</span><br><span class="line"> &#x27;haha&#x27;: 5,</span><br><span class="line"> &#x27;hahaha&#x27;: 5,</span><br><span class="line"> &#x27;happy&#x27;: 10,</span><br><span class="line"> &#x27;hate&#x27;: 1,</span><br><span class="line"> &#x27;hurt&#x27;: 1,</span><br><span class="line"> &#x27;hurts&#x27;: 1,</span><br><span class="line"> &#x27;hurting&#x27;: 1,</span><br><span class="line"> &#x27;like&#x27;: 7,</span><br><span class="line"> &#x27;likes&#x27;: 7,</span><br><span class="line"> &#x27;liked&#x27;: 7,</span><br><span class="line"> &#x27;lol&#x27;: 5,</span><br><span class="line"> &#x27;lonely&#x27;: 1,</span><br><span class="line"> &#x27;love&#x27;: 10,</span><br><span class="line"> &#x27;loves&#x27;: 10,</span><br><span class="line"> &#x27;loved&#x27;: 10,</span><br><span class="line"> &#x27;loving&#x27;: 10,</span><br><span class="line"> &#x27;lovin&#x27;: 10,</span><br><span class="line"> &#x27;need&#x27;: 1,</span><br><span class="line"> &#x27;needs&#x27;: 1,</span><br><span class="line"> &#x27;negative&#x27;: 1,</span><br><span class="line"> &#x27;please&#x27;: 5,</span><br><span class="line"> &#x27;positive&#x27;: 7,</span><br><span class="line"> &#x27;pretty&#x27;: 10,</span><br><span class="line"> &#x27;prettiest&#x27;: 10,</span><br><span class="line"> &#x27;regret&#x27;: 1,</span><br><span class="line"> &#x27;regrets&#x27;: 1,</span><br><span class="line"> &#x27;ruin&#x27;: 1,</span><br><span class="line"> &#x27;ruins&#x27;: 1,</span><br><span class="line"> &#x27;ruined&#x27;: 1,</span><br><span class="line"> &#x27;sad&#x27;: 1,</span><br><span class="line"> &#x27;save&#x27;: 5,</span><br><span class="line"> &#x27;saves&#x27;: 5,</span><br><span class="line"> &#x27;saved&#x27;: 5,</span><br><span class="line"> &#x27;sorry&#x27;: 1,</span><br><span class="line"> &#x27;thank&#x27;: 5,</span><br><span class="line"> &#x27;thanks&#x27;: 5,</span><br><span class="line"> &#x27;tired&#x27;: 1,</span><br><span class="line"> &#x27;worst&#x27;: 1&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;C:\\Users\\PC\\tweets.txt&quot;</span>,<span class="string">&quot;r&quot;</span>,encoding=<span class="string">&quot;utf-8&quot;</span>)<span class="keyword">as</span> f:</span><br><span class="line">    tweets= f.readlines()</span><br><span class="line">去重 = <span class="literal">True</span> <span class="comment"># delete the repeated texts</span></span><br><span class="line"><span class="keyword">if</span> 去重:</span><br><span class="line">    new_lines = <span class="built_in">list</span>(<span class="built_in">set</span>(tweets))</span><br><span class="line">    new_lines.sort(key=tweets.index)</span><br><span class="line">    tweets = new_lines</span><br><span class="line"></span><br><span class="line"><span class="comment">#print(lines)</span></span><br><span class="line"><span class="built_in">print</span>(tweets)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">wholecontent=tweets[<span class="number">0</span>].split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">content3=wholecontent[<span class="number">5</span>:]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p1 =  -<span class="number">67.444574</span></span><br><span class="line">p2 = -<span class="number">67.444574</span></span><br><span class="line">p3 =  -<span class="number">87.518395</span></span><br><span class="line">p4 = -<span class="number">87.518395</span></span><br><span class="line">p5 = -<span class="number">101.998892</span></span><br><span class="line">p6 = -<span class="number">101.998892</span></span><br><span class="line">p7 = -<span class="number">115.236428</span></span><br><span class="line">p8 = -<span class="number">115.236428</span></span><br><span class="line">p9 =  -<span class="number">125.242264</span></span><br><span class="line">p10 =  -<span class="number">125.242264</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getTimezone</span>(<span class="params">longitude</span>):</span></span><br><span class="line">    <span class="keyword">if</span> (-<span class="number">125.242264</span> &lt; longitude) <span class="keyword">and</span> (longitude &lt;= -<span class="number">115.236428</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Pacific&quot;</span></span><br><span class="line">    <span class="keyword">elif</span> (-<span class="number">115.236428</span> &lt; longitude) <span class="keyword">and</span> (longitude &lt;= -<span class="number">101.998892</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Mountain&quot;</span></span><br><span class="line">    <span class="keyword">elif</span> (-<span class="number">101.998892</span> &lt; longitude) <span class="keyword">and</span> (longitude &lt;= -<span class="number">87.518395</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Central&quot;</span></span><br><span class="line">    <span class="keyword">elif</span> (-<span class="number">87.518395</span> &lt; longitude) <span class="keyword">and</span> (longitude &lt;= -<span class="number">67.444574</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Eastern&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">content2=[]</span><br><span class="line">content3=[]</span><br><span class="line">list2=[]</span><br><span class="line">location=[]</span><br><span class="line">general=&#123;&#125;</span><br><span class="line">total=&#123;&#125;</span><br><span class="line">Pacific = <span class="number">0</span></span><br><span class="line">Mountain = <span class="number">0</span></span><br><span class="line">Central = <span class="number">0</span></span><br><span class="line">Eastern = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(tweets)):</span><br><span class="line">    wholecontent=tweets[i].split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    content3=wholecontent[<span class="number">5</span>:]</span><br><span class="line">    content1=[]</span><br><span class="line">    emovalue=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(content3)):</span><br><span class="line">        str1=<span class="string">&#x27;&#x27;</span></span><br><span class="line">        content3[i]=content3[i].lower()</span><br><span class="line">        <span class="keyword">for</span> p <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(content3[i])):</span><br><span class="line">            <span class="keyword">if</span> content3[i][p]&gt;=<span class="string">&#x27;a&#x27;</span> <span class="keyword">and</span> content3[i][p]&lt;=<span class="string">&#x27;z&#x27;</span>:</span><br><span class="line">                str1=str1+content3[i][p]</span><br><span class="line">        content1.append(str1)</span><br><span class="line">        <span class="keyword">while</span> <span class="string">&#x27;&#x27;</span> <span class="keyword">in</span> content1:</span><br><span class="line">            content1.remove(<span class="string">&#x27;&#x27;</span>)  <span class="comment"># string processing</span></span><br><span class="line">        location=wholecontent[<span class="number">1</span>]</span><br><span class="line">        location=location[<span class="number">0</span>:-<span class="number">1</span>]</span><br><span class="line">        locate=<span class="built_in">float</span>(location)   <span class="comment">#get the longlitude</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(content3)):</span><br><span class="line">            key=location</span><br><span class="line">            value=content1</span><br><span class="line">            total[key]=value     <span class="comment">#put in dictionary</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(content1)):</span><br><span class="line">        <span class="keyword">if</span> content1[i] <span class="keyword">in</span> keywords:</span><br><span class="line">            emovalue += keywords[content1[i]]  <span class="comment">#count emovalue for each text</span></span><br><span class="line">    timezone = getTimezone(locate)</span><br><span class="line">    score = emovalue</span><br><span class="line">    <span class="keyword">if</span> timezone == <span class="string">&quot;Pacific&quot;</span>:    <span class="comment">#add the score to its area belonging</span></span><br><span class="line">        Pacific += score</span><br><span class="line">    <span class="keyword">elif</span> timezone == <span class="string">&quot;Mountain&quot;</span>:</span><br><span class="line">        Mountain += score</span><br><span class="line">    <span class="keyword">elif</span> timezone == <span class="string">&quot;Central&quot;</span>:</span><br><span class="line">        Central += score</span><br><span class="line">    <span class="keyword">elif</span> timezone == <span class="string">&quot;Eastern&quot;</span>:</span><br><span class="line">        Eastern += score</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Pacific: &#x27;</span>+<span class="built_in">str</span>(Pacific),<span class="string">&#x27; Mountain: &#x27;</span>+<span class="built_in">str</span>(Mountain), <span class="string">&#x27; Central: &#x27;</span>+<span class="built_in">str</span>(Central),<span class="string">&#x27; Eastern: &#x27;</span>+<span class="built_in">str</span>(Eastern))</span><br></pre></td></tr></table></figure>
-
-<h4 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pacific: 1644  Mountain: 728  Central: 2711  Eastern: 5836</span><br></pre></td></tr></table></figure>
-
-
-          
+          This python programme is from a Canada university’s question. It a data processing question.
+Requests
+My Code123with open(&quot;C:\\Users\\PC\\keywords.txt&quot;,&quot;r&quot;,encoding=&quot;utf-8&quo
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/10/11/Python-tweets-data-analysis/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -813,39 +781,17 @@
       
         
           
-            <p>  I do this summery is to make myself have a comprehensive concepts about the progress I’ve made last term.</p>
-<h4 id="School-course"><a href="#School-course" class="headerlink" title="School course"></a>School course</h4><p>Result: all A*</p>
-<p>The IGCSE course is relatively simple for me. Most knowledge I have already learned in the middle school. So I spent about only 40% of my time on this part.</p>
-<h4 id="IELTS"><a href="#IELTS" class="headerlink" title="IELTS"></a>IELTS</h4><p>Result: 7 in total , 6 in each component</p>
-<p>IELTS is the basic requirement for applying a university. I spent the rest 40% times on it. The result I have now can allow me to apply the university. But my ideal school needs higher mark. Therefore, I need to get a higher mark next year to satisfy the requirement of the condition offer.</p>
-<p>Future plan: I plan to have the IELTS exam when I go to the senior three because I need to pay mainly of my attention on AS course study. Moreover, my English level may be better than now, it may be easier for me to get higher marks.</p>
-<h4 id="Major-explore"><a href="#Major-explore" class="headerlink" title="Major explore"></a>Major explore</h4><p>Result: economics in general</p>
-<p>After exploring different fields, I gradually found that I am better in liberal arts than science and I am especially interest in Economics. However, there are many branches in it which are still waiting for me to discover. </p>
-<p>The activities I’ve done :</p>
-<p>Eight Vally new retail activity</p>
-<p>AI programming </p>
-<p>Python Learning</p>
-<h4 id="Preparing-for-the-Major"><a href="#Preparing-for-the-Major" class="headerlink" title="Preparing for the Major"></a>Preparing for the Major</h4><ul>
-<li><p>Reading</p>
-<ul>
-<li>薛兆丰经济学讲义（basic economic concepts)</li>
-<li>Monetary Economics</li>
-<li>Human History</li>
-<li>Capitalism</li>
-</ul>
-</li>
-<li><p>Eight Vally new retail activity</p>
-</li>
-<li><p>Python Learning(necessary data analysis skills)</p>
-</li>
-<li><p>competition</p>
-<ul>
-<li>UKMT  Result: Gold award</li>
-</ul>
-</li>
-</ul>
-
-          
+            I do this summery is to make myself have a comprehensive concepts about the progress I’ve made last term.
+School courseResult: all A*
+The IGCSE course is relatively simple for me. Most knowledge I h
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/10/06/Stage-summary-of-senior-one/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -985,11 +931,15 @@
       
         
           
-            <p>Everyone in life will face an unfamiliar situation and environment and it is vital to confront it in the right way. Adjusting to an unfamiliar situation happened to me when I attended a business study project called Eight Valley  three month s ago . In this project, I learned about knowledge about new retailing  and created a plan for designing a retail store with business partners . The course was mainly divided into two stages. The first part consisted of learning the theory of retail management which included topics such as the type of retail shop and the way to make the store more attractive. In the second part, team members held team discussions to make a store designing plan and prepare for the final road show , which was the last and the biggest activity of this program. We designed a activities which allows shoppers to design their own shoes pattern. </p>
-<p>Undeniably, the course content was really interesting, but the things  that made me feel a little bit uncomfortable was that the other team  members were students who was older than me , even there was one graduate. I didn’t know any of them and I was in a totally new environment. Moreover, since the knowledge of new retailing was brand new to me, I seldom came up with any creative ideas. Some of the older students, however, had much more active thinking and thought a lot of good ideas. In such an unfamiliar environment, I became shy to express my opinions and communicate less than others. Though I attended this project from the beginning untill the end, I still did not have too much sense of participation because of my wrong attitude and inability to adapt the unfamiliar situation.</p>
-<p>After the course, I shared my feelings with my parents and teachers and I realized that it is necessary for me to learn how to integrate in an unfamiliar circumstance since I still need to face these problems after I work. Otherwise, it may make me lose many valuable job opportunities . I learned that one of the most important factors in life is confidence and being assertive with your viewpoints even if they may be controversial or rom a minority point of view. This is the process of learning. Always try your best to integrate into the group.  Therefore, you can have more sense of participation and gain more experience whatever task you do or whoever you cooperate with.</p>
-
-          
+          Everyone in life will face an unfamiliar situation and environment and it is vital to confront it in the right way. Adjusting to an unfamiliar situation happened to me when I attended a business study
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/09/12/The-unfamiliar-situation-I-have-met/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1107,19 +1057,26 @@
       
         
           
-            <p>This is the PPT that I used for the speech in school.</p>
-<p><img src="https://s1.ax1x.com/2020/09/06/wmpDmV.jpg" alt="wmpDmV.jpg"></p>
-<p><img src="https://s1.ax1x.com/2020/09/06/wmpWlR.jpg" alt="wmpWlR.jpg"></p>
-<p><img src="https://s1.ax1x.com/2020/09/06/wmpf61.jpg" alt="wmpf61.jpg"></p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/wmp5m6"><img src="https://s1.ax1x.com/2020/09/06/wmp5m6.jpg" alt="wmp5m6.jpg"></a></p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/wmpI0K"><img src="https://s1.ax1x.com/2020/09/06/wmpI0K.jpg" alt="wmpI0K.jpg"></a></p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/wmpbfH"><img src="https://s1.ax1x.com/2020/09/06/wmpbfH.jpg" alt="wmpbfH.jpg"></a></p>
-<p><img src="https://s1.ax1x.com/2020/09/06/wmpLpd.jpg" alt="wmpLpd.jpg"></p>
-<p><img src="https://s1.ax1x.com/2020/09/06/wmpjXt.jpg" alt="wmpjXt.jpg"></p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/wmpxnP"><img src="https://s1.ax1x.com/2020/09/06/wmpxnP.jpg" alt="wmpxnP.jpg"></a></p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/wm9S78"><img src="https://s1.ax1x.com/2020/09/06/wm9S78.jpg" alt="wm9S78.jpg"></a></p>
+          This is the PPT that I used for the speech in school.
+
+
+
+
+
+
+
+
+
+
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/09/06/Finance-Introducing-PPT/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1237,29 +1194,17 @@
       
         
           
-            <p>This is the last project of this program. I made a draw board.  </p>
-<p>This program was divided into two classes. </p>
-<h3 id="First-class"><a href="#First-class" class="headerlink" title="First class"></a>First class</h3><p>In this class, I mainly focused on the installation of basic components. It consists of  the base, the mechanical arm, the white board and the pen. </p>
-<p><img src="https://s1.ax1x.com/2020/08/29/d74les.png" alt="d74les.png"></p>
-<p>The main driving device is the mechanical arm. Three servos made the arm move in different direction. One of the servos is in charge of lifting and setting pens. The other two are responsible for writing on a horizontal plane.</p>
-<p>There is also a eraser which is placed in a corner of the board. The mechanical arm can use it to erase the board automatically every time before writing.</p>
-<h3 id="Second-class"><a href="#Second-class" class="headerlink" title="Second class"></a>Second class</h3><p>In the second class, we began to write the code and adjust the parameter.</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/d7LK6P"><img src="https://s1.ax1x.com/2020/08/29/d7LK6P.png" alt="d7LK6P.png"></a></p>
-<p>These are the important parameters I needed to adjust. These includes the degree how the mechanical arm will lift and set when writing, the exact coordinate of the eraser and the range of the arm can move.</p>
-<p>These parameters need to be very exact that takes me hours to adjust them.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br></pre></td><td class="code"><pre><span class="line">#define SERVOPINLIFT  <span class="number">2</span> <span class="comment">//抬臂舵机</span></span><br><span class="line">#define SERVOPINLEFT  <span class="number">3</span> <span class="comment">//左臂舵机</span></span><br><span class="line">#define SERVOPINRIGHT <span class="number">4</span> <span class="comment">//右臂舵机</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 速度  数字越小越慢，太快了容易抖 1000~2000</span></span><br><span class="line">#define LIFTSPEED <span class="number">1500</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">// 悬臂的长度，根据图纸测量，无需改变</span></span><br><span class="line">#define L1 <span class="number">35</span></span><br><span class="line">#define L2 <span class="number">57.2</span></span><br><span class="line">#define L3 <span class="number">14.2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 左右舵机轴心的位置，根据图纸测量，无需改变</span></span><br><span class="line">#define O1X <span class="number">22</span></span><br><span class="line">#define O1Y -<span class="number">25</span></span><br><span class="line">#define O2X <span class="number">47</span></span><br><span class="line">#define O2Y -<span class="number">25</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//需要的库函数 ,如果编译报告 time.h 错误请参考readme文档、</span></span><br><span class="line"><span class="comment">//#include &lt;Time.h&gt; // see http://playground.arduino.cc/Code/time </span></span><br><span class="line">#include &lt;Servo.h&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> servoLift = LIFT2;</span><br><span class="line"></span><br><span class="line">Servo servo1;  <span class="comment">// </span></span><br><span class="line">Servo servo2;  <span class="comment">// </span></span><br><span class="line">Servo servo3;  <span class="comment">// </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">volatile</span> <span class="keyword">double</span> lastX = rubberx;</span><br><span class="line"><span class="keyword">volatile</span> <span class="keyword">double</span> lastY = rubbery;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> last_min = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">  <span class="comment">// 设置一个模拟时间，（小时，分钟，后面全填0）</span></span><br><span class="line">  <span class="comment">//如果此句编译错误，请将文件包内的libraries库放到Arduino文件夹内，具体操作办法见说明文档</span></span><br><span class="line">  servo1.attach(SERVOPINLIFT);  <span class="comment">//初始化抬臂舵机  lifting servo</span></span><br><span class="line">  servo2.attach(SERVOPINLEFT);  <span class="comment">//初始化左臂舵机  left servo</span></span><br><span class="line">  servo3.attach(SERVOPINRIGHT); <span class="comment">//初始化右臂舵机  right servo</span></span><br><span class="line">  lift(<span class="number">2</span>); <span class="comment">//高抬笔</span></span><br><span class="line">  drawTo(rubberx, rubbery); <span class="comment">//停留在笔擦位置</span></span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">      lift(<span class="number">0</span>); <span class="comment">//落笔写字 </span></span><br><span class="line">      number(<span class="number">0</span>, <span class="number">3</span>, <span class="number">111</span>, <span class="number">1</span>);   <span class="comment">// 檫黑板  </span></span><br><span class="line">      number(<span class="number">0</span>, <span class="number">25</span>, <span class="number">1</span>, <span class="number">1</span>); </span><br><span class="line">      number(<span class="number">14</span>, <span class="number">25</span>, <span class="number">2</span>,<span class="number">1</span>);</span><br><span class="line">      number(<span class="number">25</span>, <span class="number">25</span>, <span class="number">11</span>,<span class="number">1</span>);  <span class="comment">// 打点</span></span><br><span class="line">      number(<span class="number">32</span>, <span class="number">25</span>, <span class="number">3</span>, <span class="number">1</span>);</span><br><span class="line">      number(<span class="number">43</span>, <span class="number">25</span>, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">      lift(<span class="number">2</span>); <span class="comment">//高抬笔</span></span><br><span class="line">      drawTo(rubberx, rubbery); <span class="comment">//【此数值可能需要调节】  默认为70  44</span></span><br><span class="line">      lift(<span class="number">1</span>);<span class="comment">//抬笔</span></span><br><span class="line">      servo1.detach();</span><br><span class="line">      servo2.detach();</span><br><span class="line">      servo3.detach();</span><br><span class="line">     <span class="keyword">while</span>(<span class="number">1</span>);</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// Writing numeral with bx by being the bottom left originpoint. Scale 1 equals a 20 mm high font.</span></span><br><span class="line"><span class="comment">// The structure follows this principle: move to first startpoint of the numeral, lift down, draw numeral, lift up</span></span><br><span class="line"><span class="comment">//这里是写字的函数，如果你觉得字写的丑，可以自行修改字体，结果可能是更丑</span></span><br><span class="line"><span class="comment">//还可以自行增加其他内容，比如字母甚至是汉字</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">number</span><span class="params">(<span class="keyword">float</span> bx, <span class="keyword">float</span> by, <span class="keyword">int</span> num, <span class="keyword">float</span> scale)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">switch</span> (num) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">    drawTo(bx + <span class="number">12</span> * scale, by + <span class="number">6</span> * scale);</span><br><span class="line">    lift(<span class="number">0</span>);</span><br><span class="line">    bogenGZS(bx + <span class="number">7</span> * scale, by + <span class="number">10</span> * scale, <span class="number">10</span> * scale, -<span class="number">0.8</span>, <span class="number">6.7</span>, <span class="number">0.5</span>);</span><br><span class="line">    lift(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line"></span><br><span class="line">    drawTo(bx + <span class="number">3</span> * scale, by + <span class="number">15</span> * scale); <span class="comment">//</span></span><br><span class="line">    lift(<span class="number">0</span>);</span><br><span class="line">    drawTo(bx + <span class="number">5</span> * scale, by + <span class="number">20</span> * scale);<span class="comment">// drawTo(bx + 10 * scale, by + 20 * scale);</span></span><br><span class="line">    drawTo(bx + <span class="number">5</span> * scale, by + <span class="number">0</span> * scale);</span><br><span class="line">    lift(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    drawTo(bx + <span class="number">2</span> * scale, by + <span class="number">12</span> * scale);</span><br><span class="line">    lift(<span class="number">0</span>);</span><br><span class="line">    bogenUZS(bx + <span class="number">8</span> * scale, by + <span class="number">14</span> * scale, <span class="number">6</span> * scale, <span class="number">3</span>, -<span class="number">0.8</span>, <span class="number">1</span>);</span><br><span class="line">    drawTo(bx + <span class="number">1</span> * scale, by + <span class="number">0</span> * scale);</span><br><span class="line">    drawTo(bx + <span class="number">12</span> * scale, by + <span class="number">2</span> * scale);<span class="comment">//    drawTo(bx + 12 * scale, by + 0 * scale);</span></span><br><span class="line">    lift(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    drawTo(bx + <span class="number">2</span> * scale, by + <span class="number">17</span> * scale);</span><br><span class="line">    lift(<span class="number">0</span>);</span><br><span class="line">    bogenUZS(bx + <span class="number">5</span> * scale, by + <span class="number">15</span> * scale, <span class="number">5</span> * scale, <span class="number">3</span>, -<span class="number">2</span>, <span class="number">1</span>);</span><br><span class="line">    bogenUZS(bx + <span class="number">5</span> * scale, by + <span class="number">5</span> * scale, <span class="number">5</span> * scale, <span class="number">1.57</span>, -<span class="number">3</span>, <span class="number">1</span>);</span><br><span class="line">    lift(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">    drawTo(bx + <span class="number">10</span> * scale, by + <span class="number">0</span> * scale);</span><br><span class="line">    lift(<span class="number">0</span>);</span><br><span class="line">    drawTo(bx + <span class="number">10</span> * scale, by + <span class="number">20</span> * scale);</span><br><span class="line">    drawTo(bx + <span class="number">4</span> * scale, by + <span class="number">2</span> * scale); <span class="comment">//   drawTo(bx + 2 * scale, by + 6 * scale);</span></span><br><span class="line">    drawTo(bx + <span class="number">15</span> * scale, by + <span class="number">6</span> * scale);<span class="comment">//    drawTo(bx + 12 * scale, by + 6 * scale);</span></span><br><span class="line">    lift(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">    drawTo(bx + <span class="number">2</span> * scale, by + <span class="number">5</span> * scale);</span><br><span class="line">    lift(<span class="number">0</span>);</span><br><span class="line">    bogenGZS(bx + <span class="number">5</span> * scale, by + <span class="number">6</span> * scale, <span class="number">6</span> * scale, -<span class="number">2.5</span>, <span class="number">2</span>, <span class="number">1</span>);</span><br><span class="line">    drawTo(bx + <span class="number">5</span> * scale, by + <span class="number">20</span> * scale);</span><br><span class="line">    drawTo(bx + <span class="number">12</span> * scale, by + <span class="number">20</span> * scale);</span><br><span class="line">    lift(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">    drawTo(bx + <span class="number">2</span> * scale, by + <span class="number">10</span> * scale);</span><br><span class="line">    lift(<span class="number">0</span>);</span><br><span class="line">    bogenUZS(bx + <span class="number">7</span> * scale, by + <span class="number">6</span> * scale, <span class="number">6</span> * scale, <span class="number">2</span>, -<span class="number">4.4</span>, <span class="number">1</span>);</span><br><span class="line">    drawTo(bx + <span class="number">11</span> * scale, by + <span class="number">20</span> * scale);</span><br><span class="line">    lift(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">    drawTo(bx + <span class="number">2</span> * scale, by + <span class="number">20</span> * scale);</span><br><span class="line">    lift(<span class="number">0</span>);</span><br><span class="line">    drawTo(bx + <span class="number">12</span> * scale, by + <span class="number">20</span> * scale);</span><br><span class="line">    drawTo(bx + <span class="number">2</span> * scale, by + <span class="number">0</span>);</span><br><span class="line">    lift(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">    drawTo(bx + <span class="number">5</span> * scale, by + <span class="number">10</span> * scale);</span><br><span class="line">    lift(<span class="number">0</span>);</span><br><span class="line">    bogenUZS(bx + <span class="number">5</span> * scale, by + <span class="number">15</span> * scale, <span class="number">5</span> * scale, <span class="number">4.7</span>, -<span class="number">1.6</span>, <span class="number">1</span>);</span><br><span class="line">    bogenGZS(bx + <span class="number">5</span> * scale, by + <span class="number">5</span> * scale, <span class="number">5</span> * scale, -<span class="number">4.7</span>, <span class="number">2</span>, <span class="number">1</span>);</span><br><span class="line">    lift(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">    drawTo(bx + <span class="number">9</span> * scale, by + <span class="number">11</span> * scale);</span><br><span class="line">    lift(<span class="number">0</span>);</span><br><span class="line">    bogenUZS(bx + <span class="number">7</span> * scale, by + <span class="number">15</span> * scale, <span class="number">5</span> * scale, <span class="number">4</span>, -<span class="number">0.5</span>, <span class="number">1</span>);</span><br><span class="line">    drawTo(bx + <span class="number">5</span> * scale, by + <span class="number">0</span>);</span><br><span class="line">    lift(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">case</span> <span class="number">111</span>:</span><br><span class="line"></span><br><span class="line">    lift(<span class="number">0</span>);</span><br><span class="line">    drawTo(rubberx, rubbery);</span><br><span class="line">    drawTo(<span class="number">58</span>, <span class="number">42</span>);</span><br><span class="line"></span><br><span class="line">    drawTo(<span class="number">58</span>, <span class="number">45</span>); </span><br><span class="line">    drawTo(<span class="number">0</span>, <span class="number">45</span>);</span><br><span class="line">    drawTo(<span class="number">0</span>, <span class="number">41</span>);</span><br><span class="line">    drawTo(<span class="number">58</span>, <span class="number">41</span>);</span><br><span class="line">    drawTo(<span class="number">60</span>, <span class="number">37</span>);</span><br><span class="line"></span><br><span class="line">    drawTo(<span class="number">0</span>, <span class="number">37</span>);</span><br><span class="line">    drawTo(<span class="number">0</span>, <span class="number">33</span>);</span><br><span class="line">    drawTo(<span class="number">60</span>, <span class="number">33</span>);</span><br><span class="line">    drawTo(<span class="number">60</span>, <span class="number">29</span>);</span><br><span class="line"></span><br><span class="line">    drawTo(<span class="number">0</span>, <span class="number">29</span>);</span><br><span class="line">    drawTo(<span class="number">0</span>, <span class="number">25</span>);</span><br><span class="line">    drawTo(<span class="number">60</span>, <span class="number">25</span>);</span><br><span class="line">    drawTo(<span class="number">60</span>, <span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">    drawTo(<span class="number">0</span>, <span class="number">20</span>);</span><br><span class="line">    </span><br><span class="line">    drawTo(<span class="number">60</span>, rubbery-<span class="number">3</span>);</span><br><span class="line">    drawTo(rubberx+<span class="number">6</span> , rubbery-<span class="number">3</span>);</span><br><span class="line">    lift(<span class="number">2</span>);</span><br><span class="line">    drawTo(rubberx , rubbery);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">    drawTo(bx + <span class="number">5</span> * scale, by + <span class="number">15</span> * scale);</span><br><span class="line">    lift(<span class="number">0</span>);</span><br><span class="line">    bogenGZS(bx + <span class="number">5</span> * scale, by + <span class="number">15</span> * scale, <span class="number">0.1</span> * scale, <span class="number">1</span>, -<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">    lift(<span class="number">1</span>);</span><br><span class="line">    drawTo(bx + <span class="number">5</span> * scale, by + <span class="number">5</span> * scale);</span><br><span class="line">    lift(<span class="number">0</span>);</span><br><span class="line">    bogenGZS(bx + <span class="number">5</span> * scale, by + <span class="number">5</span> * scale, <span class="number">0.1</span> * scale, <span class="number">1</span>, -<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">    lift(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//抬函数，不同的摆臂高度</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">lift</span><span class="params">(<span class="keyword">char</span> lift)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (lift) &#123;</span><br><span class="line">    <span class="comment">// room to optimize  !</span></span><br><span class="line">  <span class="keyword">case</span> <span class="number">0</span>: </span><br><span class="line">      <span class="keyword">if</span> (servoLift &gt;= LIFT0) &#123;</span><br><span class="line">      <span class="keyword">while</span> (servoLift &gt;= LIFT0) </span><br><span class="line">      &#123;</span><br><span class="line">        servoLift--;</span><br><span class="line">        servo1.writeMicroseconds(servoLift);				</span><br><span class="line">        delayMicroseconds(LIFTSPEED);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">while</span> (servoLift &lt;= LIFT0) &#123;</span><br><span class="line">        servoLift++;</span><br><span class="line">        servo1.writeMicroseconds(servoLift);</span><br><span class="line">        delayMicroseconds(LIFTSPEED);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">1</span>: </span><br><span class="line">    <span class="keyword">if</span> (servoLift &gt;= LIFT1) &#123;</span><br><span class="line">      <span class="keyword">while</span> (servoLift &gt;= LIFT1) &#123;</span><br><span class="line">        servoLift--;</span><br><span class="line">        servo1.writeMicroseconds(servoLift);</span><br><span class="line">        delayMicroseconds(LIFTSPEED);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">while</span> (servoLift &lt;= LIFT1) &#123;</span><br><span class="line">        servoLift++;</span><br><span class="line">        servo1.writeMicroseconds(servoLift);</span><br><span class="line">        delayMicroseconds(LIFTSPEED);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    <span class="keyword">if</span> (servoLift &gt;= LIFT2) &#123;</span><br><span class="line">      <span class="keyword">while</span> (servoLift &gt;= LIFT2) &#123;</span><br><span class="line">        servoLift--;</span><br><span class="line">        servo1.writeMicroseconds(servoLift);</span><br><span class="line">        delayMicroseconds(LIFTSPEED);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">while</span> (servoLift &lt;= LIFT2) &#123;</span><br><span class="line">        servoLift++;</span><br><span class="line">        servo1.writeMicroseconds(servoLift);				</span><br><span class="line">        delayMicroseconds(LIFTSPEED);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//里面似乎有勾股定理？</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bogenUZS</span><span class="params">(<span class="keyword">float</span> bx, <span class="keyword">float</span> by, <span class="keyword">float</span> radius, <span class="keyword">int</span> start, <span class="keyword">int</span> ende, <span class="keyword">float</span> sqee)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">float</span> inkr = -<span class="number">0.05</span>;</span><br><span class="line">  <span class="keyword">float</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">do</span> &#123;</span><br><span class="line">    drawTo(sqee * radius * cos(start + count) + bx,</span><br><span class="line">    radius * sin(start + count) + by);</span><br><span class="line">    count += inkr;</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="keyword">while</span> ((start + count) &gt; ende);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//cos？sin？</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bogenGZS</span><span class="params">(<span class="keyword">float</span> bx, <span class="keyword">float</span> by, <span class="keyword">float</span> radius, <span class="keyword">int</span> start, <span class="keyword">int</span> ende, <span class="keyword">float</span> sqee)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">float</span> inkr = <span class="number">0.05</span>;</span><br><span class="line">  <span class="keyword">float</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">do</span> &#123;</span><br><span class="line">    drawTo(sqee * radius * cos(start + count) + bx,</span><br><span class="line">    radius * sin(start + count) + by);</span><br><span class="line">    count += inkr;</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="keyword">while</span> ((start + count) &lt;= ende);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">drawTo</span><span class="params">(<span class="keyword">double</span> pX, <span class="keyword">double</span> pY)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">double</span> dx, dy, c;</span><br><span class="line">  <span class="keyword">int</span> i;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// dx dy of new point</span></span><br><span class="line">  dx = pX - lastX;</span><br><span class="line">  dy = pY - lastY;</span><br><span class="line">  <span class="comment">//path lenght in mm, times 4 equals 4 steps per mm</span></span><br><span class="line">  c = floor(<span class="number">4</span> * sqrt(dx * dx + dy * dy));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (c &lt; <span class="number">1</span>) c = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= c; i++) &#123;</span><br><span class="line">    <span class="comment">// draw line point by point</span></span><br><span class="line">    set_XY(lastX + (i * dx / c), lastY + (i * dy / c));</span><br><span class="line">  &#125;</span><br><span class="line">  lastX = pX;</span><br><span class="line">  lastY = pY;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">return_angle</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b, <span class="keyword">double</span> c)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// cosine rule for angle between c and a</span></span><br><span class="line">  <span class="keyword">return</span> acos((a * a + c * c - b * b) / (<span class="number">2</span> * a * c));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//用各种三角函数把位置坐标换算成舵机的角度，具体咋算的，请参考</span></span><br><span class="line"><span class="comment">//Plotclock by joo - Thingiverse</span></span><br><span class="line"><span class="comment">//http://www.thingiverse.com/thing:248009/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">set_XY</span><span class="params">(<span class="keyword">double</span> Tx, <span class="keyword">double</span> Ty)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  delay(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">double</span> dx, dy, c, a1, a2, Hx, Hy;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// calculate triangle between pen, servoLeft and arm joint</span></span><br><span class="line">  <span class="comment">// cartesian dx/dy</span></span><br><span class="line">  dx = Tx - O1X;</span><br><span class="line">  dy = Ty - O1Y;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// polar lemgth (c) and angle (a1)</span></span><br><span class="line">  c = sqrt(dx * dx + dy * dy); <span class="comment">// </span></span><br><span class="line">  a1 = atan2(dy, dx); <span class="comment">//</span></span><br><span class="line">  a2 = return_angle(L1, L2, c);</span><br><span class="line"></span><br><span class="line">    servo2.writeMicroseconds(floor(((a2 + a1 - M_PI) * SERVOFAKTORLEFT) + SERVOLEFTNULL));</span><br><span class="line"></span><br><span class="line">  <span class="comment">// calculate joinr arm point for triangle of the right servo arm</span></span><br><span class="line">  a2 = return_angle(L2, L1, c);</span><br><span class="line">  Hx = Tx + L3 * cos((a1 - a2 + <span class="number">0.621</span>) + M_PI); <span class="comment">//36,5掳</span></span><br><span class="line">  Hy = Ty + L3 * sin((a1 - a2 + <span class="number">0.621</span>) + M_PI);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// calculate triangle between pen joint, servoRight and arm joint</span></span><br><span class="line">  dx = Hx - O2X;</span><br><span class="line">  dy = Hy - O2Y;</span><br><span class="line"></span><br><span class="line">  c = sqrt(dx * dx + dy * dy);</span><br><span class="line">  a1 = atan2(dy, dx);</span><br><span class="line">  a2 = return_angle(L1, (L2 - L3), c);</span><br><span class="line">  servo3.writeMicroseconds(floor(((a1 - a2) * SERVOFAKTORRIGHT) + SERVORIGHTNULL));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Its principle is :</p>
-<ul>
-<li>marking all the coordinate of each strokes of each number</li>
-<li>use the particular digital library</li>
-<li>output by moving the mechanical arm</li>
-</ul>
-<h3 id="Final-product"><a href="#Final-product" class="headerlink" title="Final product"></a>Final product</h3><p><img src="https://s1.ax1x.com/2020/08/29/d7vyb6.jpg" alt="d7vyb6.jpg"></p>
-
-          
+          This is the last project of this program. I made a draw board.  
+This program was divided into two classes. 
+First classIn this class, I mainly focused on the installation of basic components. It cons
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/08/24/ARDUINO-Programme-5/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1399,55 +1344,20 @@
       
         
           
-            <h3 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h3><ul>
-<li>a password system</li>
-<li>a keyboard to input the password</li>
-<li>a screen to show the four-digit password, which is  1234</li>
-<li>if the password is correct, the steering engine starts working</li>
-<li>if wrong, the light turns on</li>
-</ul>
-<h3 id="How-to-connect"><a href="#How-to-connect" class="headerlink" title="How to connect"></a>How to connect</h3><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/dJtbWT"><img src="https://s1.ax1x.com/2020/08/20/dJtbWT.jpg" alt="dJtbWT.jpg"></a></p>
-<h3 id="Program"><a href="#Program" class="headerlink" title="Program"></a>Program</h3><p>Include all the packages we need.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;Keypad.h&gt; </span><br><span class="line">#include &lt;Servo.h&gt;  </span><br><span class="line">#include &lt;TM1637.h&gt;</span><br><span class="line">#define CLK 2    </span><br><span class="line">#define DIO 12</span><br><span class="line">#define KEY_ROWS 4 </span><br><span class="line">#define KEY_COLS 4 </span><br><span class="line">Servo myservo;  </span><br></pre></td></tr></table></figure>
-
-
-
-<p>Set all these packets in detail.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">TM1637 tm1637(CLK,DIO);</span><br><span class="line"></span><br><span class="line">char keymap[KEY_ROWS][KEY_COLS] = &#123;</span><br><span class="line">  &#123;&#x27;1&#x27;, &#x27;2&#x27;, &#x27;3&#x27;, &#x27;A&#x27;&#125;,</span><br><span class="line">  &#123;&#x27;4&#x27;, &#x27;5&#x27;, &#x27;6&#x27;, &#x27;B&#x27;&#125;,</span><br><span class="line">  &#123;&#x27;7&#x27;, &#x27;8&#x27;, &#x27;9&#x27;, &#x27;C&#x27;&#125;,</span><br><span class="line">  &#123;&#x27;*&#x27;, &#x27;0&#x27;, &#x27;#&#x27;, &#x27;D&#x27;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">byte colPins[KEY_COLS] = &#123;7, 6, 5, 4&#125;; </span><br><span class="line">byte rowPins[KEY_ROWS] = &#123;11, 10, 9, 8&#125;;  </span><br><span class="line">Keypad myKeypad = Keypad(makeKeymap(keymap), rowPins, colPins, KEY_ROWS, KEY_COLS);</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Set the password.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int times = 0;</span><br><span class="line">int password = 1234;</span><br><span class="line">int keyword = 0;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Set the initial input and output.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void setup()&#123;</span><br><span class="line">  Serial.begin(9600);</span><br><span class="line">  myservo.attach(3);</span><br><span class="line">  tm1637.init();</span><br><span class="line">  tm1637.point(1);//小数点开关，1为打开，0为关闭</span><br><span class="line">  tm1637.set(BRIGHT_TYPICAL);</span><br><span class="line">  pinMode(13, OUTPUT);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Define the function to achieve the power multiple calculations.</p>
-<p>It will help manage the transform of four single digits into thousands.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int multiple(int keytimes)&#123;</span><br><span class="line">    int multi;</span><br><span class="line">    switch(keytimes)&#123;</span><br><span class="line">        case 0: multi = 1000;</span><br><span class="line">        break;</span><br><span class="line">        case 1: multi = 100;</span><br><span class="line">        break;</span><br><span class="line">        case 2: multi = 10;</span><br><span class="line">        break;</span><br><span class="line">        case 3: multi = 1;</span><br><span class="line">        break;</span><br><span class="line">        default: multi = 0;</span><br><span class="line">        break; </span><br><span class="line">      &#125;</span><br><span class="line">    return multi;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>When starting the loop, set the original state.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void loop()&#123;</span><br><span class="line">  char key = myKeypad.getKey();</span><br><span class="line">  digitalWrite(13, HIGH);</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Complete the condition sentence.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">if (key)&#123;</span><br><span class="line">    digitalWrite(13, HIGH); </span><br><span class="line">    tm1637.display(times, (int(key)-48));</span><br><span class="line">    keyword = keyword + (int(key)-48)*(multiple(times));</span><br><span class="line">    times ++;                     #show the input password on the screen</span><br><span class="line">    if(times &gt; 3)&#123;                #condition 1  zero clearing after four digit </span><br><span class="line">        if(keyword == password)&#123;                has all inputed</span><br><span class="line">            myservo.write(0);                   </span><br><span class="line">            tm1637.display(0, 0);               </span><br><span class="line">            tm1637.display(1, 0);</span><br><span class="line">            tm1637.display(2, 0);</span><br><span class="line">            tm1637.display(3, 0);</span><br><span class="line">            delay(1000);</span><br><span class="line">            keyword = 0;</span><br><span class="line">            myservo.write(90);                   turning the servo</span><br><span class="line">          &#125;</span><br><span class="line">        else&#123;                     #condition 2   if the password is not correct</span><br><span class="line">            digitalWrite(13, LOW);               screen zero clearing</span><br><span class="line">            delay(2000);                         </span><br><span class="line">            digitalWrite(13, HIGH);              light on</span><br><span class="line">            tm1637.display(0, 0);</span><br><span class="line">            tm1637.display(1, 0);</span><br><span class="line">            tm1637.display(2, 0);</span><br><span class="line">            tm1637.display(3, 0);</span><br><span class="line">            keyword = 0;</span><br><span class="line">          &#125;</span><br><span class="line">        times = 0;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Show on the serial monitor.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Serial.println(keyword);</span><br><span class="line">      Serial.println(times);</span><br><span class="line">     </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
+          Request
+a password system
+a keyboard to input the password
+a screen to show the four-digit password, which is  1234
+if the password is correct, the steering engine starts working
+if wrong, the light t
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/08/20/ARDUINO-Programme-4/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1587,30 +1497,19 @@
       
         
           
-            <p>In this class, we learned about how to make an intelligent reversing radar.</p>
-<h3 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h3><p>From this part, we learned a tip.</p>
-<p><img src="https://s1.ax1x.com/2020/08/12/ajETHA.png" alt="ajETHA.png"></p>
-<p>In <code>void loop</code>, you have to set the original state of the output first. </p>
-<p><code>digitalWrite(LED,LOW);</code></p>
-<p>Set the state low in order to prevent the fan start to  work immediately when the motherboard has just connected to the power.</p>
-<p><img src="https://s1.ax1x.com/2020/08/12/ajuvvV.jpg" alt="ajuvvV.jpg"></p>
-<h3 id="intelligent-reversing-radar"><a href="#intelligent-reversing-radar" class="headerlink" title="intelligent reversing radar"></a>intelligent reversing radar</h3><h4 id="Buzzer"><a href="#Buzzer" class="headerlink" title="Buzzer"></a>Buzzer</h4><p>This device will make sharp sound when receiving electronic signal. </p>
-<p>We build a function called BUZZ.</p>
-<p>When there is a time signal input, the buzzer will bee at the speed according to the time period. The larger the time period , the slower the buzzer will bee.</p>
-<p><img src="https://s1.ax1x.com/2020/08/12/ajMBwD.png" alt="ajMBwD.png"></p>
-<h4 id="Ultrasonic-sensor"><a href="#Ultrasonic-sensor" class="headerlink" title="Ultrasonic sensor"></a>Ultrasonic sensor</h4><p>This device is used to detect the distance of the object in front of the sensor.</p>
-<p>We can use a Serial monitor to show the detailed value.</p>
-<p><img src="https://s1.ax1x.com/2020/08/12/ajlIRs.png" alt="ajlIRs.png"></p>
-<h4 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h4><p>Combine all these above together.</p>
-<ul>
-<li>First, the ultrasonic sensor record the time period it emit and receive the signal. Using this time to calculate the distance of the object by multiply the speed of sound wave in air.</li>
-<li> According to the distance long, send different signal to the buzzer. The smaller the distance, the smaller the time delay of buzzer.(Three stage: 10 cm , 50 cm , 80 cm)</li>
-</ul>
-<p><img src="https://s1.ax1x.com/2020/08/12/aj3uh4.png" alt="aj3uh4.png"></p>
-<p><img src="https://s1.ax1x.com/2020/08/12/aj31j1.png" alt="aj31j1.png"></p>
-<p><img src="https://s1.ax1x.com/2020/08/12/aj34vn.jpg" alt="aj34vn.jpg"></p>
+          In this class, we learned about how to make an intelligent reversing radar.
+ButtonFrom this part, we learned a tip.
 
-          
+In void loop, you have to set the original state of the output first. 
+digitalWrite
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/08/12/ARDUINO-Programme-3/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1750,20 +1649,16 @@
       
         
           
-            <p>In the second period,  we learned about the theory of  automatic light and  intelligent fan. </p>
-<h3 id="Automatic-Light"><a href="#Automatic-Light" class="headerlink" title="Automatic Light"></a>Automatic Light</h3><h4 id="Infrared"><a href="#Infrared" class="headerlink" title="Infrared"></a>Infrared</h4><p>This lamp uses the infrared sensor to test the surrounding. The sensor can detect  the objects surrounding with the temperature between 36.0C to 37.4C (Human Body Temperature). If there is, it will transmit the analogue signal to the motherboard to open the light.</p>
-<p><img src="https://s1.ax1x.com/2020/08/04/aDEZCt.jpg" alt="aDEZCt.jpg"></p>
-<ul>
-<li>Infrared sensor</li>
-</ul>
-<h3 id="Intelligent-fan"><a href="#Intelligent-fan" class="headerlink" title="Intelligent fan"></a>Intelligent fan</h3><h4 id="Serial"><a href="#Serial" class="headerlink" title="Serial"></a>Serial</h4><p>This is a function in Arduino which can help show the running state of the motherboard. </p>
-<p>We can use this function in the programming of intelligent fan.</p>
-<h4 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h4><p>A temperature sensor is used. It can test the surrounding temperature and send the signal to the motherboard. You can check the detail in the Series Monitor. In the programme , set a standard temperature. If the temperature tested is higher than the set value, the fan will start to work automatically.</p>
-<h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><p><img src="https://s1.ax1x.com/2020/08/04/aDJxwn.png" alt="aDJxwn.png"></p>
-<p>Here, I set 36C as a standard temperature. So, when the temperature exceeds 36C, the fan will start.</p>
-<p><img src="https://s1.ax1x.com/2020/08/04/aDtr8K.jpg" alt="aDtr8K.jpg"></p>
-
-          
+          In the second period,  we learned about the theory of  automatic light and  intelligent fan. 
+Automatic LightInfraredThis lamp uses the infrared sensor to test the surrounding. The sensor can detect  
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/08/04/ARDUINO-Programme-2/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2067,6 +1962,323 @@
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 
