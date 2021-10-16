@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>AI Learning--training model</title>
+    <url>/2020/04/18/AI-Learning-training-model/</url>
+    <content><![CDATA[<h4 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h4><p>Our project had now enter the second stage. My friends and I formed a team and began to train model and predict data by ourselves.</p>
+<h4 id="The-difficulties-we’ve-met"><a href="#The-difficulties-we’ve-met" class="headerlink" title="The difficulties we’ve met"></a>The difficulties we’ve met</h4><ul>
+<li><p>the low quality of the photos in the training set</p>
+<ul>
+<li>We used the training set which was processed by our teacher to reduce the storage of these photos in order to allowed us to train model by our own computer,which lead to low pixel photos. The original training set took up the storage of 198G, and now it only took up 3G.</li>
+</ul>
+</li>
+<li><p>the computer performance is too poor</p>
+<ul>
+<li>We used our own laptop to train the model, which the training speed is very slow. It takes about nearly 5 hours to train one epoch.</li>
+</ul>
+</li>
+</ul>
+<h4 id="What-we-do"><a href="#What-we-do" class="headerlink" title="What we do"></a>What we do</h4><p>My group mate and I asked for the teacher’s help. They offered us a computer which had ten times faster training speed. During the training process, we’ve met some technical problems, like the program may sometimes automatically shut down, which worried us a lot. </p>
+<h4 id="The-following-plan"><a href="#The-following-plan" class="headerlink" title="The following plan"></a>The following plan</h4><p>At present, the highest accuracy we had achieved was 99.62. To further improve the model accuracy, we wanted to change the training ways, we wanted to change the IncentiveV3 with the Xception package. Also, some parameters needed adjusting and modifying.</p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4>]]></content>
+      <categories>
+        <category>AI Competition</category>
+      </categories>
+      <tags>
+        <tag>AI Competition</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI Learning</title>
     <url>/2020/02/16/AI-Learning/</url>
     <content><![CDATA[<hr>
@@ -44,32 +70,6 @@
 </li>
 </ul>
 ]]></content>
-      <categories>
-        <category>AI Competition</category>
-      </categories>
-      <tags>
-        <tag>AI Competition</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI Learning--training model</title>
-    <url>/2020/04/18/AI-Learning-training-model/</url>
-    <content><![CDATA[<h4 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h4><p>Our project had now enter the second stage. My friends and I formed a team and began to train model and predict data by ourselves.</p>
-<h4 id="The-difficulties-we’ve-met"><a href="#The-difficulties-we’ve-met" class="headerlink" title="The difficulties we’ve met"></a>The difficulties we’ve met</h4><ul>
-<li><p>the low quality of the photos in the training set</p>
-<ul>
-<li>We used the training set which was processed by our teacher to reduce the storage of these photos in order to allowed us to train model by our own computer,which lead to low pixel photos. The original training set took up the storage of 198G, and now it only took up 3G.</li>
-</ul>
-</li>
-<li><p>the computer performance is too poor</p>
-<ul>
-<li>We used our own laptop to train the model, which the training speed is very slow. It takes about nearly 5 hours to train one epoch.</li>
-</ul>
-</li>
-</ul>
-<h4 id="What-we-do"><a href="#What-we-do" class="headerlink" title="What we do"></a>What we do</h4><p>My group mate and I asked for the teacher’s help. They offered us a computer which had ten times faster training speed. During the training process, we’ve met some technical problems, like the program may sometimes automatically shut down, which worried us a lot. </p>
-<h4 id="The-following-plan"><a href="#The-following-plan" class="headerlink" title="The following plan"></a>The following plan</h4><p>At present, the highest accuracy we had achieved was 99.62. To further improve the model accuracy, we wanted to change the training ways, we wanted to change the IncentiveV3 with the Xception package. Also, some parameters needed adjusting and modifying.</p>
-<h4 id=""><a href="#" class="headerlink" title=""></a></h4>]]></content>
       <categories>
         <category>AI Competition</category>
       </categories>
@@ -147,62 +147,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ARDUINO Programme 2</title>
-    <url>/2020/08/04/ARDUINO-Programme-2/</url>
-    <content><![CDATA[<p>In the second period,  we learned about the theory of  automatic light and  intelligent fan. </p>
-<h3 id="Automatic-Light"><a href="#Automatic-Light" class="headerlink" title="Automatic Light"></a>Automatic Light</h3><h4 id="Infrared"><a href="#Infrared" class="headerlink" title="Infrared"></a>Infrared</h4><p>This lamp uses the infrared sensor to test the surrounding. The sensor can detect  the objects surrounding with the temperature between 36.0C to 37.4C (Human Body Temperature). If there is, it will transmit the analogue signal to the motherboard to open the light.</p>
-<p><img src="https://s1.ax1x.com/2020/08/04/aDEZCt.jpg" alt="aDEZCt.jpg"></p>
-<ul>
-<li>Infrared sensor</li>
-</ul>
-<h3 id="Intelligent-fan"><a href="#Intelligent-fan" class="headerlink" title="Intelligent fan"></a>Intelligent fan</h3><h4 id="Serial"><a href="#Serial" class="headerlink" title="Serial"></a>Serial</h4><p>This is a function in Arduino which can help show the running state of the motherboard. </p>
-<p>We can use this function in the programming of intelligent fan.</p>
-<h4 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h4><p>A temperature sensor is used. It can test the surrounding temperature and send the signal to the motherboard. You can check the detail in the Series Monitor. In the programme , set a standard temperature. If the temperature tested is higher than the set value, the fan will start to work automatically.</p>
-<h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><p><img src="https://s1.ax1x.com/2020/08/04/aDJxwn.png" alt="aDJxwn.png"></p>
-<p>Here, I set 36C as a standard temperature. So, when the temperature exceeds 36C, the fan will start.</p>
-<p><img src="https://s1.ax1x.com/2020/08/04/aDtr8K.jpg" alt="aDtr8K.jpg"></p>
-]]></content>
-      <categories>
-        <category>Computer learning</category>
-      </categories>
-      <tags>
-        <tag>ARDUINO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ARDUINO Programme 3</title>
-    <url>/2020/08/12/ARDUINO-Programme-3/</url>
-    <content><![CDATA[<p>In this class, we learned about how to make an intelligent reversing radar.</p>
-<h3 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h3><p>From this part, we learned a tip.</p>
-<p><img src="https://s1.ax1x.com/2020/08/12/ajETHA.png" alt="ajETHA.png"></p>
-<p>In <code>void loop</code>, you have to set the original state of the output first. </p>
-<p><code>digitalWrite(LED,LOW);</code></p>
-<p>Set the state low in order to prevent the fan start to  work immediately when the motherboard has just connected to the power.</p>
-<p><img src="https://s1.ax1x.com/2020/08/12/ajuvvV.jpg" alt="ajuvvV.jpg"></p>
-<h3 id="intelligent-reversing-radar"><a href="#intelligent-reversing-radar" class="headerlink" title="intelligent reversing radar"></a>intelligent reversing radar</h3><h4 id="Buzzer"><a href="#Buzzer" class="headerlink" title="Buzzer"></a>Buzzer</h4><p>This device will make sharp sound when receiving electronic signal. </p>
-<p>We build a function called BUZZ.</p>
-<p>When there is a time signal input, the buzzer will bee at the speed according to the time period. The larger the time period , the slower the buzzer will bee.</p>
-<p><img src="https://s1.ax1x.com/2020/08/12/ajMBwD.png" alt="ajMBwD.png"></p>
-<h4 id="Ultrasonic-sensor"><a href="#Ultrasonic-sensor" class="headerlink" title="Ultrasonic sensor"></a>Ultrasonic sensor</h4><p>This device is used to detect the distance of the object in front of the sensor.</p>
-<p>We can use a Serial monitor to show the detailed value.</p>
-<p><img src="https://s1.ax1x.com/2020/08/12/ajlIRs.png" alt="ajlIRs.png"></p>
-<h4 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h4><p>Combine all these above together.</p>
-<ul>
-<li>First, the ultrasonic sensor record the time period it emit and receive the signal. Using this time to calculate the distance of the object by multiply the speed of sound wave in air.</li>
-<li> According to the distance long, send different signal to the buzzer. The smaller the distance, the smaller the time delay of buzzer.(Three stage: 10 cm , 50 cm , 80 cm)</li>
-</ul>
-<p><img src="https://s1.ax1x.com/2020/08/12/aj3uh4.png" alt="aj3uh4.png"></p>
-<p><img src="https://s1.ax1x.com/2020/08/12/aj31j1.png" alt="aj31j1.png"></p>
-<p><img src="https://s1.ax1x.com/2020/08/12/aj34vn.jpg" alt="aj34vn.jpg"></p>
-]]></content>
-      <categories>
-        <category>Computer learning</category>
-      </categories>
-      <tags>
-        <tag>ARDUINO</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ARDUINO Programme 4</title>
     <url>/2020/08/20/ARDUINO-Programme-4/</url>
     <content><![CDATA[<h3 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h3><ul>
@@ -252,6 +196,62 @@
 <p>Show on the serial monitor.</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Serial.println(keyword);</span><br><span class="line">      Serial.println(times);</span><br><span class="line">     </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+]]></content>
+      <categories>
+        <category>Computer learning</category>
+      </categories>
+      <tags>
+        <tag>ARDUINO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ARDUINO Programme 2</title>
+    <url>/2020/08/04/ARDUINO-Programme-2/</url>
+    <content><![CDATA[<p>In the second period,  we learned about the theory of  automatic light and  intelligent fan. </p>
+<h3 id="Automatic-Light"><a href="#Automatic-Light" class="headerlink" title="Automatic Light"></a>Automatic Light</h3><h4 id="Infrared"><a href="#Infrared" class="headerlink" title="Infrared"></a>Infrared</h4><p>This lamp uses the infrared sensor to test the surrounding. The sensor can detect  the objects surrounding with the temperature between 36.0C to 37.4C (Human Body Temperature). If there is, it will transmit the analogue signal to the motherboard to open the light.</p>
+<p><img src="https://s1.ax1x.com/2020/08/04/aDEZCt.jpg" alt="aDEZCt.jpg"></p>
+<ul>
+<li>Infrared sensor</li>
+</ul>
+<h3 id="Intelligent-fan"><a href="#Intelligent-fan" class="headerlink" title="Intelligent fan"></a>Intelligent fan</h3><h4 id="Serial"><a href="#Serial" class="headerlink" title="Serial"></a>Serial</h4><p>This is a function in Arduino which can help show the running state of the motherboard. </p>
+<p>We can use this function in the programming of intelligent fan.</p>
+<h4 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h4><p>A temperature sensor is used. It can test the surrounding temperature and send the signal to the motherboard. You can check the detail in the Series Monitor. In the programme , set a standard temperature. If the temperature tested is higher than the set value, the fan will start to work automatically.</p>
+<h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><p><img src="https://s1.ax1x.com/2020/08/04/aDJxwn.png" alt="aDJxwn.png"></p>
+<p>Here, I set 36C as a standard temperature. So, when the temperature exceeds 36C, the fan will start.</p>
+<p><img src="https://s1.ax1x.com/2020/08/04/aDtr8K.jpg" alt="aDtr8K.jpg"></p>
+]]></content>
+      <categories>
+        <category>Computer learning</category>
+      </categories>
+      <tags>
+        <tag>ARDUINO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ARDUINO Programme 3</title>
+    <url>/2020/08/12/ARDUINO-Programme-3/</url>
+    <content><![CDATA[<p>In this class, we learned about how to make an intelligent reversing radar.</p>
+<h3 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h3><p>From this part, we learned a tip.</p>
+<p><img src="https://s1.ax1x.com/2020/08/12/ajETHA.png" alt="ajETHA.png"></p>
+<p>In <code>void loop</code>, you have to set the original state of the output first. </p>
+<p><code>digitalWrite(LED,LOW);</code></p>
+<p>Set the state low in order to prevent the fan start to  work immediately when the motherboard has just connected to the power.</p>
+<p><img src="https://s1.ax1x.com/2020/08/12/ajuvvV.jpg" alt="ajuvvV.jpg"></p>
+<h3 id="intelligent-reversing-radar"><a href="#intelligent-reversing-radar" class="headerlink" title="intelligent reversing radar"></a>intelligent reversing radar</h3><h4 id="Buzzer"><a href="#Buzzer" class="headerlink" title="Buzzer"></a>Buzzer</h4><p>This device will make sharp sound when receiving electronic signal. </p>
+<p>We build a function called BUZZ.</p>
+<p>When there is a time signal input, the buzzer will bee at the speed according to the time period. The larger the time period , the slower the buzzer will bee.</p>
+<p><img src="https://s1.ax1x.com/2020/08/12/ajMBwD.png" alt="ajMBwD.png"></p>
+<h4 id="Ultrasonic-sensor"><a href="#Ultrasonic-sensor" class="headerlink" title="Ultrasonic sensor"></a>Ultrasonic sensor</h4><p>This device is used to detect the distance of the object in front of the sensor.</p>
+<p>We can use a Serial monitor to show the detailed value.</p>
+<p><img src="https://s1.ax1x.com/2020/08/12/ajlIRs.png" alt="ajlIRs.png"></p>
+<h4 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h4><p>Combine all these above together.</p>
+<ul>
+<li>First, the ultrasonic sensor record the time period it emit and receive the signal. Using this time to calculate the distance of the object by multiply the speed of sound wave in air.</li>
+<li> According to the distance long, send different signal to the buzzer. The smaller the distance, the smaller the time delay of buzzer.(Three stage: 10 cm , 50 cm , 80 cm)</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/08/12/aj3uh4.png" alt="aj3uh4.png"></p>
+<p><img src="https://s1.ax1x.com/2020/08/12/aj31j1.png" alt="aj31j1.png"></p>
+<p><img src="https://s1.ax1x.com/2020/08/12/aj34vn.jpg" alt="aj34vn.jpg"></p>
 ]]></content>
       <categories>
         <category>Computer learning</category>
@@ -369,6 +369,22 @@
       </tags>
   </entry>
   <entry>
+    <title> Finance Introducing PPT</title>
+    <url>/2020/09/06/Finance-Introducing-PPT/</url>
+    <content><![CDATA[<p>This is the PPT that I used for the speech in school.</p>
+<p><img src="https://s1.ax1x.com/2020/09/06/wmpDmV.jpg" alt="wmpDmV.jpg"></p>
+<p><img src="https://s1.ax1x.com/2020/09/06/wmpWlR.jpg" alt="wmpWlR.jpg"></p>
+<p><img src="https://s1.ax1x.com/2020/09/06/wmpf61.jpg" alt="wmpf61.jpg"></p>
+<p><a href="https://imgchr.com/i/wmp5m6"><img src="https://s1.ax1x.com/2020/09/06/wmp5m6.jpg" alt="wmp5m6.jpg"></a></p>
+<p><a href="https://imgchr.com/i/wmpI0K"><img src="https://s1.ax1x.com/2020/09/06/wmpI0K.jpg" alt="wmpI0K.jpg"></a></p>
+<p><a href="https://imgchr.com/i/wmpbfH"><img src="https://s1.ax1x.com/2020/09/06/wmpbfH.jpg" alt="wmpbfH.jpg"></a></p>
+<p><img src="https://s1.ax1x.com/2020/09/06/wmpLpd.jpg" alt="wmpLpd.jpg"></p>
+<p><img src="https://s1.ax1x.com/2020/09/06/wmpjXt.jpg" alt="wmpjXt.jpg"></p>
+<p><a href="https://imgchr.com/i/wmpxnP"><img src="https://s1.ax1x.com/2020/09/06/wmpxnP.jpg" alt="wmpxnP.jpg"></a></p>
+<p><a href="https://imgchr.com/i/wm9S78"><img src="https://s1.ax1x.com/2020/09/06/wm9S78.jpg" alt="wm9S78.jpg"></a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>C11 project:Brand landing preparation</title>
     <url>/2020/04/06/C11-project-Brand-landing-preparation/</url>
     <content><![CDATA[<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><p>After understanding the preliminary information about the object brand, C11 group decided to build a experience store in a simulated real business environment.</p>
@@ -431,22 +447,6 @@
       <tags>
         <tag>C11 project</tag>
       </tags>
-  </entry>
-  <entry>
-    <title> Finance Introducing PPT</title>
-    <url>/2020/09/06/Finance-Introducing-PPT/</url>
-    <content><![CDATA[<p>This is the PPT that I used for the speech in school.</p>
-<p><img src="https://s1.ax1x.com/2020/09/06/wmpDmV.jpg" alt="wmpDmV.jpg"></p>
-<p><img src="https://s1.ax1x.com/2020/09/06/wmpWlR.jpg" alt="wmpWlR.jpg"></p>
-<p><img src="https://s1.ax1x.com/2020/09/06/wmpf61.jpg" alt="wmpf61.jpg"></p>
-<p><a href="https://imgchr.com/i/wmp5m6"><img src="https://s1.ax1x.com/2020/09/06/wmp5m6.jpg" alt="wmp5m6.jpg"></a></p>
-<p><a href="https://imgchr.com/i/wmpI0K"><img src="https://s1.ax1x.com/2020/09/06/wmpI0K.jpg" alt="wmpI0K.jpg"></a></p>
-<p><a href="https://imgchr.com/i/wmpbfH"><img src="https://s1.ax1x.com/2020/09/06/wmpbfH.jpg" alt="wmpbfH.jpg"></a></p>
-<p><img src="https://s1.ax1x.com/2020/09/06/wmpLpd.jpg" alt="wmpLpd.jpg"></p>
-<p><img src="https://s1.ax1x.com/2020/09/06/wmpjXt.jpg" alt="wmpjXt.jpg"></p>
-<p><a href="https://imgchr.com/i/wmpxnP"><img src="https://s1.ax1x.com/2020/09/06/wmpxnP.jpg" alt="wmpxnP.jpg"></a></p>
-<p><a href="https://imgchr.com/i/wm9S78"><img src="https://s1.ax1x.com/2020/09/06/wm9S78.jpg" alt="wm9S78.jpg"></a></p>
-]]></content>
   </entry>
   <entry>
     <title>Internship harvest</title>
@@ -517,22 +517,6 @@
       </tags>
   </entry>
   <entry>
-    <title>My Math Formula Test</title>
-    <url>/2020/02/09/My-Math-Formula-Test/</url>
-    <content><![CDATA[<p>行内显示：</p>
-<p>$ J=\dfrac {1}{2m}\sum ^{m}_{i=1}\left( h\left( x\right) -y\right) $  </p>
-<p>独占一行且居中：</p>
-<p>$$ J=\dfrac {1}{2m}\sum ^{m}_{i=1}\left( h\left( x\right) -y\right) $$</p>
-<p>代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$公式代码$        (行内)</span><br><span class="line">$$公式代码$$      (单行居中)</span><br></pre></td></tr></table></figure>
-
-<p>网址：<a href="http://webdemo.myscript.com/views/math.html#/demo/equation">http://webdemo.myscript.com/views/math.html#/demo/equation</a></p>
-]]></content>
-      <tags>
-        <tag>Test File</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>My feelings about CS learning</title>
     <url>/2020/02/11/My-feeling-after-having-several-CS-lessons/</url>
     <content><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>​    I haven’t too much contact with computer learning. Programming is a extremely strange skills for me.  VB was the first computer language that I learn, in the 8th grade,though it didn’t give much inspiration and deepen my understanding of programming. After I attend a lecture talking about the demand of modern market for talents, I surprisingly found that jobs were usually offered to those who are proficient in different fields. One example is that the markets nowadays become more and more relying on the advanced technology,such as Large Data and modeling, which means people who are good at both business and computer will be more welcomed. Because I happened to decide to develop towards economic or business major, I planned to study CS Data Analysis and Python was the basic computer language for this.</p>
@@ -558,6 +542,48 @@
       </categories>
       <tags>
         <tag>Python Lesson</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>My Math Formula Test</title>
+    <url>/2020/02/09/My-Math-Formula-Test/</url>
+    <content><![CDATA[<p>行内显示：</p>
+<p>$ J=\dfrac {1}{2m}\sum ^{m}_{i=1}\left( h\left( x\right) -y\right) $  </p>
+<p>独占一行且居中：</p>
+<p>$$ J=\dfrac {1}{2m}\sum ^{m}_{i=1}\left( h\left( x\right) -y\right) $$</p>
+<p>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$公式代码$        (行内)</span><br><span class="line">$$公式代码$$      (单行居中)</span><br></pre></td></tr></table></figure>
+
+<p>网址：<a href="http://webdemo.myscript.com/views/math.html#/demo/equation">http://webdemo.myscript.com/views/math.html#/demo/equation</a></p>
+]]></content>
+      <tags>
+        <tag>Test File</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>My video test article</title>
+    <url>/2020/02/09/My-video-test-article/</url>
+    <content><![CDATA[<h3 id="My-video-test-article"><a href="#My-video-test-article" class="headerlink" title="My video test article"></a>My video test article</h3><p>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line"></span><br><span class="line">&lt;div style=&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;&gt;</span><br><span class="line">    &lt;iframe src=&quot;//player.bilibili.com/player.html?aid=63909506&amp;cid=110956601&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot; style=&quot;position: absolute; width: 100%; height: 100%; left: 0; top: 0;&quot;&gt;</span><br><span class="line">    &lt;/iframe&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>效果：</p>
+
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?aid=63909506&cid=110956601&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;">
+    </iframe>
+</div>
+
+
+
+
+]]></content>
+      <categories>
+        <category>Testing</category>
+      </categories>
+      <tags>
+        <tag>Test File</tag>
       </tags>
   </entry>
   <entry>
@@ -590,32 +616,6 @@
       </categories>
       <tags>
         <tag>Data Analysis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>My video test article</title>
-    <url>/2020/02/09/My-video-test-article/</url>
-    <content><![CDATA[<h3 id="My-video-test-article"><a href="#My-video-test-article" class="headerlink" title="My video test article"></a>My video test article</h3><p>代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line"></span><br><span class="line">&lt;div style=&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;&gt;</span><br><span class="line">    &lt;iframe src=&quot;//player.bilibili.com/player.html?aid=63909506&amp;cid=110956601&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot; style=&quot;position: absolute; width: 100%; height: 100%; left: 0; top: 0;&quot;&gt;</span><br><span class="line">    &lt;/iframe&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>效果：</p>
-
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="//player.bilibili.com/player.html?aid=63909506&cid=110956601&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;">
-    </iframe>
-</div>
-
-
-
-
-]]></content>
-      <categories>
-        <category>Testing</category>
-      </categories>
-      <tags>
-        <tag>Test File</tag>
       </tags>
   </entry>
   <entry>
@@ -859,6 +859,29 @@
       </tags>
   </entry>
   <entry>
+    <title>Python the center of film industry 2</title>
+    <url>/2020/11/15/Python-the-center-of-film-industry-2/</url>
+    <content><![CDATA[<p>  Following the last blog, I installed a new package called <code>pyvis</code>. It can visualize the information and form interactive images.</p>
+<p>I prepared to visualize the working relationship  between the actors and actresses in film Avengers.</p>
+<p>First, get the data.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cast=[]</span><br><span class="line">cast2=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">114827</span>):</span><br><span class="line">    <span class="keyword">if</span>  <span class="string">&#x27;companies&#x27;</span><span class="keyword">in</span> Movies[i].keys() <span class="keyword">and</span> <span class="string">&#x27;Avengers&#x27;</span><span class="keyword">in</span> Movies[i][<span class="string">&#x27;title&#x27;</span>]:</span><br><span class="line">        cast.append(i)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cast:</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> Movies[i][<span class="string">&#x27;companies&#x27;</span>]:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;Marvel&#x27;</span><span class="keyword">in</span> j:</span><br><span class="line">            cast2.append(i)</span><br><span class="line"><span class="built_in">print</span>(cast2)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[39550, 65904, 83523, 83588]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Second, form the relationship.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">G = nx.Graph()  </span><br><span class="line">Mov=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cast2:</span><br><span class="line">    Mov.append(Movies[i])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> movie <span class="keyword">in</span> Mov: </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(movie[<span class="string">&quot;cast&quot;</span>]) - <span class="number">1</span>): </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i + <span class="number">1</span>, <span class="built_in">len</span>(movie[<span class="string">&quot;cast&quot;</span>])): </span><br><span class="line">            G.add_edge(movie[<span class="string">&quot;cast&quot;</span>][i], movie[<span class="string">&quot;cast&quot;</span>][j], title=movie[<span class="string">&quot;title&quot;</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>Third, draw the diagram.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">displayG = Network(width=<span class="number">1024</span>, height=<span class="number">768</span>, notebook = <span class="literal">True</span>) <span class="comment"># 创建 pyvis 中的 Network 对象，可以设置长度、宽度、是否在当前笔记本中显示等</span></span><br><span class="line"></span><br><span class="line">displayG.from_nx(G) <span class="comment"># 将 NetWorkX 的图导入 pyvis</span></span><br><span class="line"></span><br><span class="line">displayG.show(<span class="string">&#x27;test.html&#x27;</span>) <span class="comment"># 展示，并可生成一个名为 &quot;test.html&quot; 的网页文件</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://imgchr.com/i/DFotWn"><img src="https://s3.ax1x.com/2020/11/15/DFotWn.png" alt="DFotWn.png"></a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Python the center of film industry</title>
     <url>/2020/10/31/Python-the-center-of-film-industry/</url>
     <content><![CDATA[<h3 id="Backbround"><a href="#Backbround" class="headerlink" title="Backbround"></a>Backbround</h3><p>Social network analysis  is a branch of data science that allows the investigation of social structures using networks and graph theory. It can help to reveal patterns in voting preferences, aid the understanding of how ideas spread, and even help to model the spread of diseases.</p>
@@ -908,27 +931,31 @@
       </tags>
   </entry>
   <entry>
-    <title>Python the center of film industry 2</title>
-    <url>/2020/11/15/Python-the-center-of-film-industry-2/</url>
-    <content><![CDATA[<p>  Following the last blog, I installed a new package called <code>pyvis</code>. It can visualize the information and form interactive images.</p>
-<p>I prepared to visualize the working relationship  between the actors and actresses in film Avengers.</p>
-<p>First, get the data.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cast=[]</span><br><span class="line">cast2=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">114827</span>):</span><br><span class="line">    <span class="keyword">if</span>  <span class="string">&#x27;companies&#x27;</span><span class="keyword">in</span> Movies[i].keys() <span class="keyword">and</span> <span class="string">&#x27;Avengers&#x27;</span><span class="keyword">in</span> Movies[i][<span class="string">&#x27;title&#x27;</span>]:</span><br><span class="line">        cast.append(i)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cast:</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> Movies[i][<span class="string">&#x27;companies&#x27;</span>]:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;Marvel&#x27;</span><span class="keyword">in</span> j:</span><br><span class="line">            cast2.append(i)</span><br><span class="line"><span class="built_in">print</span>(cast2)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[39550, 65904, 83523, 83588]</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Second, form the relationship.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">G = nx.Graph()  </span><br><span class="line">Mov=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cast2:</span><br><span class="line">    Mov.append(Movies[i])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> movie <span class="keyword">in</span> Mov: </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(movie[<span class="string">&quot;cast&quot;</span>]) - <span class="number">1</span>): </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i + <span class="number">1</span>, <span class="built_in">len</span>(movie[<span class="string">&quot;cast&quot;</span>])): </span><br><span class="line">            G.add_edge(movie[<span class="string">&quot;cast&quot;</span>][i], movie[<span class="string">&quot;cast&quot;</span>][j], title=movie[<span class="string">&quot;title&quot;</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>Third, draw the diagram.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">displayG = Network(width=<span class="number">1024</span>, height=<span class="number">768</span>, notebook = <span class="literal">True</span>) <span class="comment"># 创建 pyvis 中的 Network 对象，可以设置长度、宽度、是否在当前笔记本中显示等</span></span><br><span class="line"></span><br><span class="line">displayG.from_nx(G) <span class="comment"># 将 NetWorkX 的图导入 pyvis</span></span><br><span class="line"></span><br><span class="line">displayG.show(<span class="string">&#x27;test.html&#x27;</span>) <span class="comment"># 展示，并可生成一个名为 &quot;test.html&quot; 的网页文件</span></span><br></pre></td></tr></table></figure>
-
-<p><a href="https://imgchr.com/i/DFotWn"><img src="https://s3.ax1x.com/2020/11/15/DFotWn.png" alt="DFotWn.png"></a></p>
+    <title>Quantitative investment</title>
+    <url>/2020/07/26/Quantitative-investment/</url>
+    <content><![CDATA[<p>This is the first time I heard this word, “quantitative investment”.</p>
+<p>It can be considered as a investment which totally bases on data.(From Google: Quantitative investing, also known as systematic investing, is an investment approach that uses advanced mathematical modelling, computer systems and data analysis to calculate the optimal probability of executing a profitable trade.)</p>
+<h4 id="Stock-certification"><a href="#Stock-certification" class="headerlink" title="Stock certification"></a>Stock certification</h4><p>Stock is all of the shares into which ownership of the corporation is divided. It can be trade on the stock market.  Imagine that you want to buy an apple, the original price of one apple is 3 yuan. A lot of people want to buy it, so some people are willing to buy it in 3.1 yuan. Hence, the price of an apple now becomes 3.1 yuan. As the price of apple get higher, less people want to buy it in the price of 3.1 yuan, so the price of an an apple then drops back to 3 yuan. You can consider the apple as a share. That is the reason why the stock value fluctuate all the time. </p>
+<p><img src="https://s1.ax1x.com/2020/07/26/aCuN90.jpg" alt="aCuN90.jpg"></p>
+<h4 id="How-is-the-quantitative-investment-carried-out"><a href="#How-is-the-quantitative-investment-carried-out" class="headerlink" title="How is the quantitative investment carried out"></a>How is the quantitative investment carried out</h4><p>First, the computer analysis the data of stock market in previous year and it can predict whether the stock value will raise or drop. Then, computer can judge if the investors need to buy this stock or sell through a programme.</p>
+<h4 id="Characteristics-of-quantitative-investment"><a href="#Characteristics-of-quantitative-investment" class="headerlink" title="Characteristics of quantitative investment"></a>Characteristics of quantitative investment</h4><ol>
+<li><p>It is carried out by a computer. In reality, the data needed is over 100T , which people can only rely on computer to circulate.  </p>
+</li>
+<li><p>People believe the result from the computer in most conditions, unless the result goes against the financial principles.</p>
+</li>
+<li><p>A lot of math knowledge are used when programming, e.g. linear regression(which also be used in AI)</p>
+</li>
+<li><p>What a programme needs to improve most is its operating speed since other people can buy stocks when the price is low and sell it at higher price but you can only buy the stock which other people sell(higher price) and sell at low price.</p>
+</li>
+</ol>
+<p>It is hard for people to speculate in stock in the future because more and more people use computer to finish the task which is much more efficient than those people who do market research.</p>
 ]]></content>
+      <categories>
+        <category>Business study</category>
+      </categories>
+      <tags>
+        <tag>Business study</tag>
+      </tags>
   </entry>
   <entry>
     <title>Python tweets data analysis</title>
@@ -964,38 +991,10 @@
       </tags>
   </entry>
   <entry>
-    <title>Quantitative investment</title>
-    <url>/2020/07/26/Quantitative-investment/</url>
-    <content><![CDATA[<p>This is the first time I heard this word, “quantitative investment”.</p>
-<p>It can be considered as a investment which totally bases on data.(From Google: Quantitative investing, also known as systematic investing, is an investment approach that uses advanced mathematical modelling, computer systems and data analysis to calculate the optimal probability of executing a profitable trade.)</p>
-<h4 id="Stock-certification"><a href="#Stock-certification" class="headerlink" title="Stock certification"></a>Stock certification</h4><p>Stock is all of the shares into which ownership of the corporation is divided. It can be trade on the stock market.  Imagine that you want to buy an apple, the original price of one apple is 3 yuan. A lot of people want to buy it, so some people are willing to buy it in 3.1 yuan. Hence, the price of an apple now becomes 3.1 yuan. As the price of apple get higher, less people want to buy it in the price of 3.1 yuan, so the price of an an apple then drops back to 3 yuan. You can consider the apple as a share. That is the reason why the stock value fluctuate all the time. </p>
-<p><img src="https://s1.ax1x.com/2020/07/26/aCuN90.jpg" alt="aCuN90.jpg"></p>
-<h4 id="How-is-the-quantitative-investment-carried-out"><a href="#How-is-the-quantitative-investment-carried-out" class="headerlink" title="How is the quantitative investment carried out"></a>How is the quantitative investment carried out</h4><p>First, the computer analysis the data of stock market in previous year and it can predict whether the stock value will raise or drop. Then, computer can judge if the investors need to buy this stock or sell through a programme.</p>
-<h4 id="Characteristics-of-quantitative-investment"><a href="#Characteristics-of-quantitative-investment" class="headerlink" title="Characteristics of quantitative investment"></a>Characteristics of quantitative investment</h4><ol>
-<li><p>It is carried out by a computer. In reality, the data needed is over 100T , which people can only rely on computer to circulate.  </p>
-</li>
-<li><p>People believe the result from the computer in most conditions, unless the result goes against the financial principles.</p>
-</li>
-<li><p>A lot of math knowledge are used when programming, e.g. linear regression(which also be used in AI)</p>
-</li>
-<li><p>What a programme needs to improve most is its operating speed since other people can buy stocks when the price is low and sell it at higher price but you can only buy the stock which other people sell(higher price) and sell at low price.</p>
-</li>
-</ol>
-<p>It is hard for people to speculate in stock in the future because more and more people use computer to finish the task which is much more efficient than those people who do market research.</p>
-]]></content>
-      <categories>
-        <category>Business study</category>
-      </categories>
-      <tags>
-        <tag>Business study</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Reading Seminar Financing</title>
-    <url>/2020/11/30/Reading-Seminar-Financing/</url>
-    <content><![CDATA[<p><a href="https://imgchr.com/i/DWMpm6"><img src="https://s3.ax1x.com/2020/11/30/DWMpm6.jpg" alt="DWMpm6.jpg"></a></p>
-<p><a href="https://imgchr.com/i/DWKx61"><img src="https://s3.ax1x.com/2020/11/30/DWKx61.jpg" alt="DWKx61.jpg"></a></p>
-<p><a href="https://imgchr.com/i/DWKvlR"><img src="https://s3.ax1x.com/2020/11/30/DWKvlR.jpg" alt="DWKvlR.jpg"></a></p>
+    <title>Reading Seminar: economic theory</title>
+    <url>/2020/07/04/Reading-Seminar-economic-theory/</url>
+    <content><![CDATA[<p>There are many insurmountable obstacles to the planned economy which price can solve them. Price mechanism is a much  more changeable and accurate system though it still have some drawbacks. A  proper division of work between government and th price mechanism can maximum the benifits.</p>
+<p><img src="https://s1.ax1x.com/2020/07/04/NxjMSP.jpg" alt="NxjMSP.jpg"></p>
 ]]></content>
   </entry>
   <entry>
@@ -1015,10 +1014,11 @@
       </tags>
   </entry>
   <entry>
-    <title>Reading Seminar: economic theory</title>
-    <url>/2020/07/04/Reading-Seminar-economic-theory/</url>
-    <content><![CDATA[<p>There are many insurmountable obstacles to the planned economy which price can solve them. Price mechanism is a much  more changeable and accurate system though it still have some drawbacks. A  proper division of work between government and th price mechanism can maximum the benifits.</p>
-<p><img src="https://s1.ax1x.com/2020/07/04/NxjMSP.jpg" alt="NxjMSP.jpg"></p>
+    <title>Reading Seminar Financing</title>
+    <url>/2020/11/30/Reading-Seminar-Financing/</url>
+    <content><![CDATA[<p><a href="https://imgchr.com/i/DWMpm6"><img src="https://s3.ax1x.com/2020/11/30/DWMpm6.jpg" alt="DWMpm6.jpg"></a></p>
+<p><a href="https://imgchr.com/i/DWKx61"><img src="https://s3.ax1x.com/2020/11/30/DWKx61.jpg" alt="DWKx61.jpg"></a></p>
+<p><a href="https://imgchr.com/i/DWKvlR"><img src="https://s3.ax1x.com/2020/11/30/DWKvlR.jpg" alt="DWKvlR.jpg"></a></p>
 ]]></content>
   </entry>
   <entry>
@@ -1027,17 +1027,6 @@
     <content><![CDATA[<p>“The Economics of Money,Banking, and Financial Markets” is written by Frederic S. Mishkin. It has been used as a teaching material. This book illustrates the basic concepts and theories in finance. </p>
 <p>From this book, I found a lot of connections between the economics I studied in school and the financial theories in the books. For example, Fisher effect proves the relationship between expected inflation rate and interest rate.  the predict inflation rate increases will lead to the demand for  bond to decrease as the expected return on bonds relative to real assets has fallen. According to the theory I learned at school,Therefore, the interest rate will increase as the the price of the bond and interest rate is negative corelated. </p>
 <p>Also, it analyses how credit rating agencies and subprime mortgage bonds such as CDO caused the financial bubble and the financial crisis in 2008, which provide great evidence and theoretical foundations.</p>
-]]></content>
-      <tags>
-        <tag>Reading books</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Reading harvest of Currency war</title>
-    <url>/2021/09/08/Reanding-harvest-of-Currency-war/</url>
-    <content><![CDATA[<p>This series of book was written by a Chinese scholars in 2006. It discusses who was behind many of the most important events in history and how they used financial instruments to achieve their goal. There are five books in this series. I have finished first two.</p>
-<p>I was impressed by the special financial analysis perspective in the book which I have never learned before.  The book is mainly focusing on “Currency “. It points out that currency is the right to claim wealth and what kind of wealth is used as collateral to issue money determines the nature of money.  In the past, the collateral was gold. In the  financial history, a group of people were passionate to change this situation, which caused the currency war around the gold standard and silver standard in order to control the right to issue currency.</p>
-<p>I was attract by the the allure of currency. From reading this book, I deeply understand that finance is the subject that study how to create value by using the concepts of time and trust. It is both astonishingly creative and constructive, but also destructive. </p>
 ]]></content>
       <tags>
         <tag>Reading books</tag>
@@ -1078,6 +1067,17 @@
 </li>
 </ul>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Reading harvest of Currency war</title>
+    <url>/2021/09/08/Reanding-harvest-of-Currency-war/</url>
+    <content><![CDATA[<p>This series of book was written by a Chinese scholars in 2006. It discusses who was behind many of the most important events in history and how they used financial instruments to achieve their goal. There are five books in this series. I have finished first two.</p>
+<p>I was impressed by the special financial analysis perspective in the book which I have never learned before.  The book is mainly focusing on “Currency “. It points out that currency is the right to claim wealth and what kind of wealth is used as collateral to issue money determines the nature of money.  In the past, the collateral was gold. In the  financial history, a group of people were passionate to change this situation, which caused the currency war around the gold standard and silver standard in order to control the right to issue currency.</p>
+<p>I was attract by the the allure of currency. From reading this book, I deeply understand that finance is the subject that study how to create value by using the concepts of time and trust. It is both astonishingly creative and constructive, but also destructive. </p>
+]]></content>
+      <tags>
+        <tag>Reading books</tag>
+      </tags>
   </entry>
   <entry>
     <title>Stage summery of data analysis learning</title>
@@ -1276,26 +1276,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Survey on the sustainability factors of the fair development(3)</title>
-    <url>/2021/01/25/Survey-on-the-sustainability-factors-of-the-fair-development-3/</url>
-    <content><![CDATA[<p>Because of the time reason, we didn’t do the questionnaire investigation to decide the first level indexes and the secondary indexes. Hence, we decide the first level indexes ourselves after listen to the tutor’s advice. </p>
-<h4 id="First-level-index"><a href="#First-level-index" class="headerlink" title="First level index"></a>First level index</h4><ol>
-<li>Internal factors</li>
-<li>External factors</li>
-</ol>
-<h4 id="Secondary-index"><a href="#Secondary-index" class="headerlink" title="Secondary index"></a>Secondary index</h4><p>We categorised these index by using the company life cycle theory, namely forming period, growing period, mature period and declining period.</p>
-<h4 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h4><p>What’s more, for further research, we built up our research model. </p>
-<p><a href="https://imgchr.com/i/sLI4IJ"><img src="https://s3.ax1x.com/2021/01/25/sLI4IJ.jpg" alt="sLI4IJ.jpg"></a></p>
-<h4 id="Questionnaire-investigation"><a href="#Questionnaire-investigation" class="headerlink" title="Questionnaire investigation"></a>Questionnaire investigation</h4><p>On 2020 Dec 24, a small fair was held in a shopping mall. My teammate and I went their to send out the questionnaire. This time, we decided to use electronic questionnaire. People can scan the code and answering the question by doing simple clicking.</p>
-]]></content>
-      <categories>
-        <category>Economics and Statistics</category>
-      </categories>
-      <tags>
-        <tag>Study on the Sustainable Factors of Fair activities</tag>
-      </tags>
-  </entry>
-  <entry>
     <title> Survey on the sustainability factors of the fair development(4)</title>
     <url>/2021/02/07/Survey-on-the-sustainability-factors-of-the-fair-development-4/</url>
     <content><![CDATA[<p>Now we start  learning how to do the reliability and validity analysis.</p>
@@ -1336,6 +1316,26 @@
 <p>As we change the factors, we also change the model.</p>
 <p>The second test is quite success,all of the index has reached the targets.</p>
 <p><a href="https://imgchr.com/i/yaZsGq"><img src="https://s3.ax1x.com/2021/02/08/yaZsGq.png" alt="yaZsGq.png"></a></p>
+]]></content>
+      <categories>
+        <category>Economics and Statistics</category>
+      </categories>
+      <tags>
+        <tag>Study on the Sustainable Factors of Fair activities</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Survey on the sustainability factors of the fair development(3)</title>
+    <url>/2021/01/25/Survey-on-the-sustainability-factors-of-the-fair-development-3/</url>
+    <content><![CDATA[<p>Because of the time reason, we didn’t do the questionnaire investigation to decide the first level indexes and the secondary indexes. Hence, we decide the first level indexes ourselves after listen to the tutor’s advice. </p>
+<h4 id="First-level-index"><a href="#First-level-index" class="headerlink" title="First level index"></a>First level index</h4><ol>
+<li>Internal factors</li>
+<li>External factors</li>
+</ol>
+<h4 id="Secondary-index"><a href="#Secondary-index" class="headerlink" title="Secondary index"></a>Secondary index</h4><p>We categorised these index by using the company life cycle theory, namely forming period, growing period, mature period and declining period.</p>
+<h4 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h4><p>What’s more, for further research, we built up our research model. </p>
+<p><a href="https://imgchr.com/i/sLI4IJ"><img src="https://s3.ax1x.com/2021/01/25/sLI4IJ.jpg" alt="sLI4IJ.jpg"></a></p>
+<h4 id="Questionnaire-investigation"><a href="#Questionnaire-investigation" class="headerlink" title="Questionnaire investigation"></a>Questionnaire investigation</h4><p>On 2020 Dec 24, a small fair was held in a shopping mall. My teammate and I went their to send out the questionnaire. This time, we decided to use electronic questionnaire. People can scan the code and answering the question by doing simple clicking.</p>
 ]]></content>
       <categories>
         <category>Economics and Statistics</category>
@@ -1388,6 +1388,25 @@
       </tags>
   </entry>
   <entry>
+    <title>The eighth Python lesson</title>
+    <url>/2020/02/10/The-eighth-Python-lesson/</url>
+    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/10/1I1cfU.jpg" alt="1I1cfU.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/11/1ITDDU.jpg" alt="1ITDDU.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/11/1ITrbF.jpg" alt="1ITrbF.jpg"></p>
+<p> HW 写入一串代码，让用户输入自己的密码，密码需含8位以上的字符，包含大、小写字母及数字。 </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Select a new password (letters and numbers only,must have 8 words or more,have both upper and lower words):&#x27;</span>)</span><br><span class="line">    password = <span class="built_in">input</span>()</span><br><span class="line">    <span class="keyword">if</span>  password.isalpha() <span class="keyword">or</span> password.isdecimal() <span class="keyword">or</span> password.isspace()<span class="keyword">or</span> <span class="built_in">len</span>(password)&lt; <span class="number">8</span> <span class="keyword">or</span> <span class="keyword">not</span> password.isalnum()<span class="keyword">or</span> password.isupper() <span class="keyword">or</span> password.islower():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;form mistakes&#x27;</span>)</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Successfully setting password.&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;your password is &#x27;</span>+ password)</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Computer learning</category>
+      </categories>
+      <tags>
+        <tag>Python Notes</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Survey on the sustainability factors of the fair development(6)</title>
     <url>/2021/03/02/Survey-on-the-sustainability-factors-of-the-fair-development-6/</url>
     <content><![CDATA[<p>I have finished the whole essay yesterday. This is a conclusion of this programme.</p>
@@ -1426,6 +1445,39 @@
       </categories>
       <tags>
         <tag>Study on the Sustainable Factors of Fair activities</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>The essay about two buz model</title>
+    <url>/2020/03/15/The-essay-about-two-buz-model/</url>
+    <content><![CDATA[<h2 id="The-ways-to-expand-the-business-of-a-restaurant"><a href="#The-ways-to-expand-the-business-of-a-restaurant" class="headerlink" title="The ways to expand the business of a restaurant"></a>The ways to expand the business of a restaurant</h2><p>Han</p>
+<p>Nowadays, people concern more about what they eat and how the eat, which promote the rapid development of catering industry. It is surprising found that the growth rate of this industry is more than 10% higher than that of other industries in recent years.  <u>[Need a reference for this statement]</u> Many small restaurants have to expand their business in order to maintain competitiveness in the market.  <u>[why?]</u> For the topic of how a popular local restaurant could expand its business and operate successfully in different regions, I suggest that both chain and franchise model can be considered.</p>
+<p>In terms of the chain model, it is an operation method which manage many stores in different regions of country or world with the same brand, same products and same store policies by the same parent company.[Again, need a reference] The parent company has full control of his chain stores, and as a result, it needs to take responsibility for everything of his branches, including profits. In China, there is a famous hotpot restaurant, which is operated in the form of chain store, called Haidilao Hot Pot. So far, it has already had 117 chain stores all over China. Through 20 years of hard work, Haidilao gradually has more than 20000 employees from an unknown hot pot brand.  <u>[You could have used the Haidilao corporate report as a reference]</u></p>
+<p>Chain model has many advantages. First, because of the complete control of the owning chain stores, it can perfectly present its successful business philosophy, such as the ways of cooking and the sources of food material, avoiding many unnecessary costs while expanding. Second, the owner can receive high revenue from every chain store  <u>[that they own]</u> of his. Apart from the basic cost for operating the shops, the brand owner can receive all rest of the money. However, disadvantages exist. There is a huge amount of initial cost when new branches are built. This is because the parent company should take responsibility to everything of the branches, including the cost of construction and decoration. Also, opening chain stores has a huge demand for management talents, which it’s difficult to hire. If any branch goes wrong in management, the company and its owner will bear a great loss, both in financial and reputation aspect.  <u>[A good discussion, but needs to be supported by references]</u></p>
+<p>Another way to expand is running the franchising model. A franchise business is a business owned by an entrepreneur, offering products or services labeled by a corporation that provide assistance in every aspect of business, in return for fees based on profits.  <u>[Again, need a reference]</u>To expand the business scale, the brand owner need to hire employees. But the owner won’t make rules on how the employees run their franchising store.  <u>[Most franchises (such as Subway) have strict rules in the contract on how the franchise is run. The franchisee will have control over staffing]</u> He just negotiate with them about the profit sharing and make a contract. In this way, the business can expand into a very large scale in a very short time, one example is that “A Little”, a popular milk-tea shop in China, it has successfully expand over 2000 stores in China which only spent about 15 years.  <u>[Again, need a reference]</u></p>
+<p>For the advantages of this operation method, franchising can expand quickly and has little initial cost <u>[to the franchise owner]</u>, which is especially suitable for those small catering business. The owner don’t need to pay anything for the opening of one of his franchising store because the whole managing tasks as well as responsibility are undertook by his employees. What’s more, the brand owner won’t bear too much risk to go bankrupt. Since there is no much initial cost and investment, though some of the stores may lose money in business, this has little effect on the total profit revenue. However, one serious drawback of franchising model is that the reputation of the brand image may be easily damaged. Without any guidance, the employees may make fatal mistakes which lead to bad reputation to the whole brand. <u>[Also it may cost a lot of time and money to prepare the franchise rules and build the brand]</u> </p>
+<p>In a word, both method to expand the local restaurant’s business, chain model and franchising model, have advantages and drawbacks. Chain model can help the owner control the chain stores well and receive high revenue from each shop, but it has high initial cost and poor management will cause great loss. Franchising model expand quickly and has little initial cost and bear relatively low risk, but the reputation of brand may be damaged easily. For the local popular restaurant, the owner needs to determine which model to choose according to his own financial and workers’ condition, or combine two method together in order to expand its business and operate successfully in different regions.</p>
+<hr>
+<h1 id="Comments-on-Han’s-Session-2-Essay"><a href="#Comments-on-Han’s-Session-2-Essay" class="headerlink" title="Comments on Han’s Session 2 Essay"></a>Comments on Han’s Session 2 Essay</h1><h2 id="Dr-Andrew-Hunt"><a href="#Dr-Andrew-Hunt" class="headerlink" title="Dr Andrew Hunt"></a>Dr Andrew Hunt</h2><h2 id="March-2020"><a href="#March-2020" class="headerlink" title="March 2020"></a>March 2020</h2><p><strong>Content</strong></p>
+<p>·     Generally, the essay conforms to the stated layout.</p>
+<p>·     Many of the key points including a comparison of the selected models were addressed, lightly.</p>
+<p>·     A few key elements were missing including references.</p>
+<p>·     Overall the essay would probably be given a low <strong>pass.</strong></p>
+<h1 id="Academic-Writing"><a href="#Academic-Writing" class="headerlink" title="Academic Writing"></a>Academic Writing</h1><p>·     Need to clearly identify all pages of the essay. Each page should include at least your name (or student number), date of submission, Module or department.</p>
+<p>·     There are no references in this essay. All key points, or potentially controversial statements, theories, statistics, and descriptions should be supported by references. Each reference can be used more than once in the essay to support relevant statements.</p>
+<p>·     All citations in the essay text should include Author surname, Year of publication, for example (Cook, 2017). Citations for quotations should include Author surname, Year of publication, Page number, for example (Cook, 2017, p200).</p>
+<h1 id="English-Language"><a href="#English-Language" class="headerlink" title="English Language"></a>English Language</h1><p>·     Overall, the written English was acceptable. Although the objectiveness of academic English was sometimes lacking.</p>
+<p>·     Occasionally, there were poor phrases and incomplete statements.</p>
+<h1 id="Recommendations"><a href="#Recommendations" class="headerlink" title="Recommendations"></a>Recommendations</h1><p>·     Once the essay is complete, review it and check against the question, to ensure all elements have been clearly answered.</p>
+<p>·     Ensure all essays include relevant citations wherever possible.</p>
+<p>·     Arrange additional 1:1 tuition in academic English.</p>
+<p>More detailed comments have been provided within the essay itself [in Blue]</p>
+]]></content>
+      <categories>
+        <category>Business study</category>
+      </categories>
+      <tags>
+        <tag>Business theory and case study</tag>
       </tags>
   </entry>
   <entry>
@@ -1523,58 +1575,6 @@
       </tags>
   </entry>
   <entry>
-    <title>The eighth Python lesson</title>
-    <url>/2020/02/10/The-eighth-Python-lesson/</url>
-    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/10/1I1cfU.jpg" alt="1I1cfU.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/11/1ITDDU.jpg" alt="1ITDDU.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/11/1ITrbF.jpg" alt="1ITrbF.jpg"></p>
-<p> HW 写入一串代码，让用户输入自己的密码，密码需含8位以上的字符，包含大、小写字母及数字。 </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Select a new password (letters and numbers only,must have 8 words or more,have both upper and lower words):&#x27;</span>)</span><br><span class="line">    password = <span class="built_in">input</span>()</span><br><span class="line">    <span class="keyword">if</span>  password.isalpha() <span class="keyword">or</span> password.isdecimal() <span class="keyword">or</span> password.isspace()<span class="keyword">or</span> <span class="built_in">len</span>(password)&lt; <span class="number">8</span> <span class="keyword">or</span> <span class="keyword">not</span> password.isalnum()<span class="keyword">or</span> password.isupper() <span class="keyword">or</span> password.islower():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;form mistakes&#x27;</span>)</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Successfully setting password.&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;your password is &#x27;</span>+ password)</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>Computer learning</category>
-      </categories>
-      <tags>
-        <tag>Python Notes</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>The essay about two buz model</title>
-    <url>/2020/03/15/The-essay-about-two-buz-model/</url>
-    <content><![CDATA[<h2 id="The-ways-to-expand-the-business-of-a-restaurant"><a href="#The-ways-to-expand-the-business-of-a-restaurant" class="headerlink" title="The ways to expand the business of a restaurant"></a>The ways to expand the business of a restaurant</h2><p>Han</p>
-<p>Nowadays, people concern more about what they eat and how the eat, which promote the rapid development of catering industry. It is surprising found that the growth rate of this industry is more than 10% higher than that of other industries in recent years.  <u>[Need a reference for this statement]</u> Many small restaurants have to expand their business in order to maintain competitiveness in the market.  <u>[why?]</u> For the topic of how a popular local restaurant could expand its business and operate successfully in different regions, I suggest that both chain and franchise model can be considered.</p>
-<p>In terms of the chain model, it is an operation method which manage many stores in different regions of country or world with the same brand, same products and same store policies by the same parent company.[Again, need a reference] The parent company has full control of his chain stores, and as a result, it needs to take responsibility for everything of his branches, including profits. In China, there is a famous hotpot restaurant, which is operated in the form of chain store, called Haidilao Hot Pot. So far, it has already had 117 chain stores all over China. Through 20 years of hard work, Haidilao gradually has more than 20000 employees from an unknown hot pot brand.  <u>[You could have used the Haidilao corporate report as a reference]</u></p>
-<p>Chain model has many advantages. First, because of the complete control of the owning chain stores, it can perfectly present its successful business philosophy, such as the ways of cooking and the sources of food material, avoiding many unnecessary costs while expanding. Second, the owner can receive high revenue from every chain store  <u>[that they own]</u> of his. Apart from the basic cost for operating the shops, the brand owner can receive all rest of the money. However, disadvantages exist. There is a huge amount of initial cost when new branches are built. This is because the parent company should take responsibility to everything of the branches, including the cost of construction and decoration. Also, opening chain stores has a huge demand for management talents, which it’s difficult to hire. If any branch goes wrong in management, the company and its owner will bear a great loss, both in financial and reputation aspect.  <u>[A good discussion, but needs to be supported by references]</u></p>
-<p>Another way to expand is running the franchising model. A franchise business is a business owned by an entrepreneur, offering products or services labeled by a corporation that provide assistance in every aspect of business, in return for fees based on profits.  <u>[Again, need a reference]</u>To expand the business scale, the brand owner need to hire employees. But the owner won’t make rules on how the employees run their franchising store.  <u>[Most franchises (such as Subway) have strict rules in the contract on how the franchise is run. The franchisee will have control over staffing]</u> He just negotiate with them about the profit sharing and make a contract. In this way, the business can expand into a very large scale in a very short time, one example is that “A Little”, a popular milk-tea shop in China, it has successfully expand over 2000 stores in China which only spent about 15 years.  <u>[Again, need a reference]</u></p>
-<p>For the advantages of this operation method, franchising can expand quickly and has little initial cost <u>[to the franchise owner]</u>, which is especially suitable for those small catering business. The owner don’t need to pay anything for the opening of one of his franchising store because the whole managing tasks as well as responsibility are undertook by his employees. What’s more, the brand owner won’t bear too much risk to go bankrupt. Since there is no much initial cost and investment, though some of the stores may lose money in business, this has little effect on the total profit revenue. However, one serious drawback of franchising model is that the reputation of the brand image may be easily damaged. Without any guidance, the employees may make fatal mistakes which lead to bad reputation to the whole brand. <u>[Also it may cost a lot of time and money to prepare the franchise rules and build the brand]</u> </p>
-<p>In a word, both method to expand the local restaurant’s business, chain model and franchising model, have advantages and drawbacks. Chain model can help the owner control the chain stores well and receive high revenue from each shop, but it has high initial cost and poor management will cause great loss. Franchising model expand quickly and has little initial cost and bear relatively low risk, but the reputation of brand may be damaged easily. For the local popular restaurant, the owner needs to determine which model to choose according to his own financial and workers’ condition, or combine two method together in order to expand its business and operate successfully in different regions.</p>
-<hr>
-<h1 id="Comments-on-Han’s-Session-2-Essay"><a href="#Comments-on-Han’s-Session-2-Essay" class="headerlink" title="Comments on Han’s Session 2 Essay"></a>Comments on Han’s Session 2 Essay</h1><h2 id="Dr-Andrew-Hunt"><a href="#Dr-Andrew-Hunt" class="headerlink" title="Dr Andrew Hunt"></a>Dr Andrew Hunt</h2><h2 id="March-2020"><a href="#March-2020" class="headerlink" title="March 2020"></a>March 2020</h2><p><strong>Content</strong></p>
-<p>·     Generally, the essay conforms to the stated layout.</p>
-<p>·     Many of the key points including a comparison of the selected models were addressed, lightly.</p>
-<p>·     A few key elements were missing including references.</p>
-<p>·     Overall the essay would probably be given a low <strong>pass.</strong></p>
-<h1 id="Academic-Writing"><a href="#Academic-Writing" class="headerlink" title="Academic Writing"></a>Academic Writing</h1><p>·     Need to clearly identify all pages of the essay. Each page should include at least your name (or student number), date of submission, Module or department.</p>
-<p>·     There are no references in this essay. All key points, or potentially controversial statements, theories, statistics, and descriptions should be supported by references. Each reference can be used more than once in the essay to support relevant statements.</p>
-<p>·     All citations in the essay text should include Author surname, Year of publication, for example (Cook, 2017). Citations for quotations should include Author surname, Year of publication, Page number, for example (Cook, 2017, p200).</p>
-<h1 id="English-Language"><a href="#English-Language" class="headerlink" title="English Language"></a>English Language</h1><p>·     Overall, the written English was acceptable. Although the objectiveness of academic English was sometimes lacking.</p>
-<p>·     Occasionally, there were poor phrases and incomplete statements.</p>
-<h1 id="Recommendations"><a href="#Recommendations" class="headerlink" title="Recommendations"></a>Recommendations</h1><p>·     Once the essay is complete, review it and check against the question, to ensure all elements have been clearly answered.</p>
-<p>·     Ensure all essays include relevant citations wherever possible.</p>
-<p>·     Arrange additional 1:1 tuition in academic English.</p>
-<p>More detailed comments have been provided within the essay itself [in Blue]</p>
-]]></content>
-      <categories>
-        <category>Business study</category>
-      </categories>
-      <tags>
-        <tag>Business theory and case study</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>The fifth python lesson</title>
     <url>/2020/02/08/The-fifth-python-lesson/</url>
     <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/08/1WdQd1.jpg" alt="1WdQd1.jpg"></p>
@@ -1616,15 +1616,13 @@
       </tags>
   </entry>
   <entry>
-    <title>The seventh python lesson</title>
-    <url>/2020/02/08/The-seventh-python-lesson/</url>
-    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/08/1W0F3T.jpg" alt="1W0F3T.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/08/1WDXjO.jpg" alt="1WDXjO.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/08/1WrpEd.jpg" alt="1WrpEd.jpg"></p>
-<p>HW:Define a function, accepts two input lists and returns a new list which contains only the unique</p>
-<p>elements from both lists.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">a</span>(<span class="params">m,n</span>):</span></span><br><span class="line">    b = m + n</span><br><span class="line">    c = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> b:</span><br><span class="line">        <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> c:</span><br><span class="line">            c.append(i)</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line">list1=<span class="string">&#x27;&#x27;</span></span><br><span class="line">list2=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;请用空格分隔。&#x27;</span>)</span><br><span class="line"></span><br><span class="line">list1=<span class="built_in">input</span>()</span><br><span class="line">list2=<span class="built_in">input</span>()</span><br><span class="line">m=list1.split()</span><br><span class="line">n=list2.split()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a(m,n))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+    <title>The second python lesson</title>
+    <url>/2020/02/08/The-second-python-lesson/</url>
+    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/08/1WU1mR.jpg" alt="1WU1mR.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/08/1WUtfO.jpg" alt="1WUtfO.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/08/1WUa1e.jpg" alt="1WUa1e.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/08/1WUyAP.jpg" alt="1WUyAP.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/08/1WU29S.jpg" alt="1WU29S.jpg"></p>
 ]]></content>
       <categories>
         <category>Computer learning</category>
@@ -1634,13 +1632,15 @@
       </tags>
   </entry>
   <entry>
-    <title>The second python lesson</title>
-    <url>/2020/02/08/The-second-python-lesson/</url>
-    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/08/1WU1mR.jpg" alt="1WU1mR.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/08/1WUtfO.jpg" alt="1WUtfO.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/08/1WUa1e.jpg" alt="1WUa1e.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/08/1WUyAP.jpg" alt="1WUyAP.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/08/1WU29S.jpg" alt="1WU29S.jpg"></p>
+    <title>The seventh python lesson</title>
+    <url>/2020/02/08/The-seventh-python-lesson/</url>
+    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/08/1W0F3T.jpg" alt="1W0F3T.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/08/1WDXjO.jpg" alt="1WDXjO.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/08/1WrpEd.jpg" alt="1WrpEd.jpg"></p>
+<p>HW:Define a function, accepts two input lists and returns a new list which contains only the unique</p>
+<p>elements from both lists.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">a</span>(<span class="params">m,n</span>):</span></span><br><span class="line">    b = m + n</span><br><span class="line">    c = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> b:</span><br><span class="line">        <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> c:</span><br><span class="line">            c.append(i)</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line">list1=<span class="string">&#x27;&#x27;</span></span><br><span class="line">list2=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;请用空格分隔。&#x27;</span>)</span><br><span class="line"></span><br><span class="line">list1=<span class="built_in">input</span>()</span><br><span class="line">list2=<span class="built_in">input</span>()</span><br><span class="line">m=list1.split()</span><br><span class="line">n=list2.split()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a(m,n))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>Computer learning</category>
@@ -1665,6 +1665,34 @@
       <tags>
         <tag>Python Notes</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>The tenth Python lesson</title>
+    <url>/2020/02/23/The-tenth-Python-lesson/</url>
+    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/23/33C4Vf.jpg" alt="33C4Vf.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/23/33CTPg.jpg" alt="33CTPg.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/23/33CvZV.jpg" alt="33CvZV.jpg"></p>
+<hr>
+<p>There is also a website for Python learning:</p>
+<p><a href="https://www.runoob.com/">菜鸟教程</a></p>
+]]></content>
+      <categories>
+        <category>Computer learning</category>
+      </categories>
+      <tags>
+        <tag>Python Notes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>The understanding of the asset management industry</title>
+    <url>/2021/09/08/The-understanding-of-the-asset-management-industry/</url>
+    <content><![CDATA[<p>When I read the book “ monetary finance”, I was confused about the concept of “ sort of bank credit assets “, I discussed this topic with my mother, and consulted with related experience of the elder. Hence, i got involved in and initially discussed a relatively unpopular topic in the financial industry, namely “distressed asset Management”, or “AMC”. What I learned later aroused my interest: AMC industry started late in China, with huge scale and broad market prospect, but there are very few professionals engaged in this industry. After an internship at an asset management company, I got a better understanding of the industry.</p>
+<p>Generally speaking, the NPL in the market refer to the NPL of financial institutions and more to the non-performing creditor’s rights of banks, among which the most important is the non-performing loan (refers to the loan that the bank customers cannot repay the principal and interest on schedule and in amount. ).</p>
+<p>For the banks, non-performing assets are a burden and drag, non-performing assets shackle hands and feet, so that the bank is difficult to implement development; For investors in bad assets, the huge profit space of bad assets is very attractive, so that countless investors participate in it one after another. From the perspective of investors, the current global economic downturn, downward pressure is huge, the development of many areas are facing bottlenecks, even challenges, and non-performing assets, known as the best counter-cyclical investment, is thriving and booming. From the perspective of financial institutions’ risk prevention and sound operation, it is very important and necessary to divest and dispose of non-performing assets, just like a sick person has to seek medical treatment or even surgical resection.</p>
+<p>Bad assets are not worthless assets. The famous investment guru Graham once said, “There are no bad assets to invest in, only bad prices to buy.” What’s more, most of the time these assets are not worthless junk because of a lack of proper operations or temporary difficulties due to the economic cycle. Therefore, smart NPL investors will practice contrarian thinking, buy at the right price, dispose of it properly, and then wait for the right time to sell it, thus making a huge profit. In fact, NPL is a typical industry of turning waste into treasure. For excellent gold diggers, NPL disposal industry hides huge treasure. Westerners refer to distressed asset management companies (AMCs) as “vultures that eat rotten meat”.</p>
+<p>I also learned that China’s finance started very late, and there is still a big gap between China and Europe and America. From a global perspective, the best choice to study accounting and finance is to go to the UK. Britain’s financial industry is highly developed. According to OECD statistics, the UK’s GDP in 2019 was 2,214.8 billion pounds, of which the value of finance and insurance was 129.6 billion pounds, accounting for more than 5%. Currently, the UK is the world’s largest exporter of financial services, is the global influence of the international financial center of London, London ranked first in the total cross-border banking, London has the world’s largest foreign exchange market, London is in the world in the field of international bond issuance and trading, gold, silver trading volume in the world’s first.</p>
+<p>Therefore, I really hope to study accounting and finance in university. This will help me better enter the asset management industry in the future.</p>
+]]></content>
   </entry>
   <entry>
     <title>Paragraph writing The unfamiliar situation I have met</title>
@@ -1716,34 +1744,6 @@
 
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pridict_result==test_label <span class="comment">#test the accuracy</span></span><br></pre></td></tr></table></figure>
 
-]]></content>
-  </entry>
-  <entry>
-    <title>The tenth Python lesson</title>
-    <url>/2020/02/23/The-tenth-Python-lesson/</url>
-    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/23/33C4Vf.jpg" alt="33C4Vf.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/23/33CTPg.jpg" alt="33CTPg.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/23/33CvZV.jpg" alt="33CvZV.jpg"></p>
-<hr>
-<p>There is also a website for Python learning:</p>
-<p><a href="https://www.runoob.com/">菜鸟教程</a></p>
-]]></content>
-      <categories>
-        <category>Computer learning</category>
-      </categories>
-      <tags>
-        <tag>Python Notes</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>The understanding of the asset management industry</title>
-    <url>/2021/09/08/The-understanding-of-the-asset-management-industry/</url>
-    <content><![CDATA[<p>When I read the book “ monetary finance”, I was confused about the concept of “ sort of bank credit assets “, I discussed this topic with my mother, and consulted with related experience of the elder. Hence, i got involved in and initially discussed a relatively unpopular topic in the financial industry, namely “distressed asset Management”, or “AMC”. What I learned later aroused my interest: AMC industry started late in China, with huge scale and broad market prospect, but there are very few professionals engaged in this industry. After an internship at an asset management company, I got a better understanding of the industry.</p>
-<p>Generally speaking, the NPL in the market refer to the NPL of financial institutions and more to the non-performing creditor’s rights of banks, among which the most important is the non-performing loan (refers to the loan that the bank customers cannot repay the principal and interest on schedule and in amount. ).</p>
-<p>For the banks, non-performing assets are a burden and drag, non-performing assets shackle hands and feet, so that the bank is difficult to implement development; For investors in bad assets, the huge profit space of bad assets is very attractive, so that countless investors participate in it one after another. From the perspective of investors, the current global economic downturn, downward pressure is huge, the development of many areas are facing bottlenecks, even challenges, and non-performing assets, known as the best counter-cyclical investment, is thriving and booming. From the perspective of financial institutions’ risk prevention and sound operation, it is very important and necessary to divest and dispose of non-performing assets, just like a sick person has to seek medical treatment or even surgical resection.</p>
-<p>Bad assets are not worthless assets. The famous investment guru Graham once said, “There are no bad assets to invest in, only bad prices to buy.” What’s more, most of the time these assets are not worthless junk because of a lack of proper operations or temporary difficulties due to the economic cycle. Therefore, smart NPL investors will practice contrarian thinking, buy at the right price, dispose of it properly, and then wait for the right time to sell it, thus making a huge profit. In fact, NPL is a typical industry of turning waste into treasure. For excellent gold diggers, NPL disposal industry hides huge treasure. Westerners refer to distressed asset management companies (AMCs) as “vultures that eat rotten meat”.</p>
-<p>I also learned that China’s finance started very late, and there is still a big gap between China and Europe and America. From a global perspective, the best choice to study accounting and finance is to go to the UK. Britain’s financial industry is highly developed. According to OECD statistics, the UK’s GDP in 2019 was 2,214.8 billion pounds, of which the value of finance and insurance was 129.6 billion pounds, accounting for more than 5%. Currently, the UK is the world’s largest exporter of financial services, is the global influence of the international financial center of London, London ranked first in the total cross-border banking, London has the world’s largest foreign exchange market, London is in the world in the field of international bond issuance and trading, gold, silver trading volume in the world’s first.</p>
-<p>Therefore, I really hope to study accounting and finance in university. This will help me better enter the asset management industry in the future.</p>
 ]]></content>
   </entry>
   <entry>
