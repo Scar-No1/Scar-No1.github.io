@@ -1,10 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AI competition--feelings&amp;harvests</title>
-    <url>/2020/04/19/AI-competition-feelings-harvests/</url>
-    <content><![CDATA[<p>  In February this year, I signed up for the Haihua AI garbage sorting challenge. The word AI is far away from me from the technical level, but I can always feel its inextricable connection with our lives.<br>  From knowing nothing ,to trying for the first time and to pursuing perfection, I have gone through countless studies and experiments. At the beginning of the project, we had a few AI classes. Mr. Chen Siyu explained the basic AI principles, such as linear regression of machine learning, separation and processing of structural images of artificial neural network, and gave us codes to teach us how to train and predict data. Although these theoretical knowledge are complicated and difficult to understand, and there are many unfamiliar terms to understand, they all lay a good foundation for the later model training.<br>The most experienced and fruitful part is the model training and data forecast upload after the team formation. When the teacher packs a  training set into a group, the rest of the work would be done by ourselves. I tried to train by myself first, and soon learned that this task is extremely time-consuming. It takes nearly five hours to run an epoch on my laptop, which is far not enough. After teaming up with classmates, we began to try to run more programs on our own computers to train the model, but due to the equipment problems, all ended in failure. Failure is always the driving force to move forward, so we contacted TP’s teacher and provided a better performance computer there. After two times of TP debugging in person, plus daily remote control, continuous training, at the end of the competition, our senior group also had the fifth place, ACC 99.78.<br>  Although I didn’t enter the top three as the senior two, I was very satisfied with my efforts, achievements and gains. Through this project, I have not only learned a lot about AI, python data analysis, but also learned that this technology is widely used in daily life. I admire those programmers who are careful enough to write a long and complicated code, and patient enough to debug parameters and wait for training results. Although computer is not my major, I know that there is no clear boundary between disciplines, and knowledge can be exchanged. This project has exercised my data analysis ability, and I have a deeper understanding of linear regression. AI technology can also play an important role in retail projects.</p>
+    <title>AI Learning</title>
+    <url>/2020/02/16/AI-Learning/</url>
+    <content><![CDATA[<hr>
+<p>I attended an AI competition called HaiHua AI competition—–Rubbish classify. It’s about using programming to identify the types of the rubbish by import the pictures. The programming software is Python, which I have just learned. AI is a complete new field to me though this technology has been widely used in our daily life. Today is my first lesson preparing for this competition. Before the class, I read some articles about it.</p>
+<p>Here is the website addresses:</p>
+<p><a href="https://link.zhihu.com/?target=http://www.cnblogs.com/subconscious/p/5058741.html&source=https://www.zhihu.com/appview/v2/answer/267280164?no_image=false&X-AD=canvas_version%253Av%253D4.1%253Bsetting%253Acad%253D0&is_enable_double_click_voteup=1&page_padding_top=0.0">神经网络Neural Network</a></p>
+<p><a href="https://link.zhihu.com/?target=http://www.cnblogs.com/subconscious/p/4107357.html&source=https://www.zhihu.com/appview/v2/answer/267280164?no_image=false&X-AD=canvas_version%253Av%253D4.1%253Bsetting%253Acad%253D0&is_enable_double_click_voteup=1&page_padding_top=0.0">机器学习Machine Learning</a></p>
+<hr>
+<h2 id="Few-Concepts"><a href="#Few-Concepts" class="headerlink" title="Few Concepts"></a>Few Concepts</h2><ul>
+<li>Machine Learning </li>
+</ul>
+<blockquote>
+<p> A field of research that enables computers to learn without specific programming<br><img src="https://s2.ax1x.com/2020/02/16/3pTH4H.png" alt="3pTH4H.png" style="zoom: 80%;" /></p>
+</blockquote>
+<ul>
+<li><p>Linear Regression</p>
+<p><img src="https://s2.ax1x.com/2020/02/16/3pq4RH.png" alt="3pq4RH.png"></p>
+</li>
+<li><p>Cost function</p>
+<p><img src="https://s2.ax1x.com/2020/02/16/3pLItU.png" alt="3pLItU.png"></p>
+</li>
+<li><p>Artificial neural network</p>
+<p><img src="https://s2.ax1x.com/2020/02/16/3pLbc9.png" alt="3pLbc9.png"></p>
+<p><img src="https://s2.ax1x.com/2020/02/16/3pLxAK.png" alt="3pLxAK.png"></p>
+</li>
+</ul>
+<hr>
+<h2 id="My-harvest"><a href="#My-harvest" class="headerlink" title="My harvest"></a>My harvest</h2><ul>
+<li><p>preliminarily learn the principle of machine learning and the structure of artificial neural network </p>
+</li>
+<li><p>see the whole process of classifying several clothes and shoes by learning 60000 pictures </p>
+</li>
+<li><p>watch a video about a speech from Li Feifei in TED</p>
+
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//v.qq.com/txp/iframe/player.html?vid=k0383ifq9rt" scrolling="no" border="0" frameborder="0" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;">
+    </iframe>
+</div>
+
+</li>
+</ul>
 ]]></content>
+      <categories>
+        <category>AI Competition</category>
+      </categories>
+      <tags>
+        <tag>AI Competition</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI Learning--training model</title>
+    <url>/2020/04/18/AI-Learning-training-model/</url>
+    <content><![CDATA[<h4 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h4><p>Our project had now enter the second stage. My friends and I formed a team and began to train model and predict data by ourselves.</p>
+<h4 id="The-difficulties-we’ve-met"><a href="#The-difficulties-we’ve-met" class="headerlink" title="The difficulties we’ve met"></a>The difficulties we’ve met</h4><ul>
+<li><p>the low quality of the photos in the training set</p>
+<ul>
+<li>We used the training set which was processed by our teacher to reduce the storage of these photos in order to allowed us to train model by our own computer,which lead to low pixel photos. The original training set took up the storage of 198G, and now it only took up 3G.</li>
+</ul>
+</li>
+<li><p>the computer performance is too poor</p>
+<ul>
+<li>We used our own laptop to train the model, which the training speed is very slow. It takes about nearly 5 hours to train one epoch.</li>
+</ul>
+</li>
+</ul>
+<h4 id="What-we-do"><a href="#What-we-do" class="headerlink" title="What we do"></a>What we do</h4><p>My group mate and I asked for the teacher’s help. They offered us a computer which had ten times faster training speed. During the training process, we’ve met some technical problems, like the program may sometimes automatically shut down, which worried us a lot. </p>
+<h4 id="The-following-plan"><a href="#The-following-plan" class="headerlink" title="The following plan"></a>The following plan</h4><p>At present, the highest accuracy we had achieved was 99.62. To further improve the model accuracy, we wanted to change the training ways, we wanted to change the IncentiveV3 with the Xception package. Also, some parameters needed adjusting and modifying.</p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4>]]></content>
       <categories>
         <category>AI Competition</category>
       </categories>
@@ -70,74 +135,9 @@
       </tags>
   </entry>
   <entry>
-    <title>AI Learning--training model</title>
-    <url>/2020/04/18/AI-Learning-training-model/</url>
-    <content><![CDATA[<h4 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h4><p>Our project had now enter the second stage. My friends and I formed a team and began to train model and predict data by ourselves.</p>
-<h4 id="The-difficulties-we’ve-met"><a href="#The-difficulties-we’ve-met" class="headerlink" title="The difficulties we’ve met"></a>The difficulties we’ve met</h4><ul>
-<li><p>the low quality of the photos in the training set</p>
-<ul>
-<li>We used the training set which was processed by our teacher to reduce the storage of these photos in order to allowed us to train model by our own computer,which lead to low pixel photos. The original training set took up the storage of 198G, and now it only took up 3G.</li>
-</ul>
-</li>
-<li><p>the computer performance is too poor</p>
-<ul>
-<li>We used our own laptop to train the model, which the training speed is very slow. It takes about nearly 5 hours to train one epoch.</li>
-</ul>
-</li>
-</ul>
-<h4 id="What-we-do"><a href="#What-we-do" class="headerlink" title="What we do"></a>What we do</h4><p>My group mate and I asked for the teacher’s help. They offered us a computer which had ten times faster training speed. During the training process, we’ve met some technical problems, like the program may sometimes automatically shut down, which worried us a lot. </p>
-<h4 id="The-following-plan"><a href="#The-following-plan" class="headerlink" title="The following plan"></a>The following plan</h4><p>At present, the highest accuracy we had achieved was 99.62. To further improve the model accuracy, we wanted to change the training ways, we wanted to change the IncentiveV3 with the Xception package. Also, some parameters needed adjusting and modifying.</p>
-<h4 id=""><a href="#" class="headerlink" title=""></a></h4>]]></content>
-      <categories>
-        <category>AI Competition</category>
-      </categories>
-      <tags>
-        <tag>AI Competition</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI Learning</title>
-    <url>/2020/02/16/AI-Learning/</url>
-    <content><![CDATA[<hr>
-<p>I attended an AI competition called HaiHua AI competition—–Rubbish classify. It’s about using programming to identify the types of the rubbish by import the pictures. The programming software is Python, which I have just learned. AI is a complete new field to me though this technology has been widely used in our daily life. Today is my first lesson preparing for this competition. Before the class, I read some articles about it.</p>
-<p>Here is the website addresses:</p>
-<p><a href="https://link.zhihu.com/?target=http://www.cnblogs.com/subconscious/p/5058741.html&source=https://www.zhihu.com/appview/v2/answer/267280164?no_image=false&X-AD=canvas_version%253Av%253D4.1%253Bsetting%253Acad%253D0&is_enable_double_click_voteup=1&page_padding_top=0.0">神经网络Neural Network</a></p>
-<p><a href="https://link.zhihu.com/?target=http://www.cnblogs.com/subconscious/p/4107357.html&source=https://www.zhihu.com/appview/v2/answer/267280164?no_image=false&X-AD=canvas_version%253Av%253D4.1%253Bsetting%253Acad%253D0&is_enable_double_click_voteup=1&page_padding_top=0.0">机器学习Machine Learning</a></p>
-<hr>
-<h2 id="Few-Concepts"><a href="#Few-Concepts" class="headerlink" title="Few Concepts"></a>Few Concepts</h2><ul>
-<li>Machine Learning </li>
-</ul>
-<blockquote>
-<p> A field of research that enables computers to learn without specific programming<br><img src="https://s2.ax1x.com/2020/02/16/3pTH4H.png" alt="3pTH4H.png" style="zoom: 80%;" /></p>
-</blockquote>
-<ul>
-<li><p>Linear Regression</p>
-<p><img src="https://s2.ax1x.com/2020/02/16/3pq4RH.png" alt="3pq4RH.png"></p>
-</li>
-<li><p>Cost function</p>
-<p><img src="https://s2.ax1x.com/2020/02/16/3pLItU.png" alt="3pLItU.png"></p>
-</li>
-<li><p>Artificial neural network</p>
-<p><img src="https://s2.ax1x.com/2020/02/16/3pLbc9.png" alt="3pLbc9.png"></p>
-<p><img src="https://s2.ax1x.com/2020/02/16/3pLxAK.png" alt="3pLxAK.png"></p>
-</li>
-</ul>
-<hr>
-<h2 id="My-harvest"><a href="#My-harvest" class="headerlink" title="My harvest"></a>My harvest</h2><ul>
-<li><p>preliminarily learn the principle of machine learning and the structure of artificial neural network </p>
-</li>
-<li><p>see the whole process of classifying several clothes and shoes by learning 60000 pictures </p>
-</li>
-<li><p>watch a video about a speech from Li Feifei in TED</p>
-
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="//v.qq.com/txp/iframe/player.html?vid=k0383ifq9rt" scrolling="no" border="0" frameborder="0" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;">
-    </iframe>
-</div>
-
-</li>
-</ul>
+    <title>AI competition--feelings&amp;harvests</title>
+    <url>/2020/04/19/AI-competition-feelings-harvests/</url>
+    <content><![CDATA[<p>  In February this year, I signed up for the Haihua AI garbage sorting challenge. The word AI is far away from me from the technical level, but I can always feel its inextricable connection with our lives.<br>  From knowing nothing ,to trying for the first time and to pursuing perfection, I have gone through countless studies and experiments. At the beginning of the project, we had a few AI classes. Mr. Chen Siyu explained the basic AI principles, such as linear regression of machine learning, separation and processing of structural images of artificial neural network, and gave us codes to teach us how to train and predict data. Although these theoretical knowledge are complicated and difficult to understand, and there are many unfamiliar terms to understand, they all lay a good foundation for the later model training.<br>The most experienced and fruitful part is the model training and data forecast upload after the team formation. When the teacher packs a  training set into a group, the rest of the work would be done by ourselves. I tried to train by myself first, and soon learned that this task is extremely time-consuming. It takes nearly five hours to run an epoch on my laptop, which is far not enough. After teaming up with classmates, we began to try to run more programs on our own computers to train the model, but due to the equipment problems, all ended in failure. Failure is always the driving force to move forward, so we contacted TP’s teacher and provided a better performance computer there. After two times of TP debugging in person, plus daily remote control, continuous training, at the end of the competition, our senior group also had the fifth place, ACC 99.78.<br>  Although I didn’t enter the top three as the senior two, I was very satisfied with my efforts, achievements and gains. Through this project, I have not only learned a lot about AI, python data analysis, but also learned that this technology is widely used in daily life. I admire those programmers who are careful enough to write a long and complicated code, and patient enough to debug parameters and wait for training results. Although computer is not my major, I know that there is no clear boundary between disciplines, and knowledge can be exchanged. This project has exercised my data analysis ability, and I have a deeper understanding of linear regression. AI technology can also play an important role in retail projects.</p>
 ]]></content>
       <categories>
         <category>AI Competition</category>
@@ -161,6 +161,39 @@
 <h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><p><img src="https://s1.ax1x.com/2020/08/04/aDJxwn.png" alt="aDJxwn.png"></p>
 <p>Here, I set 36C as a standard temperature. So, when the temperature exceeds 36C, the fan will start.</p>
 <p><img src="https://s1.ax1x.com/2020/08/04/aDtr8K.jpg" alt="aDtr8K.jpg"></p>
+]]></content>
+      <categories>
+        <category>Computer learning</category>
+      </categories>
+      <tags>
+        <tag>ARDUINO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ARDUINO Programme 3</title>
+    <url>/2020/08/12/ARDUINO-Programme-3/</url>
+    <content><![CDATA[<p>In this class, we learned about how to make an intelligent reversing radar.</p>
+<h3 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h3><p>From this part, we learned a tip.</p>
+<p><img src="https://s1.ax1x.com/2020/08/12/ajETHA.png" alt="ajETHA.png"></p>
+<p>In <code>void loop</code>, you have to set the original state of the output first. </p>
+<p><code>digitalWrite(LED,LOW);</code></p>
+<p>Set the state low in order to prevent the fan start to  work immediately when the motherboard has just connected to the power.</p>
+<p><img src="https://s1.ax1x.com/2020/08/12/ajuvvV.jpg" alt="ajuvvV.jpg"></p>
+<h3 id="intelligent-reversing-radar"><a href="#intelligent-reversing-radar" class="headerlink" title="intelligent reversing radar"></a>intelligent reversing radar</h3><h4 id="Buzzer"><a href="#Buzzer" class="headerlink" title="Buzzer"></a>Buzzer</h4><p>This device will make sharp sound when receiving electronic signal. </p>
+<p>We build a function called BUZZ.</p>
+<p>When there is a time signal input, the buzzer will bee at the speed according to the time period. The larger the time period , the slower the buzzer will bee.</p>
+<p><img src="https://s1.ax1x.com/2020/08/12/ajMBwD.png" alt="ajMBwD.png"></p>
+<h4 id="Ultrasonic-sensor"><a href="#Ultrasonic-sensor" class="headerlink" title="Ultrasonic sensor"></a>Ultrasonic sensor</h4><p>This device is used to detect the distance of the object in front of the sensor.</p>
+<p>We can use a Serial monitor to show the detailed value.</p>
+<p><img src="https://s1.ax1x.com/2020/08/12/ajlIRs.png" alt="ajlIRs.png"></p>
+<h4 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h4><p>Combine all these above together.</p>
+<ul>
+<li>First, the ultrasonic sensor record the time period it emit and receive the signal. Using this time to calculate the distance of the object by multiply the speed of sound wave in air.</li>
+<li> According to the distance long, send different signal to the buzzer. The smaller the distance, the smaller the time delay of buzzer.(Three stage: 10 cm , 50 cm , 80 cm)</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/08/12/aj3uh4.png" alt="aj3uh4.png"></p>
+<p><img src="https://s1.ax1x.com/2020/08/12/aj31j1.png" alt="aj31j1.png"></p>
+<p><img src="https://s1.ax1x.com/2020/08/12/aj34vn.jpg" alt="aj34vn.jpg"></p>
 ]]></content>
       <categories>
         <category>Computer learning</category>
@@ -219,39 +252,6 @@
 <p>Show on the serial monitor.</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Serial.println(keyword);</span><br><span class="line">      Serial.println(times);</span><br><span class="line">     </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <categories>
-        <category>Computer learning</category>
-      </categories>
-      <tags>
-        <tag>ARDUINO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ARDUINO Programme 3</title>
-    <url>/2020/08/12/ARDUINO-Programme-3/</url>
-    <content><![CDATA[<p>In this class, we learned about how to make an intelligent reversing radar.</p>
-<h3 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h3><p>From this part, we learned a tip.</p>
-<p><img src="https://s1.ax1x.com/2020/08/12/ajETHA.png" alt="ajETHA.png"></p>
-<p>In <code>void loop</code>, you have to set the original state of the output first. </p>
-<p><code>digitalWrite(LED,LOW);</code></p>
-<p>Set the state low in order to prevent the fan start to  work immediately when the motherboard has just connected to the power.</p>
-<p><img src="https://s1.ax1x.com/2020/08/12/ajuvvV.jpg" alt="ajuvvV.jpg"></p>
-<h3 id="intelligent-reversing-radar"><a href="#intelligent-reversing-radar" class="headerlink" title="intelligent reversing radar"></a>intelligent reversing radar</h3><h4 id="Buzzer"><a href="#Buzzer" class="headerlink" title="Buzzer"></a>Buzzer</h4><p>This device will make sharp sound when receiving electronic signal. </p>
-<p>We build a function called BUZZ.</p>
-<p>When there is a time signal input, the buzzer will bee at the speed according to the time period. The larger the time period , the slower the buzzer will bee.</p>
-<p><img src="https://s1.ax1x.com/2020/08/12/ajMBwD.png" alt="ajMBwD.png"></p>
-<h4 id="Ultrasonic-sensor"><a href="#Ultrasonic-sensor" class="headerlink" title="Ultrasonic sensor"></a>Ultrasonic sensor</h4><p>This device is used to detect the distance of the object in front of the sensor.</p>
-<p>We can use a Serial monitor to show the detailed value.</p>
-<p><img src="https://s1.ax1x.com/2020/08/12/ajlIRs.png" alt="ajlIRs.png"></p>
-<h4 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h4><p>Combine all these above together.</p>
-<ul>
-<li>First, the ultrasonic sensor record the time period it emit and receive the signal. Using this time to calculate the distance of the object by multiply the speed of sound wave in air.</li>
-<li> According to the distance long, send different signal to the buzzer. The smaller the distance, the smaller the time delay of buzzer.(Three stage: 10 cm , 50 cm , 80 cm)</li>
-</ul>
-<p><img src="https://s1.ax1x.com/2020/08/12/aj3uh4.png" alt="aj3uh4.png"></p>
-<p><img src="https://s1.ax1x.com/2020/08/12/aj31j1.png" alt="aj31j1.png"></p>
-<p><img src="https://s1.ax1x.com/2020/08/12/aj34vn.jpg" alt="aj34vn.jpg"></p>
 ]]></content>
       <categories>
         <category>Computer learning</category>
@@ -859,29 +859,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python the center of film industry 2</title>
-    <url>/2020/11/15/Python-the-center-of-film-industry-2/</url>
-    <content><![CDATA[<p>  Following the last blog, I installed a new package called <code>pyvis</code>. It can visualize the information and form interactive images.</p>
-<p>I prepared to visualize the working relationship  between the actors and actresses in film Avengers.</p>
-<p>First, get the data.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cast=[]</span><br><span class="line">cast2=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">114827</span>):</span><br><span class="line">    <span class="keyword">if</span>  <span class="string">&#x27;companies&#x27;</span><span class="keyword">in</span> Movies[i].keys() <span class="keyword">and</span> <span class="string">&#x27;Avengers&#x27;</span><span class="keyword">in</span> Movies[i][<span class="string">&#x27;title&#x27;</span>]:</span><br><span class="line">        cast.append(i)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cast:</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> Movies[i][<span class="string">&#x27;companies&#x27;</span>]:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;Marvel&#x27;</span><span class="keyword">in</span> j:</span><br><span class="line">            cast2.append(i)</span><br><span class="line"><span class="built_in">print</span>(cast2)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[39550, 65904, 83523, 83588]</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Second, form the relationship.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">G = nx.Graph()  </span><br><span class="line">Mov=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cast2:</span><br><span class="line">    Mov.append(Movies[i])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> movie <span class="keyword">in</span> Mov: </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(movie[<span class="string">&quot;cast&quot;</span>]) - <span class="number">1</span>): </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i + <span class="number">1</span>, <span class="built_in">len</span>(movie[<span class="string">&quot;cast&quot;</span>])): </span><br><span class="line">            G.add_edge(movie[<span class="string">&quot;cast&quot;</span>][i], movie[<span class="string">&quot;cast&quot;</span>][j], title=movie[<span class="string">&quot;title&quot;</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>Third, draw the diagram.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">displayG = Network(width=<span class="number">1024</span>, height=<span class="number">768</span>, notebook = <span class="literal">True</span>) <span class="comment"># 创建 pyvis 中的 Network 对象，可以设置长度、宽度、是否在当前笔记本中显示等</span></span><br><span class="line"></span><br><span class="line">displayG.from_nx(G) <span class="comment"># 将 NetWorkX 的图导入 pyvis</span></span><br><span class="line"></span><br><span class="line">displayG.show(<span class="string">&#x27;test.html&#x27;</span>) <span class="comment"># 展示，并可生成一个名为 &quot;test.html&quot; 的网页文件</span></span><br></pre></td></tr></table></figure>
-
-<p><a href="https://imgchr.com/i/DFotWn"><img src="https://s3.ax1x.com/2020/11/15/DFotWn.png" alt="DFotWn.png"></a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Python the center of film industry</title>
     <url>/2020/10/31/Python-the-center-of-film-industry/</url>
     <content><![CDATA[<h3 id="Backbround"><a href="#Backbround" class="headerlink" title="Backbround"></a>Backbround</h3><p>Social network analysis  is a branch of data science that allows the investigation of social structures using networks and graph theory. It can help to reveal patterns in voting preferences, aid the understanding of how ideas spread, and even help to model the spread of diseases.</p>
@@ -929,6 +906,29 @@
       <tags>
         <tag>Python Lesson</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Python the center of film industry 2</title>
+    <url>/2020/11/15/Python-the-center-of-film-industry-2/</url>
+    <content><![CDATA[<p>  Following the last blog, I installed a new package called <code>pyvis</code>. It can visualize the information and form interactive images.</p>
+<p>I prepared to visualize the working relationship  between the actors and actresses in film Avengers.</p>
+<p>First, get the data.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cast=[]</span><br><span class="line">cast2=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">114827</span>):</span><br><span class="line">    <span class="keyword">if</span>  <span class="string">&#x27;companies&#x27;</span><span class="keyword">in</span> Movies[i].keys() <span class="keyword">and</span> <span class="string">&#x27;Avengers&#x27;</span><span class="keyword">in</span> Movies[i][<span class="string">&#x27;title&#x27;</span>]:</span><br><span class="line">        cast.append(i)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cast:</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> Movies[i][<span class="string">&#x27;companies&#x27;</span>]:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;Marvel&#x27;</span><span class="keyword">in</span> j:</span><br><span class="line">            cast2.append(i)</span><br><span class="line"><span class="built_in">print</span>(cast2)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[39550, 65904, 83523, 83588]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Second, form the relationship.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">G = nx.Graph()  </span><br><span class="line">Mov=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cast2:</span><br><span class="line">    Mov.append(Movies[i])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> movie <span class="keyword">in</span> Mov: </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(movie[<span class="string">&quot;cast&quot;</span>]) - <span class="number">1</span>): </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i + <span class="number">1</span>, <span class="built_in">len</span>(movie[<span class="string">&quot;cast&quot;</span>])): </span><br><span class="line">            G.add_edge(movie[<span class="string">&quot;cast&quot;</span>][i], movie[<span class="string">&quot;cast&quot;</span>][j], title=movie[<span class="string">&quot;title&quot;</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>Third, draw the diagram.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">displayG = Network(width=<span class="number">1024</span>, height=<span class="number">768</span>, notebook = <span class="literal">True</span>) <span class="comment"># 创建 pyvis 中的 Network 对象，可以设置长度、宽度、是否在当前笔记本中显示等</span></span><br><span class="line"></span><br><span class="line">displayG.from_nx(G) <span class="comment"># 将 NetWorkX 的图导入 pyvis</span></span><br><span class="line"></span><br><span class="line">displayG.show(<span class="string">&#x27;test.html&#x27;</span>) <span class="comment"># 展示，并可生成一个名为 &quot;test.html&quot; 的网页文件</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://imgchr.com/i/DFotWn"><img src="https://s3.ax1x.com/2020/11/15/DFotWn.png" alt="DFotWn.png"></a></p>
+]]></content>
   </entry>
   <entry>
     <title>Python tweets data analysis</title>
@@ -1140,26 +1140,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Survey on the sustainability factors of the fair development(3)</title>
-    <url>/2021/01/25/Survey-on-the-sustainability-factors-of-the-fair-development-3/</url>
-    <content><![CDATA[<p>Because of the time reason, we didn’t do the questionnaire investigation to decide the first level indexes and the secondary indexes. Hence, we decide the first level indexes ourselves after listen to the tutor’s advice. </p>
-<h4 id="First-level-index"><a href="#First-level-index" class="headerlink" title="First level index"></a>First level index</h4><ol>
-<li>Internal factors</li>
-<li>External factors</li>
-</ol>
-<h4 id="Secondary-index"><a href="#Secondary-index" class="headerlink" title="Secondary index"></a>Secondary index</h4><p>We categorised these index by using the company life cycle theory, namely forming period, growing period, mature period and declining period.</p>
-<h4 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h4><p>What’s more, for further research, we built up our research model. </p>
-<p><a href="https://imgchr.com/i/sLI4IJ"><img src="https://s3.ax1x.com/2021/01/25/sLI4IJ.jpg" alt="sLI4IJ.jpg"></a></p>
-<h4 id="Questionnaire-investigation"><a href="#Questionnaire-investigation" class="headerlink" title="Questionnaire investigation"></a>Questionnaire investigation</h4><p>On 2020 Dec 24, a small fair was held in a shopping mall. My teammate and I went their to send out the questionnaire. This time, we decided to use electronic questionnaire. People can scan the code and answering the question by doing simple clicking.</p>
-]]></content>
-      <categories>
-        <category>Economics and Statistics</category>
-      </categories>
-      <tags>
-        <tag>Study on the Sustainable Factors of Fair activities</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Survey on the sustainability factors of the fair development(2)</title>
     <url>/2021/01/24/Survey-on-the-sustainability-factors-of-the-fair-development-2/</url>
     <content><![CDATA[<p>After doing the fundamental market research, we immediately began the next step. On the second stage,  we prepare to set up an index system.</p>
@@ -1287,6 +1267,26 @@
 <hr>
 <p><a href="https://imgchr.com/i/sqAutA"><img src="https://s3.ax1x.com/2021/01/24/sqAutA.png" alt="sqAutA.png"></a></p>
 <p>Technology level<br>Consumer acceptance of Technology<br>technological innovation</p>
+]]></content>
+      <categories>
+        <category>Economics and Statistics</category>
+      </categories>
+      <tags>
+        <tag>Study on the Sustainable Factors of Fair activities</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Survey on the sustainability factors of the fair development(3)</title>
+    <url>/2021/01/25/Survey-on-the-sustainability-factors-of-the-fair-development-3/</url>
+    <content><![CDATA[<p>Because of the time reason, we didn’t do the questionnaire investigation to decide the first level indexes and the secondary indexes. Hence, we decide the first level indexes ourselves after listen to the tutor’s advice. </p>
+<h4 id="First-level-index"><a href="#First-level-index" class="headerlink" title="First level index"></a>First level index</h4><ol>
+<li>Internal factors</li>
+<li>External factors</li>
+</ol>
+<h4 id="Secondary-index"><a href="#Secondary-index" class="headerlink" title="Secondary index"></a>Secondary index</h4><p>We categorised these index by using the company life cycle theory, namely forming period, growing period, mature period and declining period.</p>
+<h4 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h4><p>What’s more, for further research, we built up our research model. </p>
+<p><a href="https://imgchr.com/i/sLI4IJ"><img src="https://s3.ax1x.com/2021/01/25/sLI4IJ.jpg" alt="sLI4IJ.jpg"></a></p>
+<h4 id="Questionnaire-investigation"><a href="#Questionnaire-investigation" class="headerlink" title="Questionnaire investigation"></a>Questionnaire investigation</h4><p>On 2020 Dec 24, a small fair was held in a shopping mall. My teammate and I went their to send out the questionnaire. This time, we decided to use electronic questionnaire. People can scan the code and answering the question by doing simple clicking.</p>
 ]]></content>
       <categories>
         <category>Economics and Statistics</category>
@@ -1616,22 +1616,6 @@
       </tags>
   </entry>
   <entry>
-    <title>The second python lesson</title>
-    <url>/2020/02/08/The-second-python-lesson/</url>
-    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/08/1WU1mR.jpg" alt="1WU1mR.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/08/1WUtfO.jpg" alt="1WUtfO.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/08/1WUa1e.jpg" alt="1WUa1e.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/08/1WUyAP.jpg" alt="1WUyAP.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/08/1WU29S.jpg" alt="1WU29S.jpg"></p>
-]]></content>
-      <categories>
-        <category>Computer learning</category>
-      </categories>
-      <tags>
-        <tag>Python Notes</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>The seventh python lesson</title>
     <url>/2020/02/08/The-seventh-python-lesson/</url>
     <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/08/1W0F3T.jpg" alt="1W0F3T.jpg"></p>
@@ -1641,6 +1625,22 @@
 <p>elements from both lists.</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">a</span>(<span class="params">m,n</span>):</span></span><br><span class="line">    b = m + n</span><br><span class="line">    c = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> b:</span><br><span class="line">        <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> c:</span><br><span class="line">            c.append(i)</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line">list1=<span class="string">&#x27;&#x27;</span></span><br><span class="line">list2=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;请用空格分隔。&#x27;</span>)</span><br><span class="line"></span><br><span class="line">list1=<span class="built_in">input</span>()</span><br><span class="line">list2=<span class="built_in">input</span>()</span><br><span class="line">m=list1.split()</span><br><span class="line">n=list2.split()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a(m,n))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+]]></content>
+      <categories>
+        <category>Computer learning</category>
+      </categories>
+      <tags>
+        <tag>Python Notes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>The second python lesson</title>
+    <url>/2020/02/08/The-second-python-lesson/</url>
+    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/08/1WU1mR.jpg" alt="1WU1mR.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/08/1WUtfO.jpg" alt="1WUtfO.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/08/1WUa1e.jpg" alt="1WUa1e.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/08/1WUyAP.jpg" alt="1WUyAP.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/08/1WU29S.jpg" alt="1WU29S.jpg"></p>
 ]]></content>
       <categories>
         <category>Computer learning</category>
@@ -1665,34 +1665,6 @@
       <tags>
         <tag>Python Notes</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>The tenth Python lesson</title>
-    <url>/2020/02/23/The-tenth-Python-lesson/</url>
-    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/23/33C4Vf.jpg" alt="33C4Vf.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/23/33CTPg.jpg" alt="33CTPg.jpg"></p>
-<p><img src="https://s2.ax1x.com/2020/02/23/33CvZV.jpg" alt="33CvZV.jpg"></p>
-<hr>
-<p>There is also a website for Python learning:</p>
-<p><a href="https://www.runoob.com/">菜鸟教程</a></p>
-]]></content>
-      <categories>
-        <category>Computer learning</category>
-      </categories>
-      <tags>
-        <tag>Python Notes</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>The understanding of the asset management industry</title>
-    <url>/2021/09/08/The-understanding-of-the-asset-management-industry/</url>
-    <content><![CDATA[<p>When I read the book “ monetary finance”, I was confused about the concept of “ sort of bank credit assets “, I discussed this topic with my mother, and consulted with related experience of the elder. Hence, i got involved in and initially discussed a relatively unpopular topic in the financial industry, namely “distressed asset Management”, or “AMC”. What I learned later aroused my interest: AMC industry started late in China, with huge scale and broad market prospect, but there are very few professionals engaged in this industry. After an internship at an asset management company, I got a better understanding of the industry.</p>
-<p>Generally speaking, the NPL in the market refer to the NPL of financial institutions and more to the non-performing creditor’s rights of banks, among which the most important is the non-performing loan (refers to the loan that the bank customers cannot repay the principal and interest on schedule and in amount. ).</p>
-<p>For the banks, non-performing assets are a burden and drag, non-performing assets shackle hands and feet, so that the bank is difficult to implement development; For investors in bad assets, the huge profit space of bad assets is very attractive, so that countless investors participate in it one after another. From the perspective of investors, the current global economic downturn, downward pressure is huge, the development of many areas are facing bottlenecks, even challenges, and non-performing assets, known as the best counter-cyclical investment, is thriving and booming. From the perspective of financial institutions’ risk prevention and sound operation, it is very important and necessary to divest and dispose of non-performing assets, just like a sick person has to seek medical treatment or even surgical resection.</p>
-<p>Bad assets are not worthless assets. The famous investment guru Graham once said, “There are no bad assets to invest in, only bad prices to buy.” What’s more, most of the time these assets are not worthless junk because of a lack of proper operations or temporary difficulties due to the economic cycle. Therefore, smart NPL investors will practice contrarian thinking, buy at the right price, dispose of it properly, and then wait for the right time to sell it, thus making a huge profit. In fact, NPL is a typical industry of turning waste into treasure. For excellent gold diggers, NPL disposal industry hides huge treasure. Westerners refer to distressed asset management companies (AMCs) as “vultures that eat rotten meat”.</p>
-<p>I also learned that China’s finance started very late, and there is still a big gap between China and Europe and America. From a global perspective, the best choice to study accounting and finance is to go to the UK. Britain’s financial industry is highly developed. According to OECD statistics, the UK’s GDP in 2019 was 2,214.8 billion pounds, of which the value of finance and insurance was 129.6 billion pounds, accounting for more than 5%. Currently, the UK is the world’s largest exporter of financial services, is the global influence of the international financial center of London, London ranked first in the total cross-border banking, London has the world’s largest foreign exchange market, London is in the world in the field of international bond issuance and trading, gold, silver trading volume in the world’s first.</p>
-<p>Therefore, I really hope to study accounting and finance in university. This will help me better enter the asset management industry in the future.</p>
-]]></content>
   </entry>
   <entry>
     <title>Paragraph writing The unfamiliar situation I have met</title>
@@ -1744,6 +1716,34 @@
 
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pridict_result==test_label <span class="comment">#test the accuracy</span></span><br></pre></td></tr></table></figure>
 
+]]></content>
+  </entry>
+  <entry>
+    <title>The tenth Python lesson</title>
+    <url>/2020/02/23/The-tenth-Python-lesson/</url>
+    <content><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/23/33C4Vf.jpg" alt="33C4Vf.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/23/33CTPg.jpg" alt="33CTPg.jpg"></p>
+<p><img src="https://s2.ax1x.com/2020/02/23/33CvZV.jpg" alt="33CvZV.jpg"></p>
+<hr>
+<p>There is also a website for Python learning:</p>
+<p><a href="https://www.runoob.com/">菜鸟教程</a></p>
+]]></content>
+      <categories>
+        <category>Computer learning</category>
+      </categories>
+      <tags>
+        <tag>Python Notes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>The understanding of the asset management industry</title>
+    <url>/2021/09/08/The-understanding-of-the-asset-management-industry/</url>
+    <content><![CDATA[<p>When I read the book “ monetary finance”, I was confused about the concept of “ sort of bank credit assets “, I discussed this topic with my mother, and consulted with related experience of the elder. Hence, i got involved in and initially discussed a relatively unpopular topic in the financial industry, namely “distressed asset Management”, or “AMC”. What I learned later aroused my interest: AMC industry started late in China, with huge scale and broad market prospect, but there are very few professionals engaged in this industry. After an internship at an asset management company, I got a better understanding of the industry.</p>
+<p>Generally speaking, the NPL in the market refer to the NPL of financial institutions and more to the non-performing creditor’s rights of banks, among which the most important is the non-performing loan (refers to the loan that the bank customers cannot repay the principal and interest on schedule and in amount. ).</p>
+<p>For the banks, non-performing assets are a burden and drag, non-performing assets shackle hands and feet, so that the bank is difficult to implement development; For investors in bad assets, the huge profit space of bad assets is very attractive, so that countless investors participate in it one after another. From the perspective of investors, the current global economic downturn, downward pressure is huge, the development of many areas are facing bottlenecks, even challenges, and non-performing assets, known as the best counter-cyclical investment, is thriving and booming. From the perspective of financial institutions’ risk prevention and sound operation, it is very important and necessary to divest and dispose of non-performing assets, just like a sick person has to seek medical treatment or even surgical resection.</p>
+<p>Bad assets are not worthless assets. The famous investment guru Graham once said, “There are no bad assets to invest in, only bad prices to buy.” What’s more, most of the time these assets are not worthless junk because of a lack of proper operations or temporary difficulties due to the economic cycle. Therefore, smart NPL investors will practice contrarian thinking, buy at the right price, dispose of it properly, and then wait for the right time to sell it, thus making a huge profit. In fact, NPL is a typical industry of turning waste into treasure. For excellent gold diggers, NPL disposal industry hides huge treasure. Westerners refer to distressed asset management companies (AMCs) as “vultures that eat rotten meat”.</p>
+<p>I also learned that China’s finance started very late, and there is still a big gap between China and Europe and America. From a global perspective, the best choice to study accounting and finance is to go to the UK. Britain’s financial industry is highly developed. According to OECD statistics, the UK’s GDP in 2019 was 2,214.8 billion pounds, of which the value of finance and insurance was 129.6 billion pounds, accounting for more than 5%. Currently, the UK is the world’s largest exporter of financial services, is the global influence of the international financial center of London, London ranked first in the total cross-border banking, London has the world’s largest foreign exchange market, London is in the world in the field of international bond issuance and trading, gold, silver trading volume in the world’s first.</p>
+<p>Therefore, I really hope to study accounting and finance in university. This will help me better enter the asset management industry in the future.</p>
 ]]></content>
   </entry>
   <entry>
